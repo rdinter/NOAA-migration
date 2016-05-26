@@ -3,6 +3,8 @@ Working repository to look at the effects of natural disasters on internal migra
 
 TO BE UPDATED.
 
+One bit of note, it would be helpful to have a consistent style for the code. Object names should be nouns while functions should be verbs. The names should adhere to [snake_case](https://en.wikipedia.org/wiki/Snake_case). In general, we should follow Hadley Wickham's [Style guide](http://adv-r.had.co.nz/Style.html) from his [Advanced R](http://adv-r.had.co.nz/) text.
+
 ## Organization:
 
 The main theme behind this repository is to have an easy to access data-source that can be easily accessed for multiple projects. The `Project` is the identifier for various ideas, research interests, modeling exercises, etc. As this becomes more populated with Projects, I will give a short description for each.
@@ -42,6 +44,8 @@ The main theme behind this repository is to have an easy to access data-source t
 The packages used in this repository so far include: `cleangeo`, `dplyr`, `gdata`, `maptools`, `readxl`, `readr`, `rgdal`, and `stringr`.
 
 Further, other packages needed include: `dplyr`, `ggplot2`, `jsonlite`, `maptools`, `pbapply`, `raster`, `RCurl`, `readr`, `readxl`, `rgdal`, `spdep`, `stringr`, `tidyr`.
+
+```devtools::install_github("hadley/readxl")```
 
 # Various To-Do Items:
 

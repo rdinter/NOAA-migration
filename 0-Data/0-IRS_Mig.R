@@ -157,27 +157,19 @@ write_csv(allout, paste0(localDir, "/outflows0413.csv"))
 rm(indata, outdata)
 
 allindata  <- bind_rows(allindata, allin)
-allindata$return  <- ifelse(is.na(allindata$return), -1,
-                                allindata$return)
-allindata$exmpt   <- ifelse(is.na(allindata$exmpt), -1,
-                                allindata$exmpt)
-allindata$AGI    <- ifelse(is.na(allindata$AGI), -1,
-                                allindata$AGI)
+allindata$return  <- ifelse(is.na(allindata$return), -1, allindata$return)
+allindata$exmpt   <- ifelse(is.na(allindata$exmpt), -1, allindata$exmpt)
+allindata$AGI     <- ifelse(is.na(allindata$AGI), -1, allindata$AGI)
 saveRDS(allindata,  file = paste0(localDir, "/inflows9213.rds"))
 
 alloutdata <- bind_rows(alloutdata, allout)
-alloutdata$return  <- ifelse(is.na(alloutdata$return), -1,
-                                 alloutdata$return)
-alloutdata$exmpt   <- ifelse(is.na(alloutdata$exmpt), -1,
-                                 alloutdata$exmpt)
-alloutdata$AGI    <- ifelse(is.na(alloutdata$AGI), -1,
-                                 alloutdata$AGI)
+alloutdata$return <- ifelse(is.na(alloutdata$return), -1, alloutdata$return)
+alloutdata$exmpt  <- ifelse(is.na(alloutdata$exmpt), -1, alloutdata$exmpt)
+alloutdata$AGI    <- ifelse(is.na(alloutdata$AGI), -1, alloutdata$AGI)
 saveRDS(alloutdata, file = paste0(localDir, "/outflows9213.rds"))
 
-allindata$key  <- paste0(allindata$ofips, allindata$dfips,
-                         allindata$year)
-alloutdata$key <- paste0(alloutdata$ofips, alloutdata$dfips,
-                         alloutdata$year)
+allindata$key  <- paste0(allindata$ofips, allindata$dfips, allindata$year)
+alloutdata$key <- paste0(alloutdata$ofips, alloutdata$dfips, alloutdata$year)
 
 check1 <- allindata$key %in% alloutdata$key
 sum(check1)
