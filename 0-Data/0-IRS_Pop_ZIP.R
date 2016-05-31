@@ -60,7 +60,7 @@ j5 <- read_csv(files[1])
 #   }
 #   
 #   names(data) <- c("st_fips", "cty_fips", "county_name", "return",
-#                    "exmpt", "AGI", "wages", "dividends", "interest")
+#                    "exmpt", "agi", "wages", "dividends", "interest")
 #   
 #   data$st_fips  <- as.numeric(data$st_fips)
 #   data$cty_fips <- as.numeric(data$cty_fips)
@@ -213,7 +213,7 @@ j5 <- read_csv(files[1])
 #   group_by(year, st_fips) %>%
 #   summarise(cty_fips = 0, return = sum(return, na.rm = T),
 #             exmpt = sum(exmpt, na.rm = T),
-#             AGI = sum(AGI, na.rm = T),
+#             agi = sum(agi, na.rm = T),
 #             wages = sum(wages, na.rm = T),
 #             dividends = sum(dividends, na.rm = T),
 #             interest = sum(interest, na.rm = T)) -> states
@@ -225,7 +225,7 @@ j5 <- read_csv(files[1])
 #   bind_rows(states) -> IRS_POP
 # 
 # IRS_POP <- select(IRS_POP, fips, year, pop_IRS = exmpt,
-#                   HH_IRS = return, AGI_IRS = AGI, wages_IRS = wages,
+#                   HH_IRS = return, agi_IRS = agi, wages_IRS = wages,
 #                   dividends_IRS = dividends, interest_IRS = interest)
 # 
 # # Problem with 51515, 51560, 51780:

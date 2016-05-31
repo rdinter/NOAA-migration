@@ -92,7 +92,7 @@ zipdata <- function(file, tempDir, year){
 read_pop1 <- function(file){
   require(readxl, quietly = T)
   coln   <- c("st_fips", "cty_fips", "county_name", "return", "exmpt",
-              "AGI", "wages", "dividends", "interest")
+              "agi", "wages", "dividends", "interest")
   
   # Alaska in 97 is missing a column and MA 2001 is F-d
   probs <- c("ALASKA97ci.xls", "Kentucky01ci.xls", "MASSACHUSETTS01ci.xls")
@@ -152,7 +152,7 @@ read_pop1 <- function(file){
 
 read_pop2 <- function(file){
   coln   <- c("st_fips", "cty_fips", "county_name", "return", "exmpt",
-              "AGI", "wages", "dividends", "interest")
+              "agi", "wages", "dividends", "interest")
   data   <- read.xls(file)
   data   <- data[c(5:nrow(data)), c(1:9)]
   ind    <- apply(data, 1, function(x) all(is.na(x)))

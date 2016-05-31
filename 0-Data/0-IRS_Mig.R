@@ -31,9 +31,9 @@ allindata  <- data.frame()
 alloutdata <- data.frame()
 
 namesi <- c("st_fips_d", "cty_fips_d", "st_fips_o", "cty_fips_o",
-            "state_abbrv", "county_name", "return", "exmpt", "AGI")
+            "state_abbrv", "county_name", "return", "exmpt", "agi")
 nameso <- c("st_fips_o", "cty_fips_o", "st_fips_d", "cty_fips_d",
-            "state_abbrv", "county_name", "return", "exmpt", "AGI")
+            "state_abbrv", "county_name", "return", "exmpt", "agi")
 
 for (i in files){  
   unzip(i, exdir = tempDir)
@@ -71,7 +71,7 @@ indata   <- sapply(inflows, function(x){
   data       <- read_csv(file, col_names = c("st_fips_d", "cty_fips_d",
                                              "st_fips_o", "cty_fips_o",
                                              "state_abbrv", "county_name",
-                                             "return", "exmpt", "AGI"),
+                                             "return", "exmpt", "agi"),
                          col_types = "iiiicciii", skip = 1)
   data[,c(5:6)]     <- lapply(data[,c(5:6)],
                               function(xx) toupper(str_trim(xx)) )
@@ -96,7 +96,7 @@ outdata  <- sapply(outflows, function(x){
   data       <- read_csv(file, col_names = c("st_fips_o", "cty_fips_o",
                                              "st_fips_d", "cty_fips_d",
                                              "state_abbrv", "county_name",
-                                             "return", "exmpt", "AGI"),
+                                             "return", "exmpt", "agi"),
                          col_types = "iiiicciii", skip = 1)
   data[,c(5:6)]     <- lapply(data[,c(5:6)],
                               function(xx) toupper(str_trim(xx)) )
@@ -115,13 +115,13 @@ rm(indata, outdata)
 allindata  <- bind_rows(allindata, allin)
 allindata$return  <- ifelse(is.na(allindata$return), -1, allindata$return)
 allindata$exmpt   <- ifelse(is.na(allindata$exmpt), -1, allindata$exmpt)
-allindata$AGI     <- ifelse(is.na(allindata$AGI), -1, allindata$AGI)
+allindata$agi     <- ifelse(is.na(allindata$agi), -1, allindata$agi)
 saveRDS(allindata,  file = paste0(localDir, "/inflows9213.rds"))
 
 alloutdata <- bind_rows(alloutdata, allout)
 alloutdata$return <- ifelse(is.na(alloutdata$return), -1, alloutdata$return)
 alloutdata$exmpt  <- ifelse(is.na(alloutdata$exmpt), -1, alloutdata$exmpt)
-alloutdata$AGI    <- ifelse(is.na(alloutdata$AGI), -1, alloutdata$AGI)
+alloutdata$agi    <- ifelse(is.na(alloutdata$agi), -1, alloutdata$agi)
 saveRDS(alloutdata, file = paste0(localDir, "/outflows9213.rds"))
 
 allindata$key  <- paste0(allindata$ofips, allindata$dfips, allindata$year)
