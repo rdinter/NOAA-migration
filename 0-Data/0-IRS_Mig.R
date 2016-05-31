@@ -3,54 +3,12 @@
 print(paste0("Started 0-IRS_Mig at ", Sys.time()))
 
 library(dplyr)
-library(gdata)
-library(readxl)
+# library(gdata)
+# library(readxl)
 library(readr)
 library(stringr)
+source("0-Data/0-functions.R")
 
-#Problem for excel files with "us" from 1998.99 until 2001.2
-read_excel1 <- function(file){
-  data   <- read_excel(file)
-  data   <- data[, c(1:9)]
-  #data   <- data[c(8:nrow(data)), c(1:9)]
-  return(data)
-}
-read_excel2 <- function(file){
-  data   <- read.xls(file)
-  data   <- data[c(4:nrow(data)), c(1:9)]
-  return(data)
-}
-Mode <- function(x) {
-  ux <- unique(x)
-  ux[which.max(tabulate(match(x, ux)))]
-}
-
-read_data1 <- function(j5i, namesi){
-  
-  indata <- sapply(j5i, function(x){
-    data <- tryCatch(read_excel1(x), error = function(e){
-      read_excel2(x)
-    })
-    
-    data[,c(1:4,7:9)] <- lapply(data[,c(1:4,7:9)],
-                                function(xx){ # Sometimes characters in values
-                                  as.numeric(
-                                    gsub(",", "", 
-                                         gsub("[A-z]", "", xx)))
-                                })
-    data[,c(5:6)]     <- lapply(data[,c(5:6)], function(xx) toupper(xx) )
-    names(data)       <- namesi
-    
-    data                 <- filter(data, !is.na(state_code_d))
-    data$state_code_d <- Mode(data$state_code_d)
-    data$ofips <- data$state_code_o*1000 + data$county_code_o
-    data$dfips <- data$state_code_d*1000   + data$county_code_d
-    data
-  }, simplify = F, USE.NAMES = T)
-  indata <- bind_rows(indata)
-  indata$year <- as.numeric(substr(basename(i), 1, 4))
-  return(indata)
-}
 
 # Create a directory for the data, ignore for GitHub
 localDir <- "0-Data/IRS"
@@ -86,7 +44,7 @@ for (i in files){
   j5o <- list.files(j5[grepl("Outflow", j5)], full.names = T)
   
   indata  <- read_data1(j5i, namesi)
-  outdata <- read_data1(j5o, nameso)
+  outdata <- read_data1(j5o, nameso, inflow = F)
   
   unlink(tempDir, recursive = T)
   allindata  <- bind_rows(allindata, indata)
