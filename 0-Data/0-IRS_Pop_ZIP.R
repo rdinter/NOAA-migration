@@ -59,16 +59,16 @@ j5 <- read_csv(files[1])
 #                        "A00100", "A00200", "A00600", "A00300")]
 #   }
 #   
-#   names(data) <- c("stfips", "ctyfips", "county_name", "return",
+#   names(data) <- c("st_fips", "cty_fips", "county_name", "return",
 #                    "exmpt", "AGI", "wages", "dividends", "interest")
 #   
-#   data$stfips  <- as.numeric(data$stfips)
-#   data$ctyfips <- as.numeric(data$ctyfips)
+#   data$st_fips  <- as.numeric(data$st_fips)
+#   data$cty_fips <- as.numeric(data$cty_fips)
 #   
 #   year      <- as.numeric(substr(basename(i), 1, 4))
 #   if (is.na(year)) year <- 2013 # QUICK FIX
 #   data$year <- year
-#   data$fips <- data$stfips*1000 + data$ctyfips
+#   data$fips <- data$st_fips*1000 + data$cty_fips
 #   
 #   # Add in total
 #   add   <- ((data$fips %% 1000) == 0)
@@ -86,7 +86,7 @@ j5 <- read_csv(files[1])
 #   print(paste0("Finished ", basename(i), " at ", Sys.time()))
 # }
 # # Remove NAs
-# tdata   <- tdata[!is.na(tdata$stfips),]
+# tdata   <- tdata[!is.na(tdata$st_fips),]
 # 
 # 
 # 
@@ -148,15 +148,15 @@ j5 <- read_csv(files[1])
 #     year          <- as.numeric(substr(basename(i), 1, 4))
 #     data$year     <- year
 #     
-#     # PROBLEM, in 1989 IRS defines Cali stfips as 90, but it's 6
+#     # PROBLEM, in 1989 IRS defines Cali st_fips as 90, but it's 6
 #     #  further...sometimes the State fips is NA when it shouldn't be
-#     st <- median(data$stfips, na.rm = T)
-#     data$stfips[is.na(data$stfips)]   <- st
-#     data$ctyfips[is.na(data$ctyfips)] <- 0
+#     st <- median(data$st_fips, na.rm = T)
+#     data$st_fips[is.na(data$st_fips)]   <- st
+#     data$cty_fips[is.na(data$cty_fips)] <- 0
 #     if (st == 90) {
-#       data$fips <- 6000 + data$ctyfips
+#       data$fips <- 6000 + data$cty_fips
 #     }    else{
-#       data$fips <- st*1000 + data$ctyfips
+#       data$fips <- st*1000 + data$cty_fips
 #     }
 #     
 #     ind    <- apply(data, 1, function(x) all(is.na(x)))
@@ -199,7 +199,7 @@ j5 <- read_csv(files[1])
 # IRS_POP <- filter(IRS_POP, !is.na(return), !is.na(exmpt))
 # 
 # IRS_POP %>% filter(fips == 11000, year == 2012) %>%
-#   mutate(fips = 11001, ctyfips = 1) %>% bind_rows(IRS_POP) -> IRS_POP
+#   mutate(fips = 11001, cty_fips = 1) %>% bind_rows(IRS_POP) -> IRS_POP
 # 
 # IRS_POP$fips <- ifelse(IRS_POP$fips == 12025, 12086, IRS_POP$fips)
 # ind          <- IRS_POP == -1 & !is.na(IRS_POP) # Turn suppressed into NA
@@ -210,14 +210,14 @@ j5 <- read_csv(files[1])
 # 
 # IRS_POP %>%
 #   filter(fips %% 1000 != 0) %>%
-#   group_by(year, stfips) %>%
-#   summarise(ctyfips = 0, return = sum(return, na.rm = T),
+#   group_by(year, st_fips) %>%
+#   summarise(cty_fips = 0, return = sum(return, na.rm = T),
 #             exmpt = sum(exmpt, na.rm = T),
 #             AGI = sum(AGI, na.rm = T),
 #             wages = sum(wages, na.rm = T),
 #             dividends = sum(dividends, na.rm = T),
 #             interest = sum(interest, na.rm = T)) -> states
-# states$fips        <- 1000*states$stfips
+# states$fips        <- 1000*states$st_fips
 # states$county_name <- "State Total"
 # 
 # IRS_POP %>%

@@ -3,8 +3,6 @@
 print(paste0("Started 0-IRS_Mig at ", Sys.time()))
 
 library(dplyr)
-# library(gdata)
-# library(readxl)
 library(readr)
 library(stringr)
 source("0-Data/0-functions.R")
@@ -32,9 +30,9 @@ if (all(sapply(files, function(x) !file.exists(x)))) {
 allindata  <- data.frame()
 alloutdata <- data.frame()
 
-namesi <- c("state_code_d", "county_code_d", "state_code_o", "county_code_o",
+namesi <- c("st_fips_d", "cty_fips_d", "st_fips_o", "cty_fips_o",
             "state_abbrv", "county_name", "return", "exmpt", "AGI")
-nameso <- c("state_code_o", "county_code_o", "state_code_d", "county_code_d",
+nameso <- c("st_fips_o", "cty_fips_o", "st_fips_d", "cty_fips_d",
             "state_abbrv", "county_name", "return", "exmpt", "AGI")
 
 for (i in files){  
@@ -53,7 +51,7 @@ for (i in files){
   print(paste0("Finished ", basename(i), " at ", Sys.time()))
 }
 # Problem in 1996 where the indata for total US is coded as 1 instead of 0
-allindata <- filter(allindata, !(state_code_d == 1 & state_abbrv == "US"))
+allindata <- filter(allindata, !(st_fips_d == 1 & state_abbrv == "US"))
 
 write_csv(allindata, paste0(localDir, "/inflows9203.csv"))
 write_csv(alloutdata, paste0(localDir, "/outflows9203.csv"))
@@ -70,17 +68,17 @@ inflows  <- c("countyinflow0405.csv", "countyinflow0506.csv",
 indata   <- sapply(inflows, function(x){
   file       <- paste0(data_source, "/", x)
   if (!file.exists(file)) (download.file(paste0(url, x), file))
-  data       <- read_csv(file, col_names = c("state_code_d", "county_code_d",
-                                             "state_code_o", "county_code_o",
+  data       <- read_csv(file, col_names = c("st_fips_d", "cty_fips_d",
+                                             "st_fips_o", "cty_fips_o",
                                              "state_abbrv", "county_name",
                                              "return", "exmpt", "AGI"),
                          col_types = "iiiicciii", skip = 1)
   data[,c(5:6)]     <- lapply(data[,c(5:6)],
                               function(xx) toupper(str_trim(xx)) )
   data$year  <- 1999 + as.numeric(substr(x, nchar(x) - 5, nchar(x) - 4))
-  data$ofips <- data$state_code_o*1000 + data$county_code_o
-  data$dfips <- data$state_code_d*1000   + data$county_code_d
-  filter(data, !is.na(state_code_d))
+  data$ofips <- data$st_fips_o*1000 + data$cty_fips_o
+  data$dfips <- data$st_fips_d*1000   + data$cty_fips_d
+  filter(data, !is.na(st_fips_d))
 }, simplify = F, USE.NAMES = T)
 
 allin <- bind_rows(indata)
@@ -95,17 +93,17 @@ outflows <- c("countyoutflow0405.csv", "countyoutflow0506.csv",
 outdata  <- sapply(outflows, function(x){
   file       <- paste0(data_source, "/", x)
   if (!file.exists(file)) (download.file(paste0(url, x), file))
-  data       <- read_csv(file, col_names = c("state_code_o", "county_code_o",
-                                             "state_code_d", "county_code_d",
+  data       <- read_csv(file, col_names = c("st_fips_o", "cty_fips_o",
+                                             "st_fips_d", "cty_fips_d",
                                              "state_abbrv", "county_name",
                                              "return", "exmpt", "AGI"),
                          col_types = "iiiicciii", skip = 1)
   data[,c(5:6)]     <- lapply(data[,c(5:6)],
                               function(xx) toupper(str_trim(xx)) )
   data$year  <- 1999 + as.numeric(substr(x, nchar(x) - 5, nchar(x) - 4))
-  data$ofips <- data$state_code_o*1000 + data$county_code_o
-  data$dfips <- data$state_code_d*1000   + data$county_code_d
-  filter(data, !is.na(state_code_o))
+  data$ofips <- data$st_fips_o*1000 + data$cty_fips_o
+  data$dfips <- data$st_fips_d*1000   + data$cty_fips_d
+  filter(data, !is.na(st_fips_o))
 }, simplify = F, USE.NAMES = T)
 
 allout <- bind_rows(outdata)

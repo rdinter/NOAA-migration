@@ -40,16 +40,16 @@ read_data1 <- function(j5i, namesi, inflow = T){
     names(data)       <- namesi
     
     if (inflow) {
-      data              <- filter(data, !is.na(state_code_d))
-      data$state_code_d <- Mode(data$state_code_d)
+      data              <- filter(data, !is.na(st_fips_d))
+      data$st_fips_d <- Mode(data$st_fips_d)
     } else {
-      data              <- filter(data, !is.na(state_code_o))
-      data$state_code_o <- Mode(data$state_code_o)
+      data              <- filter(data, !is.na(st_fips_o))
+      data$st_fips_o <- Mode(data$st_fips_o)
     }
     
     
-    data$ofips <- data$state_code_o*1000 + data$county_code_o
-    data$dfips <- data$state_code_d*1000   + data$county_code_d
+    data$ofips <- data$st_fips_o*1000 + data$cty_fips_o
+    data$dfips <- data$st_fips_d*1000   + data$cty_fips_d
     data
   }, simplify = F, USE.NAMES = T)
   indata <- bind_rows(indata)
@@ -91,7 +91,7 @@ zipdata <- function(file, tempDir, year){
 #Problem for excel files with "us" from 1998.99 until 2001.2
 read_pop1 <- function(file){
   require(readxl, quietly = T)
-  coln   <- c("stfips", "ctyfips", "county_name", "return", "exmpt",
+  coln   <- c("st_fips", "cty_fips", "county_name", "return", "exmpt",
               "AGI", "wages", "dividends", "interest")
   
   # Alaska in 97 is missing a column and MA 2001 is F-d
@@ -151,7 +151,7 @@ read_pop1 <- function(file){
 }
 
 read_pop2 <- function(file){
-  coln   <- c("stfips", "ctyfips", "county_name", "return", "exmpt",
+  coln   <- c("st_fips", "cty_fips", "county_name", "return", "exmpt",
               "AGI", "wages", "dividends", "interest")
   data   <- read.xls(file)
   data   <- data[c(5:nrow(data)), c(1:9)]
