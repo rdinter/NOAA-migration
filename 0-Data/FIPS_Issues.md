@@ -2,6 +2,18 @@
 
 [Federal Information Processing Standards](http://www.nist.gov/itl/fips.cfm) is a government system which geographically partitions the United States by disjoint regions. For our purposes, FIPS consistent to two parts: State and County. The State FIPS is a two-digit value which spans the United States across States and Territories. Given a State FIPS, a particular geographic location in a State is then partitioned into a County FIPS. A County FIPS is a three-digit value and represents a political polygon within a State/Territory. County FIPS are also disjoint regions, although as we will see in the [problems section][Problems with FIPS], the intended goal of a disjoint set may interfere with political practice.
 
+## Problems with FIPS
+
+Government agencies that collect county-level data may or may not be consistent across time and/or agencies. This may be because new counties emerge over time, counties change names, counties consolidate to another, or the definition of a county equivalent varies[^fn-cnty-eq] across time/agency. This can make construction of panel data involving county-level data frustrating to keep these changes consistent.
+
+[^fn-cnty-eq]: The most egregious example for this comes from Virginia, which has designations for [counties and independent cities](http://www.pettitcompany.com/html/va_cities_and_counties.html). For some government data, a fips code will designate the county as well as all independent cities that lie within the border. Other government data will track data for independent cities as their own fips code.
+
+The [National Resource Conservation Service](http://www.nrcs.usda.gov/wps/portal/nrcs/detail/pa/home/?cid=nrcs143_013710) has an excellent overview of FIPS changes where a fips code needs to be combined with other existing ones. Further, the Census Bureau [maintains county equivalent changes from 1970 to present](https://www.census.gov/geo/reference/county-changes.html) which are deemed:
+
+>Substantial county changes include all county boundary changes affecting an estimated population of 200 or more people, changes of at least one square mile where no estimated population was provided and research indicated that the affected population may have been 200 people or more, or "large" annexations of unpopulated territory (10 square miles or more).
+
+A short overview for each State is provided below with particular dates noted. The raw descriptions are from the [Census description](https://www.census.gov/geo/reference/county-changes.html) of county changes and are left at the bottom of each state overview. States that are not listed do not need any changes of note.
+
 To skip to a specific state, here are links to those which have FIPS issues:
 
 1.  [Alabama](#alabama)
@@ -26,17 +38,7 @@ To skip to a specific state, here are links to those which have FIPS issues:
 20. [Virginia](#virginia)
 21. [Wyoming](#wyoming)
 
-## Problems with FIPS
 
-Government agencies that collect county-level data may or may not be consistent across time and/or agencies. This may be because new counties emerge over time, counties change names, counties consolidate to another, or the definition of a county equivalent varies[^fn-cnty-eq] across time/agency. This can make construction of panel data involving county-level data frustrating to keep these changes consistent.
-
-[^fn-cnty-eq]: The most egregious example for this comes from Virginia, which has designations for [counties and independent cities](http://www.pettitcompany.com/html/va_cities_and_counties.html). For some government data, a fips code will designate the county as well as all independent cities that lie within the border. Other government data will track data for independent cities as their own fips code.
-
-The [National Resource Conservation Service](http://www.nrcs.usda.gov/wps/portal/nrcs/detail/pa/home/?cid=nrcs143_013710) has an excellent overview of FIPS changes where a fips code needs to be combined with other existing ones. Further, the Census Bureau [maintains county equivalent changes from 1970 to present](https://www.census.gov/geo/reference/county-changes.html) which are deemed:
-
->Substantial county changes include all county boundary changes affecting an estimated population of 200 or more people, changes of at least one square mile where no estimated population was provided and research indicated that the affected population may have been 200 people or more, or "large" annexations of unpopulated territory (10 square miles or more).
-
-A short overview for each State is provided below with particular dates noted. The raw descriptions are from the [Census description](https://www.census.gov/geo/reference/county-changes.html) of county changes and are left at the bottom of each state overview. States that are not listed do not need any changes of note.
 
 ### Alabama
 A name change from "De Kalb" to "DeKalb." County names should not be of interest in any analysis, only a unique identifier and so this should not be of concern.
@@ -198,7 +200,7 @@ Nothing really, name change for DeKalb.
 1. **1990s:**
   - BOUNDARY CHANGES:
     * Montgomery County, Maryland (24-031): Added territory (Takoma Park city) from Prince George's County (24-033) effective July 1, 1997; 1990 added population: 5,156.
-    * Prince George?s County, Maryland (24-033): Lost territory (Takoma Park city) to Montgomery County (24-031) effective July 1, 1997; 1990 detached population: 5,156.
+    * Prince George's County, Maryland (24-033): Lost territory (Takoma Park city) to Montgomery County (24-031) effective July 1, 1997; 1990 detached population: 5,156.
 
 
 ### Mississippi

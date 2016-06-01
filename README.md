@@ -3,7 +3,7 @@ Working repository to look at the effects of natural disasters on internal migra
 
 TO BE UPDATED.
 
-One bit of note, it would be helpful to have a consistent style for the code. Object names should be nouns while functions should be verbs. The names should adhere to [snake_case](https://en.wikipedia.org/wiki/Snake_case). In general, we should follow Hadley Wickham's [Style guide](http://adv-r.had.co.nz/Style.html) from his [Advanced R](http://adv-r.had.co.nz/) text.
+One bit of note, it would be helpful to have a consistent style for the code. Object names should be nouns while functions should be verbs. The names should adhere to [snake_case](https://en.wikipedia.org/wiki/Snake_case). In general, we should follow Hadley Wickham's [Style guide](http://adv-r.had.co.nz/Style.html) from his [Advanced R](http://adv-r.had.co.nz/) text. Hadley also has a great new book titled [R for Data Science](http://r4ds.had.co.nz/) plus if we end up developing any packages related to this repository then [R packages](http://r-pkgs.had.co.nz/) is another great resource from Hadley.
 
 ## Organization:
 
@@ -12,7 +12,7 @@ The main theme behind this repository is to have an easy to access data-source t
 * 0-Data/
     * `0-Data_Source.R` - script to download data and create `.csv` and `.Rda` files in an easy to read and uniform format.
     * Data_Source/ - most of this will be ignored via `.gitignore`.
-        * RAW/
+        * raw/
             * All downloaded files from the `0-Data_Source.R` script.
             * Some data cannot be downloaded and must be hosted elsewhere. They will also be in this folder for local use.
         * `Various_Names.csv`
@@ -22,7 +22,8 @@ The main theme behind this repository is to have an easy to access data-source t
 * 1-Organization/
     * `1-Project_Tidy.R` - script to gather particular data
     * Project/
-        * Properly formatted and gathered data for further analysis.
+        * Properly formatted and gathered data for further analysis. If files are over 100 mb, [GitHub will reject the push](http://stackoverflow.com/questions/17382375/github-file-size-limit-changed-6-18-13-cant-push-now). __So Do Not Push Files Above 100MB__
+    * `1-Project_functions.R` - any relevant functions for tidying of a project's data.
 * 2-Exploratory/
     * `2-Project_Explore.R` - summary statistics, histograms, plots, maps, etc.
     * Project/
@@ -41,16 +42,12 @@ The main theme behind this repository is to have an easy to access data-source t
         * Finished results.
 
 ## Packages Needed
-The packages used in this repository so far include: `cleangeo`, `dplyr`, `gdata`, `maptools`, `readxl`, `readr`, `rgdal`, and `stringr`.
-
-Further, other packages needed include: `dplyr`, `ggplot2`, `jsonlite`, `maptools`, `pbapply`, `raster`, `RCurl`, `readr`, `readxl`, `rgdal`, `spdep`, `stringr`, `tidyr`.
-
-```devtools::install_github("hadley/readxl")```
+The packages used in this repository so far include: `cleangeo`, `dplyr`, `gdata`, `maptools`, `RCurl`, `readr`, `readxl`, `rgdal`, `stringr`, and `tidyr`. All of these are available on [CRAN](https://cran.r-project.org/) and can be installed using `install.packages()`.
 
 # Various To-Do Items:
 
 This is still currently a work in progress. At the moment, here are a few things I know that I will eventually need to tackle:
 
-1. Hosting various datasets (BB loans, FCC data, etc.) on a site so that R scripts are automated.
+1. Hosting various datasets (FCC data, various shapefiles, etc.) on a site so that R scripts are automated.
 2. Delve into the BEA API and sort through their various data. Document this as well.
-3. Convert Matlab code (for origin-destination models and potentially dynamic spatial ordered probit) to R scripts.
+3. Convert Matlab code (for origin-destination models) to R scripts.
