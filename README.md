@@ -42,7 +42,7 @@ The main theme behind this repository is to have an easy to access data-source t
         * Finished results.
 
 ## Packages Needed
-The packages used in this repository so far include: `cleangeo`, `dplyr`, `gdata`, `maptools`, `RCurl`, `readr`, `readxl`, `rgdal`, `stringr`, and `tidyr`. All of these are available on [CRAN](https://cran.r-project.org/) and can be installed using `install.packages()`.
+The packages used in this repository so far include: `cleangeo`, `dplyr`, `gdata`, `lubridate`, `maptools`, `RCurl`, `readr`, `readxl`, `rgdal`, `rvest`, `stringr`, and `tidyr`. All of these are available on [CRAN](https://cran.r-project.org/) and can be installed using `install.packages()`.
 
 # Various To-Do Items:
 
