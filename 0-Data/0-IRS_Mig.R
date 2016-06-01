@@ -27,8 +27,8 @@ if (all(sapply(files, function(x) !file.exists(x)))) {
   mapply(download.file, url = urls, destfile = files, method = "libcurl")
 }
 
-allindata  <- data.frame()
-alloutdata <- data.frame()
+allinflow  <- data.frame()
+alloutflow <- data.frame()
 
 namesi <- c("st_fips_d", "cty_fips_d", "st_fips_o", "cty_fips_o",
             "state_abbrv", "county_name", "return", "exmpt", "agi")
@@ -37,101 +37,91 @@ nameso <- c("st_fips_o", "cty_fips_o", "st_fips_d", "cty_fips_d",
 
 for (i in files){  
   unzip(i, exdir = tempDir)
-  j5  <- list.dirs(tempDir)
-  j5i <- list.files(j5[grepl("Inflow", j5)], full.names = T)
-  j5o <- list.files(j5[grepl("Outflow", j5)], full.names = T)
+  j5         <- list.dirs(tempDir)
+  j5i        <- list.files(j5[grepl("Inflow", j5)], full.names = T)
+  j5o        <- list.files(j5[grepl("Outflow", j5)], full.names = T)
   
-  indata  <- read_data1(j5i, namesi)
-  outdata <- read_data1(j5o, nameso, inflow = F)
+  inflow     <- read_data1(j5i, namesi)
+  outflow    <- read_data1(j5o, nameso, inflow = F)
   
   unlink(tempDir, recursive = T)
-  allindata  <- bind_rows(allindata, indata)
-  alloutdata <- bind_rows(alloutdata, outdata)
-  rm(indata, outdata)
+  allinflow  <- bind_rows(allinflow, inflow)
+  alloutflow <- bind_rows(alloutflow, outflow)
+  rm(inflow, outflow)
   print(paste0("Finished ", basename(i), " at ", Sys.time()))
 }
-# Problem in 1996 where the indata for total US is coded as 1 instead of 0
-allindata <- filter(allindata, !(st_fips_d == 1 & state_abbrv == "US"))
+# Problem in 1996 where the inflow for total US is coded as 1 instead of 0
+allinflow <- filter(allinflow, !(st_fips_d == 1 & state_abbrv == "US"))
 
-write_csv(allindata, paste0(localDir, "/inflows9203.csv"))
-write_csv(alloutdata, paste0(localDir, "/outflows9203.csv"))
+write_csv(allinflow, paste0(localDir, "/inflows9203.csv"))
+write_csv(alloutflow, paste0(localDir, "/outflows9203.csv"))
 
 
 # ---- Data from 2004 to 2013 ---------------------------------------------
+dyears   <- c("0405", "0506", "0607", "0708", "0809",
+              "0910", "1011", "1112", "1213", "1314")
+infiles  <- paste0("countyinflow", dyears, ".csv")
 
-inflows  <- c("countyinflow0405.csv", "countyinflow0506.csv",
-              "countyinflow0607.csv", "countyinflow0708.csv",
-              "countyinflow0809.csv", "countyinflow0910.csv",
-              "countyinflow1011.csv", "countyinflow1112.csv",
-              "countyinflow1213.csv", "countyinflow1314.csv")
-
-indata   <- sapply(inflows, function(x){
-  file       <- paste0(data_source, "/", x)
+inflow   <- sapply(infiles, function(x){
+  file          <- paste0(data_source, "/", x)
+  
   if (!file.exists(file)) (download.file(paste0(url, x), file))
-  data       <- read_csv(file, col_names = c("st_fips_d", "cty_fips_d",
-                                             "st_fips_o", "cty_fips_o",
-                                             "state_abbrv", "county_name",
-                                             "return", "exmpt", "agi"),
-                         col_types = "iiiicciii", skip = 1)
-  data[,c(5:6)]     <- lapply(data[,c(5:6)],
-                              function(xx) toupper(str_trim(xx)) )
-  data$year  <- 1999 + as.numeric(substr(x, nchar(x) - 5, nchar(x) - 4))
-  data$ofips <- data$st_fips_o*1000 + data$cty_fips_o
-  data$dfips <- data$st_fips_d*1000   + data$cty_fips_d
-  filter(data, !is.na(st_fips_d))
+  
+  flow          <- read_csv(file, namesi, col_types = "iiiicciii", skip = 1)
+  flow[,c(5:6)] <- lapply(flow[,c(5:6)], function(xx) toupper(str_trim(xx)))
+  flow$year     <- 1999 + as.numeric(substr(x, nchar(x) - 5, nchar(x) - 4))
+  flow$ofips    <- flow$st_fips_o*1000 + flow$cty_fips_o
+  flow$dfips    <- flow$st_fips_d*1000 + flow$cty_fips_d
+  
+  filter(flow, !is.na(st_fips_d))
 }, simplify = F, USE.NAMES = T)
 
-allin <- bind_rows(indata)
+allin    <- bind_rows(inflow)
 
 write_csv(allin, paste0(localDir, "/inflows0413.csv"))
 
-outflows <- c("countyoutflow0405.csv", "countyoutflow0506.csv",
-              "countyoutflow0607.csv", "countyoutflow0708.csv",
-              "countyoutflow0809.csv", "countyoutflow0910.csv",
-              "countyoutflow1011.csv", "countyoutflow1112.csv",
-              "countyoutflow1213.csv", "countyoutflow1314.csv")
-outdata  <- sapply(outflows, function(x){
+outfiles <- paste0("countyoutflow", dyears, ".csv")
+
+outflow  <- sapply(outfiles, function(x){
   file       <- paste0(data_source, "/", x)
+  
   if (!file.exists(file)) (download.file(paste0(url, x), file))
-  data       <- read_csv(file, col_names = c("st_fips_o", "cty_fips_o",
-                                             "st_fips_d", "cty_fips_d",
-                                             "state_abbrv", "county_name",
-                                             "return", "exmpt", "agi"),
-                         col_types = "iiiicciii", skip = 1)
-  data[,c(5:6)]     <- lapply(data[,c(5:6)],
-                              function(xx) toupper(str_trim(xx)) )
-  data$year  <- 1999 + as.numeric(substr(x, nchar(x) - 5, nchar(x) - 4))
-  data$ofips <- data$st_fips_o*1000 + data$cty_fips_o
-  data$dfips <- data$st_fips_d*1000   + data$cty_fips_d
-  filter(data, !is.na(st_fips_o))
+  
+  flow          <- read_csv(file, nameso, col_types = "iiiicciii", skip = 1)
+  flow[,c(5:6)] <- lapply(flow[,c(5:6)], function(xx) toupper(str_trim(xx)))
+  flow$year     <- 1999 + as.numeric(substr(x, nchar(x) - 5, nchar(x) - 4))
+  flow$ofips    <- flow$st_fips_o*1000 + flow$cty_fips_o
+  flow$dfips    <- flow$st_fips_d*1000 + flow$cty_fips_d
+  
+  filter(flow, !is.na(st_fips_o))
 }, simplify = F, USE.NAMES = T)
 
-allout <- bind_rows(outdata)
+allout <- bind_rows(outflow)
 
 write_csv(allout, paste0(localDir, "/outflows0413.csv"))
 
-rm(indata, outdata)
+rm(inflow, outflow)
 
-allindata  <- bind_rows(allindata, allin)
-allindata$return  <- ifelse(is.na(allindata$return), -1, allindata$return)
-allindata$exmpt   <- ifelse(is.na(allindata$exmpt), -1, allindata$exmpt)
-allindata$agi     <- ifelse(is.na(allindata$agi), -1, allindata$agi)
-saveRDS(allindata,  file = paste0(localDir, "/inflows9213.rds"))
+allinflow         <- bind_rows(allinflow, allin)
+allinflow$return  <- ifelse(is.na(allinflow$return), -1, allinflow$return)
+allinflow$exmpt   <- ifelse(is.na(allinflow$exmpt), -1, allinflow$exmpt)
+allinflow$agi     <- ifelse(is.na(allinflow$agi), -1, allinflow$agi)
+saveRDS(allinflow,  file = paste0(localDir, "/inflows9213.rds"))
 
-alloutdata <- bind_rows(alloutdata, allout)
-alloutdata$return <- ifelse(is.na(alloutdata$return), -1, alloutdata$return)
-alloutdata$exmpt  <- ifelse(is.na(alloutdata$exmpt), -1, alloutdata$exmpt)
-alloutdata$agi    <- ifelse(is.na(alloutdata$agi), -1, alloutdata$agi)
-saveRDS(alloutdata, file = paste0(localDir, "/outflows9213.rds"))
+alloutflow        <- bind_rows(alloutflow, allout)
+alloutflow$return <- ifelse(is.na(alloutflow$return), -1, alloutflow$return)
+alloutflow$exmpt  <- ifelse(is.na(alloutflow$exmpt), -1, alloutflow$exmpt)
+alloutflow$agi    <- ifelse(is.na(alloutflow$agi), -1, alloutflow$agi)
+saveRDS(alloutflow, file = paste0(localDir, "/outflows9213.rds"))
 
-allindata$key  <- paste0(allindata$ofips, allindata$dfips, allindata$year)
-alloutdata$key <- paste0(alloutdata$ofips, alloutdata$dfips, alloutdata$year)
+allinflow$key  <- paste0(allinflow$ofips, allinflow$dfips, allinflow$year)
+alloutflow$key <- paste0(alloutflow$ofips, alloutflow$dfips, alloutflow$year)
 
-check1 <- allindata$key %in% alloutdata$key
+check1 <- allinflow$key %in% alloutflow$key
 sum(check1)
 sum(!check1)
 
-check2 <- alloutdata$key %in% allindata$key
+check2 <- alloutflow$key %in% allinflow$key
 sum(check2)
 sum(!check2)
 

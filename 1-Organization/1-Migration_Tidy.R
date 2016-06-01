@@ -13,16 +13,16 @@ library(tidyr)
 localDir <- "1-Organization/Migration"
 if (!file.exists(localDir)) dir.create(localDir)
 
-allindata  <- readRDS("0-Data/IRS/inflows9213.rds")
-alloutdata <- readRDS("0-Data/IRS/outflows9213.rds")
+allinflow  <- readRDS("0-Data/IRS/inflows9213.rds")
+alloutflow <- readRDS("0-Data/IRS/outflows9213.rds")
 allshp     <- readRDS("0-Data/Shapefiles/All_2010_county.rds")
 
 # ---- Clean --------------------------------------------------------------
 
 # Need to make sure to change the -1 to NA in the flows data, then change
 #  classification of values
-nonmig <- allindata$st_fips_o == 63 & allindata$cty_fips_o==50
-allin  <- allindata %>%
+nonmig <- allinflow$st_fips_o == 63 & allinflow$cty_fips_o==50
+allin  <- allinflow %>%
   select(year, st_fips_d:agi) %>% 
   mutate(return = replace(return, return == -1 | is.na(return),NA),
          exmpt = replace(exmpt, exmpt == -1 | is.na(exmpt), NA),
@@ -98,8 +98,8 @@ allin$ofips <- 1000*allin$st_fips_o + allin$cty_fips_o
 allin$dfips <- 1000*allin$st_fips_d + allin$cty_fips_d
 
 # OUT DATA
-nonmig <- alloutdata$st_fips_d == 63 & alloutdata$cty_fips_d == 50
-allout <- alloutdata %>%
+nonmig <- alloutflow$st_fips_d == 63 & alloutflow$cty_fips_d == 50
+allout <- alloutflow %>%
   select(year, st_fips_o:agi) %>% 
   mutate(return = replace(return, return == -1 | is.na(return),NA),
          exmpt  = replace(exmpt, exmpt == -1 | is.na(exmpt), NA),
@@ -173,7 +173,7 @@ allout          <- bind_rows(allout, temp)
 allout$ofips <- 1000*allout$st_fips_o + allout$cty_fips_o
 allout$dfips <- 1000*allout$st_fips_d + allout$cty_fips_d
 
-rm(allindata, alloutdata)
+rm(allinflow, alloutflow)
 
 # ---- FIPS Issues --------------------------------------------------------
 
@@ -249,16 +249,16 @@ allouttotal <- allout %>%
   filter(dfips == 96000, ofips < 57000, ofips %% 1000 != 0) %>% 
   rename(fips = ofips, return_out = return, exmpt_out = exmpt, agi_out = agi)
 
-aggdata <- full_join(allintotal, allouttotal)
-aggdata <- aggdata %>% 
+aggflow <- full_join(allintotal, allouttotal)
+aggflow <- aggflow %>% 
   select(-dfips, -ofips) %>% 
   mutate(return_net = return_in - return_out,
          exmpt_net = exmpt_in - exmpt_out,
          agi_net = agi_in - agi_out)
-aggdata <- as.data.frame(aggdata)
+aggflow <- as.data.frame(aggflow)
 
-saveRDS(aggdata, file = paste0(localDir, "/netmigration.rds"))
-write_csv(aggdata, paste0(localDir, "/netmigration.csv"))
+saveRDS(aggflow, file = paste0(localDir, "/netmigration.rds"))
+write_csv(aggflow, paste0(localDir, "/netmigration.csv"))
 rm(allintotal, allouttotal)
 
 # ---- cty2cty ------------------------------------------------------------
@@ -279,12 +279,12 @@ outcty <- allout %>%
          agi   = replace(agi, is.na(agi), -1)) %>% 
   rename(return_out = return, exmpt_out = exmpt, agi_out = agi)
 
-data <- full_join(incty, outcty)
+flow <- full_join(incty, outcty)
 
 # ----
 
 # Evaluate the matches of IN versus OUT
-data %>% 
+flow %>% 
   group_by(year) %>% 
   summarise(Total = n(),
             return = sum(return_in == return_out, na.rm = T),
@@ -293,7 +293,7 @@ data %>%
             Match  = paste0(round(100*return / Total, 1), "%")) %>%
   knitr::kable()
 
-data %>% 
+flow %>% 
   group_by(year) %>% 
   summarise(Total = n(),
             SupIN  = sum((return_in == -1 | is.na(return_in)) &
@@ -306,12 +306,12 @@ data %>%
 
 # ----
 
-data <- data %>% 
+flow <- flow %>% 
   mutate(return = ifelse(!is.na(return_in), return_in, return_out),
          exmpt  = ifelse(!is.na(exmpt_in), exmpt_in, exmpt_out),
          agi    = ifelse(!is.na(agi_in), agi_in, agi_out))
-temp <- data$return == -1
-ctycty <- data %>% 
+temp <- flow$return == -1
+ctycty <- flow %>% 
   as.data.frame() %>% 
   select(year:ofips, return:agi) %>% 
   mutate(return = replace(return, temp, NA),

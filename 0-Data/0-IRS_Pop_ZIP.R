@@ -43,7 +43,7 @@ if (!all(sapply(files, function(x) file.exists(x)))) {
 j5 <- read_csv(files[1])
 
 # 
-# tdata <- data.frame()
+# tirs <- data.frame()
 # for (i in files){
 #   unlink(tempDir, recursive = T)
 #   unzip(i, exdir = tempDir)
@@ -51,42 +51,42 @@ j5 <- read_csv(files[1])
 #   # The 2010 and 2011 are .csv but 2012 is .xls
 #   if (length(j5) == 0){
 #     j5     <- list.files(tempDir, pattern = "*all.xls", full.names = T)
-#     data   <- read_excel(j5, skip = 5)
-#     data   <- data[, c(1, 3, 4, 5, 10, 12, 14, 18, 16)]
+#     irs   <- read_excel(j5, skip = 5)
+#     irs   <- irs[, c(1, 3, 4, 5, 10, 12, 14, 18, 16)]
 #   } else{
-#     data   <- read_csv(j5)
-#     data   <- data[, c("STATEFIPS", "ZIPCODE", "agi_stub", "N1", "N2",
+#     irs   <- read_csv(j5)
+#     irs   <- irs[, c("STATEFIPS", "ZIPCODE", "agi_stub", "N1", "N2",
 #                        "A00100", "A00200", "A00600", "A00300")]
 #   }
 #   
-#   names(data) <- c("st_fips", "cty_fips", "county_name", "return",
+#   names(irs) <- c("st_fips", "cty_fips", "county_name", "return",
 #                    "exmpt", "agi", "wages", "dividends", "interest")
 #   
-#   data$st_fips  <- as.numeric(data$st_fips)
-#   data$cty_fips <- as.numeric(data$cty_fips)
+#   irs$st_fips  <- as.numeric(irs$st_fips)
+#   irs$cty_fips <- as.numeric(irs$cty_fips)
 #   
 #   year      <- as.numeric(substr(basename(i), 1, 4))
 #   if (is.na(year)) year <- 2013 # QUICK FIX
-#   data$year <- year
-#   data$fips <- data$st_fips*1000 + data$cty_fips
+#   irs$year <- year
+#   irs$fips <- irs$st_fips*1000 + irs$cty_fips
 #   
 #   # Add in total
-#   add   <- ((data$fips %% 1000) == 0)
-#   addt  <- apply(data[add, c(4:9)], 2, function(x) sum(x, na.rm = T))
+#   add   <- ((irs$fips %% 1000) == 0)
+#   addt  <- apply(irs[add, c(4:9)], 2, function(x) sum(x, na.rm = T))
 #   add   <- c(0, 0, NA, addt, year, 0)
-#   names(add) <- names(data)
+#   names(add) <- names(irs)
 #   
 #   # 2012 already has a total...
-#   if (year != 2012)  data    <- bind_rows(data, as.data.frame(t(add)))
+#   if (year != 2012)  irs    <- bind_rows(irs, as.data.frame(t(add)))
 #   
-#   tdata   <- bind_rows(tdata, data)
+#   tirs   <- bind_rows(tirs, irs)
 #   
-#   tdata$county_name[tdata$fips == 0] <- "Total" #Correct for NA name
+#   tirs$county_name[tirs$fips == 0] <- "Total" #Correct for NA name
 #   
 #   print(paste0("Finished ", basename(i), " at ", Sys.time()))
 # }
 # # Remove NAs
-# tdata   <- tdata[!is.na(tdata$st_fips),]
+# tirs   <- tirs[!is.na(tirs$st_fips),]
 # 
 # 
 # 
@@ -109,7 +109,7 @@ j5 <- read_csv(files[1])
 # ################################################
 # 
 # # Documentation changes in 1997...added "Gross rents" and "Total money income"
-# alldata  <- data.frame()
+# allirs  <- data.frame()
 # 
 # for (i in files){
 #   unlink(tempDir, recursive = T)
@@ -134,67 +134,67 @@ j5 <- read_csv(files[1])
 #     j6 <- xlscheck
 #   }
 #   
-#   ydata <- data.frame()
+#   yirs <- data.frame()
 #   for (j in j6){
-#     data   <- read_pop1(j)
+#     irs   <- read_pop1(j)
 #     
-#     data[,c(1:2, 4:9)] <- lapply(data[,c(1:2, 4:9)],
+#     irs[,c(1:2, 4:9)] <- lapply(irs[,c(1:2, 4:9)],
 #                                  function(x){ # Sometimes characters in values
 #                                    as.numeric(
 #                                      gsub(",", "", 
 #                                           gsub("[A-z]", "", x)))
 #                                  })
-#     data[, 3]     <- sapply(data[, 3], function(x){as.character(x)})
+#     irs[, 3]     <- sapply(irs[, 3], function(x){as.character(x)})
 #     year          <- as.numeric(substr(basename(i), 1, 4))
-#     data$year     <- year
+#     irs$year     <- year
 #     
 #     # PROBLEM, in 1989 IRS defines Cali st_fips as 90, but it's 6
 #     #  further...sometimes the State fips is NA when it shouldn't be
-#     st <- median(data$st_fips, na.rm = T)
-#     data$st_fips[is.na(data$st_fips)]   <- st
-#     data$cty_fips[is.na(data$cty_fips)] <- 0
+#     st <- median(irs$st_fips, na.rm = T)
+#     irs$st_fips[is.na(irs$st_fips)]   <- st
+#     irs$cty_fips[is.na(irs$cty_fips)] <- 0
 #     if (st == 90) {
-#       data$fips <- 6000 + data$cty_fips
+#       irs$fips <- 6000 + irs$cty_fips
 #     }    else{
-#       data$fips <- st*1000 + data$cty_fips
+#       irs$fips <- st*1000 + irs$cty_fips
 #     }
 #     
-#     ind    <- apply(data, 1, function(x) all(is.na(x)))
-#     data   <- data[!ind, ]
-#     ydata  <- bind_rows(ydata, data)
+#     ind    <- apply(irs, 1, function(x) all(is.na(x)))
+#     irs   <- irs[!ind, ]
+#     yirs  <- bind_rows(yirs, irs)
 #     
 #     print(paste0("Finished ", basename(j), " at ", Sys.time()))
 #   }
 #   bfile <- gsub('.{4}$', '', basename(i))
-#   ydata <- ydata[!is.na(ydata$county_name), ]  #Remove the pesky NAs
+#   yirs <- yirs[!is.na(yirs$county_name), ]  #Remove the pesky NAs
 #   # Remove duplicates
-#   dupes <- duplicated(ydata)
-#   ydata <- ydata[!dupes, ]
+#   dupes <- duplicated(yirs)
+#   yirs <- yirs[!dupes, ]
 #   
 #   # Add in total
-#   add   <- ((ydata$fips %% 1000) == 0)
-#   addt  <- apply(ydata[add, c(4:9)], 2, function(x) sum(x, na.rm = T))
+#   add   <- ((yirs$fips %% 1000) == 0)
+#   addt  <- apply(yirs[add, c(4:9)], 2, function(x) sum(x, na.rm = T))
 #   add   <- c(0, 0, NA, addt, year, 0)
-#   names(add) <- names(ydata)
+#   names(add) <- names(yirs)
 #   
-#   ydata <- bind_rows(ydata, as.data.frame(t(add)))
+#   yirs <- bind_rows(yirs, as.data.frame(t(add)))
 #   
-#   ydata$county_name[ydata$fips == 0] <- "Total" #Correct for NA name
+#   yirs$county_name[yirs$fips == 0] <- "Total" #Correct for NA name
 #   
-#   write_csv(ydata, paste0(data_source, "/", bfile,".csv"))
+#   write_csv(yirs, paste0(data_source, "/", bfile,".csv"))
 #   
-#   alldata  <- bind_rows(alldata, ydata)
+#   allirs  <- bind_rows(allirs, yirs)
 #   
 #   print(paste0("Finished ", basename(i), " at ", Sys.time()))
 # }
 # # Issue with a few counties being messed up, leave it be
-# # alldata[!complete.cases(alldata),]
-# # alldata <- alldata[complete.cases(alldata),]
+# # allirs[!complete.cases(allirs),]
+# # allirs <- allirs[complete.cases(allirs),]
 # 
-# # write_csv(alldata, paste0(localDir, "/countyincome8909.csv"))
+# # write_csv(allirs, paste0(localDir, "/countyincome8909.csv"))
 # 
-# IRS_POP <- bind_rows(alldata, tdata)
-# rm(alldata, data, tdata, ydata)
+# IRS_POP <- bind_rows(allirs, tirs)
+# rm(allirs, irs, tirs, yirs)
 # 
 # IRS_POP <- filter(IRS_POP, !is.na(return), !is.na(exmpt))
 # 

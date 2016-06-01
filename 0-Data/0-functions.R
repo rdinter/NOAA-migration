@@ -6,16 +6,16 @@
 #Problem for excel files with "us" from 1998.99 until 2001.2
 read_excel1 <- function(file){
   require(readxl)
-  data   <- read_excel(file)
-  data   <- data[, c(1:9)]
-  #data   <- data[c(8:nrow(data)), c(1:9)]
-  return(data)
+  dat   <- read_excel(file)
+  dat   <- dat[, c(1:9)]
+  #dat   <- dat[c(8:nrow(dat)), c(1:9)]
+  return(dat)
 }
 read_excel2 <- function(file){
   require(gdata)
-  data   <- read.xls(file)
-  data   <- data[c(4:nrow(data)), c(1:9)]
-  return(data)
+  dat   <- read.xls(file)
+  dat   <- dat[c(4:nrow(dat)), c(1:9)]
+  return(dat)
 }
 Mode <- function(x) {
   ux <- unique(x)
@@ -26,33 +26,33 @@ read_data1 <- function(j5i, namesi, inflow = T){
   require(readxl)
   require(gdata)
   indata <- sapply(j5i, function(x){
-    data <- tryCatch(read_excel1(x), error = function(e){
+    dat <- tryCatch(read_excel1(x), error = function(e){
       read_excel2(x)
     })
     
-    data[,c(1:4,7:9)] <- lapply(data[,c(1:4,7:9)],
+    dat[,c(1:4,7:9)] <- lapply(dat[,c(1:4,7:9)],
                                 function(xx){ # Sometimes characters in values
                                   as.numeric(
                                     gsub(",", "", 
                                          gsub("[A-z]", "", xx)))
                                 })
-    data[,c(5:6)]     <- lapply(data[,c(5:6)], function(xx) toupper(xx) )
-    names(data)       <- namesi
+    dat[,c(5:6)]     <- lapply(dat[,c(5:6)], function(xx) toupper(xx) )
+    names(dat)       <- namesi
     
     if (inflow) {
-      data              <- filter(data, !is.na(st_fips_d))
-      data$st_fips_d <- Mode(data$st_fips_d)
+      dat           <- filter(dat, !is.na(st_fips_d))
+      dat$st_fips_d <- Mode(dat$st_fips_d)
     } else {
-      data              <- filter(data, !is.na(st_fips_o))
-      data$st_fips_o <- Mode(data$st_fips_o)
+      dat           <- filter(dat, !is.na(st_fips_o))
+      dat$st_fips_o <- Mode(dat$st_fips_o)
     }
     
     
-    data$ofips <- data$st_fips_o*1000 + data$cty_fips_o
-    data$dfips <- data$st_fips_d*1000   + data$cty_fips_d
-    data
+    dat$ofips <- dat$st_fips_o*1000 + dat$cty_fips_o
+    dat$dfips <- dat$st_fips_d*1000   + dat$cty_fips_d
+    dat
   }, simplify = F, USE.NAMES = T)
-  indata <- bind_rows(indata)
+  indata      <- bind_rows(indata)
   indata$year <- as.numeric(substr(basename(i), 1, 4))
   return(indata)
 }
@@ -68,8 +68,7 @@ bdown <- function(url, folder){
   
   if (!file.exists(file)){
     f <- CFILE(file, mode = "wb")
-    a <- curlPerform(url = url, writedata = f@ref,
-                     noprogress = FALSE)
+    a <- curlPerform(url = url, writedata = f@ref, noprogress = FALSE)
     close(f)
     return(a)
   } else print("File Already Exists!")
@@ -83,7 +82,7 @@ zipdata <- function(file, tempDir, year){
   rdata      <- read_csv(file)
   
   names(rdata) <- tolower(names(rdata))
-  rdata$year <- year
+  rdata$year   <- year
   
   return(rdata)
 }
@@ -97,125 +96,155 @@ read_pop1 <- function(file){
   # Alaska in 97 is missing a column and MA 2001 is F-d
   probs <- c("ALASKA97ci.xls", "Kentucky01ci.xls", "MASSACHUSETTS01ci.xls")
   if (!(basename(file) %in% probs)){
-    data   <- read_excel(file)
+    dat    <- read_excel(file)
     
-    check1 <- grep("code", data[, 1], ignore.case = T)
-    check2 <- grep("code", data[, 2], ignore.case = T)
+    check1 <- grep("code", dat[, 1], ignore.case = T)
+    check2 <- grep("code", dat[, 2], ignore.case = T)
     
-    if (is.na(check1[1])) data <- data[c((check2[1] + 1):nrow(data)), c(2:10)]
-    else                  data <- data[c((check1[1] + 1):nrow(data)), c(1:9)]
+    if (is.na(check1[1])) dat <- dat[c((check2[1] + 1):nrow(dat)), c(2:10)]
+    else                  dat <- dat[c((check1[1] + 1):nrow(dat)), c(1:9)]
     
-    ind    <- apply(data, 1, function(x) all(is.na(x)))
-    data   <- data[ !ind, ]
-    names(data) <- coln
+    ind        <- apply(dat, 1, function(x) all(is.na(x)))
+    dat        <- dat[ !ind, ]
+    names(dat) <- coln
   } else if (basename(file) == probs[1]){ #for Alaska 97
-    data   <- read_excel(file)
-    check1 <- grep("code", data[, 1], ignore.case = T)
-    data   <- cbind(data[c((check1[1] + 1):nrow(data)), c(1:2)], NA,
-                    data[c((check1[1] + 1):nrow(data)), c(3:8)])
-    ind    <- apply(data, 1, function(x) all(is.na(x)))
-    data   <- data[!ind, ]
-    names(data) <- coln
-    data$county_name <- "AK Replace"
+    dat        <- read_excel(file)
+    check1     <- grep("code", dat[, 1], ignore.case = T)
+    dat        <- cbind(dat[c((check1[1] + 1):nrow(dat)), c(1:2)], NA,
+                        dat[c((check1[1] + 1):nrow(dat)), c(3:8)])
+    ind        <- apply(dat, 1, function(x) all(is.na(x)))
+    dat        <- dat[!ind, ]
+    names(dat) <- coln
+    dat$county_name <- "AK Replace"
   } else if (basename(file) == probs[2]){ #for KY 01
-    data   <- read_excel(file)
-    check1 <- grep("code", data[, 1], ignore.case = T)
-    data1  <- data[c((check1[1] + 1)), c(1:9)]
-    data2  <- data[c((check1[1] + 2):nrow(data)), c(1:9)]
-    names(data1) <- names(data2) <- coln
+    dat         <- read_excel(file)
+    check1      <- grep("code", dat[, 1], ignore.case = T)
+    dat1        <- dat[c((check1[1] + 1)), c(1:9)]
+    dat2        <- dat[c((check1[1] + 2):nrow(dat)), c(1:9)]
+    names(dat1) <- names(dat2) <- coln
     
     # Correct:
-    data1$interest  = as.character(sum(as.numeric(data2$interest)))
+    dat1$interest  <- as.character(sum(as.numeric(dat2$interest)))
     
-    data   <- bind_rows(data1, data2)
+    dat         <- bind_rows(dat1, dat2)
     
-    ind    <- apply(data, 1, function(x) all(is.na(x)))
-    data   <- data[ !ind, ]
+    ind         <- apply(dat, 1, function(x) all(is.na(x)))
+    dat         <- dat[ !ind, ]
   } else if (basename(file) == probs[3]){ #for MA 01
-    data   <- read_excel(file)
-    check1 <- grep("code", data[, 1], ignore.case = T)
-    data1  <- data[c((check1[1] + 1)), c(1:9)]
-    data2  <- data[c((check1[1] + 2):nrow(data)), c(1:9)]
-    names(data1) <- names(data2) <- coln
+    dat         <- read_excel(file)
+    check1      <- grep("code", dat[, 1], ignore.case = T)
+    dat1        <- dat[c((check1[1] + 1)), c(1:9)]
+    dat2        <- dat[c((check1[1] + 2):nrow(dat)), c(1:9)]
+    names(dat1) <- names(dat2) <- coln
     
     # Correct:
-    data1$county_name = "Total"
-    data1$return  = as.character(sum(as.numeric(data2$return)))
+    dat1$county_name <- "Total"
+    dat1$return      <- as.character(sum(as.numeric(dat2$return)))
     
-    data   <- bind_rows(data1, data2)
+    dat <- bind_rows(dat1, dat2)
     
-    ind    <- apply(data, 1, function(x) all(is.na(x)))
-    data   <- data[!ind, ] 
+    ind <- apply(dat, 1, function(x) all(is.na(x)))
+    dat <- dat[!ind, ] 
   }
-  return(data)
+  return(dat)
 }
 
 read_pop2 <- function(file){
-  coln   <- c("st_fips", "cty_fips", "county_name", "return", "exmpt",
-              "agi", "wages", "dividends", "interest")
-  data   <- read.xls(file)
-  data   <- data[c(5:nrow(data)), c(1:9)]
-  ind    <- apply(data, 1, function(x) all(is.na(x)))
-  data   <- data[ !ind, ]
-  names(data) <- coln
-  return(data)
+  require(gdata)
+  
+  coln       <- c("st_fips", "cty_fips", "county_name", "return", "exmpt",
+                  "agi", "wages", "dividends", "interest")
+  dat        <- read.xls(file)
+  dat        <- dat[c(5:nrow(dat)), c(1:9)]
+  ind        <- apply(dat, 1, function(x) all(is.na(x)))
+  dat        <- dat[ !ind, ]
+  names(dat) <- coln
+  return(dat)
 }
 
 
 # Function for fips issues ------------------------------------------------
 
 
-fipssues <- function(data, fip, fiplace){
-  data %>% filter(fips %in% fiplace) %>% group_by(year) %>%
-    summarise_each(funs(sum), -fips) -> correct
-  correct$fips <- fip
-  data %>% filter(!(fips %in% fiplace)) %>%
-    bind_rows(correct) -> data
+fipssues <- function(dat, fip, fiplace){
+  require(magrittr)
   
-  return(data)
-}
-fipssuesmean <- function(data, fip, fiplace){
-  correct <- data %>% filter(fips %in% fiplace) %>% group_by(year) %>%
+  correct <- dat %>%
+    filter(fips %in% fiplace) %>%
+    group_by(year) %>%
     summarise_each(funs(sum), -fips)
   correct$fips <- fip
-  data %>% filter(!(fips %in% fiplace)) %>%
-    bind_rows(correct) -> data
+  dat <- dat %>%
+    filter(!(fips %in% fiplace)) %>%
+    bind_rows(correct)
   
-  return(data)
+  return(dat)
 }
-fipssuespov <- function(data, fip, fiplace){
-  correct <- data %>% filter(fips %in% fiplace) %>% group_by(year) %>%
-    summarise(POV_ALL = sum(POV_ALL, na.rm = T),
-              POV_ALL_P = mean(POV_ALL_P, na.rm = T),
-              POV_0.17 = sum(POV_0.17, na.rm = T),
-              POV_0.17_P = mean(POV_0.17_P, na.rm = T),
-              POV_5.17 = sum(POV_5.17, na.rm = T),
-              POV_5.17_P = mean(POV_5.17_P, na.rm = T),
-              MEDHHINC = mean(MEDHHINC, na.rm = T),
-              POP_POV = sum(POP_POV, na.rm = T))
-  correct$fips <- fip
-  data %>% filter(!(fips %in% fiplace)) %>%
-    bind_rows(correct) -> data
+
+fipssuesmean <- function(dat, fip, fiplace){
+  require(magrittr)
   
-  return(data)
+  correct <- dat %>%
+    filter(fips %in% fiplace) %>%
+    group_by(year) %>%
+    summarise_each(funs(sum), -fips)
+  correct$fips <- fip
+  dat <- dat %>%
+    filter(!(fips %in% fiplace)) %>%
+    bind_rows(correct)
+  
+  return(dat)
+}
+
+fipssuespov <- function(dat, fip, fiplace){
+  require(magrittr)
+  
+  correct <- dat %>%
+    filter(fips %in% fiplace) %>%
+    group_by(year) %>%
+    summarise(POV_ALL    = sum(POV_ALL, na.rm = T),
+              POV_ALL_P  = mean(POV_ALL_P, na.rm = T),
+              POV_0.17   = sum(POV_0.17, na.rm = T),
+              POV_0.17_P = mean(POV_0.17_P, na.rm = T),
+              POV_5.17   = sum(POV_5.17, na.rm = T),
+              POV_5.17_P = mean(POV_5.17_P, na.rm = T),
+              MEDHHINC   = mean(MEDHHINC, na.rm = T),
+              POP_POV    = sum(POP_POV, na.rm = T))
+  correct$fips <- fip
+  dat <- dat %>%
+    filter(!(fips %in% fiplace)) %>%
+    bind_rows(correct)
+  
+  return(dat)
 }
 
 # Function for fips issues for CBP
-fipssues1 <- function(data, fip, fiplace){
-  data %>% filter(fips %in% fiplace) %>% group_by(year, sic, naics) %>%
-    summarise_each(funs(sum), -fips, -empflag) -> correct
-  correct$fips <- fip
-  data %>% filter(!(fips %in% fiplace)) %>%
-    bind_rows(correct) -> data
+fipssues1 <- function(dat, fip, fiplace){
+  require(magrittr)
   
-  return(data)
+  correct <- dat %>%
+    filter(fips %in% fiplace) %>%
+    group_by(year, sic, naics) %>%
+    summarise_each(funs(sum), -fips, -empflag)
+  correct$fips <- fip
+  dat <- dat %>%
+    filter(!(fips %in% fiplace)) %>%
+    bind_rows(correct)
+  
+  return(dat)
 }
-fipssues2 <- function(data, fip, fiplace){
-  data %>% filter(fips %in% fiplace) %>% group_by(year, naics) %>%
-    summarise_each(funs(sum), -fips, -empflag, -(emp_nf:ap_nf)) -> correct
-  correct$fips <- fip
-  data %>% filter(!(fips %in% fiplace)) %>%
-    bind_rows(correct) -> data
+
+fipssues2 <- function(dat, fip, fiplace){
+  require(magrittr)
   
-  return(data)
+  correct <- dat %>%
+    filter(fips %in% fiplace) %>%
+    group_by(year, naics) %>%
+    summarise_each(funs(sum), -fips, -empflag, -(emp_nf:ap_nf))
+  correct$fips <- fip
+  dat <- dat %>%
+    filter(!(fips %in% fiplace)) %>%
+    bind_rows(correct)
+  
+  return(dat)
 }

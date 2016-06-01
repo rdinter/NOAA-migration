@@ -1627,7 +1627,220 @@ $(document).ready(function () {
 <h1>Inflow versus Outflow Merge</h1>
 <p>The IRS data contains two sets of files: one for the inflow between regions and one for the outflow between regions. I have looked across the IRS documentation in attempt to verify that the inflow from region A to region B should also be the outflow from region B to region A. I have not found confirmation of this from documentation, so we need to attempt to figure this out through inspection of the data.</p>
 <p>After combining the inflows and outflows files by year, origin FIPS code, and destination FIPS code, we can inspect to see how well these match. Below is a table which indicates <code>total</code> as the number of county to county pairs; <code>return</code>, <code>exmpt</code> and <code>agi</code> as the number of pairs which match for these categories; and <code>match</code> which is the percentage of pairs which correctly match out of all the observed pairs:</p>
-<p>There appears to be some change in the IRS procedure of reporting flows in 2004 as before the average percentage matching is greater than 97% but after this falls to below 95%. But the high percentage of match is a positive sign here. Next, we need to consider why there are values which do not match. To do so, I check to see the values where <code>IN</code> (or <code>OUT</code>) are suppressed but the <code>OUT</code> (or <code>IN</code>) are not suppressed:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="right">total</th>
+<th align="right">return</th>
+<th align="right">exmpt</th>
+<th align="right">agi</th>
+<th align="left">match</th>
+<th align="right">bad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1992</td>
+<td align="right">80596</td>
+<td align="right">78258</td>
+<td align="right">78258</td>
+<td align="right">78258</td>
+<td align="left">97.1%</td>
+<td align="right">2338</td>
+</tr>
+<tr class="even">
+<td align="right">1993</td>
+<td align="right">80253</td>
+<td align="right">78130</td>
+<td align="right">78130</td>
+<td align="right">78130</td>
+<td align="left">97.4%</td>
+<td align="right">2123</td>
+</tr>
+<tr class="odd">
+<td align="right">1994</td>
+<td align="right">82355</td>
+<td align="right">80318</td>
+<td align="right">80318</td>
+<td align="right">80318</td>
+<td align="left">97.5%</td>
+<td align="right">2037</td>
+</tr>
+<tr class="even">
+<td align="right">1995</td>
+<td align="right">81540</td>
+<td align="right">79444</td>
+<td align="right">79444</td>
+<td align="right">79444</td>
+<td align="left">97.4%</td>
+<td align="right">2096</td>
+</tr>
+<tr class="odd">
+<td align="right">1996</td>
+<td align="right">83395</td>
+<td align="right">81319</td>
+<td align="right">81319</td>
+<td align="right">81319</td>
+<td align="left">97.5%</td>
+<td align="right">2076</td>
+</tr>
+<tr class="even">
+<td align="right">1997</td>
+<td align="right">84066</td>
+<td align="right">81923</td>
+<td align="right">81923</td>
+<td align="right">81923</td>
+<td align="left">97.5%</td>
+<td align="right">2143</td>
+</tr>
+<tr class="odd">
+<td align="right">1998</td>
+<td align="right">85304</td>
+<td align="right">83262</td>
+<td align="right">83262</td>
+<td align="right">83262</td>
+<td align="left">97.6%</td>
+<td align="right">2042</td>
+</tr>
+<tr class="even">
+<td align="right">1999</td>
+<td align="right">85992</td>
+<td align="right">83940</td>
+<td align="right">83940</td>
+<td align="right">83940</td>
+<td align="left">97.6%</td>
+<td align="right">2052</td>
+</tr>
+<tr class="odd">
+<td align="right">2000</td>
+<td align="right">86693</td>
+<td align="right">84615</td>
+<td align="right">84615</td>
+<td align="right">84615</td>
+<td align="left">97.6%</td>
+<td align="right">2078</td>
+</tr>
+<tr class="even">
+<td align="right">2001</td>
+<td align="right">86293</td>
+<td align="right">84101</td>
+<td align="right">84101</td>
+<td align="right">84101</td>
+<td align="left">97.5%</td>
+<td align="right">2192</td>
+</tr>
+<tr class="odd">
+<td align="right">2002</td>
+<td align="right">84411</td>
+<td align="right">82186</td>
+<td align="right">82186</td>
+<td align="right">82186</td>
+<td align="left">97.4%</td>
+<td align="right">2225</td>
+</tr>
+<tr class="even">
+<td align="right">2003</td>
+<td align="right">84452</td>
+<td align="right">79528</td>
+<td align="right">79528</td>
+<td align="right">79527</td>
+<td align="left">94.2%</td>
+<td align="right">4924</td>
+</tr>
+<tr class="odd">
+<td align="right">2004</td>
+<td align="right">91142</td>
+<td align="right">84717</td>
+<td align="right">84717</td>
+<td align="right">84717</td>
+<td align="left">93%</td>
+<td align="right">6425</td>
+</tr>
+<tr class="even">
+<td align="right">2005</td>
+<td align="right">94804</td>
+<td align="right">88377</td>
+<td align="right">88377</td>
+<td align="right">88377</td>
+<td align="left">93.2%</td>
+<td align="right">6427</td>
+</tr>
+<tr class="odd">
+<td align="right">2006</td>
+<td align="right">93134</td>
+<td align="right">86714</td>
+<td align="right">86714</td>
+<td align="right">86714</td>
+<td align="left">93.1%</td>
+<td align="right">6420</td>
+</tr>
+<tr class="even">
+<td align="right">2007</td>
+<td align="right">95065</td>
+<td align="right">88623</td>
+<td align="right">88623</td>
+<td align="right">88623</td>
+<td align="left">93.2%</td>
+<td align="right">6442</td>
+</tr>
+<tr class="odd">
+<td align="right">2008</td>
+<td align="right">92595</td>
+<td align="right">86164</td>
+<td align="right">86164</td>
+<td align="right">86164</td>
+<td align="left">93.1%</td>
+<td align="right">6431</td>
+</tr>
+<tr class="even">
+<td align="right">2009</td>
+<td align="right">87811</td>
+<td align="right">81372</td>
+<td align="right">81372</td>
+<td align="right">81372</td>
+<td align="left">92.7%</td>
+<td align="right">6439</td>
+</tr>
+<tr class="odd">
+<td align="right">2010</td>
+<td align="right">90621</td>
+<td align="right">84201</td>
+<td align="right">84201</td>
+<td align="right">84201</td>
+<td align="left">92.9%</td>
+<td align="right">6420</td>
+</tr>
+<tr class="even">
+<td align="right">2011</td>
+<td align="right">97682</td>
+<td align="right">92668</td>
+<td align="right">92668</td>
+<td align="right">92664</td>
+<td align="left">94.9%</td>
+<td align="right">5014</td>
+</tr>
+<tr class="odd">
+<td align="right">2012</td>
+<td align="right">99520</td>
+<td align="right">94601</td>
+<td align="right">94601</td>
+<td align="right">94595</td>
+<td align="left">95.1%</td>
+<td align="right">4919</td>
+</tr>
+<tr class="even">
+<td align="right">2013</td>
+<td align="right">53319</td>
+<td align="right">48589</td>
+<td align="right">48589</td>
+<td align="right">48585</td>
+<td align="left">91.1%</td>
+<td align="right">4730</td>
+</tr>
+</tbody>
+</table>
+<p>There appears to be some change in the IRS procedure of reporting flows in 2004 as before the average percentage matching is greater than 97% but after this falls to below 95%. But the high percentage of match is a positive sign here. Next, we need to consider why there are values which do not match. To do so, I check to see the values where <code>in</code> are suppressed but the <code>out</code> are not suppressed and call this variable <code>sup_in</code>. I perform the opposite and term that <code>sup_out</code> and then add the two together to get <code>sup_total</code>:</p>
 <table>
 <thead>
 <tr class="header">
@@ -1635,6 +1848,7 @@ $(document).ready(function () {
 <th align="right">total</th>
 <th align="right">sup_in</th>
 <th align="right">sup_out</th>
+<th align="right">sup_total</th>
 <th align="left">bad_match</th>
 </tr>
 </thead>
@@ -1644,6 +1858,7 @@ $(document).ready(function () {
 <td align="right">80596</td>
 <td align="right">1061</td>
 <td align="right">1299</td>
+<td align="right">2360</td>
 <td align="left">2.9%</td>
 </tr>
 <tr class="even">
@@ -1651,6 +1866,7 @@ $(document).ready(function () {
 <td align="right">80253</td>
 <td align="right">996</td>
 <td align="right">1127</td>
+<td align="right">2123</td>
 <td align="left">2.6%</td>
 </tr>
 <tr class="odd">
@@ -1658,6 +1874,7 @@ $(document).ready(function () {
 <td align="right">82355</td>
 <td align="right">901</td>
 <td align="right">1142</td>
+<td align="right">2043</td>
 <td align="left">2.5%</td>
 </tr>
 <tr class="even">
@@ -1665,6 +1882,7 @@ $(document).ready(function () {
 <td align="right">81540</td>
 <td align="right">978</td>
 <td align="right">1120</td>
+<td align="right">2098</td>
 <td align="left">2.6%</td>
 </tr>
 <tr class="odd">
@@ -1672,6 +1890,7 @@ $(document).ready(function () {
 <td align="right">83395</td>
 <td align="right">1011</td>
 <td align="right">1065</td>
+<td align="right">2076</td>
 <td align="left">2.5%</td>
 </tr>
 <tr class="even">
@@ -1679,6 +1898,7 @@ $(document).ready(function () {
 <td align="right">84066</td>
 <td align="right">1022</td>
 <td align="right">1123</td>
+<td align="right">2145</td>
 <td align="left">2.6%</td>
 </tr>
 <tr class="odd">
@@ -1686,6 +1906,7 @@ $(document).ready(function () {
 <td align="right">85304</td>
 <td align="right">971</td>
 <td align="right">1071</td>
+<td align="right">2042</td>
 <td align="left">2.4%</td>
 </tr>
 <tr class="even">
@@ -1693,6 +1914,7 @@ $(document).ready(function () {
 <td align="right">85992</td>
 <td align="right">991</td>
 <td align="right">1061</td>
+<td align="right">2052</td>
 <td align="left">2.4%</td>
 </tr>
 <tr class="odd">
@@ -1700,6 +1922,7 @@ $(document).ready(function () {
 <td align="right">86693</td>
 <td align="right">1009</td>
 <td align="right">1069</td>
+<td align="right">2078</td>
 <td align="left">2.4%</td>
 </tr>
 <tr class="even">
@@ -1707,6 +1930,7 @@ $(document).ready(function () {
 <td align="right">86293</td>
 <td align="right">1066</td>
 <td align="right">1126</td>
+<td align="right">2192</td>
 <td align="left">2.5%</td>
 </tr>
 <tr class="odd">
@@ -1714,6 +1938,7 @@ $(document).ready(function () {
 <td align="right">84411</td>
 <td align="right">1053</td>
 <td align="right">1172</td>
+<td align="right">2225</td>
 <td align="left">2.6%</td>
 </tr>
 <tr class="even">
@@ -1721,6 +1946,7 @@ $(document).ready(function () {
 <td align="right">84452</td>
 <td align="right">989</td>
 <td align="right">1097</td>
+<td align="right">2086</td>
 <td align="left">2.5%</td>
 </tr>
 <tr class="odd">
@@ -1728,6 +1954,7 @@ $(document).ready(function () {
 <td align="right">91142</td>
 <td align="right">3214</td>
 <td align="right">3227</td>
+<td align="right">6441</td>
 <td align="left">7.1%</td>
 </tr>
 <tr class="even">
@@ -1735,6 +1962,7 @@ $(document).ready(function () {
 <td align="right">94804</td>
 <td align="right">3214</td>
 <td align="right">3231</td>
+<td align="right">6445</td>
 <td align="left">6.8%</td>
 </tr>
 <tr class="odd">
@@ -1742,6 +1970,7 @@ $(document).ready(function () {
 <td align="right">93134</td>
 <td align="right">3203</td>
 <td align="right">3229</td>
+<td align="right">6432</td>
 <td align="left">6.9%</td>
 </tr>
 <tr class="even">
@@ -1749,6 +1978,7 @@ $(document).ready(function () {
 <td align="right">95065</td>
 <td align="right">3217</td>
 <td align="right">3235</td>
+<td align="right">6452</td>
 <td align="left">6.8%</td>
 </tr>
 <tr class="odd">
@@ -1756,6 +1986,7 @@ $(document).ready(function () {
 <td align="right">92595</td>
 <td align="right">3221</td>
 <td align="right">3238</td>
+<td align="right">6459</td>
 <td align="left">7%</td>
 </tr>
 <tr class="even">
@@ -1763,6 +1994,7 @@ $(document).ready(function () {
 <td align="right">87811</td>
 <td align="right">3218</td>
 <td align="right">3241</td>
+<td align="right">6459</td>
 <td align="left">7.4%</td>
 </tr>
 <tr class="odd">
@@ -1770,6 +2002,7 @@ $(document).ready(function () {
 <td align="right">90621</td>
 <td align="right">3207</td>
 <td align="right">3223</td>
+<td align="right">6430</td>
 <td align="left">7.1%</td>
 </tr>
 <tr class="even">
@@ -1777,6 +2010,7 @@ $(document).ready(function () {
 <td align="right">97682</td>
 <td align="right">2551</td>
 <td align="right">2463</td>
+<td align="right">5014</td>
 <td align="left">5.1%</td>
 </tr>
 <tr class="odd">
@@ -1784,6 +2018,7 @@ $(document).ready(function () {
 <td align="right">99520</td>
 <td align="right">2495</td>
 <td align="right">2424</td>
+<td align="right">4919</td>
 <td align="left">4.9%</td>
 </tr>
 <tr class="even">
@@ -1791,6 +2026,7 @@ $(document).ready(function () {
 <td align="right">53319</td>
 <td align="right">2395</td>
 <td align="right">2335</td>
+<td align="right">4730</td>
 <td align="left">8.9%</td>
 </tr>
 </tbody>

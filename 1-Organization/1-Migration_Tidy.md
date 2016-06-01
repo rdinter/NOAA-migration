@@ -585,32 +585,57 @@ The IRS data contains two sets of files: one for the inflow between regions and 
 
 After combining the inflows and outflows files by year, origin FIPS code, and destination FIPS code, we can inspect to see how well these match. Below is a table which indicates `total` as the number of county to county pairs; `return`, `exmpt` and `agi` as the number of pairs which match for these categories; and `match` which is the percentage of pairs which correctly match out of all the observed pairs:
 
-There appears to be some change in the IRS procedure of reporting flows in 2004 as before the average percentage matching is greater than 97% but after this falls to below 95%. But the high percentage of match is a positive sign here. Next, we need to consider why there are values which do not match. To do so, I check to see the values where `IN` (or `OUT`) are suppressed but the `OUT` (or `IN`) are not suppressed:
+|  year|  total|  return|  exmpt|    agi| match |   bad|
+|-----:|------:|-------:|------:|------:|:------|-----:|
+|  1992|  80596|   78258|  78258|  78258| 97.1% |  2338|
+|  1993|  80253|   78130|  78130|  78130| 97.4% |  2123|
+|  1994|  82355|   80318|  80318|  80318| 97.5% |  2037|
+|  1995|  81540|   79444|  79444|  79444| 97.4% |  2096|
+|  1996|  83395|   81319|  81319|  81319| 97.5% |  2076|
+|  1997|  84066|   81923|  81923|  81923| 97.5% |  2143|
+|  1998|  85304|   83262|  83262|  83262| 97.6% |  2042|
+|  1999|  85992|   83940|  83940|  83940| 97.6% |  2052|
+|  2000|  86693|   84615|  84615|  84615| 97.6% |  2078|
+|  2001|  86293|   84101|  84101|  84101| 97.5% |  2192|
+|  2002|  84411|   82186|  82186|  82186| 97.4% |  2225|
+|  2003|  84452|   79528|  79528|  79527| 94.2% |  4924|
+|  2004|  91142|   84717|  84717|  84717| 93%   |  6425|
+|  2005|  94804|   88377|  88377|  88377| 93.2% |  6427|
+|  2006|  93134|   86714|  86714|  86714| 93.1% |  6420|
+|  2007|  95065|   88623|  88623|  88623| 93.2% |  6442|
+|  2008|  92595|   86164|  86164|  86164| 93.1% |  6431|
+|  2009|  87811|   81372|  81372|  81372| 92.7% |  6439|
+|  2010|  90621|   84201|  84201|  84201| 92.9% |  6420|
+|  2011|  97682|   92668|  92668|  92664| 94.9% |  5014|
+|  2012|  99520|   94601|  94601|  94595| 95.1% |  4919|
+|  2013|  53319|   48589|  48589|  48585| 91.1% |  4730|
 
-|  year|  total|  sup\_in|  sup\_out| bad\_match |
-|-----:|------:|--------:|---------:|:-----------|
-|  1992|  80596|     1061|      1299| 2.9%       |
-|  1993|  80253|      996|      1127| 2.6%       |
-|  1994|  82355|      901|      1142| 2.5%       |
-|  1995|  81540|      978|      1120| 2.6%       |
-|  1996|  83395|     1011|      1065| 2.5%       |
-|  1997|  84066|     1022|      1123| 2.6%       |
-|  1998|  85304|      971|      1071| 2.4%       |
-|  1999|  85992|      991|      1061| 2.4%       |
-|  2000|  86693|     1009|      1069| 2.4%       |
-|  2001|  86293|     1066|      1126| 2.5%       |
-|  2002|  84411|     1053|      1172| 2.6%       |
-|  2003|  84452|      989|      1097| 2.5%       |
-|  2004|  91142|     3214|      3227| 7.1%       |
-|  2005|  94804|     3214|      3231| 6.8%       |
-|  2006|  93134|     3203|      3229| 6.9%       |
-|  2007|  95065|     3217|      3235| 6.8%       |
-|  2008|  92595|     3221|      3238| 7%         |
-|  2009|  87811|     3218|      3241| 7.4%       |
-|  2010|  90621|     3207|      3223| 7.1%       |
-|  2011|  97682|     2551|      2463| 5.1%       |
-|  2012|  99520|     2495|      2424| 4.9%       |
-|  2013|  53319|     2395|      2335| 8.9%       |
+There appears to be some change in the IRS procedure of reporting flows in 2004 as before the average percentage matching is greater than 97% but after this falls to below 95%. But the high percentage of match is a positive sign here. Next, we need to consider why there are values which do not match. To do so, I check to see the values where `in` are suppressed but the `out` are not suppressed and call this variable `sup_in`. I perform the opposite and term that `sup_out` and then add the two together to get `sup_total`:
+
+|  year|  total|  sup\_in|  sup\_out|  sup\_total| bad\_match |
+|-----:|------:|--------:|---------:|-----------:|:-----------|
+|  1992|  80596|     1061|      1299|        2360| 2.9%       |
+|  1993|  80253|      996|      1127|        2123| 2.6%       |
+|  1994|  82355|      901|      1142|        2043| 2.5%       |
+|  1995|  81540|      978|      1120|        2098| 2.6%       |
+|  1996|  83395|     1011|      1065|        2076| 2.5%       |
+|  1997|  84066|     1022|      1123|        2145| 2.6%       |
+|  1998|  85304|      971|      1071|        2042| 2.4%       |
+|  1999|  85992|      991|      1061|        2052| 2.4%       |
+|  2000|  86693|     1009|      1069|        2078| 2.4%       |
+|  2001|  86293|     1066|      1126|        2192| 2.5%       |
+|  2002|  84411|     1053|      1172|        2225| 2.6%       |
+|  2003|  84452|      989|      1097|        2086| 2.5%       |
+|  2004|  91142|     3214|      3227|        6441| 7.1%       |
+|  2005|  94804|     3214|      3231|        6445| 6.8%       |
+|  2006|  93134|     3203|      3229|        6432| 6.9%       |
+|  2007|  95065|     3217|      3235|        6452| 6.8%       |
+|  2008|  92595|     3221|      3238|        6459| 7%         |
+|  2009|  87811|     3218|      3241|        6459| 7.4%       |
+|  2010|  90621|     3207|      3223|        6430| 7.1%       |
+|  2011|  97682|     2551|      2463|        5014| 5.1%       |
+|  2012|  99520|     2495|      2424|        4919| 4.9%       |
+|  2013|  53319|     2395|      2335|        4730| 8.9%       |
 
 As it turns out, the only values that do not match are due to a suppression on one side of the values but not the other. By combining the suppressed values of the inflows and outflows, we are able to get a fuller dataset for county-to-county level migration than if we only used one of these. The data are also symmetric in that the value of returns from County A to County B in the inflow and outflow are identical.
 
