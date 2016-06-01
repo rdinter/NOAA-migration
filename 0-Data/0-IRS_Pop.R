@@ -3,6 +3,7 @@
 print(paste0("Started 0-IRS_Pop at ", Sys.time()))
 
 # THERE IS A PROBLEM WITH THE "agi_stub" VARIABLE WHICH STRATIFIES THE SAMPLE
+# this begins in 2010
 
 library(dplyr)
 library(readr)
@@ -213,7 +214,7 @@ IRS_POP <- fipssues(IRS_POP, 51005, c(51005, 51560))
 IRS_POP <- fipssues(IRS_POP, 51083, c(51083, 51780))
 
 write_csv(IRS_POP, paste0(localDir, "/countyincome8913.csv"))
-saveRDS(IRS_POP, file = paste0(localDir, "/CTYPop.rds"))
+saveRDS(IRS_POP, file = paste0(localDir, "/cty_pop.rds"))
 
 print(paste0("Finished 0-IRS_Pop at ", Sys.time()))
 
