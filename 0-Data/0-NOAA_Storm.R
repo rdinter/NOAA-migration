@@ -46,11 +46,6 @@ if (all(sapply(files, function(x) !file.exists(x)))) {
 # ugc <- read_csv(ugc)
 
 # ---- Events -------------------------------------------------------------
-detail  <- files[grep("StormEvents_details-ftp", files)]
-dfun    <- function(x,n) read_csv(x, col_types=paste(rep("c", n), collapse=""))
-devents <- lapply(detail, function(x) dfun(x, 51))
-devents <- bind_rows(devents)
-
 # Function to correct for the damages abbreviations
 abbrev <- function(x){
   val  <- as.numeric(gsub("[[:alpha:]]", "", x))
@@ -76,7 +71,10 @@ fixdate <- function(x, year = 1949){
   return(x)
 }
 
-devents <- devents %>% 
+detail  <- files[grep("StormEvents_details-ftp", files)]
+dfun    <- function(x,n) read_csv(x, col_types=paste(rep("c", n), collapse=""))
+devents <- lapply(detail, function(x) dfun(x, 51)) %>% 
+  bind_rows() %>% 
   mutate(BEGIN_YEARMONTH = as.numeric(BEGIN_YEARMONTH),
          BEGIN_DAY = as.numeric(BEGIN_DAY), BEGIN_TIME = as.numeric(BEGIN_TIME),
          END_YEARMONTH = as.numeric(END_YEARMONTH),
@@ -99,27 +97,30 @@ devents <- devents %>%
          END_RANGE = as.numeric(END_RANGE),
          BEGIN_LAT = as.numeric(BEGIN_LAT), BEGIN_LON = as.numeric(BEGIN_LON),
          END_LAT = as.numeric(END_LAT), END_LON = as.numeric(END_LON))
+
 names(devents) <- tolower(names(devents))
 
-# write_csv(devents, paste0(localDir, "/Events.csv"))
-# zip(paste0(localDir, "/Events.zip"), paste0(localDir, "/Events.csv"))
+saveRDS(devents, paste0(localDir, "/events.rds"))
+# write_csv(devents, paste0(localDir, "/events.csv"))
+# zip(paste0(localDir, "/events.zip"), paste0(localDir, "/events.csv"))
 
 
 # ---- Fatalities ---------------------------------------------------------
 
 fatal <- files[grep("StormEvents_fatalities-ftp", files)]
-dfat   <- lapply(fatal, function(x) dfun(x, 11))
-dfat   <- bind_rows(dfat)
-dfat <- dfat %>% 
+dfat   <- lapply(fatal, function(x) dfun(x, 11)) %>% 
+  bind_rows() %>% 
   mutate(FAT_YEARMONTH = as.numeric(FAT_YEARMONTH),
          FAT_DAY = as.numeric(FAT_DAY), FAT_TIME = as.numeric(FAT_TIME),
          FATALITY_ID = as.numeric(FATALITY_ID), EVENT_ID = as.numeric(EVENT_ID),
-         FATALITY_DATE_ = fixdate(dmy_hms(FATALITY_DATE)),
+         FATALITY_DATE_ = fixdate(mdy_hms(FATALITY_DATE)),
          EVENT_YEARMONTH = as.numeric(EVENT_YEARMONTH))
+
 names(dfat) <- tolower(names(dfat))
 
-# write_csv(dfat, paste0(localDir, "/Fatalities.csv"))
-# zip(paste0(localDir, "/Fatalities.zip"), paste0(localDir, "/Fatalities.csv"))
+saveRDS(dfat, paste0(localDir, "/fatalities.rds"))
+# write_csv(dfat, paste0(localDir, "/fatalities.csv"))
+# zip(paste0(localDir, "/fatalities.zip"), paste0(localDir, "/fatalities.csv"))
 
 # Check for problem EVENT_ID that do not appear
 check <- dfat$EVENT_ID %in% devents$EVENT_ID
@@ -128,10 +129,8 @@ table(dfat$EVENT_ID[!check])
 # ---- Locations ----------------------------------------------------------
 
 location <- files[grep("StormEvents_locations-ftp", files)]
-dlocate  <- lapply(location, function(x) dfun(x, 11))
-dlocate  <- bind_rows(dlocate)
-
-dlocate <- dlocate %>% 
+dlocate  <- lapply(location, function(x) dfun(x, 11)) %>% 
+  bind_rows() %>% 
   filter(complete.cases(.)) %>%
   mutate(YEARMONTH = as.numeric(YEARMONTH),
          EPISODE_ID = as.numeric(EPISODE_ID),
@@ -141,20 +140,22 @@ dlocate <- dlocate %>%
          LONGITUDE = as.numeric(LONGITUDE),
          LAT2 = as.numeric(LAT2),
          LON2 = as.numeric(LON2))
+
 names(dlocate) <- tolower(names(dlocate))
 
-# write_csv(dlocate, paste0(localDir, "/Location.csv"))
-# zip(paste0(localDir, "/Location.zip"), paste0(localDir, "/Location.csv"))
+saveRDS(dlocate, paste0(localDir, "/location.rds"))
+# write_csv(dlocate, paste0(localDir, "/location.csv"))
+# zip(paste0(localDir, "/location.zip"), paste0(localDir, "/location.csv"))
 
 
 # ---- Basic Summary ------------------------------------------------------
 
-devents %>% mutate(fips = STATE_FIPS*1000 + CZ_FIPS) %>% 
-  filter(CZ_TYPE == "C") %>% 
-  group_by(YEAR, fips) %>% select(INJURIES_DIRECT:DAMAGE_CROPS) %>% 
+devents %>% mutate(fips = state_fips*1000 + cz_fips) %>% 
+  filter(cz_type == "C") %>% 
+  group_by(year, fips) %>% select(injuries_direct:damage_crops) %>% 
   summarise_each(funs(sum(., na.rm = T))) -> noaabasic
 
-noaabasic <- expand.grid(YEAR = unique(noaabasic$YEAR),
+noaabasic <- expand.grid(year = unique(noaabasic$year),
                          fips = unique(noaabasic$fips)) %>% 
   left_join(noaabasic) %>% replace(is.na(.), 0)
 

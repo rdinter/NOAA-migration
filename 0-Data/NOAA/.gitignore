@@ -1,1 +1,5 @@
 raw
+events.rds
+fatalities.rds
+location.rds
+noaabasic.rds
