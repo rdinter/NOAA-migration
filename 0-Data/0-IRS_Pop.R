@@ -104,7 +104,7 @@ for (i in files){
   
   yirs$county_name[yirs$fips == 0] <- "Total" #Correct for NA name
   
-  write_csv(yirs, paste0(data_source, "/", bfile,".csv"))
+  # write_csv(yirs, paste0(data_source, "/", bfile,".csv"))
   
   allirs  <- bind_rows(allirs, yirs)
   
@@ -118,17 +118,23 @@ urls   <- paste0(url, years, "countydata.zip")
 urls[4]<- paste0(url, "county", 2013, ".zip")
 files  <- paste(data_source, basename(urls), sep = "/")
 
+# https://www.irs.gov/pub/irs-soi/11incyallagi.csv
+# https://www.irs.gov/pub/irs-soi/12cyallagi.csv
+# https://www.irs.gov/pub/irs-soi/13incyallagi.csv
+
 if (!all(sapply(files, function(x) file.exists(x)))) {
   mapply(download.file, url = urls, destfile = files)
 }
 
 # NEED TO ADD IN THE agi_stub HERE
-tirs <- data.frame()
+tirs      <- data.frame()
+tiris_agi <- data.frame()
 for (i in files){
   unlink(tempDir, recursive = T)
   unzip(i, exdir = tempDir)
   
   j5     <- list.files(tempDir, pattern = "*noagi.csv", full.names = T)
+  j5_agi <- list.files(tempDir, pattern = "*allagi.csv", full.names = T)
   
   # The 2010 and 2011 are .csv but 2012 is .xls
   if (length(j5) == 0){
@@ -136,9 +142,19 @@ for (i in files){
     irs <- read_excel(j5, skip = 5)
     irs <- irs[, c(1, 3, 4, 5, 10, 12, 14, 18, 16)]
   } else{
-    irs <- read_csv(j5)
+    irs_agi        <- read_csv(j5_agi)
+    names(irs_agi) <- toupper(names(irs_agi))
+    
+    irs     <- read_csv(j5)
+    irs_agi <- irs_agi %>% 
+      bind_rows(irs) %>% 
+      select(st_fips = STATEFIPS, cty_fips = COUNTYFIPS, agi_stub = AGI_STUB,
+             county_name = COUNTYNAME, return = N1, exmpt = N2, agi = A00100,
+             wages = A00200, dividends = A00600, interest = A00300)
+    
     irs <- irs[, c("STATEFIPS", "COUNTYFIPS", "COUNTYNAME", "N1", "N2",
                    "A00100", "A00200", "A00600", "A00300")]
+    
   }
   
   names(irs) <- c("st_fips", "cty_fips", "county_name", "return",
@@ -147,10 +163,16 @@ for (i in files){
   irs$st_fips  <- as.numeric(irs$st_fips)
   irs$cty_fips <- as.numeric(irs$cty_fips)
   
+  irs_agi$st_fips  <- as.numeric(irs_agi$st_fips)
+  irs_agi$cty_fips <- as.numeric(irs_agi$cty_fips)
+  
   year      <- as.numeric(substr(basename(i), 1, 4))
   if (is.na(year)) year <- 2013 # QUICK FIX
   irs$year <- year
   irs$fips <- irs$st_fips*1000 + irs$cty_fips
+  
+  irs_agi$year <- year
+  irs_agi$fips <- irs_agi$st_fips*1000 + irs_agi$cty_fips
   
   # Add in total
   add   <- ((irs$fips %% 1000) == 0)
@@ -164,9 +186,23 @@ for (i in files){
   tirs   <- bind_rows(tirs, irs)
   
   tirs$county_name[tirs$fips == 0] <- "Total" # Correct for NA name
+  #############
+  # Add in total
+  add   <- ((irs_agi$fips %% 1000) == 0)
+  addt  <- apply(irs_agi[add, c(4:9)], 2, function(x) sum(x, na.rm = T))
+  add   <- c(0, 0, NA, addt, year, 0)
+  names(add) <- names(irs_agi)
   
+  # 2012 already has a total...
+  if (year != 2012)  irs_agi <- bind_rows(irs_agi, as.data.frame(t(add)))
+  
+  tirs_agi   <- bind_rows(tirs_agi, irs_agi)
+  
+  tirs_agi$county_name[tirs_agi$fips == 0] <- "Total" # Correct for NA name
+  #############
   print(paste0("Finished ", basename(i), " at ", Sys.time()))
 }
+
 # Remove NAs
 tirs         <- tirs[!is.na(tirs$st_fips),]
 

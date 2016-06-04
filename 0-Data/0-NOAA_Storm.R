@@ -72,7 +72,7 @@ fixdate <- function(x, year = 1949){
 }
 
 detail  <- files[grep("StormEvents_details-ftp", files)]
-dfun    <- function(x,n) read_csv(x, col_types=paste(rep("c", n), collapse=""))
+dfun    <- function(x,n) read_csv(x, col_types = strrep("c", n))
 devents <- lapply(detail, function(x) dfun(x, 51)) %>% 
   bind_rows() %>% 
   mutate(BEGIN_YEARMONTH = as.numeric(BEGIN_YEARMONTH),
