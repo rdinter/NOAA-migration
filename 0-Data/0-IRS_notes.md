@@ -5,12 +5,12 @@
 
 ### [SOI Tax Stats - Individual Income Tax Statistics - ZIP Code Data (SOI)](https://www.irs.gov/uac/soi-tax-stats-individual-income-tax-statistics-zip-code-data-soi)
 
-The IRS has released ZIP code level data on tax returns, which is great. The years cover [1998](#1998), [2001](#2001), [2002](#2002), and [2004](#2004) to [2010](#2010). All of these will include returns, exemptions, AGI, salaries and wages, taxable interest, earned income credit, total tax, "Schedule C" (non-farm sole proprietorship), "Schedule F" (farm sole proprietorship), and Schedule A Deductions." The files up until 2005 are in .xls format, then from 2005 and beyond they are .csv. In addition, all years are stratified by AGI classes but the IRS has slowly added new AGI classes and so comparability is limited. Here is a quick rundown of the contents of the .zip files for each year:
+The IRS has released ZIP code level data on tax returns, which is great. The years cover [1998](#1998), [2001](#2001), [2002](#2002), and [2004](#2004) to [2013](#2013). All of these will include returns, exemptions, AGI, salaries and wages, taxable interest, earned income credit, total tax, "Schedule C" (non-farm sole proprietorship), "Schedule F" (farm sole proprietorship), and Schedule A Deductions." The files up until 2005 are in .xls format, then from 2005 and beyond they are .csv. In addition, all years are stratified by AGI classes but the IRS has slowly added new AGI classes and so comparability is limited. Here is a quick rundown of the contents of the .zip files for each year:
 
 ### 1998
 All states are in .xls files plus an additional "98zp53us.xls" which contains state totals and US totals.
 
-AGI: < \$10,000; \$10,000 to \$25,000; \$25,000 to \$50,000; > \$50,000
+AGI: < $10,000; $10,000 to $25,000; $25,000 to $50,000; > $50,000
 
 Data start on row 9, then it is "Total" followed by AGI classes and a skipped row.
 
@@ -46,7 +46,7 @@ Special notes
 ### 2001
 All states are in .xls files plus an additional "01zp53us.xls" which contains state totals and US totals.
 
-AGI: < \$10,000; \$10,000 to \$25,000; \$25,000 to \$50,000; > \$50,000
+AGI: < $10,000; $10,000 to $25,000; $25,000 to $50,000; > $50,000
 
 Data start on row 9, then it is "Total" followed by AGI classes and a skipped row.
 
@@ -67,12 +67,12 @@ There are 19 columns:
 13. number of returns for schedule F
 14. number of returns with schedule A
 
-* Upper cell and/or lower cell value(s) have been added into this cell.
-** Value removed from this cell is added into upper or lower cell.
-0 or - Cell values are zero.
-State totals do not include deleted Zipcode totals.
-Adjusted Gross Income size of "Under $10,000" includes adjusted gross deficits.
-Source: IRS Master File Data, Statistics of Income, October 2003.
+> \* Upper cell and/or lower cell value(s) have been added into this cell.
+> \** Value removed from this cell is added into upper or lower cell.
+> 0 or - Cell values are zero.
+> State totals do not include deleted Zipcode totals.
+> Adjusted Gross Income size of "Under $10,000" includes adjusted gross deficits.
+> Source: IRS Master File Data, Statistics of Income, October 2003.
 
 ### 2002
 Same as 2001.
@@ -80,7 +80,7 @@ Same as 2001.
 ### 2004
 All states are in .xls files, there is no total file for states/US.
 
-AGI: < \$10,000; \$10,000 to \$25,000; \$25,000 to \$50,000; \$50,000 to \$75,000; \$75,000 to \$100,000; > \$100,000
+AGI: < $10,000; $10,000 to $25,000; $25,000 to $50,000; $50,000 to $75,000; $75,000 to $100,000; > $100,000
 
 Data start on row 13, then it is "Total" followed by AGI classes and a skipped row.
 
@@ -131,7 +131,7 @@ It appears that only \* is a special character on this set of data.
 ### 2005
 Finally, we have .csv files! There is also a file of .xls files but only need the `zipcode05.csv` to read in. 
 
-AGI classes: 1 = Under \$10,000; 2 = \$10,000 under \$25,000; 3 = \$25,000 under \$50,000; 4 = \$50,000 under \$75,000; 5 = \$75,000 under \$100,000; 6 = \$100,000 or more.
+AGI classes: 1 = Under $10,000; 2 = $10,000 under $25,000; 3 = $25,000 under $50,000; 4 = $50,000 under $75,000; 5 = $75,000 under $100,000; 6 = $100,000 or more.
 
 Here are the variables:
 
@@ -178,12 +178,14 @@ Here are the variables:
 41. PREP, Number of returns using a Paid Preparer
 
 ### 2006
-Same as 2005, except new AGI classes are added: \$100,000 to \$200,000; and > \$200,000
+Same as 2005, except new AGI classes are added: $100,000 to $200,000; and > $200,000
 
 ### 2007
 Things change again. Still as a .csv
 
-Variables are now: state, ZIPCODE, agi_class, n1, mars2, prep, n2, numdep, a00100, n00200, a00200, n00300, a00300, n00600, a00600, n00900, a00900, schf, n23900, a23900, n01400, a01400, n01700, a01700, n02300, a02300, n02500, a02500, n03300, a03300, n04470, a04470, n18425, a18425, n18450, a18450, n18500, a18500, n18300, a18300, n19300, a19300, n19700, a19700, n04800, a04800, n07100, a07100, nf5695, af5695, n07220, a07220, n07180, a07180, n59660, a59660, n59720, a59720, n09600, a09600, n06500, a06500, n10300, a10300, n11900gt0, a11900gt0, n11900lt0, a11900lt0
+Variables are now: 
+
+state ZIPCODE agi_class n1 mars2 prep n2 numdep a00100 n00200 a00200 n00300 a00300 n00600 a00600 n00900 a00900 schf n23900 a23900 n01400 a01400 n01700 a01700 n02300 a02300 n02500 a02500 n03300 a03300 n04470 a04470 n18425 a18425 n18450 a18450 n18500 a18500 n18300 a18300 n19300 a19300 n19700 a19700 n04800 a04800 n07100 a07100 nf5695 af5695 n07220 a07220 n07180 a07180 n59660 a59660 n59720 a59720 n09600 a09600 n06500 a06500 n10300 a10300 n11900gt0 a11900gt0 n11900lt0 a11900lt0
 
 mars2 - filing status is married filing jointly; prep - paid preparer outside IRS; numdep - n6, dependent exemptions
 
@@ -203,3 +205,12 @@ STATEFIPS STATE ZIPCODE AGI_STUB N1 MARS2 PREP N2 NUMDEP A00100 N00200 A00200 N0
 Appears to be the same as 2009:
 
 STATEFIPS STATE ZIPCODE AGI_STUB N1 MARS2 PREP N2 NUMDEP A00100 N00200 A00200 N00300 A00300 N00600 A00600 N00650 A00650 N00900 A00900 SCHF N01000 A01000 N01400 A01400 N01700 A01700 N02300 A02300 N02500 A02500 N03300 A03300 N04470 A04470 N18425 A18425 N18450 A18450 N18500 A18500 N18300 A18300 N19300 A19300 N19700 A19700 N04800 A04800 N07100 A07100 N07220 A07220 N07180 A07180 N07260 A07260 N59660 A59660 N59720 A59720 N11070 A11070 N09600 A09600 N06500 A06500 N10300 A10300 N11901 A11901 N11902 A11902
+
+### 2011
+These are .csv files that have been loaded in already.
+
+### 2012
+Same as 2011.
+
+### 2013
+Same as 2011 and 2012.
