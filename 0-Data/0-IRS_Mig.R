@@ -53,6 +53,21 @@ for (i in files){
 # Problem in 1996 where the inflow for total US is coded as 1 instead of 0
 allinflow <- filter(allinflow, !(st_fips_d == 1 & state_abbrv == "US"))
 
+# Problem with 2003 Illinois
+prob <- allinflow$year == 2003 & allinflow$dfips == 17017 &
+  allinflow$county_name == "TOTAL MIG - US & FOR"
+allinflow$cty_fips_d[prob] <- 0
+allinflow$dfips[prob]      <- 17000
+
+# Duplicated issues, add leading zeros to fips:
+allinflow$key  <- paste0(str_pad(allinflow$ofips, 5, pad = "0"),
+                         str_pad(allinflow$dfips, 5, pad = "0"),
+                         allinflow$year)
+alloutflow$key <- paste0(str_pad(alloutflow$ofips, 5, pad = "0"),
+                         str_pad(alloutflow$dfips, 5, pad = "0"),
+                         alloutflow$year)
+alloutflow <- filter(alloutflow, duplicated(key))
+
 write_csv(allinflow, paste0(localDir, "/inflows9203.csv"))
 write_csv(alloutflow, paste0(localDir, "/outflows9203.csv"))
 
@@ -76,7 +91,14 @@ inflow   <- sapply(infiles, function(x){
   filter(flow, !is.na(st_fips_d))
 }, simplify = F, USE.NAMES = T)
 
-allin    <- bind_rows(inflow)
+allin     <- bind_rows(inflow)
+allin$key <- paste0(str_pad(allin$ofips, 5, pad = "0"),
+                    str_pad(allin$dfips, 5, pad = "0"),
+                    allin$year)
+# Duplicate problem:
+allin %>% 
+  filter(duplicated(key) | duplicated(key, fromLast = T)) -> dupes
+dupes %>% group_by(key) %>% summarise(check = diff(return)) -> j5
 
 write_csv(allin, paste0(localDir, "/inflows0413.csv"))
 
@@ -96,7 +118,14 @@ outflow  <- sapply(outfiles, function(x){
   filter(flow, !is.na(st_fips_o))
 }, simplify = F, USE.NAMES = T)
 
-allout <- bind_rows(outflow)
+allout     <- bind_rows(outflow)
+allout$key <- paste0(str_pad(allout$ofips, 5, pad = "0"),
+                     str_pad(allout$dfips, 5, pad = "0"),
+                     allout$year)
+# Duplicate problem:
+allout %>% 
+  filter(duplicated(key) | duplicated(key, fromLast = T)) %>% 
+  View
 
 write_csv(allout, paste0(localDir, "/outflows0413.csv"))
 
