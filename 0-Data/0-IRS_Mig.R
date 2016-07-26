@@ -96,9 +96,13 @@ allin$key <- paste0(str_pad(allin$ofips, 5, pad = "0"),
                     str_pad(allin$dfips, 5, pad = "0"),
                     allin$year)
 # Duplicate problem:
-allin %>% 
-  filter(duplicated(key) | duplicated(key, fromLast = T)) -> dupes
-dupes %>% group_by(key) %>% summarise(check = diff(return)) -> j5
+# allin %>% 
+#   filter(duplicated(key) | duplicated(key, fromLast = T)) %>%
+#   group_by(key) %>%
+#   mutate(check = mean(return) - return, count = n()) %>% 
+#   ungroup %>% arrange(desc(count)) %>% 
+#   filter(check != 0) -> j5
+allin <- filter(allin, !duplicated(key))
 
 write_csv(allin, paste0(localDir, "/inflows0413.csv"))
 
@@ -123,9 +127,13 @@ allout$key <- paste0(str_pad(allout$ofips, 5, pad = "0"),
                      str_pad(allout$dfips, 5, pad = "0"),
                      allout$year)
 # Duplicate problem:
-allout %>% 
-  filter(duplicated(key) | duplicated(key, fromLast = T)) %>% 
-  View
+# allout %>%
+#   filter(duplicated(key) | duplicated(key, fromLast = T)) %>%
+#   group_by(key) %>%
+#   mutate(check = mean(return) - return, count = n()) %>%
+#   ungroup %>% arrange(desc(count)) %>%
+#   filter(check != 0) -> j5
+allout <- filter(allout, !duplicated(key))
 
 write_csv(allout, paste0(localDir, "/outflows0413.csv"))
 
