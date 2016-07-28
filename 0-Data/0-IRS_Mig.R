@@ -66,7 +66,7 @@ allinflow$key  <- paste0(str_pad(allinflow$ofips, 5, pad = "0"),
 alloutflow$key <- paste0(str_pad(alloutflow$ofips, 5, pad = "0"),
                          str_pad(alloutflow$dfips, 5, pad = "0"),
                          alloutflow$year)
-alloutflow <- filter(alloutflow, duplicated(key))
+alloutflow <- filter(alloutflow, !duplicated(key))
 
 write_csv(allinflow, paste0(localDir, "/inflows9203.csv"))
 write_csv(alloutflow, paste0(localDir, "/outflows9203.csv"))
