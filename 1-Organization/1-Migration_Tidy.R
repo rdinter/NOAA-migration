@@ -145,30 +145,35 @@ temp <- allout %>%
   filter(st_fips_d == 57, year < 1995) %>% 
   group_by(year, st_fips_o, cty_fips_o) %>% 
   summarise_each(funs(sum(., na.rm = T)), return:agi)
-temp$st_fips_d  <- 98
-temp$cty_fips_d <- 0
-allout          <- bind_rows(allout, temp)
+if (nrow(temp) > 0){
+  temp$st_fips_d  <- 98
+  temp$cty_fips_d <- 0
+  allout          <- bind_rows(allout, temp)
+}
 
 # Finally, we need the US values of 97000 
 temp <- allout %>% 
   select(year:cty_fips_d, return:agi) %>% 
-  filter(st_fips_d %in% c(96, 98), year < 1995) %>% 
-  gather(key, value, return:agi) %>% 
-  unite(temp, key, st_fips_d) %>% 
-  spread(temp, value) %>% 
-  mutate(return = ifelse(is.na(return_96) & is.na(return_98), NA,
-                             ifelse(is.na(return_98), return_96,
-                                    return_96 - return_98)),
-         exmpt = ifelse(is.na(exmpt_96) & is.na(exmpt_98), NA,
-                            ifelse(is.na(exmpt_98), exmpt_96,
-                                   exmpt_96 - exmpt_98)),
-         agi = ifelse(is.na(agi_96) & is.na(agi_98), NA,
-                           ifelse(is.na(agi_98), agi_96,
-                                  agi_96 - agi_98))) %>% 
-  select(year:cty_fips_d, return:agi)
-temp$st_fips_d  <- 97
-temp$cty_fips_d <- 0
-allout          <- bind_rows(allout, temp)
+  filter(st_fips_d %in% c(96, 98), year < 1995)
+if (nrow(temp) > 0) {
+  temp <- temp %>% 
+    gather(key, value, return:agi) %>% 
+    unite(temp, key, st_fips_d) %>% 
+    spread(temp, value) %>% 
+    mutate(return = ifelse(is.na(return_96) & is.na(return_98), NA,
+                           ifelse(is.na(return_98), return_96,
+                                  return_96 - return_98)),
+           exmpt = ifelse(is.na(exmpt_96) & is.na(exmpt_98), NA,
+                          ifelse(is.na(exmpt_98), exmpt_96,
+                                 exmpt_96 - exmpt_98)),
+           agi = ifelse(is.na(agi_96) & is.na(agi_98), NA,
+                        ifelse(is.na(agi_98), agi_96,
+                               agi_96 - agi_98))) %>% 
+    select(year:cty_fips_d, return:agi)
+  temp$st_fips_d  <- 97
+  temp$cty_fips_d <- 0
+  allout          <- bind_rows(allout, temp)
+}
 
 allout$ofips <- 1000*allout$st_fips_o + allout$cty_fips_o
 allout$dfips <- 1000*allout$st_fips_d + allout$cty_fips_d

@@ -2,7 +2,9 @@
 title: "1-Migration_Tidy"
 author: "Robert Dinterman"
 date: '`r Sys.Date()`'
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r, include=FALSE}
@@ -24,15 +26,15 @@ The Internal Revenue Service (IRS) maintains a [dataset of county-to-county leve
 
 * `return` - number of returns filed, which approximates the number of households that migrated.
 * `exmpt` - number of personal exemptions claimed, which approximates the number of individuals.
-* `agi` - total adjusted gross income, starting with filing year 1995.
+* `agi` - total adjusted gross income, values are per \$1,000s
 * Aggregate migration flows at the state level, by the size of adjusted gross income (agi) and age of the primary taxpayer, starting with filing year 2011.
 
 I have not yet parsed the data for 1990 and 1991 because the `.txt` format is not easily readable. Further, because of data concerns with a large number of negative income flows of extremely unlikely negative values for income flows, the 1992 to 1994 years are noted to be dubious:
 
 ```{r Example Negatives}
-allinflow %>% filter(agi < 0 & !is.na(agi)) %>% arrange(agi) %>% select(year, ofips, dfips, return:agi) %>%  head(., n = 5) %>% kable(., caption = "Inflows")
+allinflow %>% filter(agi < 0 & !is.na(agi)) %>% arrange(agi) %>% select(year, ofips, dfips, return:agi) %>%  head(., n = 10) %>% kable(., caption = "Inflows")
 
-alloutflow %>% filter(agi < 0 & !is.na(agi)) %>% arrange(agi) %>% select(year, ofips, dfips, return:agi) %>% head(., n = 5) %>% kable(., caption = "Outflows")
+alloutflow %>% filter(agi < 0 & !is.na(agi)) %>% arrange(agi) %>% select(year, ofips, dfips, return:agi) %>% head(., n = 10) %>% kable(., caption = "Outflows")
 ```
 
 *where* `return` *indicates aggregate tax returns between the origin county (ofips) and destination county (dfips) to proxy for number of households;* `exmpt` *refers to the number of exemptions filed which proxies population;* `agi` *is the sum of Adjusted Gross Income for all filers and is in units of \$1,000s.*
@@ -46,10 +48,11 @@ The negative values undoubtedly are due to some sort of clerical or data convers
 allinflow %>%
   mutate(flag = agi < -100*abs(return)) %>% 
   filter(flag) -> flag
-flag %>% group_by(year) %>% summarise(Flagged = n(), HH = round(mean(return)), Pop = round(mean(exmpt)), agi_Mean = round(mean(agi))) %>% kable
+flag %>% group_by(year) %>% summarise(Flagged = n(), HH_mean = round(mean(return)), POP_mean = round(mean(exmpt)), AGI_Mean = round(mean(agi))) -> flag_inflow
+kable(flag_inflow)
 ```
 
-The flagged values appear to be minimal. If using `agi`, then it is best to remove these flagged values. However, the `return` and `exmpt` do not appear to suffer. Using this data for population migration would be considered appropriate.
+The flagged values appear to be minimal with `r sum(flag_inflow$Flagged)` total issues out of `r nrow(allinflow)` observations. If using `agi`, then it is best to remove these flagged values. However, the `return` and `exmpt` do not appear to suffer. Using this data for population migration would be considered appropriate.
 
 Correcting the `agi` problem is left for future work, although there are a few notes I can give from analyzing these data:
 
