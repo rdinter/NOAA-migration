@@ -2,9 +2,10 @@
 title: "1-Migration_Tidy"
 author: "Robert Dinterman"
 date: '`r Sys.Date()`'
-output: 
-  html_document: 
+output:
+  html_document:
     keep_md: yes
+  pdf_document: default
 ---
 
 ```{r, include=FALSE}
@@ -32,9 +33,9 @@ The Internal Revenue Service (IRS) maintains a [dataset of county-to-county leve
 I have not yet parsed the data for 1990 and 1991 because the `.txt` format is not easily readable. Further, because of data concerns with a large number of negative income flows of extremely unlikely negative values for income flows, the 1992 to 1994 years are noted to be dubious:
 
 ```{r Example Negatives}
-allinflow %>% filter(agi < 0 & !is.na(agi)) %>% arrange(agi) %>% select(year, ofips, dfips, return:agi) %>%  head(., n = 10) %>% kable(., caption = "Inflows")
+allinflow %>% filter(agi < 0 & !is.na(agi)) %>% arrange(agi) %>% select(year, ofips, dfips, return:agi) %>%  head(., n = 10) %>% kable(., caption = "Inflows", format.args = list(big.mark = ","))
 
-alloutflow %>% filter(agi < 0 & !is.na(agi)) %>% arrange(agi) %>% select(year, ofips, dfips, return:agi) %>% head(., n = 10) %>% kable(., caption = "Outflows")
+alloutflow %>% filter(agi < 0 & !is.na(agi)) %>% arrange(agi) %>% select(year, ofips, dfips, return:agi) %>% head(., n = 10) %>% kable(., caption = "Outflows", format.args = list(big.mark = ","))
 ```
 
 *where* `return` *indicates aggregate tax returns between the origin county (ofips) and destination county (dfips) to proxy for number of households;* `exmpt` *refers to the number of exemptions filed which proxies population;* `agi` *is the sum of Adjusted Gross Income for all filers and is in units of \$1,000s.*
@@ -49,10 +50,10 @@ allinflow %>%
   mutate(flag = agi < -100*abs(return)) %>% 
   filter(flag) -> flag
 flag %>% group_by(year) %>% summarise(Flagged = n(), HH_mean = round(mean(return)), POP_mean = round(mean(exmpt)), AGI_Mean = round(mean(agi))) -> flag_inflow
-kable(flag_inflow)
+kable(flag_inflow, format.args = list(big.mark = ","))
 ```
 
-The flagged values appear to be minimal with `r sum(flag_inflow$Flagged)` total issues out of `r nrow(allinflow)` observations. If using `agi`, then it is best to remove these flagged values. However, the `return` and `exmpt` do not appear to suffer. Using this data for population migration would be considered appropriate.
+The flagged values appear to be minimal with `r sum(flag_inflow$Flagged)` total issues out of `r format(nrow(allinflow), big.mark = ",")` observations. If using `agi`, then it is best to remove these flagged values. However, the `return` and `exmpt` do not appear to suffer. Using this data for population migration would be considered appropriate.
 
 Correcting the `agi` problem is left for future work, although there are a few notes I can give from analyzing these data:
 
@@ -68,7 +69,7 @@ Correcting for these implausible numbers should be possible, however the benefit
 The IRS data are suppressed if there are fewer than 10 filers that migrate across regions. Sometimes these data are omitted completely while other times they are designated as suppressed with a `-1` value, although the `-1` distinction did not occur until 2004. To get an idea of how suppressed the data are, here is a quick table of suppressed values across years plus a column at the far side indicating the number of links containing the minimum number of filers (10):
 
 ```{r Suppressed}
-kable(allinflow %>% group_by(year) %>% summarise(total = n(), Suppressed = sum(return == -1 | is.na(return)), Pct_Suppressed = round(100*Suppressed / total, digits = 2), Minimum = sum(return == 10 & !is.na(return)), Pct_Minimum = round(100*Minimum / total, digits = 2)))
+kable(allinflow %>% group_by(year) %>% summarise(total = n(), Suppressed = sum(return == -1 | is.na(return)), Pct_Suppressed = round(100*Suppressed / total, digits = 2), Minimum = sum(return == 10 & !is.na(return)), Pct_Minimum = round(100*Minimum / total, digits = 2)), format.args = list(big.mark = ","))
 ```
 
 Suppression did not occur before 2004 although it is not clear what the reasoning behind this was. For data purposes, the best practice will be to change all values which are suppressed via the `-1` value to `NA` to delineate that we know there is a connection but do not know the specific value. This will also be helpful with the above agi problem of large, unrealistic negative values which should be coded as missing values.
@@ -134,36 +135,36 @@ A further note is that a county's non-migrant population is denoted by the FIPS 
 A first pass is to do a quick cross-tabulation of the special codes across years. This involves subsetting the data to use `st_fips_o` values which are not equal to the FIPS codes of US States. The following chart's columns indicate the `st_fips_o` across the rows of `year` where the value in each cell is the total count of that particular `st_fips_o`:
 
 ```{r Crosstabs}
-kable(xtabs(~year + st_fips_o, filter(allinflow, st_fips_o > 56 | st_fips_o == 0)))
+kable(xtabs(~year + st_fips_o, filter(allinflow, st_fips_o > 56 | st_fips_o == 0)), format.args = list(big.mark = ","))
 ```
 
 Excellent. We can see a clear demarcation where, before 1995, the special codes appear to be designated with `0` and `63`. Afterwards, it appears the special codes are as documented above except with three other clear changes in data patterns:
 
-* In 2003, total values for the `98` FIPS (Total Foreign migration) were `r sum(filter(allinflow, year == 2003)$st_fips_o == 98)` but then increased sharply to `r sum(filter(allinflow, year == 2004)$st_fips_o == 98)` in 2004. This change likely demonstrates that the IRS now filled in a value of 0 (or suppressed) across all counties from 2004 and beyond where before the IRS would omit a value for the county if no (or suppressed) migration with foreign areas occurred.
+* In 2003, total values for the `98` FIPS (Total Foreign migration) were `r format(sum(filter(allinflow, year == "2003")$st_fips_o == 98), big.marks = ",")` but then increased sharply to `r format(sum(filter(allinflow, year == "2004")$st_fips_o == 98), big.marks = ",")` in 2004. This change likely demonstrates that the IRS now filled in a value of 0 (or suppressed) across all counties from 2004 and beyond where before the IRS would omit a value for the county if no (or suppressed) migration with foreign areas occurred.
 
-* In 2010, total values for the `57` FIPS (Foreign flows) were `r sum(filter(allinflow, year == 2010)$st_fips_o == 57)` but then increased to `r sum(filter(allinflow, year == 2011)$st_fips_o == 57)` for 2011. I suspect the same implementation occurred as above: the IRS now replaces values with 0 (or suppressed) when before they may have simply omitted any value. This can be seen with the `98` FIPS (Total - Foreign) which changed from `r sum(filter(allinflow, year == 2010)$st_fips_o == 98)` to `r sum(filter(allinflow, year == 2011)$st_fips_o == 98)` across the same time.
+* In 2010, total values for the `57` FIPS (Foreign flows) were `r format(sum(filter(allinflow, year == "2010")$st_fips_o == 57), big.marks = ",")` but then increased to `r format(sum(filter(allinflow, year == "2011")$st_fips_o == 57), big.marks = ",")` for 2011. I suspect the same implementation occurred as above: the IRS now replaces values with 0 (or suppressed) when before they may have simply omitted any value. This can be seen with the `98` FIPS (Total - Foreign) which changed from `r format(sum(filter(allinflow, year == "2010")$st_fips_o == 98), big.marks = ",")` to `r format(sum(filter(allinflow, year == "2011")$st_fips_o == 98), big.marks = ",")` across the same time.
 
-* In 2010, total values for the `59` FIPS (Other flows - across regions) were `r sum(filter(allinflow, year == 2010)$st_fips_o == 59)` but then increased to `r sum(filter(allinflow, year == 2011)$st_fips_o == 59)` for 2011. This represents a `r paste0(round(sum(filter(allinflow, year == 2011)$st_fips_o == 59) / sum(filter(allinflow, year == 2010)$st_fips_o == 59) *100), "%")` increase in values. I suspect the same implementation occurred as above: the IRS now replaces values with 0 (or suppressed) when before they may have simply omitted any value.
+* In 2010, total values for the `59` FIPS (Other flows - across regions) were `r sum(filter(allinflow, year == "2010")$st_fips_o == 59)` but then increased to `r sum(filter(allinflow, year == "2011")$st_fips_o == 59)` for 2011. This represents a `r paste0(round(sum(filter(allinflow, "year" == 2011)$st_fips_o == 59) / sum(filter(allinflow, year == "2010")$st_fips_o == 59) *100), "%")` increase in values. I suspect the same implementation occurred as above: the IRS now replaces values with 0 (or suppressed) when before they may have simply omitted any value.
 
 The necessary corrections for handling data before 1995 involve changing the special FIPS codes involving `0` (which represent total migrants) and `63` which are more complicated:
 
 ```{r Pre1995}
-kable(xtabs(~county_name + cty_fips_o, filter(allinflow, st_fips_o == 63, year < 1995)), caption = "Pre 1995 Special Codes")
+kable(xtabs(~county_name + cty_fips_o, filter(allinflow, st_fips_o == 63, as.numeric(year) < 1995)), caption = "Pre 1995 Special Codes")
 ```
 
-The biggest change is that we need to have consistent measures of Total-Migrants and Non-Migrants. I will choose to ignore all categories which can be calculated from other values (i.e. movement within state, movement within region, etc.). All ST `63` and CTY `50` values need to be converted to the respective home region. The ST `63` and CTY `15` is loosely classified as Foreign with around 200 observations each year with an average of `r mean(filter(allinflow, st_fips_o == 63, cty_fips_o == 15)$return)` returns per observation. This indicates that the `63` "Foreign" is not likely to be movement to designated Foreign areas but rather observations that the IRS did not know what to do with and matches up well with a category called "Foreign - Other Flows."
+The biggest change is that we need to have consistent measures of Total-Migrants and Non-Migrants. I will choose to ignore all categories which can be calculated from other values (i.e. movement within state, movement within region, etc.). All ST `63` and CTY `50` values need to be converted to the respective home region. The ST `63` and CTY `15` is loosely classified as Foreign with around 200 observations each year with an average of `r format(mean(filter(allinflow, st_fips_o == 63, cty_fips_o == 15)$return), big.mark = ",")` returns per observation. This indicates that the `63` "Foreign" is not likely to be movement to designated Foreign areas but rather observations that the IRS did not know what to do with and matches up well with a category called "Foreign - Other Flows."
 
 We also have ST `57` as a Foreign category that we need to inspect. Here is a chart with the column as the `cty_fips_o` based upon being in the Foreign (`57`) category across all years:
 
 ```{r Foreign}
-kable(xtabs(~year + cty_fips_o, filter(allinflow, st_fips_o == 57)))
+kable(xtabs(~year + cty_fips_o, filter(allinflow, st_fips_o == 57)), format.args = list(big.mark = ","))
 ```
 
 The foreign flows has a marked change of emphasis, from mainly classifying flows as 1 (Foreign - Overseas) before 1995 to 9 (Foreign - Other flows) for 1995 and beyond. All other maintain the same meaning and roughly the same proportions of classifications. A noted emphasis here with the `57` FIPS is that the summation of all of these equals the `98` + `000` classification (Total Migration - Foreign) that began in 1995.
 
 As for the `58` category of "Other Flows", these are defined as:
 
->At the county level, counties with less than 10 returns have been aggregated into various “Other Flows” categories. The Other Flows categories are Same State, Different State, Foreign, as well as by region (Northeast, Midwest, South, and West). See section E.6 for a list of the “Other Flows” categories and codes.
+>At the county level, counties with less than 10 returns have been aggregated into various "Other Flows" categories. The Other Flows categories are Same State, Different State, Foreign, as well as by region (Northeast, Midwest, South, and West). See section E.6 for a list of the "Other Flows" categories and codes.
 
 These serve the purpose of accounting up to the aggregate level. Without these miscellaneous values, then the summation across all counties for a given county may not add up to it's Total Migrants.
 
@@ -217,7 +218,7 @@ flow %>%
             agi    = sum(agi_in == agi_out, na.rm = T),
             match  = paste0(round(100*return / total, 1), "%"),
             bad    = total - return) %>%
-  kable()
+  kable(format.args = list(big.mark = ","))
 ```
 
 There appears to be some change in the IRS procedure of reporting flows in 2004 as before the average percentage matching is greater than 97\% but after this falls to below 95\%. But the high percentage of match is a positive sign here. Next, we need to consider why there are values which do not match. To do so, I check to see the values where `in` are suppressed but the `out` are not suppressed and call this variable `sup_in`. I perform the opposite and term that `sup_out` and then add the two together to get `sup_total`:
@@ -233,7 +234,7 @@ flow %>%
                      (!is.na(return_in)), na.rm = T),
             sup_total = sup_in + sup_out,
             bad_match = paste0(round(100*(sup_total) / total, 1), "%")) %>%
-  kable()
+  kable(format.args = list(big.mark = ","))
 ```
 
 As it turns out, the only values that do not match are due to a suppression on one side of the values but not the other. By combining the suppressed values of the inflows and outflows, we are able to get a fuller dataset for county-to-county level migration than if we only used one of these. The data are also symmetric in that the value of returns from County A to County B in the inflow and outflow are identical.

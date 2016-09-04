@@ -21,35 +21,35 @@ I have not yet parsed the data for 1990 and 1991 because the `.txt` format is no
 
 Table: Inflows
 
- year   ofips   dfips   return   exmpt       agi
------  ------  ------  -------  ------  --------
- 1994   63010   21137       71     164   -998560
- 1994   51059   51630       97     195   -995284
- 1994   48027   48201      263     546   -994258
- 1994       1   21137      475    1132   -990239
- 1994   53033   53011      519     976   -979406
- 1994       1   51630     1766    3635   -942328
- 1994   63050   48133     5268   12465   -881694
- 1993   63050    8039     3096    8077   -872193
- 1993   48453   48491     3667    7930   -870064
- 1994   63050   19095     5456   12831   -815647
+year   ofips   dfips    return    exmpt        agi
+-----  ------  ------  -------  -------  ---------
+1994   63010   21137        71      164   -998,560
+1994   51059   51630        97      195   -995,284
+1994   48027   48201       263      546   -994,258
+1994   00001   21137       475    1,132   -990,239
+1994   53033   53011       519      976   -979,406
+1994   00001   51630     1,766    3,635   -942,328
+1994   63050   48133     5,268   12,465   -881,694
+1993   63050   08039     3,096    8,077   -872,193
+1993   48453   48491     3,667    7,930   -870,064
+1994   63050   19095     5,456   12,831   -815,647
 
 
 
 Table: Outflows
 
- year   ofips   dfips   return   exmpt       agi
------  ------  ------  -------  ------  --------
- 2011    5099    5099     2775    6300   -439228
- 2013   32003   59007     1404    2809   -230491
- 2013    6023   59005      220     401   -210457
- 2013    6023   59000      938    1606   -183258
- 2013    6023   97003     1144    1909   -175555
- 2013    6023   97000     2568    4185   -128086
- 2013    6023   96000     2588    4217   -127418
- 2012   40047   40109      206     393   -102008
- 2011   16047   16047     4856   13134    -88240
- 2012   40047   97001      821    1634    -75206
+year   ofips   dfips    return    exmpt        agi
+-----  ------  ------  -------  -------  ---------
+1994   21001   63020        53      129   -999,190
+1994   21001   00001       206      425   -996,416
+1994   51059   51630        97      195   -995,284
+1994   48027   48201       263      546   -994,258
+1994   53033   53011       519      976   -979,406
+1994   48133   63050     5,268   12,465   -881,694
+1993   08039   63050     3,096    8,077   -872,193
+1993   48453   48491     3,667    7,930   -870,064
+1994   19095   63050     5,456   12,831   -815,647
+1994   13029   63050     5,660   14,858   -803,974
 
 *where* `return` *indicates aggregate tax returns between the origin county (ofips) and destination county (dfips) to proxy for number of households;* `exmpt` *refers to the number of exemptions filed which proxies population;* `agi` *is the sum of Adjusted Gross Income for all filers and is in units of \$1,000s.*
 
@@ -59,32 +59,32 @@ Table: Outflows
 The negative values undoubtedly are due to some sort of clerical or data conversion error. These may still be recoverable though seeing that summary statistics are still available. The first task is to try and detect these outliers through some sort of metric. A rudimentary way of detecting is by setting an arbitrary threshold of some unrealistic amount of average negative household agi, say -\$100,000 per household, and checking which values exceed this.
 
 
- year   Flagged   HH_mean   POP_mean   AGI_Mean
+year    Flagged   HH_mean   POP_mean   AGI_Mean
 -----  --------  --------  ---------  ---------
- 1992         2        30         59      -7636
- 1993         3      2258       5340    -581550
- 1994        10      2662       6422    -918995
- 1995         3        23         41      -6644
- 1996         2        12         24      -1492
- 1997        13        25         50      -5320
- 1998         4        44         76      -7994
- 1999         9        28         53      -5932
- 2000         7        33         59      -4410
- 2001         9        32         61      -5582
- 2002         4        15         34      -2694
- 2003         8        16         33      -3956
- 2004         9        20         36      -6176
- 2005         9        22         46      -3354
- 2006         4        17         26      -3246
- 2007        11        32         58     -14916
- 2008        16        23         44      -5701
- 2009        14        29         50      -7762
- 2010        10        23         43      -7631
- 2011        62        76        158     -16837
- 2012        55        47         92     -12927
- 2013        13       192        327     -76209
+1992          2        30         59     -7,636
+1993          3     2,258      5,340   -581,550
+1994         10     2,662      6,422   -918,995
+1995          3        23         41     -6,644
+1996          2        12         24     -1,492
+1997         13        25         50     -5,320
+1998          4        44         76     -7,994
+1999          9        28         53     -5,932
+2000          7        33         59     -4,410
+2001          9        32         61     -5,582
+2002          4        15         34     -2,694
+2003          8        16         33     -3,956
+2004          9        20         36     -6,176
+2005          9        22         46     -3,354
+2006          4        17         26     -3,246
+2007         11        32         58    -14,916
+2008         16        23         44     -5,701
+2009         14        29         50     -7,762
+2010         10        23         43     -7,631
+2011         62        76        158    -16,837
+2012         55        47         92    -12,927
+2013         13       192        327    -76,209
 
-The flagged values appear to be minimal with 277 total issues out of 2438004 observations. If using `agi`, then it is best to remove these flagged values. However, the `return` and `exmpt` do not appear to suffer. Using this data for population migration would be considered appropriate.
+The flagged values appear to be minimal with 277 total issues out of 2,438,004 observations. If using `agi`, then it is best to remove these flagged values. However, the `return` and `exmpt` do not appear to suffer. Using this data for population migration would be considered appropriate.
 
 Correcting the `agi` problem is left for future work, although there are a few notes I can give from analyzing these data:
 
@@ -100,30 +100,30 @@ Correcting for these implausible numbers should be possible, however the benefit
 The IRS data are suppressed if there are fewer than 10 filers that migrate across regions. Sometimes these data are omitted completely while other times they are designated as suppressed with a `-1` value, although the `-1` distinction did not occur until 2004. To get an idea of how suppressed the data are, here is a quick table of suppressed values across years plus a column at the far side indicating the number of links containing the minimum number of filers (10):
 
 
- year    total   Suppressed   Pct_Suppressed   Minimum   Pct_Minimum
------  -------  -----------  ---------------  --------  ------------
- 1992    97149           23             0.02      6931          7.13
- 1993    96746            0             0.00      6853          7.08
- 1994    98751            7             0.01      6915          7.00
- 1995   106981            6             0.01      6817          6.37
- 1996   108734            2             0.00      6878          6.33
- 1997   109319            1             0.00      6946          6.35
- 1998   110555            0             0.00      7177          6.49
- 1999   111201            0             0.00      7109          6.39
- 2000   111807            0             0.00      7017          6.28
- 2001   111581            0             0.00      7135          6.39
- 2002   109620            0             0.00      6918          6.31
- 2003   109820            0             0.00      6890          6.27
- 2004   114534         2278             1.99      7135          6.23
- 2005   118389         2276             1.92      7437          6.28
- 2006   116627         2288             1.96      7223          6.19
- 2007   118691         2256             1.90      7495          6.31
- 2008   116059         2331             2.01      7310          6.30
- 2009   110651         2549             2.30      6778          6.13
- 2010   113593         2525             2.22      7035          6.19
- 2011   130092         6425             4.94      7898          6.07
- 2012   131920         6362             4.82      8022          6.08
- 2013    85184         8930            10.48         0          0.00
+year      total   Suppressed   Pct_Suppressed   Minimum   Pct_Minimum
+-----  --------  -----------  ---------------  --------  ------------
+1992     97,149           23             0.02     6,931          7.13
+1993     96,746            0             0.00     6,853          7.08
+1994     98,751            7             0.01     6,915          7.00
+1995    106,981            6             0.01     6,817          6.37
+1996    108,734            2             0.00     6,878          6.33
+1997    109,319            1             0.00     6,946          6.35
+1998    110,555            0             0.00     7,177          6.49
+1999    111,201            0             0.00     7,109          6.39
+2000    111,807            0             0.00     7,017          6.28
+2001    111,581            0             0.00     7,135          6.39
+2002    109,620            0             0.00     6,918          6.31
+2003    109,820            0             0.00     6,890          6.27
+2004    114,534        2,278             1.99     7,135          6.23
+2005    118,389        2,276             1.92     7,437          6.28
+2006    116,627        2,288             1.96     7,223          6.19
+2007    118,691        2,256             1.90     7,495          6.31
+2008    116,059        2,331             2.01     7,310          6.30
+2009    110,651        2,549             2.30     6,778          6.13
+2010    113,593        2,525             2.22     7,035          6.19
+2011    130,092        6,425             4.94     7,898          6.07
+2012    131,920        6,362             4.82     8,022          6.08
+2013     85,184        8,930            10.48         0          0.00
 
 Suppression did not occur before 2004 although it is not clear what the reasoning behind this was. For data purposes, the best practice will be to change all values which are suppressed via the `-1` value to `NA` to delineate that we know there is a connection but do not know the specific value. This will also be helpful with the above agi problem of large, unrealistic negative values which should be coded as missing values.
 
@@ -188,30 +188,30 @@ A further note is that a county's non-migrant population is denoted by the FIPS 
 A first pass is to do a quick cross-tabulation of the special codes across years. This involves subsetting the data to use `st_fips_o` values which are not equal to the FIPS codes of US States. The following chart's columns indicate the `st_fips_o` across the rows of `year` where the value in each cell is the total count of that particular `st_fips_o`:
 
 
-           0     57     58      59      63     96     97     98
------  -----  -----  -----  ------  ------  -----  -----  -----
-1992    3145   1815      0       0   15606      0      0      0
-1993    3135   1605      0       0   15564      0      0      0
-1994    3137   1566      0       0   15672      0      0      0
-1995       0   1634   3088    9001       0   3180   9460   1089
-1996       0   1590   3075    9016       0   3180   9433   1055
-1997       0   1562   3077    8954       0   3183   9441   1049
-1998       0   1603   3076    8857       0   3186   9442   1057
-1999       0   1570   3077    8874       0   3182   9440   1055
-2000       0   1557   3077    8810       0   3182   9440   1043
-2001       0   1603   3084    8977       0   3183   9455   1063
-2002       0   1619   3076    8893       0   3183   9439   1073
-2003       0   1621   3072    9009       0   3178   9426   1073
-2004       0   1623   3073    9078       0   3193   9579   3193
-2005       0   1637   3076    9253       0   3193   9579   3193
-2006       0   1623   3075    9168       0   3193   9579   3193
-2007       0   1681   3086    9243       0   3194   9582   3194
-2008       0   1598   3082    9159       0   3195   9585   3195
-2009       0   1215   3078    8911       0   3197   9591   3197
-2010       0   1211   3091    9028       0   3197   9591   3197
-2011       0   3581   3110   15450       0   3193   9576   2514
-2012       0   3518   3107   15449       0   3193   9577   2475
-2013       0   2931   3117   15396       0   3192   9573   2386
+            0      57      58       59       63      96      97      98
+-----  ------  ------  ------  -------  -------  ------  ------  ------
+1992    3,145   1,815       0        0   15,606       0       0       0
+1993    3,135   1,605       0        0   15,564       0       0       0
+1994    3,137   1,566       0        0   15,672       0       0       0
+1995        0   1,634   3,088    9,001        0   3,180   9,460   1,089
+1996        0   1,590   3,075    9,016        0   3,180   9,433   1,055
+1997        0   1,562   3,077    8,954        0   3,183   9,441   1,049
+1998        0   1,603   3,076    8,857        0   3,186   9,442   1,057
+1999        0   1,570   3,077    8,874        0   3,182   9,440   1,055
+2000        0   1,557   3,077    8,810        0   3,182   9,440   1,043
+2001        0   1,603   3,084    8,977        0   3,183   9,455   1,063
+2002        0   1,619   3,076    8,893        0   3,183   9,439   1,073
+2003        0   1,621   3,072    9,009        0   3,178   9,426   1,073
+2004        0   1,623   3,073    9,078        0   3,193   9,579   3,193
+2005        0   1,637   3,076    9,253        0   3,193   9,579   3,193
+2006        0   1,623   3,075    9,168        0   3,193   9,579   3,193
+2007        0   1,681   3,086    9,243        0   3,194   9,582   3,194
+2008        0   1,598   3,082    9,159        0   3,195   9,585   3,195
+2009        0   1,215   3,078    8,911        0   3,197   9,591   3,197
+2010        0   1,211   3,091    9,028        0   3,197   9,591   3,197
+2011        0   3,581   3,110   15,450        0   3,193   9,576   2,514
+2012        0   3,518   3,107   15,449        0   3,193   9,577   2,475
+2013        0   2,931   3,117   15,396        0   3,192   9,573   2,386
 
 Excellent. We can see a clear demarcation where, before 1995, the special codes appear to be designated with `0` and `63`. Afterwards, it appears the special codes are as documented above except with three other clear changes in data patterns:
 
@@ -219,7 +219,7 @@ Excellent. We can see a clear demarcation where, before 1995, the special codes 
 
 * In 2010, total values for the `57` FIPS (Foreign flows) were 1211 but then increased to 3581 for 2011. I suspect the same implementation occurred as above: the IRS now replaces values with 0 (or suppressed) when before they may have simply omitted any value. This can be seen with the `98` FIPS (Total - Foreign) which changed from 3197 to 2514 across the same time.
 
-* In 2010, total values for the `59` FIPS (Other flows - across regions) were 9028 but then increased to 15450 for 2011. This represents a 171% increase in values. I suspect the same implementation occurred as above: the IRS now replaces values with 0 (or suppressed) when before they may have simply omitted any value.
+* In 2010, total values for the `59` FIPS (Other flows - across regions) were 9028 but then increased to 15450 for 2011. This represents a 0% increase in values. I suspect the same implementation occurred as above: the IRS now replaces values with 0 (or suppressed) when before they may have simply omitted any value.
 
 The necessary corrections for handling data before 1995 involve changing the special FIPS codes involving `0` (which represent total migrants) and `63` which are more complicated:
 
@@ -239,41 +239,41 @@ SAME REGION, DIFF. STATE       0      0      0      0      0     0      0   3402
 SAME STATE                  5090      0      0      0      0     0   3402      0      0     0      0
 SUPPRESS ALL FLOWS             0      0      0      0      0     0      0      0      0   800      0
 
-The biggest change is that we need to have consistent measures of Total-Migrants and Non-Migrants. I will choose to ignore all categories which can be calculated from other values (i.e. movement within state, movement within region, etc.). All ST `63` and CTY `50` values need to be converted to the respective home region. The ST `63` and CTY `15` is loosely classified as Foreign with around 200 observations each year with an average of 11.9787611 returns per observation. This indicates that the `63` "Foreign" is not likely to be movement to designated Foreign areas but rather observations that the IRS did not know what to do with and matches up well with a category called "Foreign - Other Flows."
+The biggest change is that we need to have consistent measures of Total-Migrants and Non-Migrants. I will choose to ignore all categories which can be calculated from other values (i.e. movement within state, movement within region, etc.). All ST `63` and CTY `50` values need to be converted to the respective home region. The ST `63` and CTY `15` is loosely classified as Foreign with around 200 observations each year with an average of 11.97876 returns per observation. This indicates that the `63` "Foreign" is not likely to be movement to designated Foreign areas but rather observations that the IRS did not know what to do with and matches up well with a category called "Foreign - Other Flows."
 
 We also have ST `57` as a Foreign category that we need to inspect. Here is a chart with the column as the `cty_fips_o` based upon being in the Foreign (`57`) category across all years:
 
 
-          1     3      5    7      9
------  ----  ----  -----  ---  -----
-1992    571    63   1150   31      0
-1993    594    52    922   37      0
-1994    809     0    757    0      0
-1995     23    68    510    3   1030
-1996     14    61    511    3   1001
-1997     19    63    483    1    996
-1998     20    72    506    3   1002
-1999     18    70    479    3   1000
-2000     20    73    473    3    988
-2001     25    85    484    3   1006
-2002     22    94    484    4   1015
-2003     13    94    492    2   1020
-2004     31    88    483    3   1018
-2005     18    96    503    3   1017
-2006     30   117    475    4    997
-2007     35   132    503    6   1005
-2008     31   129    464    6    968
-2009     17   111    323    5    759
-2010     22   123    319    4    743
-2011    390   146    622    9   2414
-2012    408   138    586    7   2379
-2013    237    39    329    2   2324
+          1     3       5    7       9
+-----  ----  ----  ------  ---  ------
+1992    571    63   1,150   31       0
+1993    594    52     922   37       0
+1994    809     0     757    0       0
+1995     23    68     510    3   1,030
+1996     14    61     511    3   1,001
+1997     19    63     483    1     996
+1998     20    72     506    3   1,002
+1999     18    70     479    3   1,000
+2000     20    73     473    3     988
+2001     25    85     484    3   1,006
+2002     22    94     484    4   1,015
+2003     13    94     492    2   1,020
+2004     31    88     483    3   1,018
+2005     18    96     503    3   1,017
+2006     30   117     475    4     997
+2007     35   132     503    6   1,005
+2008     31   129     464    6     968
+2009     17   111     323    5     759
+2010     22   123     319    4     743
+2011    390   146     622    9   2,414
+2012    408   138     586    7   2,379
+2013    237    39     329    2   2,324
 
 The foreign flows has a marked change of emphasis, from mainly classifying flows as 1 (Foreign - Overseas) before 1995 to 9 (Foreign - Other flows) for 1995 and beyond. All other maintain the same meaning and roughly the same proportions of classifications. A noted emphasis here with the `57` FIPS is that the summation of all of these equals the `98` + `000` classification (Total Migration - Foreign) that began in 1995.
 
 As for the `58` category of "Other Flows", these are defined as:
 
->At the county level, counties with less than 10 returns have been aggregated into various “Other Flows” categories. The Other Flows categories are Same State, Different State, Foreign, as well as by region (Northeast, Midwest, South, and West). See section E.6 for a list of the “Other Flows” categories and codes.
+>At the county level, counties with less than 10 returns have been aggregated into various "Other Flows" categories. The Other Flows categories are Same State, Different State, Foreign, as well as by region (Northeast, Midwest, South, and West). See section E.6 for a list of the "Other Flows" categories and codes.
 
 These serve the purpose of accounting up to the aggregate level. Without these miscellaneous values, then the summation across all counties for a given county may not add up to it's Total Migrants.
 
@@ -314,58 +314,58 @@ After combining the inflows and outflows files by year, origin FIPS code, and de
 
 
 
- year   total   return   exmpt     agi  match      bad
------  ------  -------  ------  ------  ------  ------
- 1992   79546        0       0       0  0%       79546
- 1993   79257        0       0       0  0%       79257
- 1994   81457        0       0       0  0%       81457
- 1995   80563        0       0       0  0%       80563
- 1996   82384        0       0       0  0%       82384
- 1997   83045        0       0       0  0%       83045
- 1998   84333        0       0       0  0%       84333
- 1999   85001        0       0       0  0%       85001
- 2000   85684        0       0       0  0%       85684
- 2001   85227        0       0       0  0%       85227
- 2002   83358        0       0       0  0%       83358
- 2003   83500     2838    2838    2838  3.4%     80662
- 2004   91142    84717   84717   84717  93%       6425
- 2005   94804    88377   88377   88377  93.2%     6427
- 2006   93134    86714   86714   86714  93.1%     6420
- 2007   95065    88623   88623   88623  93.2%     6442
- 2008   92595    86164   86164   86164  93.1%     6431
- 2009   87811    81372   81372   81372  92.7%     6439
- 2010   90621    84201   84201   84201  92.9%     6420
- 2011   97682    92668   92668   92664  94.9%     5014
- 2012   99520    94601   94601   94595  95.1%     4919
- 2013   53319    48589   48589   48585  91.1%     4730
+year     total   return    exmpt      agi  match      bad
+-----  -------  -------  -------  -------  ------  ------
+1992    80,596   78,258   78,258   78,258  97.1%    2,338
+1993    80,253   78,130   78,130   78,130  97.4%    2,123
+1994    82,355   80,318   80,318   80,318  97.5%    2,037
+1995    81,540   79,444   79,444   79,444  97.4%    2,096
+1996    83,395   81,319   81,319   81,319  97.5%    2,076
+1997    84,066   81,923   81,923   81,923  97.5%    2,143
+1998    85,304   83,262   83,262   83,262  97.6%    2,042
+1999    85,992   83,940   83,940   83,940  97.6%    2,052
+2000    86,693   84,615   84,615   84,615  97.6%    2,078
+2001    86,293   84,101   84,101   84,101  97.5%    2,192
+2002    84,411   82,186   82,186   82,186  97.4%    2,225
+2003    84,452   82,366   82,366   82,365  97.5%    2,086
+2004    91,142   84,717   84,717   84,717  93%      6,425
+2005    94,804   88,377   88,377   88,377  93.2%    6,427
+2006    93,134   86,714   86,714   86,714  93.1%    6,420
+2007    95,065   88,623   88,623   88,623  93.2%    6,442
+2008    92,595   86,164   86,164   86,164  93.1%    6,431
+2009    87,817   81,374   81,374   81,374  92.7%    6,443
+2010    90,627   84,203   84,203   84,203  92.9%    6,424
+2011    97,682   92,668   92,668   92,664  94.9%    5,014
+2012    99,520   94,601   94,601   94,595  95.1%    4,919
+2013    53,319   48,589   48,589   48,585  91.1%    4,730
 
 There appears to be some change in the IRS procedure of reporting flows in 2004 as before the average percentage matching is greater than 97\% but after this falls to below 95\%. But the high percentage of match is a positive sign here. Next, we need to consider why there are values which do not match. To do so, I check to see the values where `in` are suppressed but the `out` are not suppressed and call this variable `sup_in`. I perform the opposite and term that `sup_out` and then add the two together to get `sup_total`:
 
 
- year   total   sup_in   sup_out   sup_total  bad_match 
------  ------  -------  --------  ----------  ----------
- 1992   79546        0     79546       79546  100%      
- 1993   79257        0     79257       79257  100%      
- 1994   81457        0     81457       81457  100%      
- 1995   80563        0     80563       80563  100%      
- 1996   82384        0     82384       82384  100%      
- 1997   83045        0     83045       83045  100%      
- 1998   84333        0     84333       84333  100%      
- 1999   85001        0     85001       85001  100%      
- 2000   85684        0     85684       85684  100%      
- 2001   85227        0     85227       85227  100%      
- 2002   83358        0     83358       83358  100%      
- 2003   83500       37     80625       80662  96.6%     
- 2004   91142     3214      3227        6441  7.1%      
- 2005   94804     3214      3231        6445  6.8%      
- 2006   93134     3203      3229        6432  6.9%      
- 2007   95065     3217      3235        6452  6.8%      
- 2008   92595     3221      3238        6459  7%        
- 2009   87811     3218      3241        6459  7.4%      
- 2010   90621     3207      3223        6430  7.1%      
- 2011   97682     2551      2463        5014  5.1%      
- 2012   99520     2495      2424        4919  4.9%      
- 2013   53319     2395      2335        4730  8.9%      
+year     total   sup_in   sup_out   sup_total  bad_match 
+-----  -------  -------  --------  ----------  ----------
+1992    80,596    1,061     1,299       2,360  2.9%      
+1993    80,253      996     1,127       2,123  2.6%      
+1994    82,355      901     1,142       2,043  2.5%      
+1995    81,540      978     1,120       2,098  2.6%      
+1996    83,395    1,011     1,065       2,076  2.5%      
+1997    84,066    1,022     1,123       2,145  2.6%      
+1998    85,304      971     1,071       2,042  2.4%      
+1999    85,992      991     1,061       2,052  2.4%      
+2000    86,693    1,009     1,069       2,078  2.4%      
+2001    86,293    1,066     1,126       2,192  2.5%      
+2002    84,411    1,053     1,172       2,225  2.6%      
+2003    84,452      989     1,097       2,086  2.5%      
+2004    91,142    3,214     3,227       6,441  7.1%      
+2005    94,804    3,214     3,231       6,445  6.8%      
+2006    93,134    3,203     3,229       6,432  6.9%      
+2007    95,065    3,217     3,235       6,452  6.8%      
+2008    92,595    3,221     3,238       6,459  7%        
+2009    87,817    3,222     3,245       6,467  7.4%      
+2010    90,627    3,211     3,227       6,438  7.1%      
+2011    97,682    2,551     2,463       5,014  5.1%      
+2012    99,520    2,495     2,424       4,919  4.9%      
+2013    53,319    2,395     2,335       4,730  8.9%      
 
 As it turns out, the only values that do not match are due to a suppression on one side of the values but not the other. By combining the suppressed values of the inflows and outflows, we are able to get a fuller dataset for county-to-county level migration than if we only used one of these. The data are also symmetric in that the value of returns from County A to County B in the inflow and outflow are identical.
 

@@ -2,9 +2,7 @@
 title: "Migration Outliers"
 author: "Robert Dinterman"
 date: '`r Sys.Date()`'
-output:
-  md_document:
-    variant: markdown_github
+output: pdf_document
 ---
 
 ```{r, include=FALSE}
@@ -23,29 +21,38 @@ knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, dev='png')
 
 # Detecting Outliers for Net Migration
 
-The IRS data currently spans across `r head(unique(netmig$year), 1)` to `r tail(unique(netmig$year), 1)` for a total of `r nrow(netmig)` observations. There were substantial changes in data formatting and collecting across this time. As such, there are likely some data problems like clerical errors in reporting values or misclassifications in FIPS codes, etc. This is meant to be a quick and dirty way of detecting outliers in the data.
+The IRS data currently spans across `r head(unique(netmig$year), 1)` to `r tail(unique(netmig$year), 1)` for a total of `r format(nrow(netmig), big.mark = ",")` FIPS-years observations for net-migration. There were substantial changes in data formatting and collecting across this time. As such, there are likely some data problems like clerical errors in reporting values or misclassifications in FIPS codes, etc. This is meant to be a quick and dirty way of detecting outliers in the data.
 
 The process for detecting an outlier used here is to group the in-migration data for each county across the years (on average `r length(unique(netmig$year))` years for each) and calculate the following:
 
 $$ | X_i - median(X_{-i}) | > 7*sd(X_{-i}) $$
 
-Values for which the above is true are flagged as potential outliers as this indicates the observation is approximately a seven sigma event (p-value of approximately `r format(2*pnorm(-7), digits = 2)`) and in expectation we should see one in `r format(1/(nrow(netmig)*2*pnorm(-7)), digits = 2)` migration datasets if each county follows an independent normal distribution.
+Values for which the above is true are flagged as potential outliers as this indicates the observation is approximately a seven sigma event (p-value of approximately `r format(2*pnorm(-7), digits = 2)`) and in expectation we should see one in `r format(1/(nrow(netmig)*2*pnorm(-7)), digits = 2, big.mark = ",")` migration datasets if each county follows an independent normal distribution.
+
+There are three values of each variable (returns, exemptions, and AGI) for a county: in-flows, out-flows, and net-flows (which is the in-flows less the out-flows). For outlier detection, the in-flow, out-flow, and net-flow are all evaluated for whether or not there may be an error in the data that we have parsed. I also calculate a column titled `flag_factor` which is the flagged migration value for the county-year divided by the mean of the migration for that county across the entire sample (excluding the flagged year). The higher the value, the more unlikely the event.
 
 ## Exemptions (proxies population)
 
-```{r display_exmpt}
+```{r Exemptions}
 <<Exemptions>>
 ```
 
-This is only meant as a quick and dirty way of detecting outliers, but there are a total of `r length(unique(flagged_exmpt$fips))` flagged FIPS-year combinations. The column `flag_factor` is the flagged in-migration value for the county-year divided by the mean of in-migration for that county. The higher the value, the more unlikely the event.
+This is only meant as a quick and dirty way of detecting outliers, but there are a total of `r length(unique(flagged_exmpt$fips))` flagged FIPS-year combinations.
 
-Exemptions appear to not be that big of an issue and none of them appear to be obious mis-codings. I would be fine leaving these outliers in the dataset.
+Exemptions do not appear to be that big of an issue and none of them appear to be obvious mis-codings. There are `r nrow(temp)` flagged ovservations, so I would be fine leaving these outliers in the dataset.
+
+```{r display_exmpt}
+<<Exmpt Display>>
+```
 
 ## Adjusted Gross Income (AGI)
-Using the same methodology as above, we can also detect any anomalies in the net-migration data that deal with AGI. This ends up being more of an issue than exemptions:
 
-```{r display_agi}
+```{r AGI}
 <<AGI>>
 ```
 
-There are some implausible values here, especially when considering that the AGI variable is measured in terms of \$1,000s. 
+Using the same methodology as above, we can also detect any anomalies in the net-migration data that deal with AGI. This ends up being more of an issue than exemptions. There are some implausible values here, especially when considering that the AGI variable is measured in terms of \$1,000s. There are `r nrow(temp)` flagged observations, which is a bit too large and should be further investigated. Below are the flagged outliers:
+
+```{r display_agi}
+<<AGI Display>>
+```

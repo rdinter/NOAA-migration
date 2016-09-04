@@ -7,14 +7,19 @@ print(paste0("Started 1-Migration_Tidy at ", Sys.time()))
 library(dplyr)
 library(maptools)
 library(readr)
+library(stringr)
 library(tidyr)
 
 # Create a directory for the data
 localDir <- "1-Organization/Migration"
 if (!file.exists(localDir)) dir.create(localDir)
 
-allinflow  <- readRDS("0-Data/IRS/inflows9213.rds")
-alloutflow <- readRDS("0-Data/IRS/outflows9213.rds")
+allinflow  <- readRDS("0-Data/IRS/inflows9213.rds") %>% 
+  mutate(year = as.character(year), dfips = str_pad(dfips, 5, pad = "0"),
+         ofips = str_pad(ofips, 5, pad = "0"))
+alloutflow <- readRDS("0-Data/IRS/outflows9213.rds") %>% 
+  mutate(year = as.character(year), dfips = str_pad(dfips, 5, pad = "0"),
+         ofips = str_pad(ofips, 5, pad = "0"))
 allshp     <- readRDS("0-Data/Shapefiles/All_2010_county.rds")
 
 # ---- Clean --------------------------------------------------------------
@@ -46,20 +51,20 @@ allin  <- allinflow %>%
          cty_fips_o = replace(cty_fips_o,
                               st_fips_o == 63 & cty_fips_o %in% c(10, 20), 0),
          # Northeast
-         st_fips_o  = replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 11, 59),
-         cty_fips_o = replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 11, 1),
+         st_fips_o  =replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 11, 59),
+         cty_fips_o =replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 11, 1),
          # Midwest
-         st_fips_o  = replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 12, 59),
-         cty_fips_o = replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 12, 3),
+         st_fips_o  =replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 12, 59),
+         cty_fips_o =replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 12, 3),
          # South
-         st_fips_o  = replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 13, 59),
-         cty_fips_o = replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 13, 5),
+         st_fips_o  =replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 13, 59),
+         cty_fips_o =replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 13, 5),
          # West
-         st_fips_o  = replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 14, 59),
-         cty_fips_o = replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 14, 7),
+         st_fips_o  =replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 14, 59),
+         cty_fips_o =replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 14, 7),
          # Foreign Other
-         st_fips_o  = replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 15, 57),
-         cty_fips_o = replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 15, 9)
+         st_fips_o  =replace(st_fips_o,st_fips_o == 63 & cty_fips_o == 15, 57),
+         cty_fips_o =replace(cty_fips_o,st_fips_o == 63 & cty_fips_o == 15, 9)
          )
 
 # Next, need to add in summed foreign values
@@ -94,8 +99,8 @@ temp$st_fips_o  <- 97
 temp$cty_fips_o <- 0
 allin           <- bind_rows(allin, temp)
 
-allin$ofips <- 1000*allin$st_fips_o + allin$cty_fips_o
-allin$dfips <- 1000*allin$st_fips_d + allin$cty_fips_d
+allin$ofips <- str_pad(1000*allin$st_fips_o + allin$cty_fips_o, 5, pad = "0")
+allin$dfips <- str_pad(1000*allin$st_fips_d + allin$cty_fips_d, 5, pad = "0")
 
 # OUT DATA
 nonmig <- alloutflow$st_fips_d == 63 & alloutflow$cty_fips_d == 50
@@ -124,16 +129,16 @@ allout <- alloutflow %>%
                               st_fips_d == 63 & cty_fips_d %in% c(10, 20), 0),
          # Northeast
          st_fips_d = replace(st_fips_d,st_fips_d == 63 & cty_fips_d == 11, 59),
-         cty_fips_d = replace(cty_fips_d,st_fips_d == 63 & cty_fips_d == 11, 1),
+         cty_fips_d =replace(cty_fips_d,st_fips_d == 63 & cty_fips_d == 11, 1),
          # Midwest
          st_fips_d = replace(st_fips_d,st_fips_d == 63 & cty_fips_d == 12, 59),
-         cty_fips_d = replace(cty_fips_d,st_fips_d == 63 & cty_fips_d == 12, 3),
+         cty_fips_d =replace(cty_fips_d,st_fips_d == 63 & cty_fips_d == 12, 3),
          # South
          st_fips_d = replace(st_fips_d,st_fips_d == 63 & cty_fips_d == 13, 59),
-         cty_fips_d = replace(cty_fips_d,st_fips_d == 63 & cty_fips_d == 13, 5),
+         cty_fips_d =replace(cty_fips_d,st_fips_d == 63 & cty_fips_d == 13, 5),
          # West
          st_fips_d = replace(st_fips_d,st_fips_d == 63 & cty_fips_d == 14, 59),
-         cty_fips_d = replace(cty_fips_d,st_fips_d == 63 & cty_fips_d == 14, 7),
+         cty_fips_d =replace(cty_fips_d,st_fips_d == 63 & cty_fips_d == 14, 7),
          # Foreign Other
          st_fips_d = replace(st_fips_d,st_fips_d == 63 & cty_fips_d == 15, 57),
          cty_fips_d = replace(cty_fips_d,st_fips_d == 63 & cty_fips_d == 15, 9)
@@ -175,8 +180,8 @@ if (nrow(temp) > 0) {
   allout          <- bind_rows(allout, temp)
 }
 
-allout$ofips <- 1000*allout$st_fips_o + allout$cty_fips_o
-allout$dfips <- 1000*allout$st_fips_d + allout$cty_fips_d
+allout$ofips <- str_pad(1000*allout$st_fips_o + allout$cty_fips_o, 5, pad="0")
+allout$dfips <- str_pad(1000*allout$st_fips_d + allout$cty_fips_d, 5, pad="0")
 
 rm(allinflow, alloutflow)
 
@@ -247,11 +252,13 @@ allout$agi    <- ifelse(is.na(allout$return), NA, allout$agi)
 # Two groups: one with only 96000 and the other with cty-cty (incl. 98000)
 
 allintotal  <- allin %>% 
-  filter(ofips == 96000, dfips < 57000, dfips %% 1000 != 0) %>% 
+  filter(as.numeric(ofips) == 96000, as.numeric(dfips) < 57000,
+         as.numeric(dfips) %% 1000 != 0) %>% 
   rename(fips = dfips, return_in = return, exmpt_in = exmpt, agi_in = agi)
 
 allouttotal <- allout %>% 
-  filter(dfips == 96000, ofips < 57000, ofips %% 1000 != 0) %>% 
+  filter(as.numeric(dfips) == 96000, as.numeric(ofips) < 57000,
+         as.numeric(ofips) %% 1000 != 0) %>% 
   rename(fips = ofips, return_out = return, exmpt_out = exmpt, agi_out = agi)
 
 aggflow <- full_join(allintotal, allouttotal)
@@ -269,16 +276,20 @@ rm(allintotal, allouttotal)
 # ---- cty2cty ------------------------------------------------------------
 
 incty <- allin %>% 
-  filter(dfips %% 1000 != 0|dfips == 98000, dfips < 56999|dfips == 98000,
-         ofips %% 1000 != 0|ofips == 98000, ofips < 56999|ofips == 98000) %>% 
+  filter(as.numeric(dfips) %% 1000 != 0|as.numeric(dfips) == 98000,
+         as.numeric(dfips) < 56999|as.numeric(dfips) == 98000,
+         as.numeric(ofips) %% 1000 != 0|as.numeric(ofips) == 98000,
+         as.numeric(ofips) < 56999|as.numeric(ofips) == 98000) %>% 
   mutate(return = replace(return, is.na(return), -1),
          exmpt  = replace(exmpt, is.na(exmpt), -1),
          agi   = replace(agi, is.na(agi), -1)) %>% 
   rename(return_in = return, exmpt_in = exmpt, agi_in = agi)
 
 outcty <- allout %>% 
-  filter(dfips %% 1000 != 0|dfips == 98000, dfips < 56999|dfips == 98000,
-         ofips %% 1000 != 0|ofips == 98000, ofips < 56999|ofips == 98000) %>% 
+  filter(as.numeric(dfips) %% 1000 != 0|as.numeric(dfips) == 98000,
+         as.numeric(dfips) < 56999|as.numeric(dfips) == 98000,
+         as.numeric(ofips) %% 1000 != 0|as.numeric(ofips) == 98000,
+         as.numeric(ofips) < 56999|as.numeric(ofips) == 98000) %>% 
   mutate(return = replace(return, is.na(return), -1),
          exmpt  = replace(exmpt, is.na(exmpt), -1),
          agi   = replace(agi, is.na(agi), -1)) %>% 
@@ -296,7 +307,8 @@ flow %>%
             exmpt  = sum(exmpt_in == exmpt_out, na.rm = T),
             agi    = sum(agi_in == agi_out, na.rm = T),
             Match  = paste0(round(100*return / Total, 1), "%")) %>%
-  knitr::kable()
+  knitr::kable(digits = 0, format.args = list(big.mark = ","),
+               caption = "Flagged Matches")
 
 flow %>% 
   group_by(year) %>% 
@@ -307,7 +319,8 @@ flow %>%
                            (!is.na(return_in)), na.rm = T),
             BadMatch = paste0(round(100*(SupIN + SupOUT) / Total, 1),
                               "%")) %>%
-  knitr::kable()
+  knitr::kable(digits = 0, format.args = list(big.mark = ","),
+               caption = "Flagged Suppression Issues")
 
 # ----
 
@@ -324,19 +337,20 @@ ctycty <- flow %>%
          agi    = replace(agi, temp, NA))
 
 allshp <- subset(allshp, FIPS < 57000)
+allshp$FIPS <- str_pad(allshp$FIPS, 5, pad = "0")
 
 check <- ctycty$dfips %in% allshp$FIPS
 unique(ctycty$dfips[!check])
-# [1]  2195  2198  2230  2105  2275 98000
+# [1] "02231" "02105" "02230" "02195" "02198" "02275" "98000"
 
 check <- allshp$FIPS %in% ctycty$dfips
 unique(allshp$FIPS[!check])
-# [1]  2000  2201  2232  2280 17000 18000 23000 26000 27000 36000 39000
-# [12] 42000 53000 55000
+# [1] "02000" "17000" "18000" "23000" "26000" "27000" "36000" "39000"
+# [9] "42000" "53000" "55000"
 
 coords        <- data.frame(coordinates(allshp))
 names(coords) <- c("long", "lat")
-coords$fips   <- as.numeric(row.names(coords))
+coords$fips   <- row.names(coords)
 
 ctycty <- ctycty %>% 
   left_join(coords, by = c("ofips" = "fips")) %>% 
