@@ -43,8 +43,8 @@ Talk will cover:
 ## Growing Risks of Natural Disasters
 
 * Climate change implies more frequent and more damaging disasters [@van2006impacts]
-* Disasters do not discriminate with respect to wealth, but institutions and wealth can helps mitigate deaths [@kahn2005death]
-* Growing social costs within the United States
+* Disasters do not discriminate with respect to wealth, but institutions and wealth helps mitigate deaths [@kahn2005death]
+* Growing fiscal and social costs within the United States
     * More frequent FEMA disaster declarations
     * Higher federal costs for declared disasters
     * Non-disaster government transfers increases may understate true cost [@deryugina2016fiscal]
@@ -82,7 +82,7 @@ ggplot(fema, aes(date, declarations)) +
 * If disasters induce shorter moves, migration may not lower future disaster costs
 * **Shorter moves may not lower costs**
     * **Key question**: where do disaster migrants locate to?
-    * And does migration mitigate impacts of disasters or simply rearranges the deck chairs?
+    * And does migration mitigate impacts of disasters or simply rearrange the deck chairs?
 
 
 # Hurricane Katrina
@@ -104,6 +104,7 @@ ggplot(fema, aes(date, declarations)) +
 
 * Data from IRS county-to-county migration used, tracks filed tax returns at FIPS code from year to year
 * Typical outmigration from New Orleans area from 2000 to 2010 excluding 2005 averaged `r prettyNum(round(sum(hurricane$exmpt_katrina[hurricane$year > 1999 & hurricane$year < 2011 & hurricane$year != 2005], na.rm = T)/10), big.mark = ",", scientific = FALSE)` outmigrants per year (average population of `r prettyNum(round(sum(hurricane$tot_pop[hurricane$year > 1999 & hurricane$year < 2011 & hurricane$year != 2005 & (hurricane$fips %in%katrina)], na.rm = T)/10), big.mark = ",", scientific = FALSE)`)
+    * Parishes - Jefferson, Lafourche, Orleans, Plaquemines, St. Bernard, St. Charles, St. John the Baptist, and St. Tammany, and Terrebonne
     * Fairly stable spatial distribution - nearby and large metro regions
 * In 2005, total of `r prettyNum(round(sum(hurricane$exmpt_katrina[hurricane$year == 2005], na.rm = T)), big.mark = ",", scientific = FALSE)` outmigrants
     * Similar spatial pattern exists plus evident overflow
@@ -136,7 +137,6 @@ Princeton Astronomer James Q. Stewart observed the composition of students in hi
 
 $$ M_{ij} = k \frac{P_{i}^{\beta_1} P_{j}^{\beta_2}}{D_{ij}^{\gamma}} $$
 
-Typical estimation involves taking logs of both sides to identify parameters.
 
 ## Modified
 
