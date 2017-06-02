@@ -4,7 +4,8 @@ title: What influences the destination of disaster migrants? \n Evidence from Hu
 author: "Robert Dinterman (Ohio State), Jonathan Eyer (USC), Adam Rose (USC), and Noah Miller (USC)"
 date: "June 2, 2017"
 output:
-  ioslides_presentation: default
+  ioslides_presentation: 
+    widescreen: true
   beamer_presentation:
     includes:
       in_header: header.tex

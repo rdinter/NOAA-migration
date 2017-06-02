@@ -9,7 +9,7 @@ library(multiwayvcov)
 library(plm)
 library(tidyverse)
 inv_hypersine <- function(x){
-  log(x+(x+1)^0.5)
+  log(x+(x^2+1)^0.5)
 }
 star_pval <- function(p.value) {
   unclass(symnum(p.value, corr = FALSE, na = FALSE,
