@@ -1,0 +1,432 @@
+disaster,state,county,year,amount,structure,type,amount_sum
+1261,Alabama,NA,1998,350500,Single Family,Owner Occupied - Principal Residence,350500
+1264,Louisiana,NA,1998,252000,Single Family,Owner Occupied - Principal Residence,1142737
+1260,Tennessee,NA,1998,48000,Non-residential - Private,Not Applicable,727577
+1239,Texas,NA,1998,32163,Single Family,Owner Occupied - Principal Residence,5306441
+1257,Texas,Travis,1998,15650,Manufactured Home,Owner Occupied - Secondary Residence,15650
+1268,Wyoming,NA,1998,110000,Manufactured Home,Owner Occupied - Principal Residence,110000
+1276,Colorado,NA,1999,285111,Single Family,Owner Occupied - Principal Residence,1858165
+1271,Georgia,NA,1999,67650,Single Family,Rental,467550
+1278,Illinois,NA,1999,32017,Single Family,Owner Occupied - Secondary Residence,125229
+1282,Iowa,NA,1999,10461,Single Family,Owner Occupied - Principal Residence,5505124
+1269,Louisiana,Bossier,1999,108750,Single Family,Owner Occupied - Principal Residence,398425
+1269,Louisiana,Caddo,1999,138603,Single Family,Owner Occupied - Principal Residence,138603
+1308,Maine,NA,1999,133000,Single Family,Owner Occupied - Principal Residence,133000
+1303,Maryland,NA,1999,335000,Single Family,Owner Occupied - Principal Residence,1288621
+1283,Minnesota,NA,1999,56000,Single Family,Owner Occupied - Principal Residence,56000
+1270,Missouri,NA,1999,1000,Single Family,Owner Occupied - Principal Residence,257821
+1286,Nebraska,NA,1999,170040,Single Family,Owner Occupied - Principal Residence,364594
+1295,New Jersey,NA,1999,88518,Single Family,NA,9417679
+1296,New York,NA,1999,10100,Single Family,Owner Occupied - Principal Residence,1980709
+1292,North Carolina,NA,1999,53107,Single Family,Owner Occupied - Secondary Residence,63274828
+1279,North Dakota,NA,1999,38808,Manufactured Home,Not Applicable,4666813
+1294,Pennsylvania,NA,1999,46225,Non-residential - Private,Not Applicable,4324880
+1299,South Carolina,NA,1999,1193302,Single Family,Owner Occupied - Principal Residence,2052405
+1262,Tennessee,NA,1999,773000,Single Family,Owner Occupied - Principal Residence,2677772
+1287,Texas,NA,1999,83653,Single Family,Owner Occupied - Principal Residence,3007003
+1293,Virginia,NA,1999,234858,Single Family,Owner Occupied - Principal Residence,3015810
+1317,Alabama,NA,2000,62540,Single Family,Owner Occupied - Principal Residence,591051
+1347,Arizona,NA,2000,114209,Vacant Land,Not Applicable,688986
+1354,Arkansas,NA,2000,82422,Single Family,Owner Occupied - Principal Residence,274109
+1311,Georgia,NA,2000,365900,Single Family,Owner Occupied - Principal Residence,5751030
+1327,Kansas,NA,2000,69959,Single Family,Owner Occupied - Principal Residence,338373
+1320,Kentucky,NA,2000,29600,Manufactured Home,Owner Occupied - Principal Residence,390700
+1314,Louisiana,Ouachita,2000,100000,Single Family,Owner Occupied - Principal Residence,100000
+1326,Maine,NA,2000,146700,Non-residential - Public,Not Applicable,146700
+1324,Maryland,NA,2000,35750,Single Family,Owner Occupied - Principal Residence,654835
+1346,Michigan,NA,2000,281866,Manufactured Home,NA,1886710
+1333,Minnesota,NA,2000,19600,Non-residential - Private,Other (Specify in Comments),1646635
+1328,Missouri,NA,2000,48015,Single Family,Owner Occupied - Principal Residence,1091464
+1337,New Jersey,NA,2000,513137,Single Family,NA,671050
+1312,North Carolina,NA,2000,27333,Single Family,Owner Occupied - Principal Residence,1918165
+1334,North Dakota,NA,2000,242259,Single Family,Owner Occupied - Principal Residence,508293
+1339,Ohio,NA,2000,3500,Single Family,Owner Occupied - Principal Residence,1323609
+1355,Oklahoma,NA,2000,126316,Non-residential - Private,Not Applicable,8759672
+1355,Oklahoma,Wagoner,2000,60900,Single Family,Owner Occupied - Principal Residence,749504
+1323,Texas,NA,2000,49784,Single Family,Owner Occupied - Secondary Residence,1884120
+1336,Vermont,NA,2000,70209,Single Family,Owner Occupied - Principal Residence,70209
+1318,Virginia,NA,2000,47000,Non-residential - Private,Not Applicable,417000
+1319,West Virginia,NA,2000,1,Single Family,Owner Occupied - Principal Residence,1882447
+1332,Wisconsin,NA,2000,75000,Single Family,Rental,2660733
+1332,Wisconsin,Sauk,2000,136253,Non-residential - Private,Not Applicable,136253
+1362,Alabama,NA,2001,117500,Single Family,Owner Occupied - Principal Residence,117500
+1381,Florida,NA,2001,100753,Single Family,Owner Occupied - Principal Residence,2098650
+1368,Illinois,NA,2001,125000,Single Family,Owner Occupied - Principal Residence,527000
+1367,Iowa,NA,2001,28820,Single Family,Owner Occupied - Principal Residence,1755984
+1366,Kansas,NA,2001,13610,Manufactured Home,Owner Occupied - Principal Residence,174738
+1388,Kentucky,NA,2001,1561221,Single Family,Owner Occupied - Principal Residence,2137221
+1380,Louisiana,Ascension,2001,589688,Single Family,Owner Occupied - Principal Residence,971588
+1380,Louisiana,Assumption,2001,79806,Single Family,Owner Occupied - Principal Residence,79806
+1380,Louisiana,Lafayette,2001,79050,Single Family,Owner Occupied - Principal Residence,246350
+1380,Louisiana,Lafourche,2001,678153,Single Family,Owner Occupied - Principal Residence,678153
+1380,Louisiana,Livingston,2001,133543,Single Family,Not Applicable,415667
+1380,Louisiana,St. Tammany,2001,103560,Single Family,Owner Occupied - Principal Residence,1070626
+1380,Louisiana,Terrebonne,2001,80442,Single Family,Owner Occupied - Principal Residence,80442
+1380,Louisiana,Vermilion,2001,75000,Single Family,Owner Occupied - Principal Residence,192000
+1370,Minnesota,NA,2001,76000,Single Family,Owner Occupied - Principal Residence,3443754
+1360,Mississippi,NA,2001,219500,Single Family,Owner Occupied - Principal Residence,1580256
+1404,New York,NA,2001,120113,Single Family,NA,143627
+1376,North Dakota,NA,2001,13512,Single Family,Owner Occupied - Principal Residence,579648
+1390,Ohio,NA,2001,87200,Single Family,Owner Occupied - Principal Residence,1124769
+1384,Oklahoma,NA,2001,50000,Single Family,Owner Occupied - Principal Residence,50000
+1383,Pennsylvania,NA,2001,134000,Single Family,Owner Occupied - Principal Residence,306868
+1387,Tennessee,NA,2001,136000,Single Family,Owner Occupied - Principal Residence,644956
+1379,Texas,Brazoria,2001,7774453,Single Family,Owner Occupied - Principal Residence,9400846
+1379,Texas,Galveston,2001,15505887,Single Family,Owner Occupied - Principal Residence,16130231
+1379,Texas,Harris,2001,267792,Single Family,Owner Occupied - Principal Residence,53865272
+1379,Texas,Liberty,2001,330750,Single Family,Owner Occupied - Principal Residence,2070272
+1379,Texas,NA,2001,58984,Single Family,Owner Occupied - Principal Residence,269044
+1386,Virginia,NA,2001,14280,Manufactured Home,Owner Occupied - Principal Residence,524520
+1361,Washington,NA,2001,1417037,Single Family,Owner Occupied - Principal Residence,3100057
+1378,West Virginia,NA,2001,21150,Single Family,Rental,8069970
+1369,Wisconsin,Douglas,2001,72000,Single Family,Owner Occupied - Principal Residence,72000
+1369,Wisconsin,NA,2001,115695,Single Family,Owner Occupied - Principal Residence,2025920
+1438,Alabama,NA,2002,53520,Non-residential - Private,Other (Specify in Comments),476520
+1440,Alaska,NA,2002,24000,Manufactured Home,Owner Occupied - Principal Residence,328566
+1422,Arizona,NA,2002,171126,Manufactured Home,Owner Occupied - Principal Residence,266767
+1443,Georgia,NA,2002,40000,Single Family,Owner Occupied - Principal Residence,40000
+1426,Guam,NA,2002,16920,Non-residential - Public,Not Applicable,210373
+1416,Illinois,NA,2002,101500,Single Family,Owner Occupied - Secondary Residence,1699936
+1433,Indiana,NA,2002,505656,Single Family,Owner Occupied - Principal Residence,1303829
+1420,Iowa,NA,2002,104171,Single Family,Owner Occupied - Principal Residence,1092842
+1402,Kansas,NA,2002,500000,Single Family,Owner Occupied - Principal Residence,535000
+1407,Kentucky,NA,2002,76500,Single Family,Owner Occupied - Secondary Residence,1908000
+1437,Louisiana,Calcasieu,2002,79613,Single Family,Owner Occupied - Principal Residence,261308
+1437,Louisiana,Livingston,2002,175000,Single Family,Owner Occupied - Principal Residence,477479
+1437,Louisiana,Terrebonne,2002,71985,Single Family,Owner Occupied - Principal Residence,171985
+1468,Maine,NA,2002,82139,Manufactured Home,Owner Occupied - Principal Residence,187139
+1409,Maryland,NA,2002,130000,Manufactured Home,Owner Occupied - Principal Residence,309400
+1419,Minnesota,NA,2002,65450,Single Family,Owner Occupied - Principal Residence,363561
+1443,Mississippi,NA,2002,84704,Vacant Land,Other (Specify in Comments),2781095
+1403,Missouri,Madison,2002,52631,Single Family,Rental,330302
+1403,Missouri,NA,2002,67600,Manufactured Home,Owner Occupied - Principal Residence,9115552
+1448,North Carolina,NA,2002,215528,Single Family,Owner Occupied - Principal Residence,879395
+1444,Ohio,NA,2002,19852,Single Family,Owner Occupied - Principal Residence,19852
+1401,Oklahoma,NA,2002,120500,Single Family,Owner Occupied - Principal Residence,1815489
+1441,Tennessee,NA,2002,126000,Single Family,Owner Occupied - Principal Residence,1345800
+1425,Texas,Bexar,2002,32640,Manufactured Home,Owner Occupied - Principal Residence,395943
+1439,Texas,Harris,2002,107969,Single Family,Owner Occupied - Principal Residence,5113192
+1425,Texas,NA,2002,73155,Single Family,Owner Occupied - Principal Residence,2515407
+1428,Vermont,NA,2002,37058,Single Family,Owner Occupied - Principal Residence,37058
+1406,Virginia,NA,2002,83000,Single Family,Owner Occupied - Principal Residence,1359181
+1410,West Virginia,NA,2002,109040,Single Family,Owner Occupied - Principal Residence,2463542
+1429,Wisconsin,Clark,2002,12000,Single Family,Owner Occupied - Principal Residence,12000
+1432,Wisconsin,Douglas,2002,90671,Single Family,Owner Occupied - Principal Residence,90671
+1432,Wisconsin,NA,2002,85857,Single Family,Owner Occupied - Principal Residence,551457
+1466,Alabama,NA,2003,63000,Single Family,Owner Occupied - Principal Residence,2625045
+1495,Delaware,NA,2003,292778,Single Family,Owner Occupied - Principal Residence,766028
+1460,Florida,NA,2003,92348,Single Family,Owner Occupied - Principal Residence,147982
+1469,Illinois,NA,2003,34453,Single Family,Owner Occupied - Principal Residence,60153
+1476,Indiana,NA,2003,105500,Single Family,Owner Occupied - Principal Residence,2383290
+1471,Kentucky,NA,2003,17500,Manufactured Home,Owner Occupied - Principal Residence,1784372
+1492,Maryland,NA,2003,252000,Single Family,Owner Occupied - Principal Residence,578479
+1459,Mississippi,NA,2003,35000,Single Family,Rental,685000
+1463,Missouri,NA,2003,979942,Single Family,Owner Occupied - Principal Residence,1963500
+1467,New York,Wyoming,2003,81000,Non-residential - Private,Other (Specify in Comments),81000
+1490,North Carolina,NA,2003,118644,Single Family,Rental,2619188
+1484,Ohio,NA,2003,317500,Single Family,Owner Occupied - Principal Residence,4075423
+1485,Pennsylvania,NA,2003,39726,Single Family,Owner Occupied - Principal Residence,2082786
+1485,Pennsylvania,Wyoming,2003,165000,Single Family,Owner Occupied - Principal Residence,165000
+1501,Puerto Rico,NA,2003,83700,Single Family,Owner Occupied - Principal Residence,1641875
+1482,Tennessee,NA,2003,96840,Vacant Land,Not Applicable,5284295
+1479,Texas,NA,2003,76164,Single Family,NA,76164
+1491,Virginia,NA,2003,55192,Single Family,Owner Occupied - Principal Residence,5464032
+1499,Washington,NA,2003,389755,Single Family,Owner Occupied - Principal Residence,389755
+1474,West Virginia,NA,2003,98000,Single Family,Owner Occupied - Principal Residence,3928870
+1549,Alabama,NA,2004,187176,Non-residential - Public,Other (Specify in Comments),6871262
+1571,Alaska,NA,2004,8500,Vacant Land,Other (Specify in Comments),34500
+1561,Florida,NA,2004,49987,Single Family,Owner Occupied - Principal Residence,5665148
+1560,Georgia,NA,2004,240590,Single Family,Rental,954548
+1513,Illinois,NA,2004,147000,Single Family,Owner Occupied - Principal Residence,147000
+1520,Indiana,NA,2004,81347,Single Family,Owner Occupied - Principal Residence,524199
+1518,Iowa,NA,2004,192954,Single Family,Owner Occupied - Principal Residence,1689616
+1535,Kansas,NA,2004,129813,Single Family,Owner Occupied - Principal Residence,227699
+1523,Kentucky,NA,2004,145000,Single Family,Owner Occupied - Principal Residence,539400
+1527,Michigan,NA,2004,279100,Single Family,Owner Occupied - Principal Residence,567439
+1550,Mississippi,NA,2004,68500,Single Family,Owner Occupied - Principal Residence,1233936
+1517,Nebraska,NA,2004,84715,Non-residential - Private,Other (Specify in Comments),356239
+1530,New Jersey,Warren,2004,350411,Single Family,Owner Occupied - Principal Residence,916339
+1546,North Carolina,NA,2004,292500,Single Family,Owner Occupied - Principal Residence,2849836
+1515,North Dakota,NA,2004,36667,Single Family,Rental,613987
+1556,Ohio,NA,2004,57653,Single Family,Rental,10152342
+1557,Pennsylvania,NA,2004,87979,Manufactured Home,Rental,10767660
+1557,Pennsylvania,Wyoming,2004,140952,Single Family,Owner Occupied - Principal Residence,211428
+1552,Puerto Rico,NA,2004,762000,Single Family,Owner Occupied - Principal Residence,5809803
+1568,Tennessee,NA,2004,115000,Non-residential - Private,Not Applicable,258000
+1570,Virginia,NA,2004,70520,Single Family,Owner Occupied - Principal Residence,1283580
+1558,West Virginia,NA,2004,20100,Single Family,Owner Occupied - Principal Residence,4426263
+1526,Wisconsin,NA,2004,67000,Manufactured Home,Owner Occupied - Principal Residence,1356200
+1605,Alabama,NA,2005,16800,Single Family,Owner Occupied - Principal Residence,308547
+1573,Indiana,Adams,2005,139500,2-4 Family,Rental,2361795
+1573,Indiana,NA,2005,69900,Single Family,Owner Occupied - Principal Residence,204982
+1626,Kansas,NA,2005,78185,Single Family,Owner Occupied - Secondary Residence,498829
+1617,Kentucky,NA,2005,38780,Single Family,Owner Occupied - Secondary Residence,38780
+1603,Louisiana,Bossier,2005,426000,Single Family,Owner Occupied - Principal Residence,426000
+1603,Louisiana,Caddo,2005,240000,Single Family,Owner Occupied - Principal Residence,480000
+1607,Louisiana,NA,2005,96773,Single Family,Owner Occupied - Principal Residence,435401
+1607,Louisiana,St. Mary,2005,80000,Single Family,Owner Occupied - Principal Residence,80000
+1622,Minnesota,NA,2005,74700,Single Family,Owner Occupied - Principal Residence,335700
+1604,Mississippi,Hancock,2005,327000,Single Family,Owner Occupied - Principal Residence,414000
+1604,Mississippi,NA,2005,110500,Manufactured Home,Owner Occupied - Principal Residence,614491
+1604,Mississippi,Warren,2005,57397,Single Family,Owner Occupied - Principal Residence,236737
+1589,New York,Broome,2005,34800,Single Family,Rental,1649010
+1589,New York,Schoharie,2005,38100,Single Family,Owner Occupied - Principal Residence,93792
+1608,North Carolina,NA,2005,87782,Single Family,Rental,231037
+1616,North Dakota,NA,2005,118000,Single Family,Owner Occupied - Principal Residence,444105
+1623,Oklahoma,NA,2005,355000,Single Family,Owner Occupied - Principal Residence,1220000
+1632,Oregon,NA,2005,348075,Single Family,Owner Occupied - Principal Residence,727616
+1587,Pennsylvania,NA,2005,62000,Single Family,Rental,1133900
+1606,Texas,Angelina,2005,981000,Single Family,Owner Occupied - Principal Residence,1061500
+1606,Texas,Harris,2005,100000,Single Family,Owner Occupied - Principal Residence,100000
+1606,Texas,NA,2005,44858,Single Family,Owner Occupied - Secondary Residence,134332
+1606,Texas,Orange,2005,9999,Single Family,NA,9999
+1606,Texas,Travis,2005,105021,Single Family,NA,7556555
+1574,West Virginia,NA,2005,78500,Vacant Land,Not Applicable,636500
+1681,Illinois,Winnebago,2006,1645000,Single Family,Owner Occupied - Principal Residence,3175600
+1662,Indiana,Madison,2006,35883,Single Family,Rental,371810
+1662,Indiana,NA,2006,141000,Non-residential - Private,Other (Specify in Comments),417150
+1675,Kansas,Allen,2006,104866,Single Family,Owner Occupied - Principal Residence,1271435
+1675,Kansas,Cherokee,2006,51236,Single Family,Owner Occupied - Secondary Residence,169269
+1675,Kansas,Montgomery,2006,10293,Vacant Land,Not Applicable,1145385
+1675,Kansas,NA,2006,305661,Single Family,Owner Occupied - Principal Residence,1239956
+1652,Maryland,NA,2006,60000,Single Family,Owner Occupied - Principal Residence,623563
+1648,Minnesota,NA,2006,95000,Single Family,Owner Occupied - Principal Residence,353280
+1635,Missouri,NA,2006,17788,Single Family,Owner Occupied - Principal Residence,17788
+1674,Nebraska,Douglas,2006,108921,Single Family,Owner Occupied - Principal Residence,108921
+1674,Nebraska,Sarpy,2006,1379446,Single Family,Owner Occupied - Principal Residence,2530856
+1650,New York,Broome,2006,234146,Single Family,Owner Occupied - Principal Residence,4276154
+1665,New York,Cattaraugus,2006,82706,Single Family,Owner Occupied - Principal Residence,82706
+1650,New York,Delaware,2006,242000,Manufactured Home,Owner Occupied - Principal Residence,1487961
+1665,New York,Oneida,2006,904727,Single Family,Owner Occupied - Principal Residence,904727
+1650,New York,Otsego,2006,165000,Single Family,Owner Occupied - Principal Residence,753673
+1665,New York,Schoharie,2006,213750,Non-residential - Private,Other (Specify in Comments),213750
+1650,New York,Tioga,2006,28000,Manufactured Home,Owner Occupied - Principal Residence,634636
+1645,North Dakota,NA,2006,44419,Manufactured Home,Owner Occupied - Principal Residence,373777
+1656,Ohio,NA,2006,26600,Single Family,Rental,3342177
+1684,Pennsylvania,NA,2006,12906,2-4 Family,Owner Occupied - Principal Residence,5330691
+1634,Tennessee,NA,2006,877635,Single Family,Owner Occupied - Principal Residence,877635
+1658,Texas,El Paso,2006,40000,Manufactured Home,Owner Occupied - Principal Residence,652421
+1671,Washington,King,2006,191574,Single Family,Owner Occupied - Principal Residence,329756
+1641,Washington,NA,2006,242500,Single Family,Owner Occupied - Principal Residence,588658
+1671,Washington,Pierce,2006,83423,Single Family,Owner Occupied - Principal Residence,2452026
+1671,Washington,Snohomish,2006,286049,Single Family,Owner Occupied - Principal Residence,286049
+1686,Georgia,Chatham,2007,150000,Single Family,Owner Occupied - Principal Residence,778000
+1686,Georgia,NA,2007,542697,Single Family,Owner Occupied - Principal Residence,864179
+1729,Illinois,Winnebago,2007,1537010,Single Family,Owner Occupied - Principal Residence,1921590
+1732,Indiana,Allen,2007,7000,Other (Specify in Comments),Owner Occupied - Principal Residence,7000
+1732,Indiana,De Kalb,2007,105000,Single Family,Owner Occupied - Principal Residence,685750
+1732,Indiana,Lake,2007,163000,Single Family,Rental,329992
+1705,Iowa,NA,2007,7719,Single Family,Owner Occupied - Secondary Residence,344687
+1693,Maine,Aroostook,2007,73000,Single Family,Owner Occupied - Principal Residence,73000
+1716,Maine,NA,2007,110500,Single Family,Owner Occupied - Principal Residence,110500
+1717,Minnesota,NA,2007,36000,Non-residential - Private,Not Applicable,1137684
+1676,Missouri,Butler,2007,92000,Single Family,Rental,490272
+1676,Missouri,Franklin,2007,328054,Single Family,Rental,2075621
+1708,Missouri,Lewis,2007,120334,Single Family,Owner Occupied - Principal Residence,282784
+1736,Missouri,Marion,2007,22169,Manufactured Home,Owner Occupied - Principal Residence,271652
+1736,Missouri,NA,2007,92124,Single Family,Owner Occupied - Principal Residence,3258534
+1728,Missouri,St. Charles,2007,21080,Single Family,Rental,332644
+1676,Missouri,Wayne,2007,304633,Single Family,Owner Occupied - Principal Residence,595833
+1676,Missouri,Webster,2007,81977,Single Family,Owner Occupied - Principal Residence,81977
+1695,New Hampshire,Merrimack,2007,165800,Manufactured Home,Owner Occupied - Principal Residence,165800
+1694,New Jersey,Passaic,2007,239092,Single Family,NA,5716602
+1713,North Dakota,NA,2007,25932,Single Family,Owner Occupied - Principal Residence,25932
+1720,Ohio,NA,2007,250971,Single Family,Rental,3536079
+1678,Oklahoma,NA,2007,5500,Manufactured Home,NA,1318292
+1735,Oklahoma,Oklahoma,2007,564000,Single Family,Owner Occupied - Principal Residence,1835500
+1733,Oregon,Columbia,2007,84217,Manufactured Home,Owner Occupied - Principal Residence,266081
+1709,Texas,Burnet,2007,300565,Single Family,Owner Occupied - Principal Residence,300565
+1709,Texas,Harris,2007,99148,Single Family,Owner Occupied - Principal Residence,1287152
+1709,Texas,Newton,2007,3733,Manufactured Home,Owner Occupied - Principal Residence,270928
+1730,Texas,Tarrant,2007,38663,Single Family,NA,38663
+1697,Texas,Travis,2007,228000,Single Family,Owner Occupied - Principal Residence,228000
+1709,Texas,Wichita,2007,26500,Single Family,Owner Occupied - Principal Residence,365021
+1693,Vermont,Bennington,2007,34700,Single Family,Other (Specify in Comments),227200
+1715,Vermont,Washington,2007,329943,Single Family,Owner Occupied - Principal Residence,329943
+1734,Washington,King,2007,345400,Single Family,Owner Occupied - Principal Residence,659624
+1734,Washington,Pierce,2007,461442,Manufactured Home,Owner Occupied - Principal Residence,461442
+1734,Washington,Skagit,2007,1,Single Family,Rental,1
+1696,West Virginia,NA,2007,73000,Single Family,Owner Occupied - Principal Residence,655741
+1719,Wisconsin,NA,2007,310031,Single Family,Owner Occupied - Principal Residence,3153320
+1761,Georgia,Chatham,2008,80000,Single Family,Rental,400000
+1750,Georgia,NA,2008,976565,Single Family,Owner Occupied - Principal Residence,976565
+1740,Indiana,Allen,2008,27750,Single Family,Other (Specify in Comments),1306277
+1740,Indiana,Delaware,2008,99500,Single Family,Owner Occupied - Principal Residence,99500
+1766,Indiana,Johnson,2008,45774,Single Family,Owner Occupied - Principal Residence,4011034
+1766,Indiana,Marion,2008,112500,Single Family,Owner Occupied - Principal Residence,124500
+1766,Indiana,Morgan,2008,23833,Vacant Land,Other (Specify in Comments),131000
+1766,Indiana,Shelby,2008,44500,Vacant Land,Other (Specify in Comments),383240
+1766,Indiana,Tippecanoe,2008,53000,Single Family,Owner Occupied - Principal Residence,208000
+1763,Iowa,Black Hawk,2008,4284,Vacant Land,Not Applicable,6676796
+1763,Iowa,Bremer,2008,1191749,Single Family,Rental,4555992
+1763,Iowa,Cerro Gordo,2008,3220,Vacant Land,Not Applicable,6426756
+1763,Iowa,Delaware,2008,46200,Other (Specify in Comments),Other (Specify in Comments),46200
+1763,Iowa,Dubuque,2008,135257,Single Family,Owner Occupied - Principal Residence,2018946
+1763,Iowa,Johnson,2008,147114,Single Family,Owner Occupied - Secondary Residence,2659096
+1763,Iowa,Jones,2008,8185,Vacant Land,Not Applicable,166222
+1763,Iowa,Linn,2008,32500,Single Family,Owner Occupied - Principal Residence,3356720
+1763,Iowa,NA,2008,24354,Single Family,Rental,33115388
+1757,Kentucky,NA,2008,391203,Single Family,Owner Occupied - Principal Residence,1609796
+1815,Maine,NA,2008,410699,2-4 Family,Owner Occupied - Principal Residence,526354
+1777,Michigan,Ingham,2008,63000,Single Family,Rental,91000
+1777,Michigan,Kent,2008,72165,Single Family,Owner Occupied - Principal Residence,980685
+1764,Mississippi,NA,2008,58193,Vacant Land,Not Applicable,58193
+1760,Missouri,Greene,2008,70000,Single Family,Rental,166460
+1749,Missouri,St. Louis,2008,3031810,Single Family,Owner Occupied - Principal Residence,3840039
+1749,Missouri,Wayne,2008,30000,Single Family,Rental,142501
+1801,North Carolina,Wake,2008,321753,Single Family,Owner Occupied - Principal Residence,321753
+1805,Ohio,Butler,2008,1801810,Single Family,Owner Occupied - Principal Residence,1801810
+1805,Ohio,Franklin,2008,1212918,Single Family,Owner Occupied - Principal Residence,1279918
+1805,Ohio,Hamilton,2008,1232538,Single Family,Owner Occupied - Principal Residence,1232538
+1745,Tennessee,NA,2008,696615,Single Family,Other (Specify in Comments),696615
+1791,Texas,Dallas,2008,91000,Single Family,Owner Occupied - Principal Residence,1153500
+1791,Texas,Nueces,2008,15000,Single Family,NA,15000
+1825,Washington,NA,2008,390000,Single Family,Owner Occupied - Principal Residence,390000
+1825,Washington,Pierce,2008,1140721,Single Family,Owner Occupied - Principal Residence,1140721
+1769,West Virginia,McDowell,2008,36000,Single Family,Owner Occupied - Principal Residence,36000
+1769,West Virginia,NA,2008,863000,Single Family,Owner Occupied - Principal Residence,863000
+1768,Wisconsin,Crawford,2008,269854,Single Family,Owner Occupied - Principal Residence,389879
+1768,Wisconsin,Grant,2008,66000,Single Family,Rental,367095
+1768,Wisconsin,Jefferson,2008,211722,Vacant Land,Other (Specify in Comments),5602849
+1768,Wisconsin,Kenosha,2008,443497,Single Family,Owner Occupied - Principal Residence,1269027
+1768,Wisconsin,NA,2008,216000,2-4 Family,Rental,6139111
+1768,Wisconsin,Richland,2008,190000,Single Family,Owner Occupied - Principal Residence,190000
+1768,Wisconsin,Rock,2008,382368,Single Family,Owner Occupied - Principal Residence,692470
+1768,Wisconsin,Sauk,2008,223507,Single Family,Owner Occupied - Principal Residence,4505882
+1835,Alabama,Autauga,2009,248625,Single Family,Owner Occupied - Principal Residence,274875
+1831,Florida,NA,2009,222485,Single Family,Owner Occupied - Principal Residence,285046
+1858,Georgia,Chattooga,2009,25000,Other (Specify in Comments),Other (Specify in Comments),1237886
+1833,Georgia,Decatur,2009,1523065,Single Family,Owner Occupied - Principal Residence,1523065
+1858,Georgia,NA,2009,102828,Single Family,Rental,816977
+1828,Indiana,Marshall,2009,288132,Single Family,Owner Occupied - Principal Residence,429327
+1828,Indiana,Morgan,2009,181500,Single Family,Owner Occupied - Principal Residence,605894
+1818,Kentucky,Marshall,2009,150000,Non-residential - Public,Other (Specify in Comments),150000
+1818,Kentucky,NA,2009,197067,Single Family,Owner Occupied - Principal Residence,444833
+1841,Kentucky,Pike,2009,78300,Manufactured Home,Rental,1899436
+1841,Kentucky,Rowan,2009,64000,2-4 Family,Rental,633197
+1875,Maryland,Calvert,2009,1,Single Family,Owner Occupied - Principal Residence,9
+1830,Minnesota,Clay,2009,223410,Single Family,Owner Occupied - Principal Residence,1469390
+1830,Minnesota,NA,2009,213356,Single Family,Owner Occupied - Principal Residence,252756
+1830,Minnesota,Norman,2009,128317,Single Family,Owner Occupied - Principal Residence,264317
+1837,Mississippi,NA,2009,20000,Single Family,Owner Occupied - Principal Residence,20000
+1822,Missouri,St. Louis,2009,112900,Single Family,Owner Occupied - Principal Residence,112900
+1829,North Dakota,Barnes,2009,180500,Single Family,Owner Occupied - Principal Residence,350106
+1829,North Dakota,Emmons,2009,61000,Single Family,Rental,187264
+1829,North Dakota,Hettinger,2009,28000,Single Family,Owner Occupied - Secondary Residence,179138
+1829,North Dakota,NA,2009,222232,Single Family,Owner Occupied - Principal Residence,1799371
+1829,North Dakota,Nelson,2009,60870,Single Family,Owner Occupied - Principal Residence,60870
+1829,North Dakota,Ramsey,2009,818500,Single Family,Owner Occupied - Principal Residence,818500
+1856,Tennessee,Giles,2009,189533,Single Family,Owner Occupied - Principal Residence,189533
+1862,Virginia,Gloucester,2009,119000,Single Family,Owner Occupied - Principal Residence,249000
+1874,Virginia,NA,2009,128300,Single Family,Owner Occupied - Secondary Residence,128300
+1817,Washington,NA,2009,570336,Manufactured Home,Rental,2156849
+1817,Washington,Whatcom,2009,65824,Single Family,Owner Occupied - Principal Residence,65824
+1838,West Virginia,Harrison,2009,191000,Single Family,Owner Occupied - Principal Residence,191000
+1838,West Virginia,Logan,2009,45000,Single Family,Owner Occupied - Principal Residence,427000
+1838,West Virginia,McDowell,2009,14000,Single Family,Owner Occupied - Principal Residence,75739
+1881,West Virginia,NA,2009,112000,Single Family,Rental,751471
+1838,West Virginia,Wyoming,2009,131124,Single Family,Owner Occupied - Principal Residence,872931
+1896,Delaware,NA,2010,161436,Single Family,Owner Occupied - Principal Residence,161436
+1880,Iowa,Delaware,2010,58786,Single Family,Owner Occupied - Principal Residence,547949
+1930,Iowa,Dubuque,2010,54498,Single Family,Owner Occupied - Principal Residence,759665
+1880,Iowa,Jasper,2010,9165,Manufactured Home,Owner Occupied - Principal Residence,52921
+1930,Iowa,Jones,2010,312928,Other (Specify in Comments),Other (Specify in Comments),666338
+1880,Iowa,Polk,2010,155210,2-4 Family,Rental,5080428
+1930,Iowa,Pottawattamie,2010,1479551,Single Family,Owner Occupied - Principal Residence,1860051
+1880,Iowa,Webster,2010,285663,Single Family,Owner Occupied - Principal Residence,711017
+1912,Kentucky,Christian,2010,115232,Single Family,Owner Occupied - Principal Residence,115232
+1912,Kentucky,McCracken,2010,33533,Single Family,Owner Occupied - Principal Residence,602832
+1921,Minnesota,Blue Earth,2010,59500,Single Family,Owner Occupied - Principal Residence,59500
+1941,Minnesota,Dakota,2010,177300,Single Family,Owner Occupied - Principal Residence,177300
+1921,Minnesota,Goodhue,2010,94200,Single Family,Owner Occupied - Principal Residence,94200
+1941,Minnesota,Nicollet,2010,81196,Single Family,Owner Occupied - Principal Residence,81196
+1921,Minnesota,Olmsted,2010,388200,Single Family,Owner Occupied - Principal Residence,430400
+1900,Minnesota,Rice,2010,53900,Single Family,Owner Occupied - Principal Residence,53900
+1941,Minnesota,Stearns,2010,86500,Single Family,Owner Occupied - Principal Residence,86500
+1921,Minnesota,Wabasha,2010,24000,Single Family,Owner Occupied - Principal Residence,1287223
+1924,Nebraska,Douglas,2010,30500,Single Family,Other (Specify in Comments),146500
+1957,New York,Tioga,2010,20517,Single Family,Owner Occupied - Principal Residence,1758420
+1898,Pennsylvania,Allegheny,2010,50000,2-4 Family,Rental,144504
+1898,Pennsylvania,Beaver,2010,88281,Single Family,Rental,324211
+1898,Pennsylvania,Columbia,2010,78640,Single Family,Owner Occupied - Principal Residence,78640
+1898,Pennsylvania,Dauphin,2010,58219,Single Family,Other (Specify in Comments),58219
+1898,Pennsylvania,Huntingdon,2010,249500,Single Family,Owner Occupied - Principal Residence,249500
+1898,Pennsylvania,Luzerne,2010,51000,Single Family,Owner Occupied - Principal Residence,1398779
+1898,Pennsylvania,Lycoming,2010,120000,Single Family,Owner Occupied - Principal Residence,225677
+1898,Pennsylvania,NA,2010,98432,Single Family,Owner Occupied - Principal Residence,98432
+1915,South Dakota,Day,2010,99185,Single Family,Owner Occupied - Principal Residence,1181188
+1909,Tennessee,Cheatham,2010,198000,Single Family,Owner Occupied - Principal Residence,527000
+1909,Tennessee,Davidson,2010,223619,Single Family,Owner Occupied - Principal Residence,14095357
+1909,Tennessee,Decatur,2010,119676,Single Family,Owner Occupied - Principal Residence,119676
+1909,Tennessee,Haywood,2010,93000,2-4 Family,Rental,802841
+1909,Tennessee,Houston,2010,427167,Non-residential - Private,Other (Specify in Comments),540210
+1909,Tennessee,Maury,2010,107119,2-4 Family,Rental,1183144
+1909,Tennessee,Montgomery,2010,127697,Single Family,Owner Occupied - Principal Residence,442872
+1909,Tennessee,Robertson,2010,81500,Single Family,Owner Occupied - Secondary Residence,81500
+1909,Tennessee,Rutherford,2010,198388,Single Family,Owner Occupied - Principal Residence,449821
+1909,Tennessee,Shelby,2010,185000,Single Family,Owner Occupied - Principal Residence,289062
+1909,Tennessee,Smith,2010,82961,Single Family,Rental,486336
+1909,Tennessee,Sumner,2010,653467,Single Family,Owner Occupied - Principal Residence,1442208
+1909,Tennessee,Williamson,2010,243502,Single Family,Owner Occupied - Principal Residence,1924363
+1905,Virginia,Chesapeake (city),2010,235100,Single Family,Owner Occupied - Principal Residence,1263600
+1905,Virginia,Isle of Wight,2010,129000,Single Family,Rental,129000
+1918,West Virginia,Boone,2010,187000,Multi-Family Dwelling - 5 or More Units,Owner Occupied - Principal Residence,187000
+1903,West Virginia,Brooke,2010,2000,Single Family,Owner Occupied - Principal Residence,288835
+1893,West Virginia,Harrison,2010,32000,Other (Specify in Comments),Other (Specify in Comments),181800
+1893,West Virginia,Kanawha,2010,40000,Single Family,Owner Occupied - Principal Residence,270000
+1918,West Virginia,NA,2010,99000,Single Family,Owner Occupied - Principal Residence,379000
+1918,West Virginia,Nicholas,2010,175000,Single Family,Owner Occupied - Principal Residence,175000
+1893,West Virginia,Wood,2010,161282,Single Family,Rental,290094
+1893,West Virginia,Wyoming,2010,31600,Single Family,Owner Occupied - Principal Residence,31600
+1944,Wisconsin,Marathon,2010,425000,Single Family,Owner Occupied - Principal Residence,595000
+1944,Wisconsin,NA,2010,60000,Single Family,Owner Occupied - Principal Residence,60000
+1973,Georgia,Decatur,2011,448000,Single Family,Owner Occupied - Principal Residence,448000
+1973,Georgia,Douglas,2011,186707,Single Family,Owner Occupied - Principal Residence,278512
+1998,Iowa,Dubuque,2011,280470,Manufactured Home,Owner Occupied - Principal Residence,289870
+1998,Iowa,Pottawattamie,2011,45511,Single Family,Owner Occupied - Principal Residence,3309827
+1976,Kentucky,Lincoln,2011,141250,Single Family,Owner Occupied - Principal Residence,824250
+1972,Mississippi,Warren,2011,4304,Other (Specify in Comments),Rental,320035
+1983,Mississippi,Washington,2011,680963,Single Family,Owner Occupied - Principal Residence,680963
+1980,Missouri,Jasper,2011,84227,Single Family,Owner Occupied - Principal Residence,90349
+1980,Missouri,Ripley,2011,23422,Single Family,Owner Occupied - Principal Residence,23422
+1980,Missouri,Taney,2011,106332,Single Family,Owner Occupied - Principal Residence,2238812
+4026,New Hampshire,Carroll,2011,36789,Single Family,Owner Occupied - Principal Residence,354500
+4020,New York,Broome,2011,48065,Single Family,Owner Occupied - Principal Residence,646329
+4020,New York,Chenango,2011,28446,Single Family,Owner Occupied - Principal Residence,132120
+4020,New York,Clinton,2011,41250,Single Family,Owner Occupied - Principal Residence,203862
+4020,New York,Essex,2011,331076,Single Family,NA,2719227
+1981,North Dakota,Barnes,2011,75600,Single Family,Owner Occupied - Principal Residence,410565
+1981,North Dakota,Pembina,2011,62500,Single Family,Owner Occupied - Principal Residence,100000
+1981,North Dakota,Ramsey,2011,663318,Single Family,Owner Occupied - Principal Residence,850068
+1981,North Dakota,Traill,2011,216250,Single Family,Owner Occupied - Principal Residence,216250
+1981,North Dakota,Ward,2011,157500,Single Family,Owner Occupied - Principal Residence,935047
+4030,Pennsylvania,Chester,2011,218935,Single Family,Owner Occupied - Principal Residence,218935
+4030,Pennsylvania,Dauphin,2011,109000,Single Family,Owner Occupied - Principal Residence,867041
+4025,Pennsylvania,Lebanon,2011,135376,Single Family,Owner Occupied - Principal Residence,161486
+4025,Pennsylvania,Luzerne,2011,14900,Other (Specify in Comments),Not Applicable,67877
+4030,Pennsylvania,Montgomery,2011,321167,Single Family,Owner Occupied - Principal Residence,1295745
+4025,Pennsylvania,Northumberland,2011,80400,Single Family,Owner Occupied - Principal Residence,80400
+4025,Pennsylvania,Sullivan,2011,64800,2-4 Family,Owner Occupied - Principal Residence,64800
+4030,Pennsylvania,Susquehanna,2011,15000,Single Family,Owner Occupied - Principal Residence,15000
+1984,South Dakota,Day,2011,72525,Single Family,Owner Occupied - Principal Residence,72525
+4011,Utah,Davis,2011,182000,Single Family,Rental,182000
+4068,Florida,Hernando,2012,212655,Single Family,Owner Occupied - Principal Residence,212655
+4091,Maryland,Allegany,2012,75000,Manufactured Home,Not Applicable,75000
+4069,Minnesota,Carlton,2012,153500,Single Family,Owner Occupied - Principal Residence,153500
+4069,Minnesota,Pine,2012,704006,Single Family,Owner Occupied - Principal Residence,3742378
+4077,Ohio,Jackson,2012,212383,Non-residential - Private,Other (Specify in Comments),212383
+4099,Pennsylvania,Chester,2012,55000,Single Family,Owner Occupied - Principal Residence,55000
+4099,Pennsylvania,Dauphin,2012,272278,Single Family,Owner Occupied - Principal Residence,272278
+4099,Pennsylvania,York,2012,64430,Single Family,Owner Occupied - Principal Residence,64430
+4059,West Virginia,Berkeley,2012,55000,Vacant Land,Owner Occupied - Secondary Residence,1086000
+4071,West Virginia,Greenbrier,2012,52700,Single Family,Owner Occupied - Principal Residence,620700
+4093,West Virginia,Kanawha,2012,80000,Single Family,Owner Occupied - Principal Residence,2593000
+4061,West Virginia,Marshall,2012,42000,Single Family,Owner Occupied - Principal Residence,106500
+4061,West Virginia,Taylor,2012,16000,Vacant Land,Not Applicable,372000
+4076,Wisconsin,Richland,2012,13000,Single Family,Owner Occupied - Secondary Residence,13000
+4114,Iowa,Linn,2013,1044,Single Family,Owner Occupied - Principal Residence,1044
+4114,Iowa,Marshall,2013,59699,Single Family,Owner Occupied - Principal Residence,59699
+4119,Iowa,Story,2013,19000,Single Family,Owner Occupied - Principal Residence,19000
+4131,Minnesota,Blue Earth,2013,386000,Single Family,Owner Occupied - Principal Residence,386000
+4131,Minnesota,Pine,2013,91410,Single Family,Owner Occupied - Secondary Residence,91410
+4156,Nebraska,Gage,2013,40000,Other (Specify in Comments),Other (Specify in Comments),40000
