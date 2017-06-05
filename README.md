@@ -7,47 +7,40 @@ One bit of note, it would be helpful to have a consistent style for the code. Ob
 
 ## Organization:
 
-The main theme behind this repository is to have an easy to access data-source that can be easily accessed for multiple projects. The `Project` is the identifier for various ideas, research interests, modeling exercises, etc. As this becomes more populated with Projects, I will give a short description for each.
-
-* 0-Data/
-    * `0-Data_Source.R` - script to download data and create `.csv` and `.Rda` files in an easy to read and uniform format.
-    * Data_Source/ - most of this will be ignored via `.gitignore`.
-        * raw/
-            * All downloaded files from the `0-Data_Source.R` script.
-            * Some data cannot be downloaded and must be hosted elsewhere. They will also be in this folder for local use.
-        * `Various_Names.csv`
-        * `Various_Names.Rda`
+* 0-data/
+    * `0-data_source.R` - script to download data and create `.csv` and `.rds` files in an easy to read and uniform format.
     * `0-functions.R` - relevant functions for this sub-directory.
     * `.gitignore` - any large files will not be loaded to GitHub.
-* 1-Organization/
-    * `1-Project_Tidy.R` - script to gather particular data
+    * Data_Source/ 
+        * `various_names.csv` - usable files
+        * `various_names.rds` - usable files
+        * raw/ - most of this will be ignored via `.gitignore`.
+            * All downloaded files from the `0-data_source.R` script.
+            * Some data cannot be downloaded and must be hosted elsewhere. They will also be in this folder for local use.
+* 1-tidy/
+    * `1-project_tidy.R` - script to gather particular data
+    * `1-project_functions.R` - any relevant functions for tidying of a project's data.
     * Project/
         * Properly formatted and gathered data for further analysis. If files are over 100 mb, [GitHub will reject the push](http://stackoverflow.com/questions/17382375/github-file-size-limit-changed-6-18-13-cant-push-now). __So Do Not Push Files Above 100MB__
-    * `1-Project_functions.R` - any relevant functions for tidying of a project's data.
-* 2-Exploratory/
-    * `2-Project_Explore.R` - summary statistics, histograms, plots, maps, etc.
+* 2-eda/
+    * `2-project_eda.R` - summary statistics, histograms, plots, maps, etc.
     * Project/
         * Various plots, figures, tables, and maps saved. Not all are valuable or finished.
-* 3-Basic_Modeling/
-    * `3-Project_Basic_XXX.R` - basically OLS type of analysis to see what the data are doing.
+* 3-basic/
+    * `3-project_basic.R` - basically OLS type of analysis to see what the data are doing.
     * Project/
         * Saved results, although some of these may never be of use for the final product.
-* 4-Advanced_Modeling/
-    * `4-Project_Advanced_XXX.R` - a more complex, and hopefully complete, way of modeling the data for the particular project.
+* 4-advanced/
+    * `4-project_advanced.R` - a more complex, and hopefully complete, way of modeling the data for the particular project.
     * Project/
         * Various ideas for solving the problem of interest.
-* 5-Results/
-    * `5-Project_Results.R` - the output to be used for said project.
+* 5-writing/
+    * `5-paper.Rmd` - an RMarkdown file which is used to compile the writing and results. It will also reference the associated R file which processes the analysis, the bibliography, and any other templates.
+    * `5-paper.R` - the output to be used for said project.
+    * `paper.bib` - a bibtex document for proper references
     * Project/
         * Finished results.
-
-## Packages Needed
-The packages used in this repository so far include: `cleangeo`, `dplyr`, `gdata`, `lubridate`, `maptools`, `RCurl`, `readr`, `readxl`, `rgdal`, `rvest`, `stringr`, and `tidyr`. All of these are available on [CRAN](https://cran.r-project.org/) and can be installed using `install.packages()`.
-
-# Various To-Do Items:
-
-This is still currently a work in progress. At the moment, here are a few things I know that I will eventually need to tackle:
-
-1. Hosting various datasets (FCC data, various shapefiles, etc.) on a site so that R scripts are automated.
-2. Delve into the BEA API and sort through their various data. Document this as well.
-3. Convert Matlab code (for origin-destination models) to R scripts.
+* 6-presentations/
+    * Venue/
+        * `6-presentation.Rmd` - RMarkdown file which produces the beamer or ioslides for the presentation.
+        * `6-presentation.R` - R code which helps produce figures and tables used in the presetnation.
