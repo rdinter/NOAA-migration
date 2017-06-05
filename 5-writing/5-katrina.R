@@ -18,7 +18,7 @@ star_pval <- function(p.value) {
                  symbols = c("***", "**", "*", " ")))
 }
 
-k_data <- read_rds("1-Organization/Migration/katrina.rds") %>% 
+k_data <- read_rds("1-tidy/Migration/katrina.rds") %>% 
   mutate(moved = 1*!is.na(exmpt_katrina),
          katrina = 1*katrina,
          un_rate = unemp / (unemp + emp),
