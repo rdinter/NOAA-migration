@@ -1,0 +1,148 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{Introduction}
+
+Natural disasters can cause widespread destruction and weaken local economies. These impacts can lead to permanent migration away from disaster-affected areas. Such permanent or semi-permanent migration induced by natural disasters has the potential to reshape the distribution of national and global populations and economies (see e.g. \cite{mcintosh2008measuring}). Moreover, because migration moves people out of the path of some disasters, and potentially into the path of other disasters, post-disaster migration has implications for the risks associated with future disasters \cite{grada1997migration}. 
+
+Migration following large disasters is well-documented after major natural disasters like Hurricane Katrina, the 2011 Fukushima Daiichi earthquake/tsunami/nuclear disaster, and the 2004 Indian Ocean tsunami. Because of the pressures placed on the affected population, disasters can cause migration among a more general swath of the population than those who migrate in a non-disaster related context \cite{gray2014studying}.  
+
+Hurricane Katrina, which struck New Orleans in 2005, provides an optimal case study to exmaine the pull factors that influence the destination of disaster migrants. Most residents of New Orleans evacuated prior to the Hurricane, and following the storm most remaining residents were evacuated by the Federal Emergency Management Agency (FEMA). Approximately 1.5 million people evacuated and following the failure of the levees 96\% of New Orleans residents and 80\% of residents surrounding the city eventually left their homes \cite{groen2008hurricane} \cite{elliott2006race}. While a large number of evacuees were relocated to Houston by FEMA, Katrina evacuees relocated throughout the country. Nearly every state received FEMA funding for costs associated with supporting evacuees from Hurricane Katrina. Many of those who evacuated following Hurricane Katrina never returned to the New Orleans area. These permanent migrants were generally younger, more likely to have children, and more likely to be black than those who returned to New Orleans \cite{groen2010going}.
+
+In this paper, we examine the migration "pull factors" in terms of characteristics of the destinations of post-Katrina migration out of the New Orleans area using data on the movement of IRS return filings between counties and a range of county-destination attributes. In Section \ref{data}, we discuss our data sources, in Section \ref{sec:meth} we present our estimating equations, and in Section \ref{sec:results} we present our results. 
+
+
+%Hurricane Katrina struck New Orleans in 2005, causing widespread destruction and leading to the evacuation of nearly one million people. Given the destruction in New Orleans, many of these evacuees chose not to return for several years, if at all. S This paper examines the characteristics of the destinations of Hurricane Katrina migrants, facilitating a greater understanding of why people migrate following disasters and the 
+
+
+\section{Data} \label{data}
+
+Our primary source of data is the IRS Statistics of Income Division's migration data. These data reports the flows of populations between counties based on changes in the location from which tax returns are filed. These reports include not only those filings that change counties but also the number of claimed exemptions that change counties and the annual gross adjusted income associated with the filings. The IRS reports both outflow migration (tax returns and exemptions of filers who leave a county) as well as inflow migration (tax returns and exemptions that enter a county). The IRS data also include the number of filings and exemptions of people who do not move, providing a base-level population value that is comparable to the migration data. In order to ensure the privacy of individual filers, the IRS suppresses observations in which fewer than ten filers migrated between an origin-destination pair. Migrants between origin-destination pairs with fewer than ten filers/exemptions that migrate are aggregated to a larger geographic area.
+
+Given our focus on New Orleans, we restrict our interest to outflow migration from the counties most severely affected by Hurricane Katrina in 2005.\footnote{While Louisiana is organized into parishes rather than counties, we will use the term counties throughout this paper to facilitate discussion of destination locations.} We consider two sets of severely-affected counties, one focused exclusively on Louisiana counties and a second set that also includes Mississippi counties that were severely affected. While there was some migration between affected regions (ie moving from a county that was severely affected to one that was slightly less affected) we remove these migrants from our sample to facilitate a simpler interpretation of outflow migrants.
+
+The ten most common destination counties are shown in Table~\ref{tab:commondest}. All of these destinations are in either Texas or Louisiana, comprising approximately 45 percent of total migrants. Around 30 percent of total migrants went to Harris County, Texas (48201), East Baton Rouge Parrish, Lousiana (22033), or St. Tammany Parish, Louisiana (22103). The inclusion of Mississippi refugees to the sample results in only minor changes to the overall distribution of migrants because nearly 90\% of the migrants in the sample came from Louisiana. 
+
+We supplement the IRS migration data with a number of explanatory variables. 
+
+<<cache=T, echo = F, warning = F, message = F>>=
+BLS_lau_mstr <- read.csv("C:/Users/jeyer/Google Drive/disastermigration/BLS_lau_mstr.csv")
+BLS_lau_mstr <- subset(BLS_lau_mstr, BLS_lau_mstr$year==2004)
+@
+
+County-level unemployment rate data are obtained from the Bureau of Labor Statistics (BLS). Because an influx of migrants may impact local economies, we focus on unemployment rates in 2004 rather than in 2005 in our primary regressions. Similarly, county-level racial and gender composition data is obtained from the U.S. Census' intra-decennial Population Estimates Program. Like the unemployment data, we focus on 2004 compositions rather than 2005 compositions because the influx of migrants might change the composition of a county.
+
+We supplement the unemployment data with data from the Bureau of Labor Statistics' Quarterly Census of Employment and Wages. This provides average annual wages in each county differentiated between public and private employers as well as by a few broad categories of industries. Because we do not know anything about the skills or employment of post-Katrina migrants, we remain agnostic about the particular category of relevant wages and focus instead on average annual wages for all employers across all industries. 
+
+We also note that wages are not the whole story, but must be adjusted by the cost of living to accurately capture the true value of the trade-offs being made. We use data on median rents from the Department of Housing and Urban Development as a proxy variable for average cost of living, since generally this value will be highly correlated with the prices of local goods and services and thus the overall cost of living. Specifically, we focus on the median rent for a 2 bedroom housing unit because it is relatively likely that 2 bedroom units will be available in most parts of the country. These rents are highly correlated with rents in other housing sizes such as studios which may be less precisely estimated in rural areas.
+
+In order to account for preferences over natural amenities, we include the USDA's Natural Amenities Scale. The Natural Amenities Scale weighs a number of factors that are thought to be related to preferable environmental conditions, such as temperatures, winter sunlight, humidity, topographic variety, and water area. For each amenity type, the USDA computes each county's standardized score by dividing the deviation of the county's amenity value from the national average amenity value by the standard deviation of the ameninity value across all counties. The county's aggregate amenity score is calculated as the sum of the standardized scores across each of the amenity types.
+
+Data on federal assistance to states and municipalities for costs incurred in housing and supporting refugees is obtained from FEMA. Forty-four states and the District of Columbia received federal funding under FEMA's Public Assistance program for costs associated with the evacuation.\footnote{The only states that did not receive FEMA funding for evacuation assistance were Alaska, Hawaii, Louisiana, Mississippi, and Montana, and Wyoming.} Public Assistance payments range from less than \$10,000 in New Hampshire to over \$500 million in Texas, although it is not possible to be sure that all of the Public Assistance to Texas was spent on supporting evacuees rather than repairing storm damage there. 
+
+\section{Methodology} \label{sec:meth}
+
+\subsection{OLS Models}
+We estimate the flow of migrants out of the counties that were severely affected by Hurricane Katrina as a function of the characteristics of the counties to which they migrated. We specify the model
+
+\begin{multline} \label{eq:basereg}
+mig_j = pop_j + LA_j + PA_j + unemploy_j + pay_j + rent_j + black_j \\ + female_j + Amenity_j + f(distance_j)  + epsilon_j
+\end{multline}
+
+where $mig_j$ is the number of total migrants (filers and exemptions) that moved from the counties affected by Hurricane Katrina to county $j$ in 2005, $LA_j$ is a dummy variable that takes on a value of one if county $j$ is in Louisiana and a value of zero otherwise, $unemploy_j$ is the unemployment rate in county $j$, $pay_j$ is the average annual wage rate in county $j$ and $rent_j$ is the median monthly rent of a 2 bedroom house, $black_j$ and $female_j$ are the percentage of county $j's$ population that is black and female respectively, and $Amenity_j$ is county $j's$ value on the USDA's Amenities Index.
+
+The population of the destination county is likely to matter because migrants from a city like New Orleans are likely to prefer large, urban counties over small, rural ones. The unemployment rate in destination counties will matter if migrants opt toward areas with better job prospects. The racial and gender composition of a destination county will affect migrant destinations if migrants opt toward counties with populations that are relatively similar (or dissimilar) from themselves. The cost of relocating is highly correlated with distance so migrants are likely to stay-relatively close to New Orleans. Finally, the dummy variable $LA_j$ acknowledges that people might have preferences for staying in Louisiana that are not fully captured by distance.
+
+Next, we expand our consideration to outflow migration from the greater New Orleans area in 2006. This allows us to consider migrants who did not permanently or semi-permanently leave the area immediately in the wake of Hurricane Katrina, but rather in subsequent years. Such migrants are relatively more likely to be leaving the New Orleans area because of a weakened economy than those who left in 2005.
+
+We estimate the same estimating equation as above but we replace each of the covariates except $PA_j$ with their 2006 corollary. Note that while we used 2004 values in the 2005 estimating equation to avoid migrants appearing in the right hand side variables, here we use contemporaneous values. The number of migrants leaving New Orleans in 2006 is quite small relative to the number of people who left in 2005 and it is unlikely that migrants in 2006 will affect the characteristics of any county in a way that our covariates would be biased. 
+
+\subsection{Spatial Models}
+
+Next, we note that controlling for distance may not fully capture the spatial characteristics of the migration decision. In particular, one might be concerned that there is spatial correlation in the migration decision that is not captured by distance or by the covariates. An attractive destination, for example, may make neighboring destinations more attractive based on access to amenities and job opportunities that would not be captured in our baseline regressions. Failure to correct for this form of correlation between destinations could cause OLS estimates to be inconsistent.
+
+We test for such spatial correlation in migrant destinations using a Moran's i-Test (citation), which tests the presence of spatial correlation against the expected level of observed spatial correlation under a truly random data generating process. The test statistic is small, approximately 0.015, but statistically significant at the 0.05 level. This suggests that a formal examination of spatial effects in our models is warranted. 
+
+We first address the issue of spatial correlation by augmenting  equation ~\ref{eq:basereg} to allow migration flows to one county to directly influence migration flows to neighboring counties. Specifically, we estimate the spatial autoregressive model:
+  
+  \begin{multline}
+mig_j = \rho W mig + pop_j + LA_j + PA_j + unemploy_j + pay_j \\ + rent_j + black_j + female_j + Amenity_j + f(distance_j)  + epsilon_j .
+\end{multline}
+
+The first term of this equation, ?? W mig is the spatial component of our model. W is a JxJ spatial weights matrix, where an entry is equal to one if it corresponds to county pairings that are contiguous, and zero if the counties are not contiguous. By multiplying this weights matrix by the vector of migration decisions, mig, we explicitly allow the migration to one county to influence migration to its neighboring counties.
+
+Next, we consider the possibility of spatial overlap in the effect of the covariates. In a standard gravity model migrants will move to locations that have high expected lifetime income (e.g. high wages, low unemployment, and low cost of living) (citation). We expect that in many cases, migrants can live in one county and work in another. In this case, migrants might be drawn to a county not because of that county's employment prospects but because of its proximity to its high-wage neighboring counties. 
+
+We examine this sort of effect using a spatial Durbin model. Similar to the spatial autoregressive model, the spatial Durbin model interacts a spatial weights matrix with the explanatory variables. This results in the migration flows in each county being affected by the characteristics of its neighbor counties (citation). Our estimating equation is:
+
+\begin{multline}
+mig_j =  pop_j + LA_j + PA_j + unemploy_j + pay_j \\ + rent_j + black_j + female_j + Amenity_j + f(distance_j) +  pop_j + \rho W LA_j + \rho W PA_j + \rho W unemploy_j + \rho W pay_j \\ + \rho W rent_j + \rho W black_j + \rho W female_j + \rho W Amenity_j   + epsilon_j .
+\end{multline}
+
+Again, W is a spatial weights contiguity matrix that relates each county to its neighbors. Note that there is both an "own" effect and a neighboring effect. 
+
+\section{Results} \label{sec:results}
+
+Table ~\ref{reg:fullsample} presents the regression results for the main regressions based on migration out of the New Orleans area in 2005. In each column we present an alternative specification for the functional form by which distance is related to the number of migrants who move to a given county. Across each model, we find consistent evidence that distance between a county and the New Orleans area, the population of the destination county, and the amount of public assistance that the destination state received are statistically significant indicators of the number of migrants who move to a particular county. Counties that are in Louisiana also receive a greater number of migrants than outside counties across each of the specifications.
+
+Because it is difficult to conceptualize the marginal effect of distance on migrants across each of our specifications, we present a graph of each distance control in Figure ~\ref{fig:distnace}. Across each of our distance control specifications, the number of migrants moving to a county is declining in distance up to approximately 1000 miles afterwhich the functional form of some of the distnace specifications force t
+he graphs upward. These lines can be interpreted by comparing the functional value between various points along the x-axis. For example, the value of the spline function in green is 0 at a distance of 0 and approximately -1200 at a distance of 1000 miles. This means that a county 1000 miles from New Orleans would receive 1200 fewer migrants than a hypothethetical unevacuated county that was 0 miles from New Orleans.
+
+Migrants generally show a prefernece for larger counties than for smaller counties. Across each distance specification the number of migrants who move to a given county increases by approximately 1,150 for every million residents of the destination county. 
+
+We also find that migrants are much more likely to move to a county that is in Louisiana than one that is outside of Louisiana. This effect is of a relatively consistent magnitude across each of our distance controls so it is unlikely that this is merely capturing preferences for close counties over distant ones. Rather it is likely that residents of New Orleans feel an affiliation with the state of Louisiana and prefer to stay in Louisiana for these reasons. 
+
+Unsurprisingly, FEMA Public Assistance is also a statistically significant predictor of the number of residents who moved to a county. The effect is quite small, though. For every million dollars in FEMA Public Assistance funding to a state, approximately 0.6 additional residents move to each county in the state. In Texas, for example, which received \$513 million in Public Assistance, Public Assistance was responsible for approximately 330 additional migrants in each county. Extrapolating this to each county in Texas, however, reveals that nearly 85,000 additional migrants moved to Texas because of the effect of Public Assistance.
+
+There is little or mixed evidence that the other control variables have a statistically significant effect on migration flows. Annual pay, median rent rates, and the percentage of a county's population that is female does not have a statistically significant effect in any of our specifications. The percentage of the population that is black has a weakly significant negative effect in the spline distance control regression, although the effect is insignificant in each of the other specifications. Surprisingly, there is some evidence that counties with high USDA Amenities Index values receive fewer migrants than counties with lower ones. It is possible, however, that this is capturing some degree of collinearity between the counties that are relatively close to New Orleans, which have score poorly on the USDA's Amenities Index.
+
+In Table ~\ref{reg:fullsample2006} we present the same regressions but focus on migration flows in 2006 rather than in 2005. This is intended to pick up longer-term trends in post-disaster migration and may be a purer assessment of migration pull factors, since it does not include forced migration that took place in 2005. Coefficients are generally lower because the total number of migrants leaving the area is markedly lower. Again, we find that the populations of the destination and whether or not a county is in Louisiana are statistically significant predictors of the number of people who moved from New Orleans. Surprisingly, the Public Assistance variable is still a statistically significant variable even though the Public Assistance was tied directly to Katrina evacuations and took place in 2005. It is possible that if relatively higher levels of Public Assistance went to large states or states that were nearby the Public Assistance variable is capturing related effets.
+
+When we focus our study on 2006, we find modest but statistically significant effects of annual pay and median rents on migration decisions. Specifically, for every \$1,000 in average annual pay in a county we expect to see an additional migrant move to the county. For every \$100 in additional median rents for a 2 bedroom housing unit in a destination county, we find that approximately 5 fewer migrants move to that county. This is consistent with the belief that migrants prefer higher wages and lower costs of living. 
+
+\section{Conclusion} ~\label{sec:conclusion}
+
+This study has focused on the characteristics of the destinations of post-Katrina migrants from the New Orleans area using IRS data on the movement of tax returns and exemptions in order to explain the pattern of out-migration. 
+
+We find that in 2005 -- in the immediate aftermath of Hurricane Katrina -- that distance and population were the primary drivers of relocation decisions. Households also opted to live in Louisiana at a greater rate than one would expect based on distances alone. While it may appear surprising that wage rates, unemployment, and the cost of living did not provide statistically significant effects on migration it is unsurprising given the urgency with which people left New Orleans in the aftermath of the Katrina and the fact that FEMA determined at least the initial destination of many of them. 
+
+When we focus on those who left New Orlenas in 2006, however, we find explanatory power behind the traditional covariates suggested in gravity models of migration flows. In particular, we find that people are moving to areas with relatively higher annual wages and relatively lower costs of living. As in 2005, we find a preference for moving to larger and closer counties. Because New Orleans was still severely weakened in 2006, these results can be interpreted as those who remained in New Orleans in the year following Katrina moving away from a weakened city the following year.
+
+%\bibliographystyle{plain}
+%\biblography{migrationbib_090116nm}
+
+\clearpage
+\section{Tables and Figures}
+<<echo = F,message = F, warning = F, results = 'asis', cache = T>>=
+source('katrinamigration_summstat_chunk.R')
+@
+
+<<echo =F, message = F,warnings = F,message = F, results ='asis', cache = T>>=
+source('katrina_ols2005_chunk.R')
+@
+
+<<echo =F, message = F, warnings = F,message = F, results ='asis', cache = T>>=
+source('katrina_ols2006_chunk.R')
+
+@
+
+<<echo =F, message = F, warnings = F, results ='asis', cache = T>>=
+source('katrina_spatial2005_chunk.R')
+
+@
+
+
+<<echo =F, warnings = F,message = F, results ='asis', cache = T, fig.cap ='Effect of Distance on Migrant Flows in 2005',fig.lp="fig:distance">>=
+source('katrina_figols2005_chunk.R')
+@
+
+<<echo =F, warnings = F,message = F, results ='asis', cache = T, fig.cap ='Effect of Distance on Migrant Flows in 2006',fig.lp="fig:distance">>=
+source('katrina_figols2006_chunk.R')
+@
+
+
+\end{document}

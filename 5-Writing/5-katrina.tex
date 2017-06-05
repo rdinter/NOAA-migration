@@ -1,0 +1,1030 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{setspace}
+\setstretch{2}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={The Effect of Disasters on Migration},
+            pdfauthor={Jonathan Eyer, Adam Rose, Noah Miller; and Robert Dinterman},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{The Effect of Disasters on Migration}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Jonathan Eyer, Adam Rose, Noah Miller\footnote{University of Southern
+  California} \\ and Robert Dinterman\footnote{The Ohio State University}}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{04 June 2017}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+While post-disaster migration can move vulnerable peoples from dangerous
+regions to relatively safe areas, little is known about the processes
+through which migrants select new homes. We refine a spatial econometric
+model of migrant flows to examine the characteristics of the
+destinations of migrants leaving the New Orleans area following
+Hurricane Katrina in 2005 and in 2006 when the pressure to evacuate was
+lessened. We find that migrants in 2005 settled close to New Orleans,
+with little consideration for destination amenities or characteristics.
+After the immediate threat had dissipated, however, migrants were more
+likely to consider economic characteristics of destinations.
+\end{abstract}
+
+\newpage
+
+\section{Introduction}\label{introduction}
+
+Natural disasters can cause widespread destruction and weaken local
+economies. These impacts can lead to permanent migration away from
+disaster-affected areas. Such permanent, or even semi-permanent,
+migration induced by natural disasters has the potential to
+significantly reshape the distribution of national and global
+populations and economies (see e.g. McIntosh (2008)). Moreover, because
+migration moves people out of the path of some disasters, and
+potentially into the path of other ones, post-disaster migration has
+implications for the risks associated with future events (Gráda and
+O'Rourke 1997). Finally, the migration itself and the loss of community
+cohesion suggests the need for consideration of mental health support in
+communities that will receive large numbers of disaster migrants (Weber
+and Peek 2012).
+
+Migration following large disasters is well-documented after major
+events like Hurricane Katrina, the 2011 Tohoku earthquake/tsunami and
+subsequent Fukushima nuclear disaster, and the 2004 Indian Ocean
+tsunami. Because of the pressures placed on the affected population,
+disasters can cause migration among a wider portion of the population
+than those who migrate normally (in a non-disaster related context)
+(Gray et al. 2014). While the propensity for disaster-affected
+populations to migrate is documented, less is known about the
+preferences that impact the destination of disaster-affiliated migrants.
+
+Factors in migration decisions are generally framed in the context of
+``push'' factors and ``pull'' factors. Push factors cause people to want
+to leave the origin while pull factors cause people to want to go to a
+specific destination. High unemployment in the origin might push people
+to leave, for example. Similarly, a low cost of living might pull people
+toward a particular destination. An understanding of these pull factors
+is important for crafting natural disaster policies, understanding the
+likely evolution of disaster damages, and evaluating the prospects for
+repatriation. For example, if post-disaster migrants are credit
+constrained and unable to move to the optimal location, government
+subsidies for relocation costs might be justified. Similarly, if
+post-disaster migrants move to other areas that are at high risk of
+natural disasters, future disaster losses may actually increase
+following the migration.
+
+Hurricane Katrina, which struck New Orleans in 2005, provides an ideal
+case study to examine the factors that influence the destination of
+disaster migrants. Most residents of New Orleans evacuated prior to the
+Hurricane, and following the storm most remaining residents were
+evacuated by the Federal Emergency Management Agency (FEMA).
+Approximately 1.5 million people evacuated the New Orleans area. 96\% of
+New Orleans residents and 80\% of residents surrounding the city
+eventually left their homes (Groen and Polivka 2008; Elliott and Pais
+2006). While a large number of evacuees were relocated to Houston by
+FEMA, Katrina evacuees relocated throughout the country. Nearly every
+state received FEMA funding for costs associated with supporting
+evacuees from Katrina. Many of those who evacuated following Hurricane
+Katrina never returned to the New Orleans area. These permanent migrants
+were generally younger, more likely to have children, and more likely to
+be black than those who returned to New Orleans (Groen and Polivka
+2010). There was also an increased flow of migrants from neighboring
+communities in the years following Katrina compared to the years prior
+to Katrina, indicating that those migrants who relocated to nearby
+communities were more likely to return than those who relocated to
+distant ones (Fussell, Curtis, and DeWaard 2014).
+
+In this paper, we examine the migration pull factors in terms of
+characteristics of the destinations of post-Katrina migration out of the
+New Orleans area by using data on the movement of IRS return filings
+between counties and a range of county-destination attributes. This
+paper contributes to the literature by estimating the relative
+importance of a range of factors in post-disaster relocation decisions.
+This work conveys a range of policy implications surrounding disasters
+and climate change. By identifying the characteristics that draw
+migrants following natural disasters, we inform future migration
+patterns as disasters grow more frequent. Our consideration of distance
+in the relocation decision also highlights the extent to which
+post-disaster migrants will be removed from similarly disaster-prone
+areas. Finally, we contribute to a small but growing set of studies that
+model migration in an explicitly spatial econometric context.
+
+The rest of the paper proceeds as follows. In Section \ref{theory}, we
+review the theoretical structure of migration decisions, in Section
+\ref{data} discuss our data sources, in Section \ref{sec:meth} present
+our estimating equations, and in Section \ref{sec:results} present our
+results. \# Conceptual Underpinnings \label{theory}
+
+From an economic standpoint, migration decisions are based on households
+comparing their expected lifetime utility in their current location (the
+origin) to a location to which they could move (the destination)
+(Greenwood 1985; Greenwood 1975). Yun and Waldorf (2016) examine the
+decision about whether or not to migrate in an expected lifetime utility
+framework and focus on the extent to which Katrina induced migration by
+those who would not otherwise have migrated. The utility that a
+household expects to receive from living in a particular location
+depends on economic variables such as the wages and cost-of-living
+associated with an area, but also on non-economic variables such as
+environmental amenities, family and social ties, and perceptions about
+safety. A household will decide to migrate if the increase in expected
+lifetime utility obtained by moving from the origin to the destination
+exceeds the costs associated with moving. These costs include the
+financial costs associated with moving, as well as more abstract factors
+such as the social costs incurred by the move.
+
+The decision to migrate is generally endogenous to migrant
+characteristics. Highly-skilled migrants who expect to receive large
+wage premiums are more likely to migrate than low-skilled workers, for
+example Borjas (1987). Similarly, migration is costly, and those who are
+less credit-constrained are more able to afford the upfront costs
+associated with an optimal relocation decision (Chiswick 1999).
+
+Natural disasters, however, cause exogenous variation in the expected
+lifetime utility at the origin. For example, property damage would
+require repair costs in order to stay at the origin, and a weakened
+local economy would lower wages at the origin. Similarly, if a disaster
+causes households to update their beliefs about the likelihood and
+severity of subsequent events, this could lower the expected utility of
+remaining in the origin. These effects would cause households to
+re-evaluate their location decisions and potentially choose to migrate
+due to the decreased expected life-time utility at their origin (Yun and
+Waldorf 2016).
+
+In the event of major natural disasters like Hurricane Katrina and the
+Fukushima nuclear disaster, the push factors are relatively obvious;
+people leave the origin because of mandatory evacuation requirements,
+legal inability to return due to quarantines, loss of employment
+opportunities, etc. It is less obvious what draws migrants to particular
+locations following a disaster. One might be particularly concerned that
+post-disaster migrants are systematically different than those who
+choose to migrate under other circumstances. Disaster-related migrants,
+for example, might feel compelled to relocate more quickly or have less
+wealth with which to bear moving costs. Hence, they may not move to
+optimal locations in comparison to normal circumstances, or what Yun and
+Waldorf (2016) refer to as ``double-victimization.'' Black et al. (2011)
+suggest that population movements due to disasters are typically short
+distance, though this conclusion seems to be counter to what happened in
+the aftermath of Hurricane Katrina.
+
+Several variables have been suggested, and some tested, to explain the
+pull factors. Many of these are traditional in the gravity model
+literature of migration, such as wage and cost-of-living differentials,
+distance, moving costs, and general economic health of the destination
+(Borjas 1987; Rupasingha, Liu, and Partridge 2015). Broadening the
+analysis leads to consideration of amenities, family ties, racial/ethnic
+affinities, migration networks, and institutions (McKenzie and Rapoport
+2010; Nifo and Vecchione 2014). The destination choice itself is
+dependent on the reason that drives the individual to migrate (Findlay
+2011). One might conclude that short or long-run hazard vulnerability
+would be major considerations, but Black et al. (2011) and Fielding
+(2011) emphasize the primacy of socioeconomic over environmental
+variables in current migration decisions, though on the basis of only
+anecdotal information.
+
+\section{\texorpdfstring{Data \label{data}}{Data }}\label{data}
+
+Our primary source of data is the Internal Revenue Service (IRS)
+Statistics of Income Division's migration data. These data report the
+flows of populations between counties based on changes in the location
+from which tax returns are filed. The IRS reports both outflow migration
+(tax returns and exemptions of filers who leave a county) as well as
+inflow migration (tax returns and exemptions that enter a county). The
+IRS data also include the number of filings and exemptions of people who
+do not move, providing a base-level population value that is comparable
+to the migration data. These reports include not only those filings that
+change counties but also the number of claimed exemptions that change
+counties and the annual gross adjusted income associated with the
+filings. In order to ensure the privacy of individual filers, the IRS
+suppresses observations in which fewer than ten filers migrated between
+an origin-destination pair. We treat these values as true zeroes.
+
+Given our focus on New Orleans, we restrict our interest to outflow
+migration from the counties most severely affected by Hurricane Katrina
+in 2005.{[}\^{}parish{]} We define our population affected by Hurricane
+Katrina as those residing in Cameron Parish, Orleans Parish, Plaquemines
+Parish, St.~Bernard Parish, and Jefferson Parish. While there was some
+migration between affected regions (i.e., moving from a county that was
+severely affected to one that was slightly less affected), we remove
+these migrants from our sample to facilitate a simpler interpretation of
+outflow migrants. {[}\^{}parish{]}: While Louisiana is organized into
+parishes rather than counties, we will use the term counties throughout
+this paper to facilitate discussion of destination locations.
+
+We aggregate annual migration flows to each destination county across
+the five highly-affected origin counties between 2000 and 2010 The
+result is an 11-year panel of population flows to the 3,139
+destination-county.\footnote{There are 3,144 counties and county
+  equivalents in the U.S. and the five affected counties are removed
+  from the set of potential destination counties.} There is a non-zero
+number of migrants to approximately 5.4\% of the county-year
+observations in our dataset. In 2005, however, over 13\% of US counties
+received migrants from the affected area. Table
+\textasciitilde{}\ref{desttable_year} shows the total number of migrants
+from the affected area in each year of our sample, as well as the
+percentage of destination counties that received migrants.
+
+We supplement the IRS migration data with a number of explanatory
+variables that might affect the relative attractiveness of a destination
+county. Annual county-level unemployment rates are obtained from the
+Bureau of Labor Statistics (BLS). Similarly, annual county-level racial
+composition data is obtained from the U.S. Census' intra-decennial
+Population Estimates Program. Average annual wage data is obtained the
+the BLS' Quarterly Census of Wages. For each variable we merge these
+data with the IRS migration data by county and year.
+
+\section{\texorpdfstring{Methodology
+\label{sec:meth}}{Methodology }}\label{methodology}
+
+\subsection{OLS Models}\label{ols-models}
+
+In order to understand how Hurricane Katrina affected migration
+preferences, we estimate a series of models of migration outflow from
+the five affected counties. We specify the model
+
+\begin{equation} \label{eq:basereg}
+    mig_{jt} = f(population_{jt}, g(distance_j), X_E, X_D, Time_t, Year 2005 \times population_{jt}, Year 2005 \times g(distance_j), Year 2005 \times X_E, Year 2005 \times X_D)
+\end{equation}
+
+where \(mig_{jt}\) is the number of total migrants (filers and
+exemptions) that moved from the counties affected by Hurricane Katrina
+to county \(j\) in year \(t\), and \(X_E\) and \(X_D\) are matrices of
+economic and demographic explanatory variables, respectively. The
+economic explanatory variable matrix, \(X_E\) is composed of
+\(unemploy_{jt}\), the unemployment rate in county \(j\) in year \(t\)
+and \(pay_{jt}\), the average annual wage rate in county \(j\) at year
+\(t\). The demographic explanatory variables matrix, \(X_D\), is
+composed of \(black_{jt}\), which is the percentage of county \(j's\)
+population in year \(t\) that is black, and \(LA_j\), a dummy variable
+that takes on a value of one if county \(j\) is in Louisiana and a value
+of zero otherwise. Finally, \(g(distance_j)\) is a function of the
+Euclidean distance between county \(j\) and Orleans Parish. We consider
+four distance specifications as controls: linear, cubic, and quartic
+functions of the Euclidean distance and a restricted cubic
+spline.\footnote{The restricted cubic spline fits a series of cubic
+  polynomials to the data. This allows different polynomial structures
+  at different portions of the data's domain. The polynomials are
+  constrained to ensure continuity across the polynomial specifications.}
+
+Our key explanatory variable is Year 2005 which is a dummy variable that
+takes on a value of one if an observation occurs in 2005 and a zero
+otherwise. We interact this dummy variable with each of our other
+explanatory variables, so that the interaction terms capture the change
+in preferences over each pull factor variable relative to the other
+years in our sample, when a major disaster did not strike. If Hurricane
+Katrina shifted the relative importance of pull factors in the
+destination-selection process, we would expect these interaction terms
+to be statistically significant.
+
+We consider a set of dependent variables for our regressions, and
+estimate the model separately with each potential dependent variable.
+First, we consider the number of migrants to county \(j\) itself. While
+this is not a gravity model per se because we do not estimate logs of
+migration, it remains in the spirit of a gravity model in which distance
+and other amenities affect migrant decisions. Next, because many
+counties receive no migrants at all we estimate a linear regression in
+which \(mig_{jt}\) takes on a value of one if any migrants are observed
+moving to a particular county in a given year. Finally, we estimate the
+percentage of migrants from the affected five-counties to each
+destination county and the percentage of incoming migrants in each
+destination county that came from the Katrina-affected counties. The
+former specification allows us to examine how Hurricane Katrina affected
+the distribution of migrant destinations in a way that is invariant to
+the total number of migrants. The latter informs the effect of
+post-disaster migrants on destination counties in the sense that
+counties will likely be able to absorb some number of migrants from a
+disaster-afflicted region, but as the percentage of a county's new
+population that is migrating away from a disaster rises there is
+increasing strain placed on the destination county.
+
+Next, we expand our consideration to outflow migration from the greater
+New Orleans area in 2006. This allows us to consider migrants who did
+not permanently or semi-permanently leave the area immediately in the
+wake of Hurricane Katrina, but rather in subsequent years. Such migrants
+are relatively more likely to have left the New Orleans area because of
+a weakened economy than those who left in 2005.
+
+We again estimate Equation \textasciitilde{}\ref{eq:basereg}, but we
+include a dummy variable for whether or not an observation corresponds
+to 2006 as well as the associated interaction terms. In the same spirit
+as the 2005 interaction terms, these coefficients are interpreted as the
+change in migration pull factors in the medium-term aftermath of
+Hurricane Katrina. This allows us to examine the migratory behavior of
+New Orleans area residents in 2006. Because these people weathered the
+immediate brunt of the storm and then chose to leave, these effects are
+likely to capture behavior that is more focused on leaving the weakened
+city for better opportunities.
+
+\section{\texorpdfstring{Results
+\label{sec:results}}{Results }}\label{results}
+
+\subsection{Baseline Results}\label{baseline-results}
+
+In Table \textasciitilde{}\ref{tab:lpm}, we present the results of a
+linear probability model of whether or not any migrants were observed
+moving to a particular county from the New Orleans area. In general, the
+results across the entire 2000-2010 time range reflect relatively
+standard migration preferences. Counties that are large, or close to the
+New Orleans area are more likely to receive migrants than less populous
+counties or those that are far from southern Louisiana. Similarly,
+counties with lower unemployment and higher wages are more likely to
+receive migrants than counties with less robust economies. Counties with
+large black populations are more alluring to migrants, consistent with
+the largely black population of New Orleans moving to areas with which
+they have social and family connections.
+
+In 2005, the year of the disaster, the relative importance of distance
+\emph{increased} relative to the sample as a whole. While a one
+hundred-mile increase in distance decreases the probability that a
+county receives migrants from the New Orleans area by about 0.3
+percentage points, in 2005 each additional one hundred miles decreased
+the probability of migration by an additional 0.5 percentage points. In
+general, economic factors were less important in determining potential
+destinations than in non-disaster affected years, the effect of the
+unemployment rate on migrant destinations in 2005 is statistically
+indistinguishable from zero. One exception to the economic effect is
+through the channel of wages, which became more alluring when the
+disaster struck. Counties with a greater percentage of black residents
+were more likely to receive migrants in 2005 than in other years,
+further evidence of the reliance on community ties when disasters
+strike.
+
+In 2006, we find greater emphasis on economic characteristics than in
+the sample as a whole. Counties with low unemployment rates and a low
+cost of living are more likely to receive migrant flows from the Katrina
+area. We also find a slight reduction in the importance of population in
+determining the destination to which migrants move.
+
+Table \textasciitilde{}\ref{reg:fullsample} presents the results for the
+OLS models based on migration out of the New Orleans area in 2005. In
+each column we present an alternative specification for the functional
+form by which distance is related to the number of migrants who move to
+a given county. Across each model, we find consistent evidence that
+distance between a county and the New Orleans area and the population of
+the destination county are statistically significant indicators of the
+number of migrants who move to a particular county. Louisiana counties
+generally receive a greater number of migrants than outside counties
+across each of the specifications. \%Is this Table included?? I don't
+see it. The following 4 paragraphs all seem to discuss this missing
+Table, so I can't double check their validity as of this moment.
+
+Because it is difficult to conceptualize the marginal effect of distance
+on migrants across each of our specifications, we present a graph of
+each distance control in Figure \textasciitilde{}\ref{fig:dist2005}.
+Across each of our distance control specifications, the number of
+migrants moving to a county is declining in distance.\footnote{Population
+  flows are relatively sparse between counties more than 1000 miles
+  apart, and after 1000 miles the functional forms of the destination
+  polynomials force the polynomials either upward or downward.} These
+lines can be interpreted by comparing the functional value between
+various points along the x-axis. For example, the value of the spline
+function in green is 0 at a distance of 0 and approximately -1200 at a
+distance of 1000 miles. This means that a county 1000 miles from New
+Orleans would receive 1200 fewer migrants than a hypothetical,
+unevacuated county that was 0 miles from New Orleans. In each
+specification except the linear, the effect of distance is declining
+over the relevant range. The effect of a marginal mile of distance
+begins to flatten around 500 miles from the New Orleans area.
+
+Migrants generally show a preference for more populous counties than for
+less populous counties. Across each distance specification the number of
+migrants who move to a given county increases by approximately 1,150 for
+every million residents of the destination county. For comparison, note
+that the effect of a marginal one million residents in a county has
+approximately the same draw as a county that is 1000 miles closer to New
+Orleans than an alternative.
+
+We also find that migrants are much more likely to move to a county that
+is in Louisiana than one that is outside of Louisiana. This effect is
+relatively consistent across each of our distance controls so it is
+unlikely that this is merely capturing preferences for close counties
+over distant ones. Rather it is likely that residents of New Orleans
+feel an affiliation with the state of Louisiana and prefer to stay in
+the state for these reasons. This is consistent with the anchoring
+literature, which suggests that people feel a special affinity with the
+place that they perceive as ``home'' (Chamlee-wright and Storr 2009). A
+county in Louisiana is expected to receive about 1,000 more migrants
+than a comparable county not in the state. This effect is roughly
+equivalent to the number of migrants associated with an additional
+million residents in the destination county.
+
+\section{\texorpdfstring{Conclusion
+\label{sec:conclusion}}{Conclusion }}\label{conclusion}
+
+This study has focused on the characteristics of the destinations of
+post-Katrina migrants from the New Orleans area using IRS data on the
+movement of tax returns and exemptions in order to explain the pattern
+of out-migration. An understanding of the factors driving post-disaster
+migration is important both in planning for shifts in population and in
+assessing future damages from natural disasters.
+
+We find that in 2005 -- in the immediate aftermath of Hurricane Katrina
+-- that distance and destination counties' percentage black population
+were the primary drivers of relocation decisions. Households also opted
+to live in Louisiana at a greater rate than one would expect based on
+distances alone. While it may appear surprising that unemployment did
+not provide statistically significant effects on migration, it is
+unsurprising given the urgency with which people left New Orleans in the
+immediate aftermath of the Katrina and the fact that FEMA determined at
+least the initial destination of many of them. Indeed, after removing
+Harris County -- which received a relatively high proportion of the
+forced migrants from Katrina -- from the sample, unemployment and wage
+rates appear to have an effect on migrant destinations, although the
+effect remains small relative to destination population and distance.
+
+When we focus on those who left New Orleans in 2006, however, we find
+explanatory power behind the traditional covariates suggested in gravity
+models of migration flows. In particular, we find that people are moving
+to areas with relatively higher annual wages and relatively lower costs
+of living. As in 2005, we find a preference for moving to larger and
+closer counties. Because New Orleans was still severely weakened in
+2006, these results can be interpreted as those who remained in New
+Orleans in the year following Katrina moving away from a weakened city
+the following year.
+
+In each case, these results are robust to potential misspecification in
+the spatial dependence in both migration flows and the error term of the
+estimating equation. Failure to account for spatial correlation can bias
+OLS estimates. The consistency of our regression results between the
+spatial and OLS specifications, however, should provide some measure of
+confidence in other county-level migration models that do not explicitly
+model spatial correlation.
+
+Our results suggest the need for caution when projecting the benefits of
+post-disaster migration as a tool for mitigating future disaster
+damages. Disaster-migrants tend to relocate to destinations that are
+close to their disaster-afflicted origin. Because disaster risks are
+correlated spatially, this suggests that those impacted by disasters
+will move to locations that are also susceptible to natural disasters
+and that aggregate exposure to disaster risks will remain relatively
+unchanged. Still, those who leave the disaster-afflicted area tend to
+move to high-population, urban areas rather than rural regions. If
+disasters that strike rural areas similarly induce migration towards
+population centers, such that migrants benefit from the greater economic
+opportunity in the cities.
+
+\newpage
+
+\section{References}\label{references}
+
+\hypertarget{refs}{}
+\hypertarget{ref-black2011effect}{}
+Black, Richard, W Neil Adger, Nigel W Arnell, Stefan Dercon, Andrew
+Geddes, and David Thomas. 2011. ``The Effect of Environmental Change on
+Human Migration.'' \emph{Global Environmental Change} 21. Elsevier:
+S3--S11.
+
+\hypertarget{ref-borjas1987self}{}
+Borjas, George J. 1987. ``Self-Selection and the Earnings of
+Immigrants.'' \emph{American Economic Review} 77 (4): 531--53.
+
+\hypertarget{ref-chamlee2009there}{}
+Chamlee-wright, Emily, and Virgil Henry Storr. 2009. ```There's No Place
+Like New Orleans': Sense of Place and Community Recovery in the Ninth
+Ward After Hurricane Katrina.'' \emph{Journal of Urban Affairs} 31 (5).
+Wiley Online Library: 615--34.
+
+\hypertarget{ref-chiswick1999immigrants}{}
+Chiswick, Barry R. 1999. ``Are Immigrants Favorably Self-Selected?''
+\emph{American Economic Review} 89 (2). JSTOR: 181--85.
+
+\hypertarget{ref-elliott2006race}{}
+Elliott, James R, and Jeremy Pais. 2006. ``Race, Class, and Hurricane
+Katrina: Social Differences in Human Responses to Disaster.''
+\emph{Social Science Research} 35 (2). Elsevier: 295--321.
+
+\hypertarget{ref-fielding2011impacts}{}
+Fielding, AJ. 2011. ``The Impacts of Environmental Change on Uk Internal
+Migration.'' \emph{Global Environmental Change} 21. Elsevier:
+S121--S130.
+
+\hypertarget{ref-findlay2011migrant}{}
+Findlay, Allan M. 2011. ``Migrant Destinations in an Era of
+Environmental Change.'' \emph{Global Environmental Change} 21. Elsevier:
+S50--S58.
+
+\hypertarget{ref-fussell2014recovery}{}
+Fussell, Elizabeth, Katherine J Curtis, and Jack DeWaard. 2014.
+``Recovery Migration to the City of New Orleans After Hurricane Katrina:
+A Migration Systems Approach.'' \emph{Population and Environment} 35
+(3). Springer: 305--22.
+
+\hypertarget{ref-gray2014studying}{}
+Gray, Clark, Elizabeth Frankenberg, Thomas Gillespie, Cecep Sumantri,
+and Duncan Thomas. 2014. ``Studying Displacement After a Disaster Using
+Large-Scale Survey Methods: Sumatra After the 2004 Tsunami.''
+\emph{Annals of the Association of American Geographers} 104 (3). Taylor
+\& Francis: 594--612.
+
+\hypertarget{ref-grada1997migration}{}
+Gráda, Cormac Ó, and Kevin H O'Rourke. 1997. ``Migration as Disaster
+Relief: Lessons from the Great Irish Famine.'' \emph{European Review of
+Economic History} 1 (1). Oxford University Press: 3--25.
+
+\hypertarget{ref-greenwood1975research}{}
+Greenwood, Michael J. 1975. ``Research on Internal Migration in the
+United States: A Survey.'' \emph{Journal of Economic Literature}. JSTOR,
+397--433.
+
+\hypertarget{ref-greenwood1985human}{}
+---------. 1985. ``Human Migration: Theory, Models, and Empirical
+Studies.'' \emph{Journal of Regional Science} 25 (4). Wiley Online
+Library: 521--44.
+
+\hypertarget{ref-groen2008hurricane}{}
+Groen, Jeffrey A, and Anne E Polivka. 2008. ``Hurricane Katrina
+Evacuees: Who They Are, Where They Are, and How They Are Faring.''
+\emph{Monthly Labor Review} 131. HeinOnline: 32.
+
+\hypertarget{ref-groen2010going}{}
+---------. 2010. ``Going Home After Hurricane Katrina: Determinants of
+Return Migration and Changes in Affected Areas.'' \emph{Demography} 47
+(4). Springer: 821--44.
+
+\hypertarget{ref-mcintosh2008measuring}{}
+McIntosh, Molly Fifer. 2008. ``Measuring the Labor Market Impacts of
+Hurricane Katrina Migration: Evidence from Houston, Texas.''
+\emph{American Economic Review} 98 (2). JSTOR: 54--57.
+
+\hypertarget{ref-mckenzie2010self}{}
+McKenzie, David, and Hillel Rapoport. 2010. ``Self-Selection Patterns in
+Mexico-Us Migration: The Role of Migration Networks.'' \emph{Review of
+Economics and Statistics} 92 (4). MIT Press: 811--21.
+
+\hypertarget{ref-nifo2014institutions}{}
+Nifo, Annamaria, and Gaetano Vecchione. 2014. ``Do Institutions Play a
+Role in Skilled Migration? The Case of Italy.'' \emph{Regional Studies}
+48 (10). Taylor \& Francis: 1628--49.
+
+\hypertarget{ref-rupasingha2015rural}{}
+Rupasingha, Anil, Yongzheng Liu, and Mark Partridge. 2015. ``Rural
+Bound: Determinants of Metro to Non-Metro Migration in the United
+States.'' \emph{American Journal of Agricultural Economics} 97 (3).
+Oxford University Press: 680--700.
+
+\hypertarget{ref-weber2012displaced}{}
+Weber, Lynn, and Lori A Peek. 2012. \emph{Displaced: Life in the Katrina
+Diaspora}. University of Texas Press.
+
+\hypertarget{ref-yun2016day}{}
+Yun, Seong Do, and Brigitte S Waldorf. 2016. ``The Day After the
+Disaster: Forced Migration and Income Loss After Hurricanes Katrina and
+Rita.'' \emph{Journal of Regional Science} 56 (3). Wiley Online Library:
+420--41.
+
+\clearpage
+
+\section{Tables and Figures}\label{tables-and-figures}
+
+\begin{longtable}[]{@{}lrl@{}}
+\caption{Most Common State Destination for Migrants in 2005
+\label{tab:commondeststate}}\tabularnewline
+\toprule
+State & Migrants & Percentage of Total\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+State & Migrants & Percentage of Total\tabularnewline
+\midrule
+\endhead
+Texas & 73,252 & 40.3\%\tabularnewline
+Louisiana & 45,014 & 24.8\%\tabularnewline
+Georgia & 14,480 & 7.96\%\tabularnewline
+Mississippi & 10,327 & 5.68\%\tabularnewline
+Florida & 5,951 & 3.27\%\tabularnewline
+Tennessee & 4,896 & 2.69\%\tabularnewline
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\begin{longtable}[]{@{}lllrl@{}}
+\caption{Most Common County Destination for Migrants in 2005
+\label{tab:commondest}}\tabularnewline
+\toprule
+FIPS & County & State & Migrants & Percentage of Total\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+FIPS & County & State & Migrants & Percentage of Total\tabularnewline
+\midrule
+\endhead
+48201 & Harris & Texas & 38,033 & 20.9\%\tabularnewline
+22033 & East Baton Rouge & Louisiana & 14,291 & 7.86\%\tabularnewline
+48113 & Dallas & Texas & 9,971 & 5.48\%\tabularnewline
+48439 & Tarrant & Texas & 5,575 & 3.07\%\tabularnewline
+22105 & Tangipahoa & Louisiana & 4,758 & 2.62\%\tabularnewline
+22055 & Lafayette & Louisiana & 3,377 & 1.86\%\tabularnewline
+48029 & Bexar & Texas & 3,114 & 1.71\%\tabularnewline
+22005 & Ascension & Louisiana & 2,912 & 1.6\%\tabularnewline
+13089 & Dekalb & Georgia & 2,783 & 1.53\%\tabularnewline
+47157 & Shelby & Tennessee & 2,769 & 1.52\%\tabularnewline
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+term & Flow & IHS & LP & Share\tabularnewline
+\midrule
+\endhead
+(Intercept) & 14.8969 & -0.0325 & -0.02 & 0.0455\tabularnewline
+& (12.7597) & (0.1154) & (0.023) & (0.0278)\tabularnewline
+population & 193.1327* & 2.2289*** & 0.3992*** & 0.474**\tabularnewline
+& (110.3825) & (0.521) & (0.1027) & (0.2188)\tabularnewline
+distance & -1.8062*** & -0.0268*** & -0.0048*** &
+-0.005***\tabularnewline
+& (0.4165) & (0.003) & (5e-04) & (0.0012)\tabularnewline
+un\_rate & -12.6374 & -1.605*** & -0.3361*** & -0.1494**\tabularnewline
+& (29.0974) & (0.346) & (0.0689) & (0.0688)\tabularnewline
+pay & 0.7527* & 0.0175*** & 0.0036*** & 0.002*\tabularnewline
+& (0.4318) & (0.0047) & (9e-04) & (0.001)\tabularnewline
+fmr & -3.9009 & 0.0195 & 0.0057* & -0.0071\tabularnewline
+& (3.7921) & (0.0155) & (0.0031) & (0.0076)\tabularnewline
+metro03nonmetro & 4.2191 & -0.1092** & -0.0266*** &
+0.0138\tabularnewline
+& (7.3925) & (0.0498) & (0.0096) & (0.0168)\tabularnewline
+katrina & 51.6205*** & 0.5167*** & 0.092*** & -1e-04\tabularnewline
+& (12.9152) & (0.025) & (0.005) & (0.0038)\tabularnewline
+Adjusted R-Squared & 0.037 & 0.305 & 0.288 & 0.114\tabularnewline
+\bottomrule
+\end{longtable}
+
+\clearpage
+
+\begin{table}[!htbp]  \scriptsize \centering 
+  \caption{Any Migration to a County - Linear Probability Model} 
+  \label{tab:lpm} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\hline \\[-1.8ex] 
+\hline \\[-1.8ex] 
+ Population (Millions) & 0.264$^{***}$ & 0.261$^{***}$ & 0.261$^{***}$ \\ 
+  & (0.071) & (0.069) & (0.069) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) & $-$0.003$^{***}$ & $-$0.003$^{***}$ & $-$0.003$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) \\ 
+  & & & \\ 
+ Louisiana Dummy & 0.365$^{***}$ & 0.343$^{***}$ & 0.334$^{***}$ \\ 
+  & (0.051) & (0.055) & (0.055) \\ 
+  & & & \\ 
+ Percentage Black & 0.161$^{***}$ & 0.136$^{***}$ & 0.133$^{***}$ \\ 
+  & (0.026) & (0.027) & (0.027) \\ 
+  & & & \\ 
+ Unemployment Rate & $-$0.005$^{***}$ & $-$0.005$^{***}$ & $-$0.004$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) \\ 
+  & & & \\ 
+ Annual Average Pay & 0.005$^{***}$ & 0.004$^{***}$ & 0.004$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) \\ 
+  & & & \\ 
+ $Population (Millions) \times 2005$ &  & 0.032 & 0.066$^{*}$ \\ 
+  &  & (0.030) & (0.040) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) x 2005 &  & $-$0.005$^{***}$ & $-$0.005$^{***}$ \\ 
+  &  & (0.001) & (0.001) \\ 
+  & & & \\ 
+ Louisiana Dummy x 2005 &  & 0.301$^{***}$ & 0.311$^{***}$ \\ 
+  &  & (0.062) & (0.062) \\ 
+  & & & \\ 
+ Percentage Black x 2005 &  & 0.284$^{***}$ & 0.311$^{***}$ \\ 
+  &  & (0.046) & (0.047) \\ 
+  & & & \\ 
+ Unemployment Rate x 2005 &  & $-$0.001 & $-$0.005$^{**}$ \\ 
+  &  & (0.002) & (0.003) \\ 
+  & & & \\ 
+ Annual Average Pay x 2005 &  & 0.006$^{***}$ & 0.009$^{***}$ \\ 
+  &  & (0.001) & (0.001) \\ 
+  & & & \\ 
+ $Population (Millions) x 2006$ &  &  & $-$0.033$^{*}$ \\ 
+  &  &  & (0.019) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) x 2006 &  &  & $-$0.001$^{***}$ \\ 
+  &  &  & (0.0004) \\ 
+  & & & \\ 
+ Louisiana Dummy x 2006 &  &  & 0.108$^{**}$ \\ 
+  &  &  & (0.045) \\ 
+  & & & \\ 
+ Percentage Black x 2006 &  &  & 0.013 \\ 
+  &  &  & (0.021) \\ 
+  & & & \\ 
+ Unemployment Rate x 2006 &  &  & $-$0.001 \\ 
+  &  &  & (0.001) \\ 
+  & & & \\ 
+ Annual Average Pay x 2006 &  &  & 0.0004 \\ 
+  &  &  & (0.001) \\ 
+  & & & \\ 
+ Constant & $-$0.025 & $-$0.021 & $-$0.006 \\ 
+  & (0.020) & (0.020) & (0.020) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 34,359 & 34,359 & 34,359 \\ 
+R$^{2}$ & 0.353 & 0.377 & 0.372 \\ 
+Adjusted R$^{2}$ & 0.352 & 0.376 & 0.372 \\  
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+\clearpage
+
+\begin{table}[!htbp] \scriptsize \centering 
+  \caption{Migration to Each County as Share of Total New Orleans Out-Migration} 
+  \label{tab:percmigols} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\hline \\[-1.8ex] 
+  Population (Millions) & 0.003$^{**}$ & 0.002$^{**}$ & 0.002$^{***}$ \\ 
+  & (0.001) & (0.001) & (0.001) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) & $-$0.0001$^{***}$ & $-$0.00005$^{***}$ & $-$0.00005$^{***}$ \\ 
+  & (0.00002) & (0.00002) & (0.00002) \\ 
+  & & & \\ 
+ Louisiana Dummy & 0.007$^{**}$ & 0.007$^{**}$ & 0.008$^{**}$ \\ 
+  & (0.003) & (0.003) & (0.003) \\ 
+  & & & \\ 
+ Percentage Black & $-$0.0005 & $-$0.001 & $-$0.001 \\ 
+  & (0.001) & (0.001) & (0.001) \\ 
+  & & & \\ 
+ Unemployment Rate & $-$0.00003$^{***}$ & $-$0.00003$^{***}$ & $-$0.00003$^{***}$ \\ 
+  & (0.00001) & (0.00001) & (0.00001) \\ 
+  & & & \\ 
+ Annual Average Pay & 0.00001 & 0.00001 & 0.00001 \\ 
+  & (0.00001) & (0.00001) & (0.00001) \\ 
+  & & & \\ 
+ $Population (Millions) x 2005$ &  & 0.001 & 0.001 \\ 
+  &  & (0.002) & (0.002) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) x 2005 &  & $-$0.00002 & $-$0.00002 \\ 
+  &  & (0.00002) & (0.00002) \\ 
+  & & & \\ 
+ Louisiana Dummy x 2005 &  & $-$0.004 & $-$0.004 \\ 
+  &  & (0.003) & (0.003) \\ 
+  & & & \\ 
+ Percentage Black x 2005 &  & 0.001 & 0.001 \\ 
+  &  & (0.001) & (0.001) \\ 
+  & & & \\ 
+ Unemployment Rate x 2005 &  & 0.00005$^{*}$ & 0.00005$^{**}$ \\ 
+  &  & (0.00002) & (0.00003) \\ 
+  & & & \\ 
+ Annual Average Pay x 2005 &  & $-$0.00000 & $-$0.00000 \\ 
+  &  & (0.00002) & (0.00002) \\ 
+  & & & \\ 
+ $Population (Millions) x 2006$ &  &  & 0.001 \\ 
+  &  &  & (0.001) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) x 2006 &  &  & $-$0.00001 \\ 
+  &  &  & (0.00001) \\ 
+  & & & \\ 
+ Louisiana Dummy x 2006 &  &  & $-$0.003 \\ 
+  &  &  & (0.003) \\ 
+  & & & \\ 
+ Percentage Black x 2006 &  &  & 0.0005 \\ 
+  &  &  & (0.001) \\ 
+  & & & \\ 
+ Unemployment Rate x 2006 &  &  & 0.00003$^{**}$ \\ 
+  &  &  & (0.00001) \\ 
+  & & & \\ 
+ Annual Average Pay x 2006 &  &  & 0.00000 \\ 
+  &  &  & (0.00001) \\ 
+  & & & \\ 
+ Constant & 0.001 & 0.001 & 0.001 \\ 
+  & (0.001) & (0.001) & (0.001) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 34,359 & 34,359 & 34,359 \\ 
+R$^{2}$ & 0.117 & 0.120 & 0.121 \\ 
+Adjusted R$^{2}$ & 0.117 & 0.119 & 0.120 \\
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+\clearpage
+
+\begin{table}[!htbp] \scriptsize \centering 
+  \caption{Migration from New Orleans Area as Share of Total Destination In-Migration} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\\[-1.8ex] & \multicolumn{3}{c}{percLA2fips} \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ Population (Millions) & $-$0.0001 & $-$0.001 & $-$0.001 \\ 
+  & (0.001) & (0.001) & (0.001) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) & $-$0.0002$^{***}$ & $-$0.0002$^{***}$ & $-$0.0002$^{***}$ \\ 
+  & (0.0001) & (0.0001) & (0.0001) \\ 
+  & & & \\ 
+ Louisiana Dummy & 0.060$^{***}$ & 0.047$^{***}$ & 0.048$^{***}$ \\ 
+  & (0.013) & (0.014) & (0.015) \\ 
+  & & & \\ 
+ Percentage Black & 0.004 & $-$0.001 & $-$0.001 \\ 
+  & (0.003) & (0.003) & (0.003) \\ 
+  & & & \\ 
+ Unemployment Rate & 0.00001 & $-$0.0001$^{***}$ & $-$0.0001$^{***}$ \\ 
+  & (0.00004) & (0.00004) & (0.00004) \\ 
+  & & & \\ 
+ Annual Average Pay & 0.00000 & 0.00000 & 0.00000 \\ 
+  & (0.00000) & (0.00000) & (0.00000) \\ 
+  & & & \\ 
+ $Population (Millions) x 2005$ & 0.0001 & 0.0001 & 0.0001 \\ 
+  & (0.0001) & (0.0001) & (0.0001) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) x 2005 &  & 0.006 & 0.006 \\ 
+  &  & (0.004) & (0.004) \\ 
+  & & & \\ 
+ Louisiana Dummy x 2005 &  & $-$0.001$^{***}$ & $-$0.001$^{***}$ \\ 
+  &  & (0.0001) & (0.0001) \\ 
+  & & & \\ 
+ Percentage Black x 2005 &  & 0.153$^{***}$ & 0.152$^{***}$ \\ 
+  &  & (0.022) & (0.023) \\ 
+  & & & \\ 
+ Unemployment Rate x 2005 &  & 0.040$^{***}$ & 0.040$^{***}$ \\ 
+  &  & (0.011) & (0.011) \\ 
+  & & & \\ 
+ Annual Average Pay x 2005 &  & 0.003$^{***}$ & 0.003$^{***}$ \\ 
+  &  & (0.001) & (0.001) \\ 
+  & & & \\ 
+ $Population (Millions) x 2006$ &  & 0.0002 & 0.0002 \\ 
+  &  & (0.0001) & (0.0001) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) x 2006 &  &  & 0.002 \\ 
+  &  &  & (0.001) \\ 
+  & & & \\ 
+ Louisiana Dummy x 2006 &  &  & $-$0.00000 \\ 
+  &  &  & (0.00005) \\ 
+  & & & \\ 
+ Percentage Black x 2006 &  &  & $-$0.010 \\ 
+  &  &  & (0.014) \\ 
+  & & & \\ 
+ Unemployment Rate x 2006 &  &  & 0.004 \\ 
+  &  &  & (0.003) \\ 
+  & & & \\ 
+ Annual Average Pay x 2006 &  &  & 0.0003$^{***}$ \\ 
+  &  &  & (0.0001) \\ 
+  & & & \\ 
+ pay06 &  &  & $-$0.00001 \\ 
+  &  &  & (0.0001) \\ 
+  & & & \\ 
+ Constant & 0.001 & 0.001 & 0.002 \\ 
+  & (0.002) & (0.002) & (0.002) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 32,679 & 32,679 & 32,679 \\ 
+R$^{2}$ & 0.146 & 0.253 & 0.253 \\ 
+Adjusted R$^{2}$ & 0.145 & 0.252 & 0.252 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+\begin{table}[!htbp] \scriptsize \centering 
+  \caption{Inverse Hyperbolic Sine of Total Migrant Flow from New Orleans to Each County} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\cline{2-4} 
+
+\hline \\[-1.8ex] 
+  Population (Millions) & 1.411$^{***}$ & 1.361$^{***}$ & 1.354$^{***}$ \\ 
+  & (0.343) & (0.323) & (0.321) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) & $-$0.020$^{***}$ & $-$0.018$^{***}$ & $-$0.017$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.004) \\ 
+  & & & \\ 
+ Louisiana Dummy & 2.072$^{***}$ & 1.904$^{***}$ & 1.864$^{***}$ \\ 
+  & (0.309) & (0.319) & (0.323) \\ 
+  & & & \\ 
+ Percentage Black & 0.686$^{***}$ & 0.547$^{***}$ & 0.531$^{***}$ \\ 
+  & (0.131) & (0.129) & (0.128) \\ 
+  & & & \\ 
+ Unemployment Rate & $-$0.021$^{***}$ & $-$0.022$^{***}$ & $-$0.020$^{***}$ \\ 
+  & (0.004) & (0.003) & (0.003) \\ 
+  & & & \\ 
+ Annual Average Pay & 0.022$^{***}$ & 0.019$^{***}$ & 0.017$^{***}$ \\ 
+  & (0.005) & (0.005) & (0.005) \\ 
+  & & & \\ 
+ $Population (Millions) x 2005$ &  & 0.581$^{**}$ & 0.757$^{**}$ \\ 
+  &  & (0.254) & (0.302) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) x 2005 &  & $-$0.031$^{***}$ & $-$0.035$^{***}$ \\ 
+  &  & (0.004) & (0.005) \\ 
+  & & & \\ 
+ Louisiana Dummy x 2005 &  & 2.222$^{***}$ & 2.262$^{***}$ \\ 
+  &  & (0.272) & (0.280) \\ 
+  & & & \\ 
+ Percentage Black x 2005 &  & 1.575$^{***}$ & 1.702$^{***}$ \\ 
+  &  & (0.211) & (0.222) \\ 
+  & & & \\ 
+ Unemployment Rate x 2005 &  & $-$0.005 & $-$0.029$^{**}$ \\ 
+  &  & (0.012) & (0.013) \\ 
+  & & & \\ 
+ Annual Average Pay x 2005 &  & 0.033$^{***}$ & 0.050$^{***}$ \\ 
+  &  & (0.006) & (0.007) \\ 
+  & & & \\ 
+ $Population (Millions) x 2006$ &  &  & $-$0.120$^{*}$ \\ 
+  &  &  & (0.068) \\ 
+  & & & \\ 
+ Distance (Hundreds of Miles) x 2006 &  &  & $-$0.008$^{***}$ \\ 
+  &  &  & (0.002) \\ 
+  & & & \\ 
+ Louisiana Dummy x 2006 &  &  & 0.467$^{**}$ \\ 
+  &  &  & (0.236) \\ 
+  & & & \\ 
+ Percentage Black x 2006 &  &  & 0.064 \\ 
+  &  &  & (0.093) \\ 
+  & & & \\ 
+ Unemployment Rate x 2006 &  &  & $-$0.001 \\ 
+  &  &  & (0.007) \\ 
+  & & & \\ 
+ Annual Average Pay x 2006 &  &  & 0.003 \\ 
+  &  &  & (0.002) \\ 
+  & & & \\ 
+ Constant & $-$0.087 & $-$0.057 & 0.019 \\ 
+  & (0.098) & (0.099) & (0.098) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 34,359 & 34,359 & 34,359 \\ 
+R$^{2}$ & 0.385 & 0.422 & 0.418 \\ 
+Adjusted R$^{2}$ & 0.385 & 0.422 & 0.417 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+
+\end{document}
