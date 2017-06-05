@@ -10,7 +10,7 @@ print(paste0("Started 1-Migration_Controls_Tidy at ", Sys.time()))
 # library(tidyr)
 
 # Create a directory for the data
-localDir <- "1-Organization/Migration"
+localDir <- "1-tidy/Migration"
 if (!file.exists(localDir)) dir.create(localDir)
 
 ctycty <- readRDS(paste0(localDir,"/ctycty.rds"))

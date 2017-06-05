@@ -10,7 +10,7 @@ sd_     <- function(x, n) {as.vector(combn(rev(x), n - 1,
 flag_   <- function(x, n, lev = 7) {(abs(x - median_(x, n)) > 
                                        lev*sd_(x, n))}
 
-netmig <- readRDS("1-Organization/Migration/netmigration.rds") %>% 
+netmig <- readRDS("1-tidy/Migration/netmigration.rds") %>% 
   mutate(year = as.character(year), fips = str_pad(fips, 5, pad = "0"))
 
 # ---- Exemptions ---------------------------------------------------------

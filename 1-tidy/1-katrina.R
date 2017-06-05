@@ -2,7 +2,7 @@
 
 library(tidyverse)
 
-mig <- read_rds("1-Organization/Migration/ctycty.rds") %>% 
+mig <- read_rds("1-tidy/Migration/ctycty.rds") %>% 
   mutate(dfips = as.numeric(dfips), ofips = as.numeric(ofips),
          year = as.numeric(year))
 
@@ -52,17 +52,17 @@ base$distance <- sp::spDistsN1(as.matrix(base[,c("long", "lat")]),
 # ---- controls -----------------------------------------------------------
 
 # BLS
-base <- read_csv("0-Data/BLS_lau_mstr.csv") %>% 
+base <- read_csv("0-data/BLS_lau_mstr.csv") %>% 
   select(fips = full_fips, year, emp = Employed, unemp = Unemployed) %>% 
   right_join(base)
 
 # Wages
-base <- read_csv("0-Data/BLS_QCEW_redux.csv") %>% 
+base <- read_csv("0-data/BLS_QCEW_redux.csv") %>% 
   rename(fips = FIPS) %>% 
   right_join(base)
 
 # Race
-base <- read_csv("0-Data/race_by_county.csv") %>% 
+base <- read_csv("0-data/race_by_county.csv") %>% 
   mutate(fips = as.numeric(fips),
          black_pct = (ba_male + ba_female) / tot_pop,
          female_pct = tot_female / tot_pop,
@@ -72,16 +72,16 @@ base <- read_csv("0-Data/race_by_county.csv") %>%
   right_join(base)
 
 # Housing
-base <- read_csv("0-Data/medrents_83-17.csv", col_types = "iid") %>%
+base <- read_csv("0-data/medrents_83-17.csv", col_types = "iid") %>%
   rename(fips = FIPS10) %>% 
   right_join(base)
 
 # RUC
-base <- read_csv("0-Data/ruc_codes.csv") %>% 
+base <- read_csv("0-data/ruc_codes.csv") %>% 
   right_join(base)
 
 # FEMA funds
-ihp <- read_csv("0-Data/FEMA/ihp.csv") %>% 
+ihp <- read_csv("0-data/FEMA/ihp.csv") %>% 
   select(disasterNumber, year, county, stname,
          totalValidRegistrations:onaAmount) %>% 
   filter(!is.na(stname)) %>% 
@@ -102,5 +102,5 @@ base$spline4 <- spline[,4]
 base$la_dest <- floor(base$fips/1000)==22
 base$katrina <- base$year == 2005
 
-write_csv(base, "1-Organization/Migration/katrina.csv")
-write_rds(base, "1-Organization/Migration/katrina.rds")
+write_csv(base, "1-tidy/Migration/katrina.csv")
+write_rds(base, "1-tidy/Migration/katrina.rds")

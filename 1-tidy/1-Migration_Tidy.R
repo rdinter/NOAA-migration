@@ -11,16 +11,16 @@ library(stringr)
 library(tidyr)
 
 # Create a directory for the data
-localDir <- "1-Organization/Migration"
+localDir <- "1-tidy/Migration"
 if (!file.exists(localDir)) dir.create(localDir)
 
-allinflow  <- readRDS("0-Data/IRS/inflows9213.rds") %>% 
+allinflow  <- readRDS("0-data/IRS/inflows9213.rds") %>% 
   mutate(year = as.character(year), dfips = str_pad(dfips, 5, pad = "0"),
          ofips = str_pad(ofips, 5, pad = "0"))
-alloutflow <- readRDS("0-Data/IRS/outflows9213.rds") %>% 
+alloutflow <- readRDS("0-data/IRS/outflows9213.rds") %>% 
   mutate(year = as.character(year), dfips = str_pad(dfips, 5, pad = "0"),
          ofips = str_pad(ofips, 5, pad = "0"))
-allshp     <- readRDS("0-Data/Shapefiles/All_2010_county.rds")
+allshp     <- readRDS("0-data/Shapefiles/All_2010_county.rds")
 
 # ---- Clean --------------------------------------------------------------
 
@@ -228,7 +228,7 @@ allout %>%
   filter(ofips %in% trubs) %>% 
   xtabs(~ofips + year, data = .)
 
-source("1-Organization/1-Migration_functions.R")
+source("1-tidy/1-Migration_functions.R")
 
 allin         <- allin %>% 
   mutate(dfips = fipchange(dfips), ofips = fipchange(ofips)) %>%
