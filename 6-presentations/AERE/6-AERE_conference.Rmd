@@ -111,7 +111,7 @@ ggplot(fema, aes(date, declarations)) +
 
 ----
 
-![](../2-Exploratory/katrina_2000s_wide.gif)
+![](../../2-eda/katrina/figures/katrina_2000s_wide.gif)
 
 ----
 
