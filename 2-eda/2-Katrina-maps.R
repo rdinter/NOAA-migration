@@ -6,7 +6,7 @@ library(scales)
 library(tidyverse)
 library(viridis)
 
-mig <- read_rds("1-Organization/Migration/ctycty.rds") %>% 
+mig <- read_rds("1-tidy/Migration/ctycty.rds") %>% 
   mutate(dfips = as.numeric(dfips), ofips = as.numeric(ofips),
          year = as.numeric(year))
 
@@ -68,9 +68,9 @@ p <- hurricane %>%
   labs(title = "Outflow of Migrants in",
        subtitle = "from the 9 counties most affected by Katrina") +
   katrina_theme
-gganimate(p, filename = "2-Exploratory/katrina_2000s.gif",
+gganimate(p, filename = "2-eda/katrina_2000s.gif",
           ani.width = 768, ani.height = 576)
-gganimate(p, filename = "2-Exploratory/katrina_2000s_wide.gif",
+gganimate(p, filename = "2-eda/katrina_2000s_wide.gif",
           ani.width = 968, ani.height = 576)
 
 p <- hurricane %>% 
@@ -90,7 +90,7 @@ p <- hurricane %>%
        subtitle = "from the 9 counties most affected by Katrina") +
   katrina_theme
 p
-ggsave(filename = "2-Exploratory/katrina_2000s.png",
+ggsave(filename = "2-eda/katrina_2000s.png",
        width = 13.3, height = 10)
 
 p <- hurricane %>% 
@@ -107,7 +107,7 @@ p <- hurricane %>%
   labs(title = "Outflow of Migrants in 2005",
        subtitle = "from the 9 counties most affected by Katrina") +
   katrina_theme
-ggsave(p, filename = "2-Exploratory/katrina_2005.png",
+ggsave(p, filename = "2-eda/katrina_2005.png",
        width = 13.3, height = 10)
 
 
@@ -125,7 +125,7 @@ p <- hurricane %>%
   labs(title = "Outflow of Migrants in 2004",
        subtitle = "from the 9 counties most affected by Katrina") +
   katrina_theme
-ggsave(p, filename = "2-Exploratory/katrina_2004.png",
+ggsave(p, filename = "2-eda/katrina_2004.png",
        width = 13.3, height = 10)
 
 p <- hurricane %>% 
@@ -142,5 +142,5 @@ p <- hurricane %>%
   labs(title = "Outflow of Migrants in 2006",
        subtitle = "from the 9 counties most affected by Katrina") +
   katrina_theme
-ggsave(p, filename = "2-Exploratory/katrina_2006.png",
+ggsave(p, filename = "2-eda/katrina_2006.png",
        width = 13.3, height = 10)
