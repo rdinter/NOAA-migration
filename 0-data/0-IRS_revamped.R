@@ -1,5 +1,6 @@
 #Robert Dinterman
-#Robert Dinterman
+# We shall try to aggregate all of the IRS data in a somewhat readable
+# format, please have mercy.
 
 excel_sheets <- function(path) {
   quiet_excel_sheets <- purrr::quietly(readxl::excel_sheets)

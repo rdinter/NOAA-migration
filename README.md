@@ -1,9 +1,14 @@
 # NOAA-migration
 Working repository to look at the effects of natural disasters on internal migration rates across the United States from the early 1990s to mid 2010s.
 
-TO BE UPDATED.
+As a short note, it is helpful to have a consistent style for the code. Object names should be nouns while functions should be verbs. The names should adhere to [snake_case](https://en.wikipedia.org/wiki/Snake_case). In general, we should follow Hadley Wickham's [Style guide](http://adv-r.had.co.nz/Style.html) from his [Advanced R](http://adv-r.had.co.nz/) text. Hadley also has a great new book titled [R for Data Science](http://r4ds.had.co.nz/) plus if we end up developing any packages related to this repository then [R packages](http://r-pkgs.had.co.nz/) is another great resource from Hadley.
 
-One bit of note, it would be helpful to have a consistent style for the code. Object names should be nouns while functions should be verbs. The names should adhere to [snake_case](https://en.wikipedia.org/wiki/Snake_case). In general, we should follow Hadley Wickham's [Style guide](http://adv-r.had.co.nz/Style.html) from his [Advanced R](http://adv-r.had.co.nz/) text. Hadley also has a great new book titled [R for Data Science](http://r4ds.had.co.nz/) plus if we end up developing any packages related to this repository then [R packages](http://r-pkgs.had.co.nz/) is another great resource from Hadley.
+## To Do:
+
+1. Revamp the IRS code for downloading and parsing through the county to county migration data.
+2. Create scripts for finding the [random](https://github.com/rdinter/NOAA-migration/tree/master/0-data/random) folder data.
+3. Create variables to control for hurricane propensity across the US. This also involves different distance functions.
+4. Estimation of a censored or truncated regression.
 
 ## Organization:
 
