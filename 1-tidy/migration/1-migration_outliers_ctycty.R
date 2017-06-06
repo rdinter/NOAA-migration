@@ -11,7 +11,7 @@ sd_     <- function(x, n) {as.vector(combn(rev(x), n - 1,
 flag_   <- function(x, n, lev = 7) {(abs(x - median_(x, n)) > 
                                        lev*sd_(x, n))}
 
-ctymig <- readRDS("1-tidy/Migration/ctycty.rds") %>% 
+ctymig <- readRDS("1-tidy/migration/ctycty.rds") %>% 
   mutate(year = as.character(year), dfips = str_pad(dfips, 5, pad = "0"),
          ofips = str_pad(ofips, 5, pad = "0"))
 

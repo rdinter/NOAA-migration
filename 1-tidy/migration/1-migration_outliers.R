@@ -1,5 +1,5 @@
 
-# ---- Start --------------------------------------------------------------
+# ---- start --------------------------------------------------------------
 
 library(dplyr)
 library(stringr)
@@ -10,10 +10,10 @@ sd_     <- function(x, n) {as.vector(combn(rev(x), n - 1,
 flag_   <- function(x, n, lev = 7) {(abs(x - median_(x, n)) > 
                                        lev*sd_(x, n))}
 
-netmig <- readRDS("1-tidy/Migration/netmigration.rds") %>% 
+netmig <- readRDS("1-tidy/migration/netmigration.rds") %>% 
   mutate(year = as.character(year), fips = str_pad(fips, 5, pad = "0"))
 
-# ---- Exemptions ---------------------------------------------------------
+# ---- exemptions ---------------------------------------------------------
 
 detected_exmpt <- netmig %>%
   group_by(fips) %>%
@@ -37,9 +37,9 @@ flagged_exmpt %>% group_by(fips) %>%
   ungroup() %>% 
   filter(flag) %>%
   arrange(year, fips) -> temp
-# write.csv(temp, file = "1-Organization/Migration/exmpt_flag.csv", row.names=F)
+# write.csv(temp, file = "1-Organization/migration/exmpt_flag.csv", row.names=F)
 
-# ---- Exmpt Display ------------------------------------------------------
+# ---- exmpt-display ------------------------------------------------------
 
 flagged_exmpt %>% group_by(fips) %>% 
   mutate(mean_in = mean(exmpt_in), sd_in = sd(exmpt_in),
@@ -72,7 +72,7 @@ flagged_exmpt %>% group_by(fips) %>%
                caption = "Flagged Outliers for Net")
 
 
-# ---- AGI ----------------------------------------------------------------
+# ---- agi ----------------------------------------------------------------
 
 detected_agi <- netmig %>%
   group_by(fips) %>%
@@ -97,10 +97,10 @@ flagged_agi %>% group_by(fips) %>%
   filter(flag) %>%
   select(year, fips, agi_in, mean_in, sd_in, flag_factor) %>% 
   arrange(year, fips) -> temp
-# write.csv(temp, file = "1-Organization/Migration/agi_flag.csv", row.names=F)
+# write.csv(temp, file = "1-Organization/migration/agi_flag.csv", row.names=F)
 
 
-# ---- AGI Display --------------------------------------------------------
+# ---- agi-display --------------------------------------------------------
 
 flagged_agi %>% group_by(fips) %>% 
   mutate(mean_in = mean(agi_in), sd_in = sd(agi_in),

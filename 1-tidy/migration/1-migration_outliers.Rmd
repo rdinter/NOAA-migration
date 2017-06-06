@@ -2,21 +2,23 @@
 title: "Migration Outliers"
 author: "Robert Dinterman"
 date: '`r Sys.Date()`'
-output: pdf_document
+output:
+  pdf_document: default
+  html_document:
+    keep_md: yes
 ---
 
 ```{r, include=FALSE}
 library(knitr)
-opts_knit$set(root.dir = normalizePath(".."))
-read_chunk("1-Migration_Outliers.R")
+opts_knit$set(root.dir = normalizePath("../.."))
+read_chunk("1-migration_outliers.R")
 ```
 
 ```{r global_options, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, dev='png')
 ```
 
-```{r Start, include=FALSE}
-<<Start>>
+```{r start, include=FALSE}
 ```
 
 # Detecting Outliers for Net Migration
@@ -33,26 +35,22 @@ There are three values of each variable (returns, exemptions, and AGI) for a cou
 
 ## Exemptions (proxies population)
 
-```{r Exemptions}
-<<Exemptions>>
+```{r exemptions}
 ```
 
 This is only meant as a quick and dirty way of detecting outliers, but there are a total of `r length(unique(flagged_exmpt$fips))` flagged FIPS-year combinations.
 
 Exemptions do not appear to be that big of an issue and none of them appear to be obvious mis-codings. There are `r nrow(temp)` flagged ovservations, so I would be fine leaving these outliers in the dataset.
 
-```{r display_exmpt}
-<<Exmpt Display>>
+```{r exmpt-display}
 ```
 
 ## Adjusted Gross Income (AGI)
 
-```{r AGI}
-<<AGI>>
+```{r agi}
 ```
 
 Using the same methodology as above, we can also detect any anomalies in the net-migration data that deal with AGI. This ends up being more of an issue than exemptions. There are some implausible values here, especially when considering that the AGI variable is measured in terms of \$1,000s. There are `r nrow(temp)` flagged observations, which is a bit too large and should be further investigated. Below are the flagged outliers:
 
-```{r display_agi}
-<<AGI Display>>
+```{r agi-display}
 ```

@@ -2,7 +2,7 @@
 
 # ---- Start --------------------------------------------------------------
 
-print(paste0("Started 1-Migration_Controls_Tidy at ", Sys.time()))
+print(paste0("Started 1-migration_controls_tidy at ", Sys.time()))
 
 # library(dplyr)
 # library(maptools)
@@ -10,7 +10,7 @@ print(paste0("Started 1-Migration_Controls_Tidy at ", Sys.time()))
 # library(tidyr)
 
 # Create a directory for the data
-localDir <- "1-tidy/Migration"
+localDir <- "1-tidy/migration"
 if (!file.exists(localDir)) dir.create(localDir)
 
 ctycty <- readRDS(paste0(localDir,"/ctycty.rds"))

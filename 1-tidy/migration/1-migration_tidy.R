@@ -1,17 +1,18 @@
 # Robert Dinterman
 
-# ---- Start --------------------------------------------------------------
+# ---- start --------------------------------------------------------------
 
-print(paste0("Started 1-Migration_Tidy at ", Sys.time()))
+print(paste0("Started 1-migration_tidy at ", Sys.time()))
 
 library(dplyr)
+library(knitr)
 library(maptools)
 library(readr)
 library(stringr)
 library(tidyr)
 
 # Create a directory for the data
-localDir <- "1-tidy/Migration"
+localDir <- "1-tidy/migration"
 if (!file.exists(localDir)) dir.create(localDir)
 
 allinflow  <- readRDS("0-data/IRS/inflows9213.rds") %>% 
@@ -20,9 +21,9 @@ allinflow  <- readRDS("0-data/IRS/inflows9213.rds") %>%
 alloutflow <- readRDS("0-data/IRS/outflows9213.rds") %>% 
   mutate(year = as.character(year), dfips = str_pad(dfips, 5, pad = "0"),
          ofips = str_pad(ofips, 5, pad = "0"))
-allshp     <- readRDS("0-data/Shapefiles/All_2010_county.rds")
+allshp     <- readRDS("0-data/shapefiles/All_2010_county.rds")
 
-# ---- Clean --------------------------------------------------------------
+# ---- clean --------------------------------------------------------------
 
 # Need to make sure to change the -1 to NA in the flows data, then change
 #  classification of values
@@ -185,7 +186,7 @@ allout$dfips <- str_pad(1000*allout$st_fips_d + allout$cty_fips_d, 5, pad="0")
 
 rm(allinflow, alloutflow)
 
-# ---- FIPS Issues --------------------------------------------------------
+# ---- fips-issues --------------------------------------------------------
 
 # Checks: when did: Yuma (4027), Broomfield (8014), Cibola (35006) begin;
 # 30113 for yellowstone (1990)
@@ -228,7 +229,7 @@ allout %>%
   filter(ofips %in% trubs) %>% 
   xtabs(~ofips + year, data = .)
 
-source("1-tidy/1-Migration_functions.R")
+source("1-tidy/migration/1-migration_functions.R")
 
 allin         <- allin %>% 
   mutate(dfips = fipchange(dfips), ofips = fipchange(ofips)) %>%
@@ -247,7 +248,7 @@ allout$exmpt  <- ifelse(is.na(allout$return), NA, allout$exmpt)
 allout$agi    <- ifelse(is.na(allout$return), NA, allout$agi)
 
 
-# ---- Aggregate Migration ------------------------------------------------
+# ---- aggregate-migration ------------------------------------------------
 
 # Two groups: one with only 96000 and the other with cty-cty (incl. 98000)
 
@@ -361,7 +362,7 @@ ctycty <- ctycty %>%
 write_csv(ctycty, paste0(localDir, "/ctycty.csv"))
 saveRDS(ctycty, file = paste0(localDir, "/ctycty.rds"))
 
-print(paste0("Finished 1-Migration_Tidy at ", Sys.time()))
+print(paste0("Finished 1-migration_tidy at ", Sys.time()))
 
 rm(list = ls())
 
