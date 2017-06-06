@@ -85,7 +85,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{04 June 2017}
+  \date{06 June 2017}
 
 
 \begin{document}
@@ -186,7 +186,10 @@ The rest of the paper proceeds as follows. In Section \ref{theory}, we
 review the theoretical structure of migration decisions, in Section
 \ref{data} discuss our data sources, in Section \ref{sec:meth} present
 our estimating equations, and in Section \ref{sec:results} present our
-results. \# Conceptual Underpinnings \label{theory}
+results.
+
+\section{\texorpdfstring{Conceptual Underpinnings
+\label{theory}}{Conceptual Underpinnings }}\label{conceptual-underpinnings}
 
 From an economic standpoint, migration decisions are based on households
 comparing their expected lifetime utility in their current location (the
@@ -291,10 +294,10 @@ destination-county.\footnote{There are 3,144 counties and county
   from the set of potential destination counties.} There is a non-zero
 number of migrants to approximately 5.4\% of the county-year
 observations in our dataset. In 2005, however, over 13\% of US counties
-received migrants from the affected area. Table
-\textasciitilde{}\ref{desttable_year} shows the total number of migrants
-from the affected area in each year of our sample, as well as the
-percentage of destination counties that received migrants.
+received migrants from the affected area. Table \ref{desttable_year}
+shows the total number of migrants from the affected area in each year
+of our sample, as well as the percentage of destination counties that
+received migrants.
 
 We supplement the IRS migration data with a number of explanatory
 variables that might affect the relative attractiveness of a destination
@@ -376,28 +379,28 @@ wake of Hurricane Katrina, but rather in subsequent years. Such migrants
 are relatively more likely to have left the New Orleans area because of
 a weakened economy than those who left in 2005.
 
-We again estimate Equation \textasciitilde{}\ref{eq:basereg}, but we
-include a dummy variable for whether or not an observation corresponds
-to 2006 as well as the associated interaction terms. In the same spirit
-as the 2005 interaction terms, these coefficients are interpreted as the
-change in migration pull factors in the medium-term aftermath of
-Hurricane Katrina. This allows us to examine the migratory behavior of
-New Orleans area residents in 2006. Because these people weathered the
-immediate brunt of the storm and then chose to leave, these effects are
-likely to capture behavior that is more focused on leaving the weakened
-city for better opportunities.
+We again estimate Equation \ref{eq:basereg}, but we include a dummy
+variable for whether or not an observation corresponds to 2006 as well
+as the associated interaction terms. In the same spirit as the 2005
+interaction terms, these coefficients are interpreted as the change in
+migration pull factors in the medium-term aftermath of Hurricane
+Katrina. This allows us to examine the migratory behavior of New Orleans
+area residents in 2006. Because these people weathered the immediate
+brunt of the storm and then chose to leave, these effects are likely to
+capture behavior that is more focused on leaving the weakened city for
+better opportunities.
 
 \section{\texorpdfstring{Results
 \label{sec:results}}{Results }}\label{results}
 
 \subsection{Baseline Results}\label{baseline-results}
 
-In Table \textasciitilde{}\ref{tab:lpm}, we present the results of a
-linear probability model of whether or not any migrants were observed
-moving to a particular county from the New Orleans area. In general, the
-results across the entire 2000-2010 time range reflect relatively
-standard migration preferences. Counties that are large, or close to the
-New Orleans area are more likely to receive migrants than less populous
+In Table \ref{tab:lpm}, we present the results of a linear probability
+model of whether or not any migrants were observed moving to a
+particular county from the New Orleans area. In general, the results
+across the entire 2000-2010 time range reflect relatively standard
+migration preferences. Counties that are large, or close to the New
+Orleans area are more likely to receive migrants than less populous
 counties or those that are far from southern Louisiana. Similarly,
 counties with lower unemployment and higher wages are more likely to
 receive migrants than counties with less robust economies. Counties with
@@ -427,36 +430,34 @@ cost of living are more likely to receive migrant flows from the Katrina
 area. We also find a slight reduction in the importance of population in
 determining the destination to which migrants move.
 
-Table \textasciitilde{}\ref{reg:fullsample} presents the results for the
-OLS models based on migration out of the New Orleans area in 2005. In
-each column we present an alternative specification for the functional
-form by which distance is related to the number of migrants who move to
-a given county. Across each model, we find consistent evidence that
-distance between a county and the New Orleans area and the population of
-the destination county are statistically significant indicators of the
+Table \ref{reg:fullsample} presents the results for the OLS models based
+on migration out of the New Orleans area in 2005. In each column we
+present an alternative specification for the functional form by which
+distance is related to the number of migrants who move to a given
+county. Across each model, we find consistent evidence that distance
+between a county and the New Orleans area and the population of the
+destination county are statistically significant indicators of the
 number of migrants who move to a particular county. Louisiana counties
 generally receive a greater number of migrants than outside counties
-across each of the specifications. \%Is this Table included?? I don't
-see it. The following 4 paragraphs all seem to discuss this missing
-Table, so I can't double check their validity as of this moment.
+across each of the specifications.
 
 Because it is difficult to conceptualize the marginal effect of distance
 on migrants across each of our specifications, we present a graph of
-each distance control in Figure \textasciitilde{}\ref{fig:dist2005}.
-Across each of our distance control specifications, the number of
-migrants moving to a county is declining in distance.\footnote{Population
-  flows are relatively sparse between counties more than 1000 miles
-  apart, and after 1000 miles the functional forms of the destination
-  polynomials force the polynomials either upward or downward.} These
-lines can be interpreted by comparing the functional value between
-various points along the x-axis. For example, the value of the spline
-function in green is 0 at a distance of 0 and approximately -1200 at a
-distance of 1000 miles. This means that a county 1000 miles from New
-Orleans would receive 1200 fewer migrants than a hypothetical,
-unevacuated county that was 0 miles from New Orleans. In each
-specification except the linear, the effect of distance is declining
-over the relevant range. The effect of a marginal mile of distance
-begins to flatten around 500 miles from the New Orleans area.
+each distance control in Figure \ref{fig:dist2005}. Across each of our
+distance control specifications, the number of migrants moving to a
+county is declining in distance.\footnote{Population flows are
+  relatively sparse between counties more than 1000 miles apart, and
+  after 1000 miles the functional forms of the destination polynomials
+  force the polynomials either upward or downward.} These lines can be
+interpreted by comparing the functional value between various points
+along the x-axis. For example, the value of the spline function in green
+is 0 at a distance of 0 and approximately -1200 at a distance of 1000
+miles. This means that a county 1000 miles from New Orleans would
+receive 1200 fewer migrants than a hypothetical, unevacuated county that
+was 0 miles from New Orleans. In each specification except the linear,
+the effect of distance is declining over the relevant range. The effect
+of a marginal mile of distance begins to flatten around 500 miles from
+the New Orleans area.
 
 Migrants generally show a preference for more populous counties than for
 less populous counties. Across each distance specification the number of
