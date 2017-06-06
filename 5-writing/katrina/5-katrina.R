@@ -9,9 +9,11 @@ library(plm)
 library(scales)
 library(stringr)
 library(tidyverse)
+
 inv_hypersine <- function(x){
   log(x+(x^2+1)^0.5)
 }
+
 star_pval <- function(p.value) {
   unclass(symnum(p.value, corr = FALSE, na = FALSE,
                  cutpoints = c(0, 0.01, 0.05, 0.1, 1),

@@ -102,5 +102,5 @@ base$spline4 <- spline[,4]
 base$la_dest <- floor(base$fips/1000)==22
 base$katrina <- base$year == 2005
 
-write_csv(base, "1-tidy/Migration/katrina.csv")
-write_rds(base, "1-tidy/Migration/katrina.rds")
+write_csv(base, "1-tidy/migration/katrina.csv")
+write_rds(base, "1-tidy/migration/katrina.rds")

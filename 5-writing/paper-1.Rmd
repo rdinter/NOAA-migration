@@ -17,12 +17,12 @@ bibliography: paper-1.bib
 
 ```{r, include=FALSE}
 library(knitr)
-#opts_knit$set(root.dir = normalizePath(".."))
+opts_knit$set(root.dir = normalizePath(".."))
 read_chunk("paper-1.R")
 ```
 
 ```{r global_options, include=FALSE}
-knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, dev='png')
+opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, dev='png')
 ```
 
 # Introduction
@@ -37,8 +37,7 @@ Migration in response to disasters has been well-documented in the case of major
 <!--' <<echo = F,warning = FALSE,message = FALSE, cache = TRUE>>= -->
 <!--' load("~/migration/data/alldata.R") -->
 <!--' @ -->
-```{r Start, include=FALSE}
-<<Start>>
+```{r start, include=FALSE}
 ```
 
 
