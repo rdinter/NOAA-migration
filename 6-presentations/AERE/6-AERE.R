@@ -13,7 +13,7 @@ library(viridis)
 fema <- read_csv("0-Data/NOAA/fema_declarations.csv") %>% 
   mutate(date = as.Date(paste0(year, "-12-31")))
 
-hurricane <- read_rds("1-Organization/Migration/katrina.rds")
+hurricane <- read_rds("1-Organization/migration/katrina.rds")
 
 # Cameron Parish - 023, Orleans Parish - 071, Plaquemines Parish - 075,
 #  St. Bernard Parish - 087, and Jefferson Parish - 051

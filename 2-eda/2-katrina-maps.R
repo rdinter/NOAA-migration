@@ -12,7 +12,7 @@ figures     <- paste0(local_dir, "/figures")
 if (!file.exists(local_dir)) dir.create(local_dir)
 if (!file.exists(figures)) dir.create(figures)
 
-mig <- read_rds("1-tidy/Migration/ctycty.rds") %>% 
+mig <- read_rds("1-tidy/migration/ctycty.rds") %>% 
   mutate(dfips = as.numeric(dfips), ofips = as.numeric(ofips),
          year = as.numeric(year))
 
