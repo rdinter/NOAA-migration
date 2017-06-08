@@ -28,7 +28,7 @@ hurricane <- mig %>%
   summarise_each(funs(sum(., na.rm = T))) %>% 
   rename(fips = dfips, return_katrina = return,
          exmpt_katrina = exmpt, agi_katrina = agi) %>% 
-  arrange(year)
+  arrange(year) 
 
 hurricane <- hurricane %>% 
   group_by(year) %>% 
@@ -100,6 +100,7 @@ base$spline3 <- spline[,3]
 base$spline4 <- spline[,4]
 
 base$la_dest <- floor(base$fips/1000)==22
+base$katrinafips <- base$fips %in% katrina
 base$katrina <- base$year == 2005
 
 write_csv(base, "1-tidy/migration/katrina.csv")
