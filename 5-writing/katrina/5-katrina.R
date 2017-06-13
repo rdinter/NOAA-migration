@@ -9,6 +9,7 @@ library(plm)
 library(scales)
 library(stringr)
 library(tidyverse)
+library(stargazer)
 
 inv_hypersine <- function(x){
   log(x+(x^2+1)^0.5)
@@ -23,6 +24,7 @@ star_pval <- function(p.value) {
 k_data <- read_rds("1-tidy/migration/katrina.rds") %>% 
   mutate(moved = 1*!is.na(exmpt_katrina),
          katrina = 1*katrina,
+         postkat = (year == 2006),
          un_rate = 100*(unemp / (unemp + emp)),
          population = exmpt_own / 1000000,
          distance = distance / 100,
@@ -81,28 +83,36 @@ k_data %>%
 form_base <- formula(exmpt_katrina ~ population + distance + #la_dest +
                        un_rate + pay + fmr + metro03 + katrina)
 form_05 <- update(form_base, . ~ . + katrina:.)
-form_06 <- update(form_base, . ~ . + I(year == 2006):.)
+form_06 <- update(form_base, . ~ .+  postkat:.)
+form_all <- update(form_05, . ~ . +  postkat:(population + distance +
+                                                         #la_dest +
+                                                         un_rate + pay + fmr + metro03))
+
 
 # Raw Flow
 reg_0  <- lm(form_base, data = k_data)
 reg_05 <- lm(form_05, data = k_data)
 reg_06 <- lm(form_06, data = k_data)
+reg_all <- lm(form_all, data = k_data)
 
 # Inverse Hypersine
 ihs_0  <- lm(update(form_base, inv_hypersine(exmpt_katrina) ~.),
              data = k_data)
 ihs_05 <- lm(update(form_05, inv_hypersine(exmpt_katrina) ~.), data = k_data)
 ihs_06 <- lm(update(form_06, inv_hypersine(exmpt_katrina) ~.), data = k_data)
+ihs_all <- lm(update(form_all, inv_hypersine(exmpt_katrina) ~.), data = k_data)
 
 # Migration percentage
 pct_0  <- lm(update(form_base, exmpt_katrina_eyer ~.), data = k_data)
 pct_05 <- lm(update(form_05, exmpt_katrina_eyer ~.), data = k_data)
 pct_06 <- lm(update(form_06, exmpt_katrina_eyer ~.), data = k_data)
+pct_all <- lm(update(form_all, exmpt_katrina_eyer ~.), data = k_data)
 
 # Linear Probability
 lp_0  <- lm(update(form_base, moved ~.), data = k_data)
 lp_05 <- lm(update(form_05, moved ~.), data = k_data)
 lp_06 <- lm(update(form_06, moved ~.), data = k_data)
+lp_all <- lm(update(form_all, moved ~.), data = k_data)
 
 # Poisson?
 pois_0  <- glm(update(form_base, exmpt_katrina ~.), data = k_data,
@@ -111,6 +121,8 @@ pois_05 <- glm(update(form_05, exmpt_katrina ~.), data = k_data,
                family = "poisson")
 pois_06 <- glm(update(form_06, exmpt_katrina ~.), data = k_data,
                family = "poisson")
+pois_all <- glm(update(form_all, exmpt_katrina ~.), data = k_data,
+                family = "poisson")
 
 
 # ---- reg1 ---------------------------------------------------------------
@@ -216,4 +228,16 @@ ols_table %>%
   knitr::kable(caption = paste0("\\label{tab:reg2005}Effect of Destination",
                                 " County Characteristics on",
                                 " New Orleans Outflow - 2005 Interactions"))
+
+# ---- regall ---------------------------------------------------------------
+mod_stargazer <- function(...){
+  output <- capture.output(stargazer(...))
+  # The first three lines are the ones we want to remove...
+  output <- output[4:length(output)]
+  # cat out the results - this is essentially just what stargazer does too
+  cat(paste(output, collapse = "\n"), "\n")
+}
+
+
+mod_stargazer(reg_all, ihs_all, lp_all, pct_all,se = list(sqrt(diag(cluster.vcov(reg_all, cluster = ~fips))),  sqrt(diag(cluster.vcov(ihs_all, cluster = ~fips))), sqrt(diag(cluster.vcov(lp_all, cluster = ~fips))), sqrt(diag(cluster.vcov(pct_all , cluster = ~fips)))),omit.stat = c("f","ser"), covariate.labels = c("Population (Millions)", "Distance (Hundreds of Miles)","Unemployment Rate","Average Pay","Median Rent","Non Metro","Year 2005","Population X 2005", "Distance X 2005","Unemployment Rate X 2005 ","Average Pay X 2005","Median Rent X 2005","Non Metro X 2005", "Population X 2006", "Distance X 2006","Unemployment Rate X 2006 ","Average Pay X 2006","Median Rent X 2006","Non Metro X 2006"),font.size = 'scriptsize',title = "\\label{reg:regmain}Effect of Destination Characteristics on New Orleans Outflow Migration",column.labels = c("Flow","IHS","LP","Share"),model.names = F,dep.var.labels.include = FALSE)
 
