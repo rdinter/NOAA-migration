@@ -40,12 +40,8 @@ k_data <- k_data %>%
 
 form_base <- formula(exmpt_katrina ~ population + distance + #la_dest +
                        un_rate + pay + fmr + metro03 + katrina)
-form_05 <- update(form_base, . ~ . + katrina:(population + distance +
-                                                        #la_dest +
-                                                        un_rate + pay + fmr))
-form_06 <- update(form_base, . ~ . + I(year == 2006):(exmpt_own + distance +
-                                                        #la_dest +
-                                                        un_rate + pay + fmr))
+form_05 <- update(form_base, . ~ . + katrina:.)
+form_06 <- update(form_base, . ~ . + I(year == 2006):.)
 
 
 

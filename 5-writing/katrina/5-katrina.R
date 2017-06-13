@@ -50,11 +50,13 @@ k_data %>%
   mutate(total = sum(exmpt_katrina, na.rm = T)) %>% 
   group_by(State = stname) %>% 
   summarise(Migrants = sum(exmpt_katrina, na.rm = T),
-            `Percentage of Total` = percent(sum(exmpt_katrina, na.rm = T) / mean(total))) %>% 
+            `Percentage of Total` = percent(sum(exmpt_katrina, na.rm = T) /
+                                              mean(total))) %>% 
   arrange(desc(Migrants)) %>% 
   head() %>% 
   knitr::kable(format.args = list(big.mark = ","),
-               caption = "Most Common State Destination for Migrants in 2005 \\label{tab:commondeststate}")
+               caption = paste0("Most Common State Destination for Migrants",
+                                " in 2005 \\label{tab:commondeststate}"))
 
 
 # ---- common-county ------------------------------------------------------
@@ -65,23 +67,21 @@ k_data %>%
          ctyname = str_to_title(county)) %>% 
   group_by(FIPS = as.character(fips), County = ctyname, State = stname) %>% 
   summarise(Migrants = sum(exmpt_katrina, na.rm = T),
-            `Percentage of Total` = percent(sum(exmpt_katrina, na.rm = T) / mean(total))) %>% 
+            `Percentage of Total` = percent(sum(exmpt_katrina, na.rm = T) /
+                                              mean(total))) %>% 
   arrange(desc(Migrants)) %>% 
   head(n = 10) %>% 
   knitr::kable(format.args = list(big.mark = ","),
-               caption = "Most Common County Destination for Migrants in 2005 \\label{tab:commondest}")
+               caption = paste0("Most Common County Destination for Migrants",
+                                " in 2005 \\label{tab:commondest}"))
 
 
 # ---- regressions --------------------------------------------------------
 
 form_base <- formula(exmpt_katrina ~ population + distance + #la_dest +
                        un_rate + pay + fmr + metro03 + katrina)
-form_05 <- update(form_base, . ~ . + katrina:(population + distance +
-                                                #la_dest +
-                                                un_rate + pay + fmr))
-form_06 <- update(form_base, . ~ . + I(year == 2006):(exmpt_own + distance +
-                                                        #la_dest +
-                                                        un_rate + pay + fmr))
+form_05 <- update(form_base, . ~ . + katrina:.)
+form_06 <- update(form_base, . ~ . + I(year == 2006):.)
 
 # Raw Flow
 reg_0  <- lm(form_base, data = k_data)
@@ -126,7 +126,10 @@ m4 <- coeftest(lp_0, vcov = cluster.vcov(lp_0, cluster = ~fips)) %>%
 
 all_models <- bind_rows(m1, m2, m3, m4)
 
-varnames <- c("Intercept","Population (Millions)","Distance (Hundreds of Miles)","Unemployment Rate","Annual Pay (Thousands of USD)","Median Monthly Rent", "Non-Metro","Is 2005")
+varnames <- c("Intercept", "Population (Millions)",
+              "Distance (Hundreds of Miles)", "Unemployment Rate",
+              "Annual Pay (Thousands of USD)", "Median Monthly Rent",
+              "Non-Metro", "Is 2005")
 term_order <- c(m1$term, "",varnames) # for ordering variables
 
 ols_table <- all_models %>%
@@ -143,19 +146,24 @@ ols_table[seq(2, nrow(ols_table), 2), "term"] <- ""
 # Rename variables for presentation
 ols_table[seq(1,nrow(ols_table),2), "term"] <- varnames
 
+r_squared <- function(x) as.character(round(summary(x)$adj.r.squared, 3))
+n_obs <- function(x) prettyNum(nobs(x), big.mark = ",")
+
 ols_table %>% 
   select(-key) %>% 
   bind_rows(data.frame(term = "Adjusted R-Squared",
-                       Flow = as.character(round(summary(reg_0)$adj.r.squared, 3)), 
-                       IHS = as.character(round(summary(ihs_0)$adj.r.squared, 3)), 
-                       LP = as.character(round(summary(lp_0)$adj.r.squared, 3)), 
-                       Share = as.character(round(summary(pct_0)$adj.r.squared, 3)))) %>% 
+                       Flow = r_squared(reg_0), 
+                       IHS = r_squared(ihs_0), 
+                       LP = r_squared(lp_0), 
+                       Share = r_squared(pct_0))) %>% 
   bind_rows(data.frame(term = "Observations",
-                       Flow = as.character(nobs(reg_0)), 
-                       IHS = as.character(nobs(ihs_0)), 
-                       LP = as.character(nobs(lp_0)), 
-                       Share = as.character(nobs(pct_0)))) %>%
-  knitr::kable(caption = "\\label{tab:reg_main}Effect of Destination County Characteristics on New Orleans Outflow")
+                       Flow = n_obs(reg_0),
+                       IHS = n_obs(ihs_0),
+                       LP = n_obs(lp_0),
+                       Share = n_obs(pct_0))) %>%
+  knitr::kable(caption = paste0("\\label{tab:reg_main}Effect of Destination",
+                                " County Characteristics on",
+                                " New Orleans Outflow"))
 
 # ---- reg2 ---------------------------------------------------------------
 
@@ -170,7 +178,12 @@ m4 <- coeftest(lp_05, vcov = cluster.vcov(lp_05, cluster = ~fips)) %>%
 
 all_models <- bind_rows(m1, m2, m3, m4)
 
-varnames <- c("Intercept","Population (Millions)","Distance (Hundreds of Miles)","Unemployment Rate","Annual Pay (Thousands of USD)","Median Monthly Rent","Non-Metro","Is 2005","Population x 2005","Distance x 2005","Unemployment Rate x 2005","Pay x 2005","Monthly Rent x 2005")
+varnames <- c("Intercept", "Population (Millions)",
+              "Distance (Hundreds of Miles)", "Unemployment Rate",
+              "Annual Pay (Thousands of USD)", "Median Monthly Rent",
+              "Non-Metro", "Is 2005", "Population x 2005", "Distance x 2005",
+              "Unemployment Rate x 2005", "Pay x 2005", "Monthly Rent x 2005",
+              "Non-Metro x 2005")
 term_order <- c(m1$term, "",varnames) # for ordering variables
 
 ols_table <- all_models %>%
@@ -191,14 +204,16 @@ ols_table[seq(1,nrow(ols_table),2), "term"] <- varnames
 ols_table %>% 
   select(-key) %>% 
   bind_rows(data.frame(term = "Adjusted R-Squared",
-                       Flow = as.character(round(summary(reg_05)$adj.r.squared, 3)), 
-                       IHS = as.character(round(summary(ihs_05)$adj.r.squared, 3)), 
-                       LP = as.character(round(summary(lp_05)$adj.r.squared, 3)), 
-                       Share = as.character(round(summary(pct_05)$adj.r.squared, 3)))) %>% 
+                       Flow = r_squared(reg_05),
+                       IHS = r_squared(ihs_05),
+                       LP = r_squared(lp_05),
+                       Share = r_squared(pct_05))) %>% 
   bind_rows(data.frame(term = "Observations",
-                       Flow = as.character(nobs(reg_05)), 
-                       IHS = as.character(nobs(ihs_05)), 
-                       LP = as.character(nobs(lp_05)), 
-                       Share = as.character(nobs(pct_05)))) %>%
-  knitr::kable(caption = "\\label{tab:reg2005}Effect of Destination County Characteristics on New Orleans Outflow - 2005 Interactions")
+                       Flow = n_obs(reg_05),
+                       IHS = n_obs(ihs_05),
+                       LP = n_obs(lp_05),
+                       Share = n_obs(pct_05))) %>%
+  knitr::kable(caption = paste0("\\label{tab:reg2005}Effect of Destination",
+                                " County Characteristics on",
+                                " New Orleans Outflow - 2005 Interactions"))
 
