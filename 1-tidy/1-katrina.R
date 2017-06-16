@@ -46,6 +46,8 @@ base <- mig %>%
   select(fips = dfips, year, long = long_d, lat = lat_d) %>% 
   left_join(hurricane) %>% 
   left_join(alternate)
+
+# Euclidean distances are based in kilometers.
 base$distance <- sp::spDistsN1(as.matrix(base[,c("long", "lat")]),
                                c(-89.92945,30.06911), longlat = TRUE)
 
