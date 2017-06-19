@@ -86,7 +86,7 @@ Hurricane Katrina}
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{16 June 2017}
+  \date{19 June 2017}
 
 \usepackage{amsmath}
 
@@ -270,7 +270,15 @@ would be major considerations, but Black et al. (2011) and Fielding
 variables in current migration decisions, though on the basis of only
 anecdotal information.
 
-\emph{Transition needed here}
+Such migration preferences need not be constant, however. The very
+push-factors that cause migrants to choose to move could shift their
+relative preferences for pull factors. For example, a hurricane that
+destroys residents'homes (a push-factor shock) could cause people to
+rethink their preferences over living in coastal communities. Similarly,
+because natural disasters can force rapid relocation rather than
+providing time to search for new jobs or save money for transportation
+costs, migrants may sacrifice some pull factor preferences for a quicker
+transition.
 
 \section{\texorpdfstring{Data \label{sec:data}}{Data }}\label{data}
 
@@ -362,10 +370,13 @@ interest, \(Y_{i,t}\) is our dependent variable which captures migration
 flows from our previously defined New Orleans area, \({D}_{i}\) is the
 Euclidean distance from the centroid of a county to the affected area,
 \({P}_{i,t}\) is a measure of population, \({Katrina}_{t}\) is an
-indicator for if Katrina landed in that year, and \(\mathbf{X_{i,t}}\)
-contains the relevant economic explanatory variables for destination
-county: unemployment rate, average annual wages, average monthly rent,
-and an indicator of metropolitan status of the county.
+indicator for whether or not an observation corresponds to 2005, and
+\(\mathbf{X_{i,t}}\) contains the relevant economic explanatory
+variables for destination county: unemployment rate, average annual
+wages, average monthly rent, and an indicator of metropolitan status of
+the county. Of particular interest is the coefficient associated with
+the \({Katrina}_{t}\) variable which would indicate how the
+out-migration was affected by the natural disaster.
 
 We consider a set of dependent variables for our regressions, and
 estimate the model separately with each potential dependent variable.
@@ -378,19 +389,16 @@ any migrants are observed moving to a particular county in a given year.
 Finally, we calculate the share of New Orleans' area migration that goes
 to each county.
 
-Of particular interest is the coefficient associated with the
-\({Katrina}_{t}\) variable which would indicate how the out-migration
-was affected by the natural disaster. The first two variables capture
-the intensive margin of migration, while the third measures the
-extensive margin. These models describe the distribution and magnitude
-of post-disaster migration. The final specification speaks to the mix of
-migration across potential destinations, holding constant the magnitude
-of migration flows.
+The first two variables capture the intensive margin of migration, while
+the third measures the extensive margin. These models describe the
+distribution and magnitude of post-disaster migration. The final
+specification speaks to the mix of migration across potential
+destinations, holding constant the magnitude of migration flows.
 
-In addition to the baseline regressions, we like to better understand
-the effect of Hurricane Katrina on disaster-related migration. In order
-to do so we interact each of our explanatory variables with our
-\({Katrina}_{t}\) variables:
+Next, we focus on how the effect of each of the covariates on migration
+changed in 2005 relative to other years. In order to do so, we modify
+the baseline gravity model by interacting each of our explanatory
+variables with our \({Katrina}_{t}\) variables:
 
 \begin{equation} \label{eq:intreg}
 \begin{split}
@@ -399,15 +407,15 @@ Y_{i,t} = &\alpha + \gamma {D}_{i} + \beta_1 {P}_{i,t} + \beta_2 {Katrina}_{t} +
 \end{split}
 \end{equation}
 
-The interaction terms capture the change in preferences over each pull
-factor variable relative to the other years in our sample, when a major
-disaster did not strike New Orleans. If Hurricane Katrina shifted the
-relative importance of pull factors in the destination-selection
-process, we would expect these interaction terms to be statistically
-significant. Similarly, if these interaction terms are statistically
-indistinguishable from zero it suggests that migration was no different
-in 2005, for example, than it was in years that were not affected by
-Hurricane Katrina.
+The resulting interaction terms capture the change in preferences over
+each pull factor variable relative to the other years in our sample,
+when a major disaster did not strike New Orleans. If Hurricane Katrina
+shifted the relative importance of pull factors in the
+destination-selection process, we would expect these interaction terms
+to be statistically significant. Similarly, if these interaction terms
+are statistically indistinguishable from zero it suggests that migration
+was no different in 2005, for example, than it was in years that were
+not affected by Hurricane Katrina.
 
 \section{\texorpdfstring{Results
 \label{sec:results}}{Results }}\label{results}
@@ -435,9 +443,9 @@ specifications.
 When focusing on the intensive margin in 2005 (Columns 1 and 2), we
 primarily find an increased penalty on counties that are distant from
 New Orleans. While each additional hundred kilometers of distance
-resulted in a 2.2\% decrease in the number of migrants to a county in
+resulted in a 2.3\% decrease in the number of migrants to a county in
 the baseline, in 2005 the same marginal change in distance resulted in a
-7.5\% drop in migrants. In the inverse hyperbolic sine specification, we
+7.6\% drop in migrants. In the inverse hyperbolic sine specification, we
 find impacts on the economic pull factors that are statistically
 distinct from their non-interacted counterparts. The interpretation of
 the changes in these economic variables are mixed. The positive
@@ -445,27 +453,13 @@ coefficients on the unemployment rate and on median rent each indicate a
 reduction in the importance of economic considerations, although the
 positive impact on average pay suggests the opposite. There is also more
 migration towards larger counties relative to other years; a county with
-an additional million residents would receive 217\% more migrants than a
+an additional million residents would receive 215\% more migrants than a
 county with fewer residents in most years but in 2005 the differential
 would be closer to 300\%. We find similar effects on the extensive
 margin (Column 3) in 2005. Distance and population are more important in
 determining whether or not a county receives any migrants from the New
 Orleans area, while there is mixed evidence of a differential impact
 from economic considerations.
-
-Across both the intensive and extensive margins, migration preferences
-in 2006 generally return to their baseline level. There is still a
-differential impact of distance, indicating that more migrants from the
-New Orleans area in 2006 moved to counties that were close to New
-Orleans than in other years, although the effect is much smaller than it
-was in 2005. There is also some evidence of increased migration towards
-counties with high-paying jobs relative to other years. These two
-effects are generally consistent with the idea that those who stayed in
-New Orleans in 2005 placed greater concern on economic considerations
-than those who migrated away in 2005, and less concern on relocating
-cheaply. One possible explanation for this effect is that those who left
-New Orleans in 2005 did so because of the city's weakened post-Katrina
-economy.
 
 The results are less clear when we focus on explaining the share of
 migrants who moved to each county (Column 4). In most years, the share
@@ -483,13 +477,30 @@ by about 0.2 percentage points, in 2005 counties with higher
 unemployment rates actually received a greater share of migrants from
 New Orleans than those with low unemployment rates. There is no
 statistically significant shift of migrants from distant counties
-towards close ones or from large counties to smaller ones. Furthermore,
-none of the interacted explanatory variables in 2006 are statistically
-different from zero, indicating that the overall mix of migrants was
-unchanged in the aftermath of Hurricane Katrina.
+towards close ones or from large counties to smaller ones.
 
-In summary, while Hurricane Katrina resulted in substantial increases in
-outflow migration, much of it to areas that were relatively likely to be
+A large number of residents of New Orleans were evacuated to Houston,
+Texas by FEMA. While many of these people eventually settled permanently
+in Houston, these movements may not signal a particular preference for
+Houston, but rather path-dependence in relocation. Because Houston is
+relatively populous and had a relatively strong economy in 2005, it
+could be biasing our results. One could imagine, for example, that the
+increased migration towards more populous counties in 2005 is actually
+driven by FEMA relocations to Harris County, rather than any particular
+preference for populous destinations. In Table \ref{reg:regnoho}, we
+present our regression results again, while omitting Harris County,
+Texas, from the set of possible destinations. The results are
+qualitatively similar to the full sample. For the baseline coefficients,
+we see small reductions in magnitude for population, distance, and
+average pay. Similarly, we generally see small reductions in magnitude
+for the 2005 interaction terms. Our general results, that greater
+numbers of migrants moved to nearby and populous counties in 2005 than
+in most years but that the distribution of migrants was largely
+unchanged, is robust to removing Houston, the primary destination of
+direct FEMA evacuees.
+
+While Hurricane Katrina resulted in substantial increases in outflow
+migration, much of it to areas that were relatively likely to be
 affected by future hurricanes, the overall composition of migration
 remained relatively unchanged. Because people tend to migrate to close
 areas rather than distant ones, post-disaster migration is unlikely to
@@ -708,14 +719,19 @@ variable & mean & sd & min & max\tabularnewline
 variable & mean & sd & min & max\tabularnewline
 \midrule
 \endhead
-distance & 13.6623594 & 7.7881486 & 0.5732867 & 69.167293\tabularnewline
-exmpt\_katrina & 11.6515494 & 248.5658002 & 0.0000000 &
+Distance (Hundreds of Miles) & 13.6542783 & 7.7857742 & 0.5729597 &
+69.165578\tabularnewline
+Migrants from New Orleans & 11.6515494 & 248.5658002 & 0.0000000 &
 38033.000000\tabularnewline
-fmr & 5.5964191 & 1.7244501 & 3.2300000 & 19.400000\tabularnewline
-metro & 0.3476575 & 0.4762336 & 0.0000000 & 1.000000\tabularnewline
-pay & 29.5532491 & 7.2867086 & 0.0000000 & 101.084000\tabularnewline
-population & 0.0740929 & 0.2331340 & 0.0000000 & 7.421764\tabularnewline
-un\_rate & 6.0421604 & 2.6590955 & 1.3672343 & 28.840018\tabularnewline
+Unemploment Rate & 5.5964191 & 1.7244501 & 3.2300000 &
+19.400000\tabularnewline
+In a Metro & 0.3476575 & 0.4762336 & 0.0000000 & 1.000000\tabularnewline
+Average Annual Pay (Thousands of USD) & 29.5532491 & 7.2867086 &
+0.0000000 & 101.084000\tabularnewline
+Population (Millions) & 0.0740929 & 0.2331340 & 0.0000000 &
+7.421764\tabularnewline
+Unemployment Rate & 6.0421604 & 2.6590955 & 1.3672343 &
+28.840018\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -736,70 +752,52 @@ un\_rate & 6.0421604 & 2.6590955 & 1.3672343 & 28.840018\tabularnewline
  & Flow & IHS & LP & Share \\ 
 \\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
 \hline \\[-1.8ex] 
- Population (Millions) & 95.327$^{**}$ & 2.167$^{***}$ & 0.400$^{***}$ & 0.455$^{**}$ \\ 
-  & (39.123) & (0.496) & (0.102) & (0.187) \\ 
+ Population (Millions) & 101.203$^{**}$ & 2.148$^{***}$ & 0.395$^{***}$ & 0.459$^{**}$ \\ 
+  & (44.498) & (0.490) & (0.100) & (0.198) \\ 
   & & & & \\ 
- Distance (Hundreds of Kilometers) & $-$1.036$^{***}$ & $-$0.022$^{***}$ & $-$0.004$^{***}$ & $-$0.005$^{***}$ \\ 
-  & (0.242) & (0.003) & (0.001) & (0.001) \\ 
+ Distance (Hundreds of Kilometers) & $-$1.106$^{***}$ & $-$0.023$^{***}$ & $-$0.004$^{***}$ & $-$0.005$^{***}$ \\ 
+  & (0.261) & (0.003) & (0.001) & (0.001) \\ 
   & & & & \\ 
- Unemployment Rate & $-$0.492$^{***}$ & $-$0.018$^{***}$ & $-$0.004$^{***}$ & $-$0.002$^{***}$ \\ 
-  & (0.150) & (0.003) & (0.001) & (0.001) \\ 
+ Unemployment Rate & $-$0.535$^{***}$ & $-$0.018$^{***}$ & $-$0.004$^{***}$ & $-$0.002$^{***}$ \\ 
+  & (0.167) & (0.003) & (0.001) & (0.001) \\ 
   & & & & \\ 
- Average Pay & 0.391$^{*}$ & 0.015$^{***}$ & 0.003$^{***}$ & 0.002$^{**}$ \\ 
-  & (0.203) & (0.004) & (0.001) & (0.001) \\ 
+ Average Pay & 0.467$^{**}$ & 0.016$^{***}$ & 0.003$^{***}$ & 0.002$^{**}$ \\ 
+  & (0.221) & (0.004) & (0.001) & (0.001) \\ 
   & & & & \\ 
- Median Rent & $-$1.285 & 0.010 & 0.003 & $-$0.006 \\ 
-  & (1.362) & (0.015) & (0.003) & (0.006) \\ 
+ Median Rent & $-$1.547 & 0.007 & 0.003 & $-$0.006 \\ 
+  & (1.556) & (0.015) & (0.003) & (0.007) \\ 
   & & & & \\ 
- Non Metro & 2.779 & $-$0.057 & $-$0.017$^{*}$ & 0.014 \\ 
-  & (3.143) & (0.048) & (0.010) & (0.015) \\ 
+ Non Metro & 2.991 & $-$0.060 & $-$0.017$^{*}$ & 0.014 \\ 
+  & (3.605) & (0.048) & (0.010) & (0.016) \\ 
   & & & & \\ 
- Year 2005 & 79.976 & $-$1.107$^{***}$ & $-$0.217$^{***}$ & 0.005 \\ 
-  & (174.558) & (0.237) & (0.042) & (0.078) \\ 
+ Year 2005 & 79.850 & $-$1.109$^{***}$ & $-$0.217$^{***}$ & 0.005 \\ 
+  & (174.720) & (0.237) & (0.042) & (0.078) \\ 
   & & & & \\ 
- Population X 2005 & 1,062.432 & 0.668$^{**}$ & 0.001 & 0.180 \\ 
-  & (783.099) & (0.338) & (0.035) & (0.265) \\ 
+ Population X 2005 & 1,056.555 & 0.687$^{**}$ & 0.006 & 0.176 \\ 
+  & (777.624) & (0.344) & (0.037) & (0.254) \\ 
   & & & & \\ 
- Distance X 2005 & $-$7.544$^{***}$ & $-$0.053$^{***}$ & $-$0.009$^{***}$ & 0.0003 \\ 
-  & (1.737) & (0.004) & (0.001) & (0.001) \\ 
+ Distance X 2005 & $-$7.474$^{***}$ & $-$0.053$^{***}$ & $-$0.009$^{***}$ & 0.0003 \\ 
+  & (1.719) & (0.004) & (0.001) & (0.001) \\ 
   & & & & \\ 
- Unemployment Rate X 2005  & 10.140$^{**}$ & 0.111$^{***}$ & 0.020$^{***}$ & 0.007$^{***}$ \\ 
-  & (3.984) & (0.017) & (0.003) & (0.002) \\ 
+ Unemployment Rate X 2005  & 10.183$^{**}$ & 0.110$^{***}$ & 0.020$^{***}$ & 0.007$^{***}$ \\ 
+  & (3.995) & (0.017) & (0.003) & (0.002) \\ 
   & & & & \\ 
- Average Pay X 2005 & 3.064 & 0.027$^{***}$ & 0.004$^{***}$ & $-$0.00001 \\ 
-  & (3.337) & (0.006) & (0.001) & (0.001) \\ 
+ Average Pay X 2005 & 2.988 & 0.026$^{***}$ & 0.004$^{***}$ & $-$0.0001 \\ 
+  & (3.324) & (0.006) & (0.001) & (0.001) \\ 
   & & & & \\ 
- Median Rent X 2005 & $-$28.266 & 0.217$^{***}$ & 0.045$^{***}$ & $-$0.011 \\ 
-  & (33.117) & (0.031) & (0.006) & (0.013) \\ 
+ Median Rent X 2005 & $-$28.004 & 0.220$^{***}$ & 0.045$^{***}$ & $-$0.010 \\ 
+  & (32.920) & (0.031) & (0.006) & (0.013) \\ 
   & & & & \\ 
- Non Metro X 2005 & 10.871 & $-$0.442$^{***}$ & $-$0.083$^{***}$ & $-$0.007 \\ 
-  & (33.630) & (0.062) & (0.013) & (0.009) \\ 
+ Non Metro X 2005 & 10.658 & $-$0.439$^{***}$ & $-$0.083$^{***}$ & $-$0.007 \\ 
+  & (33.114) & (0.062) & (0.013) & (0.008) \\ 
   & & & & \\ 
- Population X 2006 & 60.817 & $-$0.214$^{**}$ & $-$0.060$^{**}$ & 0.035 \\ 
-  & (56.251) & (0.106) & (0.029) & (0.113) \\ 
-  & & & & \\ 
- Distance X 2006 & $-$0.702$^{***}$ & $-$0.006$^{***}$ & $-$0.001$^{***}$ & $-$0.0004 \\ 
-  & (0.215) & (0.001) & (0.0003) & (0.0004) \\ 
-  & & & & \\ 
- Unemployment Rate X 2006  & 0.462 & 0.002 & 0.0002 & 0.002 \\ 
-  & (0.566) & (0.007) & (0.001) & (0.002) \\ 
-  & & & & \\ 
- Average Pay X 2006 & 0.563$^{**}$ & 0.007$^{***}$ & 0.001$^{*}$ & 0.001 \\ 
-  & (0.251) & (0.002) & (0.0005) & (0.001) \\ 
-  & & & & \\ 
- Median Rent X 2006 & $-$2.228 & $-$0.023$^{**}$ & $-$0.003 & $-$0.006 \\ 
-  & (2.214) & (0.011) & (0.002) & (0.005) \\ 
-  & & & & \\ 
- Non Metro X 2006 & 1.780 & $-$0.022 & 0.0001 & $-$0.002 \\ 
-  & (5.074) & (0.020) & (0.005) & (0.010) \\ 
-  & & & & \\ 
- Constant & 10.583$^{*}$ & 0.008 & $-$0.012 & 0.044$^{*}$ \\ 
-  & (5.754) & (0.109) & (0.022) & (0.025) \\ 
+ Constant & 10.708$^{*}$ & 0.009 & $-$0.011 & 0.044$^{*}$ \\ 
+  & (5.663) & (0.109) & (0.023) & (0.025) \\ 
   & & & & \\ 
 \hline \\[-1.8ex] 
 Observations & 34,045 & 34,045 & 34,045 & 34,045 \\ 
 R$^{2}$ & 0.113 & 0.338 & 0.312 & 0.115 \\ 
-Adjusted R$^{2}$ & 0.113 & 0.338 & 0.312 & 0.115 \\ 
+Adjusted R$^{2}$ & 0.112 & 0.337 & 0.311 & 0.115 \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
@@ -807,97 +805,71 @@ Adjusted R$^{2}$ & 0.113 & 0.338 & 0.312 & 0.115 \\
 \end{table}
 
 \clearpage
+\scriptsize
 
-\begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:reg_main}Effect of Destination County
-Characteristics on New Orleans Outflow}\tabularnewline
-\toprule
-term & Flow & IHS & LP & Share\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-term & Flow & IHS & LP & Share\tabularnewline
-\midrule
-\endhead
-Intercept & 14.99 & -0.0308 & -0.0197 & 0.0458*\tabularnewline
-& (12.7717) & (0.1154) & (0.023) & (0.0278)\tabularnewline
-Population (Millions) & 193.0825* & 2.2278*** & 0.3989*** &
-0.4739**\tabularnewline
-& (110.3735) & (0.5207) & (0.1027) & (0.2188)\tabularnewline
-Distance (Hundreds of Kilometers) & -1.8106*** & -0.0268*** & -0.0048***
-& -0.005***\tabularnewline
-& (0.4174) & (0.003) & (5e-04) & (0.0012)\tabularnewline
-Unemployment Rate & -0.1306 & -0.0162*** & -0.0034*** &
--0.0015**\tabularnewline
-& (0.2915) & (0.0035) & (7e-04) & (7e-04)\tabularnewline
-Annual Pay (Thousands of USD) & 0.7592* & 0.0176*** & 0.0036*** &
-0.002*\tabularnewline
-& (0.4331) & (0.0047) & (9e-04) & (0.001)\tabularnewline
-Median Monthly Rent & -3.9228 & 0.019 & 0.0056* & -0.0072\tabularnewline
-& (3.7937) & (0.0155) & (0.0031) & (0.0076)\tabularnewline
-Non-Metro & 4.1423 & -0.1107** & -0.0268*** & 0.0136\tabularnewline
-& (7.3912) & (0.0499) & (0.0096) & (0.0168)\tabularnewline
-Is 2005 & 51.6484*** & 0.5169*** & 0.092*** & -1e-04\tabularnewline
-& (12.9228) & (0.025) & (0.005) & (0.0038)\tabularnewline
-Adjusted R-Squared & 0.037 & 0.306 & 0.288 & 0.114\tabularnewline
-Observations & 34,045 & 34,045 & 34,045 & 34,045\tabularnewline
-\bottomrule
-\end{longtable}
-
-\clearpage
-
-\begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:reg2005}Effect of Destination County Characteristics
-on New Orleans Outflow - 2005 Interactions}\tabularnewline
-\toprule
-term & Flow & IHS & LP & Share\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-term & Flow & IHS & LP & Share\tabularnewline
-\midrule
-\endhead
-Intercept & 10.7085* & 0.0094 & -0.0115 & 0.0444*\tabularnewline
-& (5.6626) & (0.1094) & (0.0225) & (0.025)\tabularnewline
-Population (Millions) & 101.2034** & 2.1478*** & 0.3946*** &
-0.4588**\tabularnewline
-& (44.4983) & (0.4899) & (0.0996) & (0.1976)\tabularnewline
-Distance (Hundreds of Kilometers) & -1.1058*** & -0.0226*** & -0.0041***
-& -0.005***\tabularnewline
-& (0.261) & (0.003) & (5e-04) & (0.0012)\tabularnewline
-Unemployment Rate & -0.5351*** & -0.0178*** & -0.0037*** &
--0.0019***\tabularnewline
-& (0.1671) & (0.0033) & (7e-04) & (7e-04)\tabularnewline
-Annual Pay (Thousands of USD) & 0.4672** & 0.016*** & 0.0034*** &
-0.002**\tabularnewline
-& (0.2207) & (0.0045) & (9e-04) & (0.001)\tabularnewline
-Median Monthly Rent & -1.5468 & 0.0073 & 0.0031 & -0.0062\tabularnewline
-& (1.5563) & (0.0149) & (0.0031) & (0.0068)\tabularnewline
-Non-Metro & 2.9913 & -0.0598 & -0.0172* & 0.014\tabularnewline
-& (3.6052) & (0.0482) & (0.0096) & (0.0162)\tabularnewline
-Is 2005 & 79.8503 & -1.1087*** & -0.2173*** & 0.0052\tabularnewline
-& (174.7202) & (0.2368) & (0.0418) & (0.0784)\tabularnewline
-Population x 2005 & 1056.5554 & 0.6868** & 0.0062 &
-0.1761\tabularnewline
-& (777.6244) & (0.3442) & (0.0371) & (0.2543)\tabularnewline
-Distance x 2005 & -7.4741*** & -0.0526*** & -0.0087*** &
-3e-04\tabularnewline
-& (1.719) & (0.0039) & (8e-04) & (6e-04)\tabularnewline
-Unemployment Rate x 2005 & 10.1832** & 0.1105*** & 0.0198*** &
-0.0072***\tabularnewline
-& (3.995) & (0.0167) & (0.003) & (0.0025)\tabularnewline
-Pay x 2005 & 2.9878 & 0.0263*** & 0.0043*** & -1e-04\tabularnewline
-& (3.3237) & (0.0061) & (0.0011) & (0.0013)\tabularnewline
-Monthly Rent x 2005 & -28.0041 & 0.2196*** & 0.0449*** &
--0.01\tabularnewline
-& (32.9195) & (0.0313) & (0.0062) & (0.0125)\tabularnewline
-Non-Metro x 2005 & 10.6583 & -0.4387*** & -0.083*** &
--0.0066\tabularnewline
-& (33.1141) & (0.062) & (0.0129) & (0.0081)\tabularnewline
-Adjusted R-Squared & 0.112 & 0.337 & 0.311 & 0.115\tabularnewline
-Observations & 34,045 & 34,045 & 34,045 & 34,045\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{table}[!htbp] \centering 
+  \caption{\label{reg:regnoho}Effect of Destination Characteristics on New Orleans Outflow Migration - Excluding Houston} 
+  \label{} 
+\scriptsize 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-5} 
+ & Flow & IHS & LP & Share \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4)\\ 
+\hline \\[-1.8ex] 
+ Population (Millions) & 61.535$^{***}$ & 2.117$^{***}$ & 0.400$^{***}$ & 0.283$^{***}$ \\ 
+  & (11.181) & (0.503) & (0.107) & (0.050) \\ 
+  & & & & \\ 
+ Distance (Hundreds of Kilometers) & $-$0.996$^{***}$ & $-$0.023$^{***}$ & $-$0.004$^{***}$ & $-$0.005$^{***}$ \\ 
+  & (0.238) & (0.003) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Unemployment Rate & $-$0.531$^{***}$ & $-$0.018$^{***}$ & $-$0.004$^{***}$ & $-$0.002$^{***}$ \\ 
+  & (0.142) & (0.003) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Average Pay & 0.393$^{**}$ & 0.016$^{***}$ & 0.003$^{***}$ & 0.002$^{**}$ \\ 
+  & (0.159) & (0.004) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Median Rent & $-$0.101 & 0.008 & 0.003 & 0.0001 \\ 
+  & (0.600) & (0.015) & (0.003) & (0.003) \\ 
+  & & & & \\ 
+ Non Metro & 0.503 & $-$0.062 & $-$0.017$^{*}$ & 0.003 \\ 
+  & (2.225) & (0.049) & (0.010) & (0.010) \\ 
+  & & & & \\ 
+ Year 2005 & $-$60.751 & $-$1.107$^{***}$ & $-$0.215$^{***}$ & $-$0.058$^{***}$ \\ 
+  & (44.486) & (0.241) & (0.043) & (0.022) \\ 
+  & & & & \\ 
+ Population X 2005 & 345.623$^{**}$ & 0.708$^{*}$ & 0.015 & $-$0.059 \\ 
+  & (154.226) & (0.371) & (0.041) & (0.047) \\ 
+  & & & & \\ 
+ Distance X 2005 & $-$6.433$^{***}$ & $-$0.053$^{***}$ & $-$0.009$^{***}$ & 0.0005 \\ 
+  & (1.240) & (0.004) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Unemployment Rate X 2005  & 11.197$^{***}$ & 0.111$^{***}$ & 0.020$^{***}$ & 0.008$^{***}$ \\ 
+  & (3.635) & (0.017) & (0.003) & (0.002) \\ 
+  & & & & \\ 
+ Average Pay X 2005 & 3.012$^{**}$ & 0.026$^{***}$ & 0.004$^{***}$ & 0.0002 \\ 
+  & (1.318) & (0.006) & (0.001) & (0.001) \\ 
+  & & & & \\ 
+ Median Rent X 2005 & 4.545 & 0.219$^{***}$ & 0.044$^{***}$ & 0.002 \\ 
+  & (5.200) & (0.032) & (0.006) & (0.002) \\ 
+  & & & & \\ 
+ Non Metro X 2005 & $-$15.917 & $-$0.437$^{***}$ & $-$0.083$^{***}$ & $-$0.011$^{*}$ \\ 
+  & (13.572) & (0.062) & (0.013) & (0.006) \\ 
+  & & & & \\ 
+ Constant & 7.150$^{**}$ & 0.006 & $-$0.011 & 0.029$^{*}$ \\ 
+  & (3.372) & (0.110) & (0.023) & (0.015) \\ 
+  & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 34,034 & 34,034 & 34,034 & 34,034 \\ 
+R$^{2}$ & 0.092 & 0.327 & 0.308 & 0.077 \\ 
+Adjusted R$^{2}$ & 0.092 & 0.327 & 0.308 & 0.077 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
 
 
 \end{document}
