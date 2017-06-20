@@ -34,7 +34,10 @@ hurricane <- hurricane %>%
   group_by(year) %>% 
   mutate(return_katrina_eyer = return_katrina / sum(return_katrina, na.rm = T),
          exmpt_katrina_eyer = exmpt_katrina / sum(exmpt_katrina, na.rm = T),
-         agi_katrina_eyer = agi_katrina / sum(agi_katrina, na.rm = T))
+         agi_katrina_eyer = agi_katrina / sum(agi_katrina, na.rm = T),
+         return_katrina_eyer_noho = return_katrina / sum(return_katrina[fips != 48201], na.rm = T),
+         exmpt_katrina_eyer_noho = exmpt_katrina / sum(exmpt_katrina[fips != 48201], na.rm = T),
+         agi_katrina_eyer_noho = agi_katrina / sum(agi_katrina[fips != 48201], na.rm = T))
 
 alternate <- mig %>% 
   group_by(dfips, year) %>% 
