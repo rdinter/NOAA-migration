@@ -1,3 +1,6 @@
+
+# ---- start --------------------------------------------------------------
+
 # devtools::install_github("rdinter/albersusa")
 # devtools::install_github("dgrtwo/gganimate")
 library(albersusa)
@@ -6,44 +9,18 @@ library(scales)
 library(tidyverse)
 library(viridis)
 
-
 local_dir   <- "2-eda/katrina"
 figures     <- paste0(local_dir, "/figures")
 if (!file.exists(local_dir)) dir.create(local_dir)
 if (!file.exists(figures)) dir.create(figures)
 
-mig <- read_rds("1-tidy/migration/ctycty.rds") %>% 
-  mutate(dfips = as.numeric(dfips), ofips = as.numeric(ofips),
-         year = as.numeric(year))
-
-# Cameron Parish - 023, Orleans Parish - 071, Plaquemines Parish - 075,
-#  St. Bernard Parish - 087, and Jefferson Parish - 051
-# katrina <- c(22023, 22075, 22071, 22087, 22051)
-
-# Better option: Jefferson - 051, Lafourche - 057, Orleans - 071, Plaquemines - 075,
-#  St. Bernard - 087, St. Tammany - 103, and Terrebonne - 109
-# katrina <- c(22051, 22057, 22071, 22075, 22087, 22103, 22109)
-
-# New Orleans MSA Covers
-# Jefferson - 051, Orleans - 071, Plaquemines - 075, St. Bernard - 087,
-# St. Charles - 089, St. John the Baptist - 095, and St. Tammany - 103 Parishes
-# Extras noted are Lafourche - 057, and Terrebonne - 109
-katrina <- c(22051, 22057, 22071, 22075, 22087, 22089, 22095, 22103, 22109)
-
-
-hurricane <- mig %>% 
-  filter(ofips %in% katrina, !(dfips %in% katrina)) %>% 
-  select(-ofips, long_o, lat_o) %>% 
-  group_by(dfips, long_d, lat_d, year) %>% 
-  summarise_each(funs(sum(., na.rm = T)))
+kat_tidy <- read_rds("1-tidy/migration/katrina.rds") %>% 
+  select(year, fips, long, lat, return_katrina, exmpt_katrina,
+           agi_katrina, disasters)
 
 cty <- counties_composite("aeqd")
 gg_base <- fortify(cty, region = "fips") %>%
   mutate(fips = as.numeric(id))
-
-# hurricane <- hurricane %>% 
-#   expand(dfips = unique(cty$fips), year = 1992:2013) %>% 
-#   left_join(hurricane)
 
 katrina_theme <-   theme(panel.background = element_rect(fill = "transparent"),
                          plot.background = element_rect(fill = "transparent"),
@@ -59,11 +36,28 @@ katrina_theme <-   theme(panel.background = element_rect(fill = "transparent"),
                          plot.title = element_text(size = 20),
                          plot.subtitle = element_text(size = 14))
 
-p <- hurricane %>% 
-  rename(fips = dfips) %>% 
+# ---- maps ---------------------------------------------------------------
+
+kat_tidy %>% 
+  group_by(fips) %>% 
+  summarise(disasters = mean(disasters, na.rm = T)) %>% 
+  right_join(gg_base) %>% 
+  replace_na(list(disasters = 0)) %>% 
+  ggplot(aes(long, lat, group = group)) +
+  geom_polygon(data = gg_base, fill = "khaki") +
+  geom_polygon(aes(fill = disasters)) +
+  geom_path(color = "grey25", size = 0.05) +
+  scale_fill_viridis(limits = c(0, 15), oob = squish) +
+  labs(title = "Number of Disasters Declared per County",
+       subtitle = "from 1964 until 2000") +
+  katrina_theme
+ggsave(paste0(figures, "/disasters_64-00.png"),
+       width = 13.3, height = 10)
+
+p <- kat_tidy %>% 
   filter(year > 1999, year < 2011) %>% 
   group_by(fips, year) %>% 
-  summarise(mig = sum(exmpt, na.rm = T)) %>% 
+  summarise(mig = sum(exmpt_katrina, na.rm = T)) %>% 
   right_join(gg_base) %>% 
   ggplot(aes(long, lat, group = group)) +
   geom_polygon(data = gg_base, fill = "khaki") +
@@ -79,11 +73,10 @@ gganimate(p, filename = paste0(figures, "/katrina_2000s.gif"),
 gganimate(p, filename = paste0(figures, "/katrina_2000s_wide.gif"),
           ani.width = 968, ani.height = 576)
 
-p <- hurricane %>% 
-  rename(fips = dfips) %>% 
+p <- kat_tidy %>% 
   filter(year > 2003, year < 2008) %>% 
   group_by(fips, year) %>% 
-  summarise(mig = sum(exmpt, na.rm = T)) %>% 
+  summarise(mig = sum(exmpt_katrina, na.rm = T)) %>% 
   right_join(gg_base) %>% 
   filter(!is.na(year)) %>% 
   # replace_na(list(mig = 0)) %>% 
@@ -99,11 +92,10 @@ p
 ggsave(filename = paste0(figures, "/katrina_2000s.png"),
        width = 13.3, height = 10)
 
-p <- hurricane %>% 
-  rename(fips = dfips) %>% 
+p <- kat_tidy %>% 
   filter(year == 2005) %>% 
   group_by(fips) %>% 
-  summarise(mig = sum(exmpt, na.rm = T)) %>% 
+  summarise(mig = sum(exmpt_katrina, na.rm = T)) %>% 
   right_join(gg_base) %>% 
   ggplot(aes(long, lat, group = group)) +
   geom_polygon(aes(fill = mig)) +
@@ -116,12 +108,10 @@ p <- hurricane %>%
 ggsave(p, filename = paste0(figures, "/katrina_2005.png"),
        width = 13.3, height = 10)
 
-
-p <- hurricane %>% 
-  rename(fips = dfips) %>% 
+p <- kat_tidy %>% 
   filter(year == 2004) %>% 
   group_by(fips) %>% 
-  summarise(mig = sum(exmpt, na.rm = T)) %>% 
+  summarise(mig = sum(exmpt_katrina, na.rm = T)) %>% 
   right_join(gg_base) %>% 
   ggplot(aes(long, lat, group = group)) +
   geom_polygon(aes(fill = mig)) +
@@ -134,11 +124,10 @@ p <- hurricane %>%
 ggsave(p, filename = paste0(figures, "/katrina_2004.png"),
        width = 13.3, height = 10)
 
-p <- hurricane %>% 
-  rename(fips = dfips) %>% 
+p <- kat_tidy %>% 
   filter(year == 2006) %>% 
   group_by(fips) %>% 
-  summarise(mig = sum(exmpt, na.rm = T)) %>% 
+  summarise(mig = sum(exmpt_katrina, na.rm = T)) %>% 
   right_join(gg_base) %>% 
   ggplot(aes(long, lat, group = group)) +
   geom_polygon(aes(fill = mig)) +
