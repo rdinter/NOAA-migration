@@ -93,13 +93,14 @@ k_data %>%
 # NEED TO TIDY THIS UP
 k_data %>% 
   mutate(metro = 1*(metro03 == "metro")) %>% 
-  select(exmpt_katrina, distance, population, un_rate, pay, fmr, metro) %>% 
+  select(exmpt_katrina, distance, population, un_rate, pay, fmr, metro, disasters) %>% 
   gather(variable, val) %>% 
   group_by(variable) %>% 
   summarise_all(funs(mean, sd, min, max), na.rm = T) %>% 
-  mutate(variable = c("Distance (Hundreds of Miles)", "Migrants from New Orleans","Unemploment Rate",
-                      "In a Metro","Average Annual Pay (Thousands of USD)", "Population (Millions)",
+  mutate(variable = c("Number of Disasters","Distance (Hundreds of Miles)", "Migrants from New Orleans",
+                      "Average Monthly Rent (Hundreds of USD)", "In a Metro","Average Annual Pay (Thousands of USD)", "Population (Millions)",
                       "Unemployment Rate")) %>%
+  mutate_if(is.numeric, funs(round(.,3)))%>%
   kable(caption = "Summary Statistics \\label{tab:sumstats}")
 
 # ---- regressions --------------------------------------------------------
