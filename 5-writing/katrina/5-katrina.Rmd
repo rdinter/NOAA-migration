@@ -1,19 +1,7 @@
 ---
 title: "The Effect of Disasters on Migration Destinations: Evidence from Hurricane Katrina"
 author:
-  -name: Jonathan Eyer
-  affiliation: a
-  -name: Robert Dinterman
-  affiliation: b
-  -name: Noah Miller
-  affiliation: a
-  -name: Adam Rose
-  affiliation: a
-- address:
-  -code: a
-  address: University of Southern California
-  -code: b
-  address: The Ohio State University
+  - Jonathan Eyer^[University of Southern California], Robert Dinterman^[The Ohio State University], Noah Miller^[University of Southern California], and Adam Rose^[University of Southern California]
 date: "`r format(Sys.time(), '%d %B %Y')`"
 tags: [nothing, nothingness]
 abstract: While post-disaster migration can move vulnerable populations from dangerous regions to relatively safe ones, little is known about the processes by which migrants select new homes. We utilize an econometric model of migrant flows to examine the characteristics of the destinations that attracted migrants leaving the New Orleans area following Hurricane Katrina in 2005 relative to migration behaviors in other years. We find an increase flow of migrants to large, nearby counties with a mixed effect of economic variables on migration. We find that counties that had experienced fewer disasters received a greater proportion of total migrants in 2005, but there was an overall increase in migration flow to disaster-exposed regions.
