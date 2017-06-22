@@ -154,6 +154,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1965,12051,12,FL,Florida,051,Hendry County,1,0,1,1,0
 1965,12071,12,FL,Florida,071,Lee County,1,0,1,1,0
 1965,12085,12,FL,Florida,085,Martin County,1,0,1,1,0
+1965,12086,12,FL,Florida,025,NA,1,0,1,1,0
 1965,12087,12,FL,Florida,087,Monroe County,1,0,1,1,0
 1965,12099,12,FL,Florida,099,Palm Beach County,1,0,1,1,0
 1965,12111,12,FL,Florida,111,St. Lucie County,1,0,1,1,0
@@ -307,6 +308,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1965,22117,22,LA,Louisiana,117,Washington Parish,1,0,1,1,0
 1965,22121,22,LA,Louisiana,121,West Baton Rouge Parish,1,0,1,1,0
 1965,22125,22,LA,Louisiana,125,West Feliciana Parish,1,0,1,1,0
+1965,22440,22,LA,Louisiana,440,NA,1,0,1,1,0
 1965,26005,26,MI,Michigan,005,Allegan County,1,0,1,1,0
 1965,26015,26,MI,Michigan,015,Barry County,1,0,1,1,0
 1965,26017,26,MI,Michigan,017,Bay County,1,0,1,1,0
@@ -656,6 +658,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1966,48439,48,TX,Texas,439,Tarrant County,1,0,1,1,0
 1966,48449,48,TX,Texas,449,Titus County,1,0,1,1,0
 1966,48459,48,TX,Texas,459,Upshur County,1,0,1,1,0
+1967,2165,02,AK,Alaska,165,NA,1,0,1,1,0
 1967,6027,06,CA,California,027,Inyo County,1,0,1,1,0
 1967,6029,06,CA,California,029,Kern County,1,0,1,1,0
 1967,6053,06,CA,California,053,Monterey County,1,0,1,1,0
@@ -1006,6 +1009,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1968,48409,48,TX,Texas,409,San Patricio County,1,0,1,1,0
 1969,1003,01,AL,Alabama,003,Baldwin County,1,0,1,1,0
 1969,1097,01,AL,Alabama,097,Mobile County,1,0,1,1,0
+1969,2165,02,AK,Alaska,165,NA,1,0,1,1,0
 1969,5005,05,AR,Arkansas,005,Baxter County,1,0,1,1,0
 1969,5007,05,AR,Arkansas,007,Benton County,1,0,1,1,0
 1969,5009,05,AR,Arkansas,009,Boone County,1,0,1,1,0
@@ -1219,6 +1223,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1969,22087,22,LA,Louisiana,087,St. Bernard Parish,1,0,1,1,0
 1969,22103,22,LA,Louisiana,103,St. Tammany Parish,1,0,1,1,0
 1969,22117,22,LA,Louisiana,117,Washington Parish,1,0,1,1,0
+1969,22440,22,LA,Louisiana,440,NA,1,0,1,1,0
 1969,27001,27,MN,Minnesota,001,Aitkin County,1,0,1,1,0
 1969,27003,27,MN,Minnesota,003,Anoka County,1,0,1,1,0
 1969,27005,27,MN,Minnesota,005,Becker County,1,0,1,1,0
@@ -1636,6 +1641,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1971,12021,12,FL,Florida,021,Collier County,1,0,1,1,0
 1971,12051,12,FL,Florida,051,Hendry County,1,0,1,1,0
 1971,12071,12,FL,Florida,071,Lee County,1,0,1,1,0
+1971,12086,12,FL,Florida,025,NA,1,0,1,1,0
 1971,12099,12,FL,Florida,099,Palm Beach County,1,0,1,1,0
 1971,21001,21,KY,Kentucky,001,Adair County,1,0,1,1,0
 1971,21031,21,KY,Kentucky,031,Butler County,1,0,1,1,0
@@ -1666,6 +1672,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1971,22109,22,LA,Louisiana,109,Terrebonne Parish,1,0,0,1,0
 1971,22113,22,LA,Louisiana,113,Vermilion Parish,1,0,0,1,0
 1971,22121,22,LA,Louisiana,121,West Baton Rouge Parish,1,0,0,1,0
+1971,24e3,24,MD,Maryland,000,NA,1,0,1,1,0
 1971,24003,24,MD,Maryland,003,Anne Arundel County,1,0,1,1,0
 1971,24005,24,MD,Maryland,005,Baltimore County,1,0,1,1,0
 1971,24013,24,MD,Maryland,013,Carroll County,1,0,1,1,0
@@ -1881,6 +1888,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1972,23027,23,ME,Maine,027,Waldo County,1,0,1,0,0
 1972,23029,23,ME,Maine,029,Washington County,2,0,2,1,0
 1972,23031,23,ME,Maine,031,York County,2,0,2,1,0
+1972,24e3,24,MD,Maryland,000,NA,1,0,1,1,0
 1972,24001,24,MD,Maryland,001,Allegany County,1,0,1,1,0
 1972,24003,24,MD,Maryland,003,Anne Arundel County,1,0,1,1,0
 1972,24005,24,MD,Maryland,005,Baltimore County,1,0,1,1,0
@@ -2112,6 +2120,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1972,48379,48,TX,Texas,379,Rains County,1,0,0,1,0
 1972,48387,48,TX,Texas,387,Red River County,1,0,0,1,0
 1972,48479,48,TX,Texas,479,Webb County,1,0,1,1,0
+1972,51e3,51,VA,Virginia,000,NA,3,0,11,12,0
 1972,51001,51,VA,Virginia,001,Accomack County,1,0,1,1,0
 1972,51003,51,VA,Virginia,003,Albemarle County,2,0,2,2,0
 1972,51005,51,VA,Virginia,005,Alleghany County,1,0,1,1,0
@@ -2126,6 +2135,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1972,51025,51,VA,Virginia,025,Brunswick County,1,0,1,1,0
 1972,51029,51,VA,Virginia,029,Buckingham County,2,0,2,2,0
 1972,51031,51,VA,Virginia,031,Campbell County,1,0,1,1,0
+1972,51032,51,VA,Virginia,032,NA,3,0,2,3,0
 1972,51033,51,VA,Virginia,033,Caroline County,1,0,1,1,0
 1972,51036,51,VA,Virginia,036,Charles City County,1,0,1,1,0
 1972,51037,51,VA,Virginia,037,Charlotte County,1,0,1,1,0
@@ -2177,6 +2187,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1972,51155,51,VA,Virginia,155,Pulaski County,1,0,1,1,0
 1972,51157,51,VA,Virginia,157,Rappahannock County,1,0,1,1,0
 1972,51159,51,VA,Virginia,159,Richmond County,1,0,1,1,0
+1972,51160,51,VA,Virginia,160,NA,1,0,1,1,0
 1972,51161,51,VA,Virginia,161,Roanoke County,1,0,1,1,0
 1972,51163,51,VA,Virginia,163,Rockbridge County,2,0,2,2,0
 1972,51165,51,VA,Virginia,165,Rockingham County,2,0,2,2,0
@@ -2189,8 +2200,28 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1972,51187,51,VA,Virginia,187,Warren County,2,0,2,2,0
 1972,51193,51,VA,Virginia,193,Westmoreland County,1,0,1,1,0
 1972,51199,51,VA,Virginia,199,York County,1,0,1,1,0
+1972,51200,51,VA,Virginia,200,NA,1,0,1,1,0
+1972,51208,51,VA,Virginia,208,NA,1,0,1,1,0
+1972,51216,51,VA,Virginia,216,NA,1,0,1,1,0
+1972,51344,51,VA,Virginia,344,NA,1,0,1,1,0
+1972,51392,51,VA,Virginia,392,NA,1,0,1,1,0
+1972,51424,51,VA,Virginia,424,NA,1,0,1,1,0
+1972,51432,51,VA,Virginia,432,NA,1,0,1,1,0
+1972,51440,51,VA,Virginia,440,NA,1,0,1,1,0
+1972,51448,51,VA,Virginia,448,NA,1,0,1,1,0
+1972,51496,51,VA,Virginia,496,NA,1,0,1,1,0
+1972,51512,51,VA,Virginia,512,NA,1,0,1,1,0
+1972,51544,51,VA,Virginia,544,NA,3,0,2,3,0
+1972,51624,51,VA,Virginia,624,NA,1,0,1,1,0
+1972,51672,51,VA,Virginia,672,NA,1,0,1,1,0
 1972,51680,51,VA,Virginia,680,Lynchburg city,1,0,1,1,0
+1972,51712,51,VA,Virginia,712,NA,1,0,1,1,0
 1972,51720,51,VA,Virginia,720,Norton city,1,0,1,1,0
+1972,51728,51,VA,Virginia,728,NA,1,0,1,1,0
+1972,51744,51,VA,Virginia,744,NA,1,0,1,1,0
+1972,51784,51,VA,Virginia,784,NA,1,0,1,1,0
+1972,51832,51,VA,Virginia,832,NA,1,0,1,1,0
+1972,51968,51,VA,Virginia,968,NA,1,0,1,1,0
 1972,53003,53,WA,Washington,003,Asotin County,1,0,1,1,0
 1972,53007,53,WA,Washington,007,Chelan County,1,0,1,1,0
 1972,53015,53,WA,Washington,015,Cowlitz County,1,0,1,1,0
@@ -2265,6 +2296,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1973,1127,01,AL,Alabama,127,Walker County,1,0,1,1,0
 1973,1131,01,AL,Alabama,131,Wilcox County,1,0,1,1,0
 1973,1133,01,AL,Alabama,133,Winston County,1,0,1,1,0
+1973,2165,02,AK,Alaska,165,NA,1,0,1,1,0
 1973,5001,05,AR,Arkansas,001,Arkansas County,1,0,1,1,0
 1973,5003,05,AR,Arkansas,003,Ashley County,1,0,1,1,0
 1973,5007,05,AR,Arkansas,007,Benton County,1,0,1,1,0
@@ -2565,6 +2597,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1973,22117,22,LA,Louisiana,117,Washington Parish,1,0,1,1,0
 1973,22121,22,LA,Louisiana,121,West Baton Rouge Parish,1,0,1,1,0
 1973,22125,22,LA,Louisiana,125,West Feliciana Parish,1,0,1,1,0
+1973,22440,22,LA,Louisiana,440,NA,1,0,1,1,0
 1973,23003,23,ME,Maine,003,Aroostook County,1,0,0,1,0
 1973,23019,23,ME,Maine,019,Penobscot County,1,0,0,1,0
 1973,23029,23,ME,Maine,029,Washington County,1,0,0,1,0
@@ -2635,6 +2668,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1973,28157,28,MS,Mississippi,157,Wilkinson County,1,0,1,1,0
 1973,28161,28,MS,Mississippi,161,Yalobusha County,1,0,1,1,0
 1973,28163,28,MS,Mississippi,163,Yazoo County,1,0,1,1,0
+1973,29e3,29,MO,Missouri,000,NA,1,0,1,1,0
 1973,29001,29,MO,Missouri,001,Adair County,2,0,2,2,0
 1973,29003,29,MO,Missouri,003,Andrew County,2,0,2,2,0
 1973,29005,29,MO,Missouri,005,Atchison County,2,0,2,2,0
@@ -3001,6 +3035,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1974,1127,01,AL,Alabama,127,Walker County,1,0,1,1,0
 1974,1133,01,AL,Alabama,133,Winston County,1,0,1,1,0
 1974,2060,02,AK,Alaska,060,Bristol Bay Borough,1,0,1,0,0
+1974,2165,02,AK,Alaska,165,NA,3,0,2,2,0
 1974,5007,05,AR,Arkansas,007,Benton County,1,0,1,1,0
 1974,5027,05,AR,Arkansas,027,Columbia County,1,0,1,1,0
 1974,5051,05,AR,Arkansas,051,Garland County,1,0,1,1,0
@@ -3226,6 +3261,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1974,22101,22,LA,Louisiana,101,St. Mary Parish,1,0,1,1,0
 1974,22109,22,LA,Louisiana,109,Terrebonne Parish,1,0,1,1,0
 1974,22113,22,LA,Louisiana,113,Vermilion Parish,1,0,1,1,0
+1974,22440,22,LA,Louisiana,440,NA,1,0,1,1,0
 1974,23001,23,ME,Maine,001,Androscoggin County,1,0,1,1,0
 1974,23003,23,ME,Maine,003,Aroostook County,1,0,1,1,0
 1974,23007,23,ME,Maine,007,Franklin County,1,0,1,1,0
@@ -3526,6 +3562,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1975,1129,01,AL,Alabama,129,Washington County,1,0,1,1,0
 1975,1131,01,AL,Alabama,131,Wilcox County,1,0,1,1,0
 1975,1133,01,AL,Alabama,133,Winston County,1,0,1,1,0
+1975,2165,02,AK,Alaska,165,NA,1,0,1,1,0
 1975,5011,05,AR,Arkansas,011,Bradley County,1,0,1,1,0
 1975,5063,05,AR,Arkansas,063,Independence County,1,0,1,1,0
 1975,5065,05,AR,Arkansas,065,Izard County,1,0,1,1,0
@@ -3579,6 +3616,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1975,22079,22,LA,Louisiana,079,Rapides Parish,2,0,2,1,0
 1975,22097,22,LA,Louisiana,097,St. Landry Parish,1,0,1,1,0
 1975,22125,22,LA,Louisiana,125,West Feliciana Parish,1,0,1,1,0
+1975,22440,22,LA,Louisiana,440,NA,1,0,1,1,0
+1975,24e3,24,MD,Maryland,000,NA,1,0,1,1,0
 1975,24003,24,MD,Maryland,003,Anne Arundel County,1,0,1,1,0
 1975,24005,24,MD,Maryland,005,Baltimore County,1,0,1,1,0
 1975,24009,24,MD,Maryland,009,Calvert County,1,0,1,1,0
@@ -4264,6 +4303,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1976,46129,46,SD,South Dakota,129,Walworth County,1,0,0,1,0
 1976,46135,46,SD,South Dakota,135,Yankton County,1,0,0,1,0
 1976,46137,46,SD,South Dakota,137,Ziebach County,1,0,0,1,0
+1976,46645,46,SD,South Dakota,645,NA,1,0,0,1,0
 1976,48201,48,TX,Texas,201,Harris County,1,0,1,1,0
 1976,50001,50,VT,Vermont,001,Addison County,1,0,1,1,0
 1976,50003,50,VT,Vermont,003,Bennington County,1,0,1,1,0
@@ -4570,6 +4610,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1977,12081,12,FL,Florida,081,Manatee County,1,0,1,0,0
 1977,12083,12,FL,Florida,083,Marion County,1,0,1,0,0
 1977,12085,12,FL,Florida,085,Martin County,1,0,1,0,0
+1977,12086,12,FL,Florida,025,NA,1,0,1,0,0
 1977,12087,12,FL,Florida,087,Monroe County,1,0,1,0,0
 1977,12093,12,FL,Florida,093,Okeechobee County,1,0,1,0,0
 1977,12095,12,FL,Florida,095,Orange County,1,0,1,0,0
@@ -4842,6 +4883,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1977,22119,22,LA,Louisiana,119,Webster Parish,1,0,0,1,0
 1977,22123,22,LA,Louisiana,123,West Carroll Parish,1,0,0,1,0
 1977,22125,22,LA,Louisiana,125,West Feliciana Parish,1,0,0,1,0
+1977,22440,22,LA,Louisiana,440,NA,1,0,0,1,0
+1977,24e3,24,MD,Maryland,000,NA,1,0,1,0,0
 1977,24003,24,MD,Maryland,003,Anne Arundel County,1,0,1,0,0
 1977,24005,24,MD,Maryland,005,Baltimore County,1,0,1,0,0
 1977,24009,24,MD,Maryland,009,Calvert County,1,0,1,0,0
@@ -5252,6 +5295,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1977,49055,49,UT,Utah,055,Wayne County,1,0,0,1,0
 1977,49057,49,UT,Utah,057,Weber County,1,0,0,1,0
 1977,50001,50,VT,Vermont,001,Addison County,1,0,0,1,0
+1977,51e3,51,VA,Virginia,000,NA,1,0,8,0,0
 1977,51001,51,VA,Virginia,001,Accomack County,1,0,1,0,0
 1977,51003,51,VA,Virginia,003,Albemarle County,1,0,0,1,0
 1977,51005,51,VA,Virginia,005,Alleghany County,1,0,0,1,0
@@ -5341,6 +5385,13 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1977,51195,51,VA,Virginia,195,Wise County,1,0,1,1,0
 1977,51197,51,VA,Virginia,197,Wythe County,1,0,1,1,0
 1977,51199,51,VA,Virginia,199,York County,1,0,1,0,0
+1977,51392,51,VA,Virginia,392,NA,1,0,1,1,0
+1977,51424,51,VA,Virginia,424,NA,1,0,1,0,0
+1977,51432,51,VA,Virginia,432,NA,1,0,1,0,0
+1977,51448,51,VA,Virginia,448,NA,1,0,1,0,0
+1977,51688,51,VA,Virginia,688,NA,1,0,1,1,0
+1977,51768,51,VA,Virginia,768,NA,1,0,1,0,0
+1977,51832,51,VA,Virginia,832,NA,1,0,1,0,0
 1977,53001,53,WA,Washington,001,Adams County,1,0,0,1,0
 1977,53003,53,WA,Washington,003,Asotin County,1,0,0,1,0
 1977,53005,53,WA,Washington,005,Benton County,2,0,1,2,0
@@ -5492,6 +5543,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1978,22087,22,LA,Louisiana,087,St. Bernard Parish,1,0,1,1,0
 1978,22095,22,LA,Louisiana,095,St. John the Baptist Parish,1,0,1,1,0
 1978,22119,22,LA,Louisiana,119,Webster Parish,1,0,1,1,0
+1978,22440,22,LA,Louisiana,440,NA,1,0,1,1,0
 1978,23005,23,ME,Maine,005,Cumberland County,1,0,1,1,0
 1978,23015,23,ME,Maine,015,Lincoln County,1,0,1,1,0
 1978,23029,23,ME,Maine,029,Washington County,1,0,1,1,0
@@ -5975,6 +6027,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1979,22079,22,LA,Louisiana,079,Rapides Parish,1,0,1,0,0
 1979,22099,22,LA,Louisiana,099,St. Martin Parish,1,0,1,0,0
 1979,22103,22,LA,Louisiana,103,St. Tammany Parish,1,0,1,1,0
+1979,24e3,24,MD,Maryland,000,NA,1,0,1,1,0
 1979,24003,24,MD,Maryland,003,Anne Arundel County,1,0,1,1,0
 1979,24005,24,MD,Maryland,005,Baltimore County,1,0,1,1,0
 1979,24009,24,MD,Maryland,009,Calvert County,1,0,1,0,0
@@ -6039,6 +6092,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1979,28157,28,MS,Mississippi,157,Wilkinson County,1,0,1,1,0
 1979,28159,28,MS,Mississippi,159,Winston County,1,0,1,1,0
 1979,28163,28,MS,Mississippi,163,Yazoo County,2,0,2,2,0
+1979,29e3,29,MO,Missouri,000,NA,1,0,1,1,0
 1979,29003,29,MO,Missouri,003,Andrew County,1,0,1,0,0
 1979,29031,29,MO,Missouri,031,Cape Girardeau County,1,0,1,1,0
 1979,29045,29,MO,Missouri,045,Clark County,1,0,1,0,0
@@ -6191,6 +6245,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1980,6087,06,CA,California,087,Santa Cruz County,1,0,0,1,0
 1980,6111,06,CA,California,111,Ventura County,1,0,1,1,0
 1980,12011,12,FL,Florida,011,Broward County,1,0,0,1,0
+1980,12086,12,FL,Florida,025,NA,1,0,0,1,0
 1980,12087,12,FL,Florida,087,Monroe County,1,0,0,1,0
 1980,12099,12,FL,Florida,099,Palm Beach County,1,0,0,1,0
 1980,15009,15,HI,Hawaii,009,Maui County,1,0,0,1,0
@@ -6219,6 +6274,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1980,22109,22,LA,Louisiana,109,Terrebonne Parish,1,0,1,0,0
 1980,22113,22,LA,Louisiana,113,Vermilion Parish,1,0,1,0,0
 1980,22117,22,LA,Louisiana,117,Washington Parish,1,0,1,0,0
+1980,22440,22,LA,Louisiana,440,NA,1,0,1,0,0
 1980,23005,23,ME,Maine,005,Cumberland County,1,0,1,0,0
 1980,23009,23,ME,Maine,009,Hancock County,1,0,1,0,0
 1980,23013,23,ME,Maine,013,Knox County,1,0,1,0,0
@@ -6661,6 +6717,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1983,22115,22,LA,Louisiana,115,Vernon Parish,1,0,1,0,0
 1983,22117,22,LA,Louisiana,117,Washington Parish,1,0,1,1,0
 1983,22127,22,LA,Louisiana,127,Winn Parish,1,0,1,0,0
+1983,22440,22,LA,Louisiana,440,NA,1,0,1,0,0
 1983,28021,28,MS,Mississippi,021,Claiborne County,2,0,2,0,0
 1983,28029,28,MS,Mississippi,029,Copiah County,1,0,1,1,0
 1983,28031,28,MS,Mississippi,031,Covington County,1,0,1,1,0
@@ -7039,6 +7096,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1985,12075,12,FL,Florida,075,Levy County,1,0,1,1,0
 1985,12077,12,FL,Florida,077,Liberty County,1,0,1,1,0
 1985,12081,12,FL,Florida,081,Manatee County,2,0,2,1,0
+1985,12086,12,FL,Florida,025,NA,1,0,1,0,0
 1985,12095,12,FL,Florida,095,Orange County,1,0,1,0,0
 1985,12097,12,FL,Florida,097,Osceola County,1,0,1,0,0
 1985,12099,12,FL,Florida,099,Palm Beach County,1,0,1,0,0
@@ -7084,6 +7142,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1985,22103,22,LA,Louisiana,103,St. Tammany Parish,1,0,1,0,0
 1985,22105,22,LA,Louisiana,105,Tangipahoa Parish,1,0,1,0,0
 1985,22109,22,LA,Louisiana,109,Terrebonne Parish,1,0,1,1,0
+1985,22440,22,LA,Louisiana,440,NA,1,0,1,0,0
 1985,25001,25,MA,Massachusetts,001,Barnstable County,1,0,0,1,0
 1985,25003,25,MA,Massachusetts,003,Berkshire County,1,0,0,1,0
 1985,25005,25,MA,Massachusetts,005,Bristol County,1,0,0,1,0
@@ -7171,6 +7230,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1985,44005,44,RI,Rhode Island,005,Newport County,1,0,0,1,0
 1985,44007,44,RI,Rhode Island,007,Providence County,1,0,0,1,0
 1985,44009,44,RI,Rhode Island,009,Washington County,1,0,0,1,0
+1985,51e3,51,VA,Virginia,000,NA,1,0,5,4,0
 1985,51005,51,VA,Virginia,005,Alleghany County,1,0,1,1,0
 1985,51009,51,VA,Virginia,009,Amherst County,1,0,1,1,0
 1985,51011,51,VA,Virginia,011,Appomattox County,1,0,1,0,0
@@ -7179,6 +7239,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1985,51019,51,VA,Virginia,019,Bedford County,1,0,0,1,0
 1985,51023,51,VA,Virginia,023,Botetourt County,1,0,1,1,0
 1985,51031,51,VA,Virginia,031,Campbell County,1,0,1,0,0
+1985,51032,51,VA,Virginia,032,NA,1,0,1,1,0
 1985,51041,51,VA,Virginia,041,Chesterfield County,1,0,1,0,0
 1985,51043,51,VA,Virginia,043,Clarke County,1,0,1,0,0
 1985,51045,51,VA,Virginia,045,Craig County,1,0,1,1,0
@@ -7210,7 +7271,13 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1985,51187,51,VA,Virginia,187,Warren County,1,0,1,1,0
 1985,51193,51,VA,Virginia,193,Westmoreland County,1,0,1,1,0
 1985,51199,51,VA,Virginia,199,York County,1,0,0,1,0
+1985,51440,51,VA,Virginia,440,NA,1,0,1,1,0
+1985,51512,51,VA,Virginia,512,NA,1,0,1,1,0
+1985,51624,51,VA,Virginia,624,NA,1,0,1,1,0
+1985,51672,51,VA,Virginia,672,NA,1,0,1,1,0
 1985,51680,51,VA,Virginia,680,Lynchburg city,1,0,1,1,0
+1985,51728,51,VA,Virginia,728,NA,1,0,1,1,0
+1985,51768,51,VA,Virginia,768,NA,1,0,1,0,0
 1985,54001,54,WV,West Virginia,001,Barbour County,1,0,1,1,0
 1985,54003,54,WV,West Virginia,003,Berkeley County,1,0,1,1,0
 1985,54007,54,WV,West Virginia,007,Braxton County,1,0,1,1,0
@@ -7242,6 +7309,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1985,54101,54,WV,West Virginia,101,Webster County,1,0,1,1,0
 1985,56021,56,WY,Wyoming,021,Laramie County,1,0,1,1,0
 1986,2122,02,AK,Alaska,122,Kenai Peninsula Borough,1,0,1,1,0
+1986,2165,02,AK,Alaska,165,NA,1,0,0,1,0
 1986,2170,02,AK,Alaska,170,Matanuska-Susitna Borough,1,0,1,1,0
 1986,2185,02,AK,Alaska,185,North Slope Borough,1,0,0,1,0
 1986,2261,02,AK,Alaska,261,Valdez-Cordova Census Area,1,0,1,1,0
@@ -7391,6 +7459,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1986,32019,32,NV,Nevada,019,Lyon County,1,0,0,1,0
 1986,32029,32,NV,Nevada,029,Storey County,1,0,0,1,0
 1986,32031,32,NV,Nevada,031,Washoe County,1,0,0,1,0
+1986,32700,32,NV,Nevada,700,NA,1,0,0,1,0
 1986,33005,33,NH,New Hampshire,005,Cheshire County,1,0,0,1,0
 1986,33011,33,NH,New Hampshire,011,Hillsborough County,1,0,0,1,0
 1986,33019,33,NH,New Hampshire,019,Sullivan County,1,0,0,1,0
@@ -7514,6 +7583,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1987,22065,22,LA,Louisiana,065,Madison Parish,1,0,1,0,0
 1987,22079,22,LA,Louisiana,079,Rapides Parish,1,0,1,0,0
 1987,22127,22,LA,Louisiana,127,Winn Parish,1,0,1,0,0
+1987,22440,22,LA,Louisiana,440,NA,1,0,1,0,0
 1987,23001,23,ME,Maine,001,Androscoggin County,1,0,1,1,0
 1987,23005,23,ME,Maine,005,Cumberland County,1,0,1,1,0
 1987,23007,23,ME,Maine,007,Franklin County,1,0,1,1,0
@@ -7600,6 +7670,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1987,48423,48,TX,Texas,423,Smith County,2,0,2,0,0
 1987,48459,48,TX,Texas,459,Upshur County,1,0,1,0,0
 1987,56005,56,WY,Wyoming,005,Campbell County,1,0,1,0,0
+1988,2165,02,AK,Alaska,165,NA,1,0,0,1,0
 1988,5017,05,AR,Arkansas,017,Chicot County,1,0,1,0,0
 1988,5019,05,AR,Arkansas,019,Clark County,1,0,1,0,0
 1988,5027,05,AR,Arkansas,027,Columbia County,1,0,1,0,0
@@ -7654,11 +7725,13 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1989,2090,02,AK,Alaska,090,Fairbanks North Star Borough,1,0,0,1,0
 1989,2122,02,AK,Alaska,122,Kenai Peninsula Borough,1,0,0,1,0
 1989,2150,02,AK,Alaska,150,Kodiak Island Borough,1,0,0,1,0
+1989,2165,02,AK,Alaska,165,NA,1,0,0,1,0
 1989,2180,02,AK,Alaska,180,Nome Census Area,1,0,0,1,0
 1989,2240,02,AK,Alaska,240,Southeast Fairbanks Census Area,1,0,0,1,0
 1989,2261,02,AK,Alaska,261,Valdez-Cordova Census Area,1,0,0,1,0
 1989,2270,02,AK,Alaska,270,Wade Hampton Census Area,2,0,1,2,0
 1989,2290,02,AK,Alaska,290,Yukon-Koyukuk Census Area,2,0,1,2,0
+1989,2580,02,AK,Alaska,580,NA,1,0,0,1,0
 1989,6001,06,CA,California,001,Alameda County,1,0,1,1,0
 1989,6013,06,CA,California,013,Contra Costa County,1,0,1,1,0
 1989,6041,06,CA,California,041,Marin County,1,0,1,1,0
@@ -7791,6 +7864,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1989,22121,22,LA,Louisiana,121,West Baton Rouge Parish,1,0,1,0,0
 1989,22123,22,LA,Louisiana,123,West Carroll Parish,1,0,1,0,0
 1989,22127,22,LA,Louisiana,127,Winn Parish,2,0,2,2,0
+1989,22440,22,LA,Louisiana,440,NA,2,0,2,0,0
 1989,23001,23,ME,Maine,001,Androscoggin County,1,0,0,1,0
 1989,23005,23,ME,Maine,005,Cumberland County,1,0,0,1,0
 1989,23007,23,ME,Maine,007,Franklin County,1,0,0,1,0
@@ -8038,6 +8112,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1990,4019,04,AZ,Arizona,019,Pima County,1,0,0,1,0
 1990,4021,04,AZ,Arizona,021,Pinal County,1,0,0,1,0
 1990,4025,04,AZ,Arizona,025,Yavapai County,1,0,0,1,0
+1990,4120,04,AZ,Arizona,120,NA,1,0,0,1,0
 1990,5007,05,AR,Arkansas,007,Benton County,1,0,1,1,0
 1990,5009,05,AR,Arkansas,009,Boone County,1,0,1,1,0
 1990,5013,05,AR,Arkansas,013,Calhoun County,1,0,1,1,0
@@ -8104,6 +8179,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1990,12081,12,FL,Florida,081,Manatee County,1,0,1,0,0
 1990,12083,12,FL,Florida,083,Marion County,1,0,1,0,0
 1990,12085,12,FL,Florida,085,Martin County,1,0,1,0,0
+1990,12086,12,FL,Florida,025,NA,1,0,1,0,0
 1990,12087,12,FL,Florida,087,Monroe County,1,0,1,0,0
 1990,12091,12,FL,Florida,091,Okaloosa County,1,0,1,0,0
 1990,12093,12,FL,Florida,093,Okeechobee County,1,0,1,0,0
@@ -8569,6 +8645,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1991,1133,01,AL,Alabama,133,Winston County,1,0,1,1,0
 1991,2050,02,AK,Alaska,050,Bethel Census Area,1,0,0,1,0
 1991,2090,02,AK,Alaska,090,Fairbanks North Star Borough,1,0,0,1,0
+1991,2165,02,AK,Alaska,165,NA,1,0,0,1,0
 1991,2290,02,AK,Alaska,290,Yukon-Koyukuk Census Area,1,0,0,1,0
 1991,5003,05,AR,Arkansas,003,Ashley County,1,0,0,1,0
 1991,5011,05,AR,Arkansas,011,Bradley County,1,0,0,1,0
@@ -8840,6 +8917,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1991,22119,22,LA,Louisiana,119,Webster Parish,2,0,2,2,0
 1991,22123,22,LA,Louisiana,123,West Carroll Parish,2,0,2,1,0
 1991,22127,22,LA,Louisiana,127,Winn Parish,1,0,1,0,0
+1991,22440,22,LA,Louisiana,440,NA,1,0,1,0,0
 1991,23001,23,ME,Maine,001,Androscoggin County,1,0,1,1,0
 1991,23003,23,ME,Maine,003,Aroostook County,1,0,0,1,0
 1991,23005,23,ME,Maine,005,Cumberland County,2,0,2,2,0
@@ -9100,6 +9178,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1992,12031,12,FL,Florida,031,Duval County,1,0,1,1,0
 1992,12057,12,FL,Florida,057,Hillsborough County,1,0,1,0,0
 1992,12081,12,FL,Florida,081,Manatee County,1,0,0,1,0
+1992,12086,12,FL,Florida,025,NA,1,0,1,1,0
 1992,12087,12,FL,Florida,087,Monroe County,1,0,1,1,0
 1992,12089,12,FL,Florida,089,Nassau County,1,0,1,1,0
 1992,12103,12,FL,Florida,103,Pinellas County,1,0,1,1,0
@@ -9124,6 +9203,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1992,15005,15,HI,Hawaii,005,Kalawao County,1,0,1,1,0
 1992,15007,15,HI,Hawaii,007,Kauai County,1,0,1,1,0
 1992,15009,15,HI,Hawaii,009,Maui County,1,0,1,1,0
+1992,15340,15,HI,Hawaii,340,NA,1,0,1,1,0
 1992,17099,17,IL,Illinois,099,LaSalle County,1,0,1,1,0
 1992,18001,18,IN,Indiana,001,Adams County,1,0,0,1,0
 1992,18019,18,IN,Indiana,019,Clark County,1,0,1,1,0
@@ -9189,6 +9269,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1992,22117,22,LA,Louisiana,117,Washington Parish,1,0,1,1,0
 1992,22121,22,LA,Louisiana,121,West Baton Rouge Parish,1,0,1,1,0
 1992,22125,22,LA,Louisiana,125,West Feliciana Parish,1,0,1,1,0
+1992,22440,22,LA,Louisiana,440,NA,1,0,1,1,0
 1992,23001,23,ME,Maine,001,Androscoggin County,1,0,0,1,0
 1992,23005,23,ME,Maine,005,Cumberland County,1,0,0,1,0
 1992,23007,23,ME,Maine,007,Franklin County,1,0,0,1,0
@@ -9340,12 +9421,14 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1992,50017,50,VT,Vermont,017,Orange County,1,0,1,1,0
 1992,50023,50,VT,Vermont,023,Washington County,1,0,1,1,0
 1992,50027,50,VT,Vermont,027,Windsor County,1,0,1,1,0
+1992,51e3,51,VA,Virginia,000,NA,1,0,2,2,0
 1992,51001,51,VA,Virginia,001,Accomack County,1,0,1,1,0
 1992,51009,51,VA,Virginia,009,Amherst County,1,0,1,1,0
 1992,51015,51,VA,Virginia,015,Augusta County,1,0,1,1,0
 1992,51017,51,VA,Virginia,017,Bath County,1,0,1,1,0
 1992,51019,51,VA,Virginia,019,Bedford County,1,0,1,1,0
 1992,51023,51,VA,Virginia,023,Botetourt County,1,0,1,1,0
+1992,51032,51,VA,Virginia,032,NA,1,0,1,1,0
 1992,51035,51,VA,Virginia,035,Carroll County,1,0,1,1,0
 1992,51045,51,VA,Virginia,045,Craig County,1,0,1,1,0
 1992,51063,51,VA,Virginia,063,Floyd County,1,0,1,1,0
@@ -9361,6 +9444,10 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1992,51161,51,VA,Virginia,161,Roanoke County,1,0,1,1,0
 1992,51163,51,VA,Virginia,163,Rockbridge County,1,0,1,1,0
 1992,51165,51,VA,Virginia,165,Rockingham County,1,0,1,1,0
+1992,51392,51,VA,Virginia,392,NA,1,0,1,1,0
+1992,51512,51,VA,Virginia,512,NA,1,0,1,1,0
+1992,51544,51,VA,Virginia,544,NA,1,0,1,1,0
+1992,51672,51,VA,Virginia,672,NA,1,0,1,0,0
 1992,55011,55,WI,Wisconsin,011,Buffalo County,1,0,1,1,0
 1992,55023,55,WI,Wisconsin,023,Crawford County,1,0,1,1,0
 1992,55025,55,WI,Wisconsin,025,Dane County,1,0,0,1,0
@@ -9516,6 +9603,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1993,12081,12,FL,Florida,081,Manatee County,1,0,1,1,0
 1993,12083,12,FL,Florida,083,Marion County,1,0,1,1,0
 1993,12085,12,FL,Florida,085,Martin County,1,0,1,1,0
+1993,12086,12,FL,Florida,025,NA,1,0,1,1,0
 1993,12087,12,FL,Florida,087,Monroe County,1,0,1,1,0
 1993,12089,12,FL,Florida,089,Nassau County,1,0,1,1,0
 1993,12101,12,FL,Florida,101,Pasco County,1,0,1,1,0
@@ -9922,6 +10010,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1993,23027,23,ME,Maine,027,Waldo County,2,0,0,2,0
 1993,23029,23,ME,Maine,029,Washington County,1,0,0,1,0
 1993,23031,23,ME,Maine,031,York County,1,0,0,1,0
+1993,24e3,24,MD,Maryland,000,NA,1,0,0,1,0
 1993,24001,24,MD,Maryland,001,Allegany County,1,0,0,1,0
 1993,24003,24,MD,Maryland,003,Anne Arundel County,1,0,0,1,0
 1993,24005,24,MD,Maryland,005,Baltimore County,1,0,0,1,0
@@ -10016,6 +10105,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1993,27169,27,MN,Minnesota,169,Winona County,1,0,1,1,0
 1993,27171,27,MN,Minnesota,171,Wright County,1,0,1,1,0
 1993,27173,27,MN,Minnesota,173,Yellow Medicine County,1,0,1,1,0
+1993,29e3,29,MO,Missouri,000,NA,1,0,2,3,0
 1993,29001,29,MO,Missouri,001,Adair County,1,0,1,1,0
 1993,29003,29,MO,Missouri,003,Andrew County,1,0,1,1,0
 1993,29005,29,MO,Missouri,005,Atchison County,1,0,1,1,0
@@ -10747,6 +10837,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1993,50007,50,VT,Vermont,007,Chittenden County,1,0,0,1,0
 1993,50011,50,VT,Vermont,011,Franklin County,1,0,0,1,0
 1993,50013,50,VT,Vermont,013,Grand Isle County,1,0,0,1,0
+1993,51e3,51,VA,Virginia,000,NA,1,0,0,10,0
 1993,51001,51,VA,Virginia,001,Accomack County,1,0,0,1,0
 1993,51003,51,VA,Virginia,003,Albemarle County,1,0,0,1,0
 1993,51005,51,VA,Virginia,005,Alleghany County,1,0,0,1,0
@@ -10763,6 +10854,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1993,51027,51,VA,Virginia,027,Buchanan County,1,0,0,1,0
 1993,51029,51,VA,Virginia,029,Buckingham County,1,0,0,1,0
 1993,51031,51,VA,Virginia,031,Campbell County,1,0,0,1,0
+1993,51032,51,VA,Virginia,032,NA,1,0,0,1,0
 1993,51033,51,VA,Virginia,033,Caroline County,1,0,0,1,0
 1993,51035,51,VA,Virginia,035,Carroll County,1,0,0,1,0
 1993,51036,51,VA,Virginia,036,Charles City County,1,0,0,1,0
@@ -10823,6 +10915,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1993,51155,51,VA,Virginia,155,Pulaski County,1,0,0,1,0
 1993,51157,51,VA,Virginia,157,Rappahannock County,1,0,0,1,0
 1993,51159,51,VA,Virginia,159,Richmond County,1,0,0,1,0
+1993,51160,51,VA,Virginia,160,NA,1,0,0,1,0
 1993,51161,51,VA,Virginia,161,Roanoke County,1,0,0,1,0
 1993,51163,51,VA,Virginia,163,Rockbridge County,1,0,0,1,0
 1993,51165,51,VA,Virginia,165,Rockingham County,1,0,0,1,0
@@ -10842,9 +10935,34 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1993,51195,51,VA,Virginia,195,Wise County,1,0,0,1,0
 1993,51197,51,VA,Virginia,197,Wythe County,1,0,0,1,0
 1993,51199,51,VA,Virginia,199,York County,1,0,0,1,0
+1993,51200,51,VA,Virginia,200,NA,1,0,0,1,0
+1993,51208,51,VA,Virginia,208,NA,1,0,0,1,0
+1993,51216,51,VA,Virginia,216,NA,1,0,0,1,0
+1993,51344,51,VA,Virginia,344,NA,1,0,0,1,0
+1993,51392,51,VA,Virginia,392,NA,1,0,0,1,0
+1993,51424,51,VA,Virginia,424,NA,1,0,0,1,0
+1993,51432,51,VA,Virginia,432,NA,1,0,0,1,0
+1993,51440,51,VA,Virginia,440,NA,1,0,0,1,0
+1993,51448,51,VA,Virginia,448,NA,1,0,0,1,0
+1993,51496,51,VA,Virginia,496,NA,1,0,0,1,0
+1993,51512,51,VA,Virginia,512,NA,1,0,0,1,0
+1993,51544,51,VA,Virginia,544,NA,1,0,0,1,0
 1993,51600,51,VA,Virginia,600,Fairfax city,1,0,0,1,0
+1993,51624,51,VA,Virginia,624,NA,1,0,0,1,0
+1993,51672,51,VA,Virginia,672,NA,1,0,0,1,0
 1993,51680,51,VA,Virginia,680,Lynchburg city,1,0,0,1,0
+1993,51688,51,VA,Virginia,688,NA,1,0,0,1,0
+1993,51712,51,VA,Virginia,712,NA,1,0,0,1,0
 1993,51720,51,VA,Virginia,720,Norton city,1,0,0,1,0
+1993,51728,51,VA,Virginia,728,NA,1,0,0,1,0
+1993,51744,51,VA,Virginia,744,NA,1,0,0,1,0
+1993,51768,51,VA,Virginia,768,NA,1,0,0,1,0
+1993,51784,51,VA,Virginia,784,NA,1,0,0,1,0
+1993,51808,51,VA,Virginia,808,NA,1,0,0,1,0
+1993,51816,51,VA,Virginia,816,NA,1,0,0,1,0
+1993,51832,51,VA,Virginia,832,NA,2,0,1,1,0
+1993,51952,51,VA,Virginia,952,NA,1,0,0,1,0
+1993,51968,51,VA,Virginia,968,NA,1,0,0,2,0
 1993,53033,53,WA,Washington,033,King County,1,0,0,1,0
 1993,53041,53,WA,Washington,041,Lewis County,1,0,0,1,0
 1993,53045,53,WA,Washington,045,Mason County,1,0,0,1,0
@@ -10979,6 +11097,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1994,1115,01,AL,Alabama,115,St. Clair County,1,0,1,1,0
 1994,1117,01,AL,Alabama,117,Shelby County,1,0,1,1,0
 1994,1133,01,AL,Alabama,133,Winston County,1,0,0,1,0
+1994,2035,02,AK,Alaska,035,NA,1,0,0,1,0
 1994,2188,02,AK,Alaska,188,Northwest Arctic Borough,1,0,1,1,0
 1994,2290,02,AK,Alaska,290,Yukon-Koyukuk Census Area,1,0,1,1,0
 1994,5001,05,AR,Arkansas,001,Arkansas County,1,0,0,1,0
@@ -11239,6 +11358,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1994,28145,28,MS,Mississippi,145,Union County,1,0,0,1,0
 1994,28151,28,MS,Mississippi,151,Washington County,1,0,0,1,0
 1994,28161,28,MS,Mississippi,161,Yalobusha County,1,0,0,1,0
+1994,29e3,29,MO,Missouri,000,NA,1,0,1,0,0
 1994,29009,29,MO,Missouri,009,Barry County,1,0,1,0,0
 1994,29027,29,MO,Missouri,027,Callaway County,1,0,1,0,0
 1994,29047,29,MO,Missouri,047,Clay County,1,0,1,0,0
@@ -11494,6 +11614,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1994,48473,48,TX,Texas,473,Waller County,1,0,1,1,0
 1994,48477,48,TX,Texas,477,Washington County,1,0,1,1,0
 1994,48481,48,TX,Texas,481,Wharton County,1,0,1,1,0
+1994,51e3,51,VA,Virginia,000,NA,1,0,0,2,0
 1994,51003,51,VA,Virginia,003,Albemarle County,1,0,0,1,0
 1994,51005,51,VA,Virginia,005,Alleghany County,1,0,0,1,0
 1994,51007,51,VA,Virginia,007,Amelia County,1,0,0,1,0
@@ -11508,6 +11629,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1994,51027,51,VA,Virginia,027,Buchanan County,1,0,0,1,0
 1994,51029,51,VA,Virginia,029,Buckingham County,2,0,0,2,0
 1994,51031,51,VA,Virginia,031,Campbell County,2,0,0,2,0
+1994,51032,51,VA,Virginia,032,NA,1,0,0,1,0
 1994,51033,51,VA,Virginia,033,Caroline County,2,0,0,2,0
 1994,51035,51,VA,Virginia,035,Carroll County,1,0,0,1,0
 1994,51037,51,VA,Virginia,037,Charlotte County,2,0,0,2,0
@@ -11569,6 +11691,14 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1994,51193,51,VA,Virginia,193,Westmoreland County,1,0,0,1,0
 1994,51195,51,VA,Virginia,195,Wise County,1,0,0,1,0
 1994,51197,51,VA,Virginia,197,Wythe County,1,0,0,1,0
+1994,51208,51,VA,Virginia,208,NA,1,0,0,1,0
+1994,51392,51,VA,Virginia,392,NA,2,0,0,2,0
+1994,51544,51,VA,Virginia,544,NA,1,0,0,1,0
+1994,51672,51,VA,Virginia,672,NA,1,0,0,1,0
+1994,51744,51,VA,Virginia,744,NA,1,0,0,1,0
+1994,51808,51,VA,Virginia,808,NA,1,0,0,1,0
+1994,51816,51,VA,Virginia,816,NA,1,0,0,1,0
+1994,51832,51,VA,Virginia,832,NA,1,0,0,1,0
 1994,53009,53,WA,Washington,009,Clallam County,1,0,1,0,0
 1994,53027,53,WA,Washington,027,Grays Harbor County,1,0,1,0,0
 1994,53031,53,WA,Washington,031,Jefferson County,1,0,1,0,0
@@ -11810,6 +11940,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1995,22103,22,LA,Louisiana,103,St. Tammany Parish,1,0,1,1,0
 1995,22105,22,LA,Louisiana,105,Tangipahoa Parish,1,0,1,0,0
 1995,22109,22,LA,Louisiana,109,Terrebonne Parish,1,0,1,0,0
+1995,22440,22,LA,Louisiana,440,NA,1,0,1,1,0
 1995,27001,27,MN,Minnesota,001,Aitkin County,1,0,0,1,0
 1995,27005,27,MN,Minnesota,005,Becker County,1,0,0,1,0
 1995,27007,27,MN,Minnesota,007,Beltrami County,1,0,0,1,0
@@ -11829,6 +11960,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1995,28047,28,MS,Mississippi,047,Harrison County,1,0,1,0,0
 1995,28059,28,MS,Mississippi,059,Jackson County,1,0,1,0,0
 1995,28109,28,MS,Mississippi,109,Pearl River County,1,0,1,0,0
+1995,29e3,29,MO,Missouri,000,NA,1,0,1,0,0
 1995,29001,29,MO,Missouri,001,Adair County,1,0,1,0,0
 1995,29003,29,MO,Missouri,003,Andrew County,1,0,1,1,0
 1995,29005,29,MO,Missouri,005,Atchison County,1,0,1,1,0
@@ -12051,12 +12183,14 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1995,50015,50,VT,Vermont,015,Lamoille County,1,0,1,1,0
 1995,50019,50,VT,Vermont,019,Orleans County,1,0,1,1,0
 1995,50023,50,VT,Vermont,023,Washington County,1,0,1,1,0
+1995,51e3,51,VA,Virginia,000,NA,1,0,1,0,0
 1995,51003,51,VA,Virginia,003,Albemarle County,1,0,1,1,0
 1995,51009,51,VA,Virginia,009,Amherst County,1,0,1,1,0
 1995,51015,51,VA,Virginia,015,Augusta County,1,0,1,1,0
 1995,51017,51,VA,Virginia,017,Bath County,1,0,1,1,0
 1995,51019,51,VA,Virginia,019,Bedford County,1,0,1,1,0
 1995,51031,51,VA,Virginia,031,Campbell County,1,0,1,1,0
+1995,51032,51,VA,Virginia,032,NA,1,0,1,1,0
 1995,51047,51,VA,Virginia,047,Culpeper County,1,0,1,1,0
 1995,51067,51,VA,Virginia,067,Franklin County,1,0,1,1,0
 1995,51071,51,VA,Virginia,071,Giles County,1,0,1,1,0
@@ -12069,6 +12203,10 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1995,51161,51,VA,Virginia,161,Roanoke County,1,0,1,0,0
 1995,51163,51,VA,Virginia,163,Rockbridge County,1,0,1,1,0
 1995,51187,51,VA,Virginia,187,Warren County,1,0,1,1,0
+1995,51216,51,VA,Virginia,216,NA,1,0,1,1,0
+1995,51512,51,VA,Virginia,512,NA,1,0,1,1,0
+1995,51544,51,VA,Virginia,544,NA,1,0,1,1,0
+1995,51672,51,VA,Virginia,672,NA,1,0,1,1,0
 1995,54055,54,WV,West Virginia,055,Mercer County,1,0,1,1,0
 1995,54057,54,WV,West Virginia,057,Mineral County,1,0,1,1,0
 1995,54067,54,WV,West Virginia,067,Nicholas County,1,0,1,1,0
@@ -12404,6 +12542,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1996,23025,23,ME,Maine,025,Somerset County,1,0,0,1,0
 1996,23027,23,ME,Maine,027,Waldo County,1,0,0,1,0
 1996,23031,23,ME,Maine,031,York County,3,0,2,3,0
+1996,24e3,24,MD,Maryland,000,NA,1,0,0,1,0
 1996,24001,24,MD,Maryland,001,Allegany County,3,0,2,3,0
 1996,24003,24,MD,Maryland,003,Anne Arundel County,1,0,0,1,0
 1996,24005,24,MD,Maryland,005,Baltimore County,1,0,0,1,0
@@ -12924,6 +13063,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1996,50023,50,VT,Vermont,023,Washington County,1,0,0,1,0
 1996,50025,50,VT,Vermont,025,Windham County,2,0,0,2,0
 1996,50027,50,VT,Vermont,027,Windsor County,1,0,0,1,0
+1996,51e3,51,VA,Virginia,000,NA,2,0,2,10,0
 1996,51001,51,VA,Virginia,001,Accomack County,2,0,1,1,0
 1996,51003,51,VA,Virginia,003,Albemarle County,2,0,1,2,0
 1996,51005,51,VA,Virginia,005,Alleghany County,3,0,2,2,0
@@ -12940,6 +13080,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1996,51027,51,VA,Virginia,027,Buchanan County,1,0,0,1,0
 1996,51029,51,VA,Virginia,029,Buckingham County,2,0,0,2,0
 1996,51031,51,VA,Virginia,031,Campbell County,2,0,1,2,0
+1996,51032,51,VA,Virginia,032,NA,3,0,2,3,0
 1996,51033,51,VA,Virginia,033,Caroline County,1,0,0,1,0
 1996,51035,51,VA,Virginia,035,Carroll County,1,0,0,1,0
 1996,51036,51,VA,Virginia,036,Charles City County,2,0,1,2,0
@@ -13000,6 +13141,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1996,51155,51,VA,Virginia,155,Pulaski County,2,0,0,2,0
 1996,51157,51,VA,Virginia,157,Rappahannock County,3,0,1,3,0
 1996,51159,51,VA,Virginia,159,Richmond County,2,0,1,1,0
+1996,51160,51,VA,Virginia,160,NA,2,0,1,1,0
 1996,51161,51,VA,Virginia,161,Roanoke County,2,0,1,2,0
 1996,51163,51,VA,Virginia,163,Rockbridge County,3,0,2,3,0
 1996,51165,51,VA,Virginia,165,Rockingham County,3,0,2,3,0
@@ -13019,9 +13161,34 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1996,51195,51,VA,Virginia,195,Wise County,1,0,0,1,0
 1996,51197,51,VA,Virginia,197,Wythe County,2,0,0,2,0
 1996,51199,51,VA,Virginia,199,York County,2,0,1,1,0
+1996,51200,51,VA,Virginia,200,NA,1,0,0,1,0
+1996,51208,51,VA,Virginia,208,NA,1,0,0,1,0
+1996,51216,51,VA,Virginia,216,NA,2,0,1,2,0
+1996,51344,51,VA,Virginia,344,NA,2,0,1,2,0
+1996,51392,51,VA,Virginia,392,NA,1,0,0,1,0
+1996,51424,51,VA,Virginia,424,NA,2,0,1,1,0
+1996,51432,51,VA,Virginia,432,NA,2,0,1,1,0
+1996,51440,51,VA,Virginia,440,NA,2,0,0,2,0
+1996,51448,51,VA,Virginia,448,NA,1,0,0,1,0
+1996,51496,51,VA,Virginia,496,NA,1,0,0,1,0
+1996,51512,51,VA,Virginia,512,NA,2,0,1,2,0
+1996,51544,51,VA,Virginia,544,NA,2,0,1,2,0
 1996,51600,51,VA,Virginia,600,Fairfax city,1,0,0,1,0
+1996,51624,51,VA,Virginia,624,NA,3,0,2,3,0
+1996,51672,51,VA,Virginia,672,NA,2,0,1,2,0
 1996,51680,51,VA,Virginia,680,Lynchburg city,3,0,2,2,0
+1996,51688,51,VA,Virginia,688,NA,1,0,0,1,0
+1996,51712,51,VA,Virginia,712,NA,1,0,0,1,0
 1996,51720,51,VA,Virginia,720,Norton city,1,0,0,1,0
+1996,51728,51,VA,Virginia,728,NA,2,0,1,2,0
+1996,51744,51,VA,Virginia,744,NA,2,0,1,1,0
+1996,51768,51,VA,Virginia,768,NA,2,0,1,1,0
+1996,51784,51,VA,Virginia,784,NA,2,0,1,2,0
+1996,51808,51,VA,Virginia,808,NA,2,0,1,2,0
+1996,51816,51,VA,Virginia,816,NA,1,0,0,1,0
+1996,51832,51,VA,Virginia,832,NA,1,0,0,1,0
+1996,51952,51,VA,Virginia,952,NA,1,0,0,1,0
+1996,51968,51,VA,Virginia,968,NA,2,0,1,3,0
 1996,53001,53,WA,Washington,001,Adams County,1,0,1,1,0
 1996,53003,53,WA,Washington,003,Asotin County,1,0,1,1,0
 1996,53005,53,WA,Washington,005,Benton County,1,0,1,1,0
@@ -13529,6 +13696,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1997,32021,32,NV,Nevada,021,Mineral County,1,0,1,1,0
 1997,32029,32,NV,Nevada,029,Storey County,1,0,1,1,0
 1997,32031,32,NV,Nevada,031,Washoe County,1,0,1,1,0
+1997,32700,32,NV,Nevada,700,NA,1,0,1,1,0
 1997,34001,34,NJ,New Jersey,001,Atlantic County,1,0,1,1,0
 1997,38001,38,ND,North Dakota,001,Adams County,2,0,1,2,1
 1997,38003,38,ND,North Dakota,003,Barnes County,2,0,1,2,1
@@ -13681,6 +13849,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1997,46129,46,SD,South Dakota,129,Walworth County,2,0,1,2,0
 1997,46135,46,SD,South Dakota,135,Yankton County,2,0,1,2,0
 1997,46137,46,SD,South Dakota,137,Ziebach County,2,0,1,2,0
+1997,46645,46,SD,South Dakota,645,NA,1,0,0,1,0
 1997,47005,47,TN,Tennessee,005,Benton County,1,0,1,1,0
 1997,47011,47,TN,Tennessee,011,Bradley County,1,0,1,1,0
 1997,47017,47,TN,Tennessee,017,Carroll County,1,0,1,1,0
@@ -13909,6 +14078,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1998,12081,12,FL,Florida,081,Manatee County,3,0,1,3,0
 1998,12083,12,FL,Florida,083,Marion County,2,0,2,2,0
 1998,12085,12,FL,Florida,085,Martin County,2,0,0,2,0
+1998,12086,12,FL,Florida,025,NA,3,0,1,3,0
 1998,12087,12,FL,Florida,087,Monroe County,5,0,3,5,2
 1998,12089,12,FL,Florida,089,Nassau County,2,0,2,2,0
 1998,12091,12,FL,Florida,091,Okaloosa County,4,0,3,4,0
@@ -14121,6 +14291,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1998,19075,19,IA,Iowa,075,Grundy County,1,0,1,0,0
 1998,19077,19,IA,Iowa,077,Guthrie County,1,0,1,1,1
 1998,19079,19,IA,Iowa,079,Hamilton County,1,0,1,0,0
+1998,19080,19,IA,Iowa,080,NA,1,0,1,0,0
 1998,19081,19,IA,Iowa,081,Hancock County,1,0,1,0,0
 1998,19083,19,IA,Iowa,083,Hardin County,1,0,1,1,0
 1998,19085,19,IA,Iowa,085,Harrison County,1,0,1,1,0
@@ -14166,6 +14337,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1998,19189,19,IA,Iowa,189,Winnebago County,1,0,1,0,0
 1998,19191,19,IA,Iowa,191,Winneshiek County,1,0,1,0,0
 1998,19197,19,IA,Iowa,197,Wright County,1,0,1,0,0
+1998,19430,19,IA,Iowa,430,NA,1,0,1,0,0
 1998,20011,20,KS,Kansas,011,Bourbon County,1,0,0,1,0
 1998,20015,20,KS,Kansas,015,Butler County,1,0,1,1,1
 1998,20017,20,KS,Kansas,017,Chase County,1,0,1,1,0
@@ -14264,6 +14436,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1998,22109,22,LA,Louisiana,109,Terrebonne Parish,1,0,1,1,1
 1998,22113,22,LA,Louisiana,113,Vermilion Parish,1,0,0,1,0
 1998,22117,22,LA,Louisiana,117,Washington Parish,1,0,1,1,0
+1998,22440,22,LA,Louisiana,440,NA,1,0,1,1,0
 1998,23001,23,ME,Maine,001,Androscoggin County,2,0,1,2,0
 1998,23003,23,ME,Maine,003,Aroostook County,1,0,1,1,0
 1998,23005,23,ME,Maine,005,Cumberland County,1,0,1,1,0
@@ -14345,6 +14518,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1998,28131,28,MS,Mississippi,131,Stone County,2,0,1,2,1
 1998,28147,28,MS,Mississippi,147,Walthall County,1,0,0,1,0
 1998,28153,28,MS,Mississippi,153,Wayne County,2,0,1,2,1
+1998,29e3,29,MO,Missouri,000,NA,1,0,1,0,1
 1998,29003,29,MO,Missouri,003,Andrew County,1,0,0,1,0
 1998,29011,29,MO,Missouri,011,Barton County,1,0,0,1,0
 1998,29025,29,MO,Missouri,025,Caldwell County,1,0,0,1,0
@@ -14590,6 +14764,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1998,47185,47,TN,Tennessee,185,White County,1,0,0,1,0
 1998,47187,47,TN,Tennessee,187,Williamson County,1,0,1,0,0
 1998,47189,47,TN,Tennessee,189,Wilson County,1,0,1,1,0
+1998,48e3,48,TX,Texas,0,NA,1,0,0,0,1
 1998,48001,48,TX,Texas,001,Anderson County,1,0,0,0,1
 1998,48003,48,TX,Texas,003,Andrews County,1,0,0,0,1
 1998,48005,48,TX,Texas,005,Angelina County,1,0,0,0,1
@@ -14844,6 +15019,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1998,48503,48,TX,Texas,503,Young County,1,0,0,0,1
 1998,48505,48,TX,Texas,505,Zapata County,1,0,0,0,1
 1998,48507,48,TX,Texas,507,Zavala County,1,0,0,0,1
+1998,48556,48,TX,Texas,556,NA,1,0,0,0,1
+1998,48662,48,TX,Texas,662,NA,1,0,0,0,1
 1998,50001,50,VT,Vermont,001,Addison County,2,0,2,2,0
 1998,50005,50,VT,Vermont,005,Caledonia County,1,0,1,1,0
 1998,50007,50,VT,Vermont,007,Chittenden County,2,0,2,2,0
@@ -14856,6 +15033,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1998,50021,50,VT,Vermont,021,Rutland County,1,0,1,1,0
 1998,50023,50,VT,Vermont,023,Washington County,1,0,1,1,0
 1998,50027,50,VT,Vermont,027,Windsor County,2,0,2,2,0
+1998,51e3,51,VA,Virginia,000,NA,1,0,4,4,4
+1998,51432,51,VA,Virginia,432,NA,1,0,1,1,1
 1998,53015,53,WA,Washington,015,Cowlitz County,1,0,1,1,1
 1998,53019,53,WA,Washington,019,Ferry County,1,0,0,1,1
 1998,53039,53,WA,Washington,039,Klickitat County,1,0,0,1,0
@@ -15013,6 +15192,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1999,12081,12,FL,Florida,081,Manatee County,3,0,0,3,0
 1999,12083,12,FL,Florida,083,Marion County,2,0,0,2,0
 1999,12085,12,FL,Florida,085,Martin County,6,0,1,6,2
+1999,12086,12,FL,Florida,025,NA,5,0,1,5,1
 1999,12087,12,FL,Florida,087,Monroe County,4,0,1,4,1
 1999,12089,12,FL,Florida,089,Nassau County,4,0,0,4,1
 1999,12093,12,FL,Florida,093,Okeechobee County,4,0,1,4,1
@@ -15267,6 +15447,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1999,27125,27,MN,Minnesota,125,Red Lake County,1,0,0,1,1
 1999,27135,27,MN,Minnesota,135,Roseau County,1,0,0,1,0
 1999,27137,27,MN,Minnesota,137,St. Louis County,1,0,1,1,1
+1999,27546,27,MN,Minnesota,546,NA,1,0,0,1,1
 1999,28007,28,MS,Mississippi,007,Attala County,1,0,0,1,1
 1999,28011,28,MS,Mississippi,011,Bolivar County,1,0,0,1,1
 1999,28013,28,MS,Mississippi,013,Calhoun County,1,0,0,1,1
@@ -15344,6 +15525,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1999,35043,35,NM,New Mexico,043,Sandoval County,1,0,0,1,1
 1999,35045,35,NM,New Mexico,045,San Juan County,1,0,0,1,1
 1999,35051,35,NM,New Mexico,051,Sierra County,1,0,0,1,1
+1999,35990,35,NM,New Mexico,990,NA,1,0,0,1,1
 1999,36001,36,NY,New York,001,Albany County,1,0,1,1,1
 1999,36009,36,NY,New York,009,Cattaraugus County,1,0,0,1,0
 1999,36013,36,NY,New York,013,Chautauqua County,1,0,0,1,0
@@ -15446,6 +15628,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1999,38015,38,ND,North Dakota,015,Burleigh County,1,0,1,1,1
 1999,38017,38,ND,North Dakota,017,Cass County,1,0,1,1,1
 1999,38019,38,ND,North Dakota,019,Cavalier County,1,0,1,1,0
+1999,38020,38,ND,North Dakota,020,NA,1,0,1,1,1
 1999,38021,38,ND,North Dakota,021,Dickey County,1,0,1,1,1
 1999,38023,38,ND,North Dakota,023,Divide County,1,0,1,1,0
 1999,38027,38,ND,North Dakota,027,Eddy County,1,0,1,1,0
@@ -15481,6 +15664,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1999,38101,38,ND,North Dakota,101,Ward County,1,0,1,1,1
 1999,38103,38,ND,North Dakota,103,Wells County,1,0,1,1,1
 1999,38105,38,ND,North Dakota,105,Williams County,1,0,1,1,0
+1999,38300,38,ND,North Dakota,300,NA,1,0,1,1,0
+1999,38340,38,ND,North Dakota,340,NA,1,0,1,1,1
+1999,38445,38,ND,North Dakota,445,NA,1,0,1,1,1
 1999,40015,40,OK,Oklahoma,015,Caddo County,1,0,1,1,1
 1999,40017,40,OK,Oklahoma,017,Canadian County,1,0,1,1,1
 1999,40027,40,OK,Oklahoma,027,Cleveland County,1,0,1,1,1
@@ -15543,6 +15729,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1999,45085,45,SC,South Carolina,085,Sumter County,2,0,0,2,0
 1999,45089,45,SC,South Carolina,089,Williamsburg County,2,0,1,2,0
 1999,46113,46,SD,South Dakota,113,Shannon County,1,0,1,1,1
+1999,46700,46,SD,South Dakota,700,NA,1,0,1,1,1
 1999,47001,47,TN,Tennessee,001,Anderson County,1,0,0,1,1
 1999,47003,47,TN,Tennessee,003,Bedford County,1,0,0,1,1
 1999,47005,47,TN,Tennessee,005,Benton County,1,0,1,1,1
@@ -15853,6 +16040,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1999,50023,50,VT,Vermont,023,Washington County,1,0,0,1,1
 1999,50025,50,VT,Vermont,025,Windham County,1,0,0,1,1
 1999,50027,50,VT,Vermont,027,Windsor County,1,0,0,1,1
+1999,51e3,51,VA,Virginia,000,NA,3,0,8,12,8
 1999,51001,51,VA,Virginia,001,Accomack County,2,0,1,2,1
 1999,51025,51,VA,Virginia,025,Brunswick County,1,0,1,1,1
 1999,51033,51,VA,Virginia,033,Caroline County,1,0,0,1,1
@@ -15881,12 +16069,19 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 1999,51133,51,VA,Virginia,133,Northumberland County,2,0,1,2,1
 1999,51149,51,VA,Virginia,149,Prince George County,1,0,1,1,0
 1999,51159,51,VA,Virginia,159,Richmond County,2,0,1,2,0
+1999,51160,51,VA,Virginia,160,NA,1,0,1,1,1
 1999,51175,51,VA,Virginia,175,Southampton County,1,0,1,1,1
 1999,51181,51,VA,Virginia,181,Surry County,1,0,1,1,0
 1999,51183,51,VA,Virginia,183,Sussex County,2,0,1,2,1
 1999,51193,51,VA,Virginia,193,Westmoreland County,2,0,1,2,0
 1999,51199,51,VA,Virginia,199,York County,2,0,1,2,1
+1999,51424,51,VA,Virginia,424,NA,1,0,1,1,0
+1999,51432,51,VA,Virginia,432,NA,2,0,1,2,1
+1999,51448,51,VA,Virginia,448,NA,1,0,1,1,1
 1999,51600,51,VA,Virginia,600,Fairfax city,1,0,1,1,1
+1999,51768,51,VA,Virginia,768,NA,2,0,1,1,0
+1999,51808,51,VA,Virginia,808,NA,1,0,1,1,1
+1999,51832,51,VA,Virginia,832,NA,1,0,1,1,0
 1999,55003,55,WI,Wisconsin,003,Ashland County,1,0,0,1,1
 1999,55007,55,WI,Wisconsin,007,Bayfield County,1,0,0,1,1
 1999,55031,55,WI,Wisconsin,031,Douglas County,1,0,0,1,1
@@ -15926,12 +16121,14 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,2240,02,AK,Alaska,240,Southeast Fairbanks Census Area,1,0,0,1,1
 2e3,2261,02,AK,Alaska,261,Valdez-Cordova Census Area,1,0,0,1,1
 2e3,2270,02,AK,Alaska,270,Wade Hampton Census Area,1,0,0,1,1
+2e3,4e3,04,AZ,Arizona,0,NA,1,0,0,0,1
 2e3,4003,04,AZ,Arizona,003,Cochise County,1,0,0,1,0
 2e3,4012,04,AZ,Arizona,012,La Paz County,1,0,1,1,0
 2e3,4013,04,AZ,Arizona,013,Maricopa County,1,0,1,1,0
 2e3,4021,04,AZ,Arizona,021,Pinal County,1,0,1,1,0
 2e3,4023,04,AZ,Arizona,023,Santa Cruz County,1,0,0,1,0
 2e3,4025,04,AZ,Arizona,025,Yavapai County,1,0,1,0,0
+2e3,4330,04,AZ,Arizona,330,NA,1,0,1,1,0
 2e3,5001,05,AR,Arkansas,001,Arkansas County,2,0,1,2,1
 2e3,5005,05,AR,Arkansas,005,Baxter County,1,0,1,1,0
 2e3,5007,05,AR,Arkansas,007,Benton County,2,0,1,2,0
@@ -16032,6 +16229,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,12075,12,FL,Florida,075,Levy County,1,0,0,1,0
 2e3,12079,12,FL,Florida,079,Madison County,1,0,0,1,0
 2e3,12083,12,FL,Florida,083,Marion County,1,0,0,1,0
+2e3,12086,12,FL,Florida,025,NA,1,0,1,1,1
 2e3,12087,12,FL,Florida,087,Monroe County,1,0,1,0,1
 2e3,12089,12,FL,Florida,089,Nassau County,1,0,0,1,0
 2e3,12091,12,FL,Florida,091,Okaloosa County,1,0,0,1,1
@@ -16121,6 +16319,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,16063,16,ID,Idaho,063,Lincoln County,1,0,1,0,0
 2e3,16077,16,ID,Idaho,077,Power County,1,0,1,0,0
 2e3,16085,16,ID,Idaho,085,Valley County,1,0,1,0,0
+2e3,16450,16,ID,Idaho,450,NA,1,0,1,0,0
 2e3,20037,20,KS,Kansas,037,Crawford County,1,0,1,0,1
 2e3,20099,20,KS,Kansas,099,Labette County,1,0,1,1,1
 2e3,20133,20,KS,Kansas,133,Neosho County,1,0,1,1,1
@@ -16192,6 +16391,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,23021,23,ME,Maine,021,Piscataquis County,1,0,0,1,1
 2e3,23025,23,ME,Maine,025,Somerset County,1,0,0,1,1
 2e3,23029,23,ME,Maine,029,Washington County,1,0,0,1,1
+2e3,24e3,24,MD,Maryland,000,NA,1,0,0,1,1
 2e3,24003,24,MD,Maryland,003,Anne Arundel County,1,0,0,1,1
 2e3,24005,24,MD,Maryland,005,Baltimore County,1,0,0,1,1
 2e3,24009,24,MD,Maryland,009,Calvert County,1,0,0,1,1
@@ -16216,6 +16416,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,27029,27,MN,Minnesota,029,Clearwater County,1,0,0,1,0
 2e3,27037,27,MN,Minnesota,037,Dakota County,1,0,1,1,1
 2e3,27039,27,MN,Minnesota,039,Dodge County,1,0,0,1,1
+2e3,27042,27,MN,Minnesota,042,NA,1,0,1,1,1
 2e3,27043,27,MN,Minnesota,043,Faribault County,1,0,0,1,1
 2e3,27045,27,MN,Minnesota,045,Fillmore County,1,0,1,1,1
 2e3,27047,27,MN,Minnesota,047,Freeborn County,1,0,0,1,1
@@ -16294,6 +16495,11 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,30107,30,MT,Montana,107,Wheatland County,1,0,1,0,0
 2e3,30109,30,MT,Montana,109,Wibaux County,1,0,0,1,1
 2e3,30111,30,MT,Montana,111,Yellowstone County,1,0,1,0,0
+2e3,30225,30,MT,Montana,225,NA,1,0,1,0,0
+2e3,30325,30,MT,Montana,325,NA,1,0,1,0,0
+2e3,30550,30,MT,Montana,550,NA,1,0,1,0,0
+2e3,30650,30,MT,Montana,650,NA,1,0,1,0,0
+2e3,30925,30,MT,Montana,925,NA,1,0,2,0,0
 2e3,32007,32,NV,Nevada,007,Elko County,1,0,0,1,0
 2e3,32031,32,NV,Nevada,031,Washoe County,2,0,0,2,0
 2e3,34001,34,NJ,New Jersey,001,Atlantic County,1,0,0,1,0
@@ -16445,6 +16651,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,37183,37,NC,North Carolina,183,Wake County,1,0,0,1,1
 2e3,37185,37,NC,North Carolina,185,Warren County,1,0,0,1,1
 2e3,37195,37,NC,North Carolina,195,Wilson County,1,0,0,1,1
+2e3,38e3,38,ND,North Dakota,0,NA,1,0,0,0,1
 2e3,38003,38,ND,North Dakota,003,Barnes County,1,0,1,0,0
 2e3,38005,38,ND,North Dakota,005,Benson County,2,0,1,2,1
 2e3,38009,38,ND,North Dakota,009,Bottineau County,1,0,1,1,0
@@ -16453,6 +16660,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,38015,38,ND,North Dakota,015,Burleigh County,1,0,1,1,0
 2e3,38017,38,ND,North Dakota,017,Cass County,1,0,1,1,0
 2e3,38019,38,ND,North Dakota,019,Cavalier County,2,0,1,1,1
+2e3,38020,38,ND,North Dakota,020,NA,1,0,1,1,0
 2e3,38021,38,ND,North Dakota,021,Dickey County,1,0,1,0,0
 2e3,38023,38,ND,North Dakota,023,Divide County,1,0,0,1,1
 2e3,38027,38,ND,North Dakota,027,Eddy County,1,0,1,1,0
@@ -16489,6 +16697,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,38101,38,ND,North Dakota,101,Ward County,1,0,1,0,0
 2e3,38103,38,ND,North Dakota,103,Wells County,1,0,1,1,0
 2e3,38105,38,ND,North Dakota,105,Williams County,1,0,0,1,1
+2e3,38340,38,ND,North Dakota,340,NA,1,0,1,1,0
+2e3,38445,38,ND,North Dakota,445,NA,1,0,1,1,0
 2e3,39001,39,OH,Ohio,001,Adams County,1,0,1,0,1
 2e3,39053,39,OH,Ohio,053,Gallia County,1,0,1,0,1
 2e3,39057,39,OH,Ohio,057,Greene County,1,0,1,1,1
@@ -16631,6 +16841,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,50021,50,VT,Vermont,021,Rutland County,1,0,0,1,1
 2e3,50025,50,VT,Vermont,025,Windham County,1,0,0,1,1
 2e3,50027,50,VT,Vermont,027,Windsor County,1,0,0,1,1
+2e3,51e3,51,VA,Virginia,000,NA,1,0,0,3,3
 2e3,51001,51,VA,Virginia,001,Accomack County,1,0,0,1,1
 2e3,51003,51,VA,Virginia,003,Albemarle County,1,0,0,1,1
 2e3,51005,51,VA,Virginia,005,Alleghany County,1,0,0,1,1
@@ -16705,6 +16916,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,51155,51,VA,Virginia,155,Pulaski County,1,0,0,1,1
 2e3,51157,51,VA,Virginia,157,Rappahannock County,1,0,0,1,1
 2e3,51159,51,VA,Virginia,159,Richmond County,1,0,0,1,1
+2e3,51160,51,VA,Virginia,160,NA,1,0,0,1,1
 2e3,51161,51,VA,Virginia,161,Roanoke County,1,0,0,1,1
 2e3,51163,51,VA,Virginia,163,Rockbridge County,1,0,0,1,1
 2e3,51165,51,VA,Virginia,165,Rockingham County,1,0,0,1,1
@@ -16724,7 +16936,18 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2e3,51195,51,VA,Virginia,195,Wise County,1,0,0,1,1
 2e3,51197,51,VA,Virginia,197,Wythe County,1,0,0,1,1
 2e3,51199,51,VA,Virginia,199,York County,1,0,0,1,1
+2e3,51344,51,VA,Virginia,344,NA,1,0,0,1,1
+2e3,51424,51,VA,Virginia,424,NA,1,0,0,1,1
+2e3,51432,51,VA,Virginia,432,NA,1,0,0,1,1
+2e3,51448,51,VA,Virginia,448,NA,1,0,0,1,1
+2e3,51496,51,VA,Virginia,496,NA,1,0,0,1,1
 2e3,51600,51,VA,Virginia,600,Fairfax city,1,0,0,1,1
+2e3,51672,51,VA,Virginia,672,NA,1,0,0,1,0
+2e3,51688,51,VA,Virginia,688,NA,1,0,0,1,0
+2e3,51744,51,VA,Virginia,744,NA,1,0,0,1,1
+2e3,51808,51,VA,Virginia,808,NA,1,0,0,1,1
+2e3,51832,51,VA,Virginia,832,NA,1,0,0,1,1
+2e3,51952,51,VA,Virginia,952,NA,1,0,0,1,1
 2e3,53005,53,WA,Washington,005,Benton County,1,0,0,1,0
 2e3,53039,53,WA,Washington,039,Klickitat County,1,0,0,1,0
 2e3,53047,53,WA,Washington,047,Okanogan County,1,0,0,1,0
@@ -16812,6 +17035,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2001,1125,01,AL,Alabama,125,Tuscaloosa County,1,0,0,1,1
 2001,1127,01,AL,Alabama,127,Walker County,1,0,0,1,1
 2001,1133,01,AL,Alabama,133,Winston County,1,0,1,1,1
+2001,2805,02,AK,Alaska,805,NA,1,0,0,1,0
 2001,5011,05,AR,Arkansas,011,Bradley County,1,0,0,1,1
 2001,5019,05,AR,Arkansas,019,Clark County,1,0,0,1,0
 2001,5025,05,AR,Arkansas,025,Cleveland County,1,0,0,1,0
@@ -16887,6 +17111,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2001,12081,12,FL,Florida,081,Manatee County,3,0,1,2,1
 2001,12083,12,FL,Florida,083,Marion County,1,0,1,0,0
 2001,12085,12,FL,Florida,085,Martin County,2,0,1,1,0
+2001,12086,12,FL,Florida,025,NA,2,0,1,1,0
 2001,12087,12,FL,Florida,087,Monroe County,2,0,1,1,0
 2001,12089,12,FL,Florida,089,Nassau County,1,0,1,0,0
 2001,12093,12,FL,Florida,093,Okeechobee County,2,0,1,1,0
@@ -17143,6 +17368,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2001,27037,27,MN,Minnesota,037,Dakota County,1,0,1,1,1
 2001,27039,27,MN,Minnesota,039,Dodge County,1,0,0,1,0
 2001,27041,27,MN,Minnesota,041,Douglas County,1,0,1,1,0
+2001,27042,27,MN,Minnesota,042,NA,1,0,1,0,0
 2001,27043,27,MN,Minnesota,043,Faribault County,1,0,0,1,0
 2001,27047,27,MN,Minnesota,047,Freeborn County,1,0,1,1,1
 2001,27049,27,MN,Minnesota,049,Goodhue County,1,0,1,1,1
@@ -17192,6 +17418,11 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2001,27169,27,MN,Minnesota,169,Winona County,1,0,1,1,1
 2001,27171,27,MN,Minnesota,171,Wright County,1,0,1,1,0
 2001,27173,27,MN,Minnesota,173,Yellow Medicine County,1,0,1,1,1
+2001,27200,27,MN,Minnesota,200,NA,1,0,0,1,0
+2001,27288,27,MN,Minnesota,288,NA,1,0,1,1,1
+2001,27316,27,MN,Minnesota,316,NA,1,0,1,1,1
+2001,27512,27,MN,Minnesota,512,NA,1,0,1,1,0
+2001,27590,27,MN,Minnesota,590,NA,1,0,0,1,0
 2001,28003,28,MS,Mississippi,003,Alcorn County,1,0,1,0,0
 2001,28005,28,MS,Mississippi,005,Amite County,1,0,1,0,0
 2001,28007,28,MS,Mississippi,007,Attala County,2,0,2,2,1
@@ -17257,6 +17488,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2001,30031,30,MT,Montana,031,Gallatin County,1,0,0,1,1
 2001,30063,30,MT,Montana,063,Missoula County,1,0,0,1,1
 2001,30077,30,MT,Montana,077,Powell County,1,0,0,1,1
+2001,30325,30,MT,Montana,325,NA,1,0,0,1,1
 2001,31007,31,NE,Nebraska,007,Banner County,1,0,0,1,1
 2001,31009,31,NE,Nebraska,009,Blaine County,1,0,0,1,1
 2001,31013,31,NE,Nebraska,013,Box Butte County,1,0,0,1,1
@@ -17387,6 +17619,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2001,38015,38,ND,North Dakota,015,Burleigh County,1,0,0,1,0
 2001,38017,38,ND,North Dakota,017,Cass County,1,0,0,1,1
 2001,38019,38,ND,North Dakota,019,Cavalier County,1,0,0,1,1
+2001,38020,38,ND,North Dakota,020,NA,1,0,0,1,1
 2001,38021,38,ND,North Dakota,021,Dickey County,1,0,0,1,1
 2001,38027,38,ND,North Dakota,027,Eddy County,1,0,0,1,1
 2001,38031,38,ND,North Dakota,031,Foster County,1,0,0,1,1
@@ -17416,6 +17649,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2001,38097,38,ND,North Dakota,097,Traill County,1,0,0,1,1
 2001,38099,38,ND,North Dakota,099,Walsh County,1,0,0,1,1
 2001,38103,38,ND,North Dakota,103,Wells County,1,0,0,1,1
+2001,38445,38,ND,North Dakota,445,NA,1,0,0,1,1
 2001,39015,39,OH,Ohio,015,Brown County,1,0,0,1,1
 2001,39017,39,OH,Ohio,017,Butler County,1,0,0,1,1
 2001,39025,39,OH,Ohio,025,Clermont County,1,0,0,1,1
@@ -17768,10 +18002,12 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2002,1125,01,AL,Alabama,125,Tuscaloosa County,1,1,1,0,1
 2002,1127,01,AL,Alabama,127,Walker County,1,1,1,1,1
 2002,1133,01,AL,Alabama,133,Winston County,1,1,1,1,1
+2002,2035,02,AK,Alaska,035,NA,1,0,1,1,1
 2002,2050,02,AK,Alaska,050,Bethel Census Area,1,0,1,1,1
 2002,2068,02,AK,Alaska,068,Denali Borough,1,1,1,1,1
 2002,2070,02,AK,Alaska,070,Dillingham Census Area,1,0,1,1,1
 2002,2090,02,AK,Alaska,090,Fairbanks North Star Borough,2,1,2,2,2
+2002,2095,02,AK,Alaska,095,NA,1,0,1,1,1
 2002,2122,02,AK,Alaska,122,Kenai Peninsula Borough,1,1,1,1,1
 2002,2150,02,AK,Alaska,150,Kodiak Island Borough,1,1,1,1,1
 2002,2170,02,AK,Alaska,170,Matanuska-Susitna Borough,2,0,0,2,2
@@ -17779,6 +18015,10 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2002,2261,02,AK,Alaska,261,Valdez-Cordova Census Area,1,0,0,1,1
 2002,2270,02,AK,Alaska,270,Wade Hampton Census Area,1,0,0,1,1
 2002,2290,02,AK,Alaska,290,Yukon-Koyukuk Census Area,2,0,1,2,2
+2002,2675,02,AK,Alaska,675,NA,1,1,1,1,1
+2002,2785,02,AK,Alaska,785,NA,1,1,1,1,1
+2002,2855,02,AK,Alaska,855,NA,1,0,1,1,1
+2002,2935,02,AK,Alaska,935,NA,1,0,1,1,1
 2002,4001,04,AZ,Arizona,001,Apache County,1,0,1,1,1
 2002,4005,04,AZ,Arizona,005,Coconino County,1,0,1,0,0
 2002,4007,04,AZ,Arizona,007,Gila County,1,0,1,0,0
@@ -17786,6 +18026,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2002,4021,04,AZ,Arizona,021,Pinal County,1,0,0,1,0
 2002,4023,04,AZ,Arizona,023,Santa Cruz County,1,0,0,1,0
 2002,4025,04,AZ,Arizona,025,Yavapai County,1,0,0,1,0
+2002,4320,04,AZ,Arizona,320,NA,1,0,1,1,1
 2002,5003,05,AR,Arkansas,003,Ashley County,1,0,0,1,1
 2002,5021,05,AR,Arkansas,021,Clay County,1,0,0,1,1
 2002,5023,05,AR,Arkansas,023,Cleburne County,1,0,0,1,1
@@ -17873,6 +18114,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2002,8121,08,CO,Colorado,121,Washington County,1,0,1,0,1
 2002,8123,08,CO,Colorado,123,Weld County,1,0,1,0,1
 2002,8125,08,CO,Colorado,125,Yuma County,1,0,1,0,1
+2002,8340,08,CO,Colorado,340,NA,1,0,1,0,1
+2002,8930,08,CO,Colorado,930,NA,1,0,1,0,1
 2002,17001,17,IL,Illinois,001,Adams County,1,0,1,1,1
 2002,17003,17,IL,Illinois,003,Alexander County,1,0,1,1,1
 2002,17005,17,IL,Illinois,005,Bond County,1,0,1,0,1
@@ -17941,6 +18184,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2002,17191,17,IL,Illinois,191,Wayne County,1,0,1,1,1
 2002,17193,17,IL,Illinois,193,White County,1,0,1,0,0
 2002,17199,17,IL,Illinois,199,Williamson County,1,0,1,0,0
+2002,18e3,18,IN,Indiana,0,NA,1,0,0,0,1
 2002,18005,18,IN,Indiana,005,Bartholomew County,1,0,1,0,1
 2002,18009,18,IN,Indiana,009,Blackford County,1,0,1,0,1
 2002,18013,18,IN,Indiana,013,Brown County,2,0,1,1,2
@@ -18301,6 +18545,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2002,30051,30,MT,Montana,051,Liberty County,1,0,0,1,1
 2002,30073,30,MT,Montana,073,Pondera County,1,0,0,1,1
 2002,30101,30,MT,Montana,101,Toole County,1,0,0,1,1
+2002,30225,30,MT,Montana,225,NA,1,0,0,1,1
 2002,32003,32,NV,Nevada,003,Clark County,1,0,0,1,0
 2002,32005,32,NV,Nevada,005,Douglas County,2,0,0,2,0
 2002,32017,32,NV,Nevada,017,Lincoln County,1,0,0,1,0
@@ -18370,6 +18615,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2002,38093,38,ND,North Dakota,093,Stutsman County,1,0,0,1,1
 2002,38097,38,ND,North Dakota,097,Traill County,1,0,0,1,1
 2002,38099,38,ND,North Dakota,099,Walsh County,1,0,0,1,1
+2002,38340,38,ND,North Dakota,340,NA,1,0,0,1,1
 2002,39005,39,OH,Ohio,005,Ashland County,1,1,1,0,1
 2002,39011,39,OH,Ohio,011,Auglaize County,1,1,1,0,1
 2002,39031,39,OH,Ohio,031,Coshocton County,1,1,1,0,1
@@ -18585,6 +18831,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2002,51191,51,VA,Virginia,191,Washington County,1,0,1,1,1
 2002,51195,51,VA,Virginia,195,Wise County,2,0,2,1,2
 2002,51197,51,VA,Virginia,197,Wythe County,1,0,0,1,0
+2002,51544,51,VA,Virginia,544,NA,1,0,1,0,0
+2002,51688,51,VA,Virginia,688,NA,1,0,1,1,1
+2002,51808,51,VA,Virginia,808,NA,1,0,1,0,1
 2002,53007,53,WA,Washington,007,Chelan County,1,0,0,1,0
 2002,53047,53,WA,Washington,047,Okanogan County,1,0,0,1,0
 2002,54039,54,WV,West Virginia,039,Kanawha County,1,0,1,0,1
@@ -18666,6 +18915,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,4017,04,AZ,Arizona,017,Navajo County,1,0,0,1,0
 2003,4019,04,AZ,Arizona,019,Pima County,2,0,0,2,1
 2003,4021,04,AZ,Arizona,021,Pinal County,1,0,0,1,0
+2003,4320,04,AZ,Arizona,320,NA,1,0,0,1,0
 2003,5005,05,AR,Arkansas,005,Baxter County,1,0,0,1,1
 2003,5007,05,AR,Arkansas,007,Benton County,1,1,1,0,1
 2003,5017,05,AR,Arkansas,017,Chicot County,1,1,1,1,1
@@ -18968,6 +19218,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,23019,23,ME,Maine,019,Penobscot County,1,0,0,1,1
 2003,23021,23,ME,Maine,021,Piscataquis County,1,0,0,1,1
 2003,23029,23,ME,Maine,029,Washington County,1,0,0,1,1
+2003,24e3,24,MD,Maryland,000,NA,2,1,1,2,1
 2003,24001,24,MD,Maryland,001,Allegany County,2,1,1,2,1
 2003,24003,24,MD,Maryland,003,Anne Arundel County,2,1,1,2,1
 2003,24005,24,MD,Maryland,005,Baltimore County,2,1,1,2,1
@@ -19163,6 +19414,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,31169,31,NE,Nebraska,169,Thayer County,1,0,0,1,1
 2003,31175,31,NE,Nebraska,175,Valley County,1,0,0,1,1
 2003,32031,32,NV,Nevada,031,Washoe County,2,0,0,2,0
+2003,32700,32,NV,Nevada,700,NA,2,0,0,2,0
 2003,33005,33,NH,New Hampshire,005,Cheshire County,2,0,0,2,1
 2003,33011,33,NH,New Hampshire,011,Hillsborough County,1,0,0,1,0
 2003,33013,33,NH,New Hampshire,013,Merrimack County,1,0,0,1,0
@@ -19191,6 +19443,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,34039,34,NJ,New Jersey,039,Union County,2,0,0,2,0
 2003,34041,34,NJ,New Jersey,041,Warren County,1,0,0,1,0
 2003,35001,35,NM,New Mexico,001,Bernalillo County,1,0,0,1,0
+2003,36e3,36,NY,New York,0,NA,1,0,0,1,0
 2003,36001,36,NY,New York,001,Albany County,3,0,0,3,0
 2003,36003,36,NY,New York,003,Allegany County,2,1,1,2,1
 2003,36005,36,NY,New York,005,Bronx County,2,0,0,2,0
@@ -19253,6 +19506,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,36119,36,NY,New York,119,Westchester County,2,0,0,2,0
 2003,36121,36,NY,New York,121,Wyoming County,2,0,0,2,1
 2003,36123,36,NY,New York,123,Yates County,3,1,1,3,2
+2003,36862,36,NY,New York,862,NA,1,0,0,1,0
 2003,37001,37,NC,North Carolina,001,Alamance County,1,0,0,1,1
 2003,37013,37,NC,North Carolina,013,Beaufort County,1,1,1,1,1
 2003,37015,37,NC,North Carolina,015,Bertie County,1,1,1,1,1
@@ -19307,6 +19561,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,37187,37,NC,North Carolina,187,Washington County,1,1,1,1,1
 2003,37191,37,NC,North Carolina,191,Wayne County,1,1,1,1,1
 2003,37195,37,NC,North Carolina,195,Wilson County,1,1,1,1,1
+2003,37390,37,NC,North Carolina,390,NA,2,0,0,0,2
 2003,38003,38,ND,North Dakota,003,Barnes County,1,0,0,1,1
 2003,39001,39,OH,Ohio,001,Adams County,2,1,1,2,2
 2003,39005,39,OH,Ohio,005,Ashland County,1,0,0,1,0
@@ -19407,6 +19662,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,41029,41,OR,Oregon,029,Jackson County,1,0,0,1,0
 2003,41031,41,OR,Oregon,031,Jefferson County,1,0,0,1,0
 2003,41043,41,OR,Oregon,043,Linn County,1,0,0,1,0
+2003,42e3,42,PA,Pennsylvania,0,NA,1,0,0,0,1
 2003,42001,42,PA,Pennsylvania,001,Adams County,1,0,0,1,0
 2003,42009,42,PA,Pennsylvania,009,Bedford County,1,0,0,1,0
 2003,42011,42,PA,Pennsylvania,011,Berks County,1,0,0,1,0
@@ -19623,6 +19879,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,50017,50,VT,Vermont,017,Orange County,1,0,0,1,1
 2003,50025,50,VT,Vermont,025,Windham County,1,0,0,1,1
 2003,50027,50,VT,Vermont,027,Windsor County,1,0,0,1,1
+2003,51e3,51,VA,Virginia,000,NA,2,10,10,11,11
 2003,51001,51,VA,Virginia,001,Accomack County,1,1,1,1,1
 2003,51003,51,VA,Virginia,003,Albemarle County,1,1,1,1,1
 2003,51007,51,VA,Virginia,007,Amelia County,1,1,1,1,1
@@ -19636,6 +19893,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,51027,51,VA,Virginia,027,Buchanan County,2,2,2,1,2
 2003,51029,51,VA,Virginia,029,Buckingham County,1,1,1,1,1
 2003,51031,51,VA,Virginia,031,Campbell County,1,1,1,1,1
+2003,51032,51,VA,Virginia,032,NA,1,1,1,1,1
 2003,51033,51,VA,Virginia,033,Caroline County,1,1,1,1,1
 2003,51036,51,VA,Virginia,036,Charles City County,1,1,1,1,1
 2003,51037,51,VA,Virginia,037,Charlotte County,1,1,1,1,1
@@ -19692,6 +19950,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,51155,51,VA,Virginia,155,Pulaski County,1,1,1,0,0
 2003,51157,51,VA,Virginia,157,Rappahannock County,2,1,1,2,2
 2003,51159,51,VA,Virginia,159,Richmond County,1,1,1,1,1
+2003,51160,51,VA,Virginia,160,NA,1,1,1,1,1
 2003,51161,51,VA,Virginia,161,Roanoke County,1,1,1,0,0
 2003,51163,51,VA,Virginia,163,Rockbridge County,1,1,1,1,1
 2003,51165,51,VA,Virginia,165,Rockingham County,1,1,1,1,1
@@ -19710,9 +19969,27 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2003,51195,51,VA,Virginia,195,Wise County,1,1,1,1,1
 2003,51197,51,VA,Virginia,197,Wythe County,1,0,0,1,0
 2003,51199,51,VA,Virginia,199,York County,1,1,1,1,1
+2003,51200,51,VA,Virginia,200,NA,2,1,1,2,2
+2003,51208,51,VA,Virginia,208,NA,1,1,1,0,1
+2003,51216,51,VA,Virginia,216,NA,1,1,1,1,1
+2003,51344,51,VA,Virginia,344,NA,2,1,1,2,1
+2003,51424,51,VA,Virginia,424,NA,1,1,1,1,1
+2003,51432,51,VA,Virginia,432,NA,1,1,1,1,1
+2003,51448,51,VA,Virginia,448,NA,1,1,1,1,1
+2003,51496,51,VA,Virginia,496,NA,2,1,1,2,2
+2003,51544,51,VA,Virginia,544,NA,1,1,1,1,1
 2003,51600,51,VA,Virginia,600,Fairfax city,1,1,1,1,1
+2003,51624,51,VA,Virginia,624,NA,1,1,1,1,1
+2003,51672,51,VA,Virginia,672,NA,1,1,1,1,1
 2003,51680,51,VA,Virginia,680,Lynchburg city,1,1,1,1,1
+2003,51688,51,VA,Virginia,688,NA,1,1,1,1,1
 2003,51720,51,VA,Virginia,720,Norton city,2,1,1,2,2
+2003,51744,51,VA,Virginia,744,NA,1,1,1,1,1
+2003,51768,51,VA,Virginia,768,NA,1,1,1,1,1
+2003,51808,51,VA,Virginia,808,NA,1,1,1,1,1
+2003,51832,51,VA,Virginia,832,NA,1,1,1,1,1
+2003,51952,51,VA,Virginia,952,NA,2,1,1,2,1
+2003,51968,51,VA,Virginia,968,NA,2,2,2,3,2
 2003,53007,53,WA,Washington,007,Chelan County,1,1,1,0,1
 2003,53009,53,WA,Washington,009,Clallam County,1,1,1,1,1
 2003,53027,53,WA,Washington,027,Grays Harbor County,1,1,1,1,1
@@ -19850,9 +20127,19 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2004,1129,01,AL,Alabama,129,Washington County,1,1,1,1,1
 2004,1131,01,AL,Alabama,131,Wilcox County,1,1,1,1,1
 2004,1133,01,AL,Alabama,133,Winston County,1,1,1,1,1
+2004,2055,02,AK,Alaska,055,NA,1,0,0,1,0
 2004,2090,02,AK,Alaska,090,Fairbanks North Star Borough,1,0,0,1,0
 2004,2188,02,AK,Alaska,188,Northwest Arctic Borough,1,0,0,1,1
+2004,2200,02,AK,Alaska,200,NA,1,0,0,1,1
 2004,2240,02,AK,Alaska,240,Southeast Fairbanks Census Area,1,0,0,1,0
+2004,2362,02,AK,Alaska,362,NA,1,0,0,1,1
+2004,2540,02,AK,Alaska,540,NA,1,0,0,1,1
+2004,2595,02,AK,Alaska,595,NA,1,0,0,1,0
+2004,2640,02,AK,Alaska,640,NA,1,0,0,1,0
+2004,2690,02,AK,Alaska,690,NA,1,0,0,1,1
+2004,2725,02,AK,Alaska,725,NA,1,0,0,1,0
+2004,2805,02,AK,Alaska,805,NA,1,0,0,1,0
+2004,2840,02,AK,Alaska,840,NA,1,0,0,1,1
 2004,4001,04,AZ,Arizona,001,Apache County,1,0,0,1,0
 2004,4007,04,AZ,Arizona,007,Gila County,1,0,0,1,0
 2004,4025,04,AZ,Arizona,025,Yavapai County,1,0,0,1,0
@@ -20573,6 +20860,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2004,31185,31,NE,Nebraska,185,York County,1,1,1,1,1
 2004,32003,32,NV,Nevada,003,Clark County,1,0,0,1,0
 2004,32031,32,NV,Nevada,031,Washoe County,3,0,0,3,0
+2004,32700,32,NV,Nevada,700,NA,2,0,0,2,1
 2004,33001,33,NH,New Hampshire,001,Belknap County,1,0,0,1,0
 2004,33003,33,NH,New Hampshire,003,Carroll County,1,0,0,1,0
 2004,33005,33,NH,New Hampshire,005,Cheshire County,1,0,0,1,0
@@ -20704,6 +20992,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2004,38009,38,ND,North Dakota,009,Bottineau County,1,0,0,1,1
 2004,38013,38,ND,North Dakota,013,Burke County,2,0,0,2,1
 2004,38019,38,ND,North Dakota,019,Cavalier County,1,0,0,1,1
+2004,38020,38,ND,North Dakota,020,NA,1,0,0,1,1
 2004,38025,38,ND,North Dakota,025,Dunn County,1,0,0,1,0
 2004,38027,38,ND,North Dakota,027,Eddy County,1,0,0,1,1
 2004,38035,38,ND,North Dakota,035,Grand Forks County,1,0,0,1,1
@@ -20724,6 +21013,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2004,38099,38,ND,North Dakota,099,Walsh County,1,0,0,1,1
 2004,38101,38,ND,North Dakota,101,Ward County,2,0,0,2,1
 2004,38105,38,ND,North Dakota,105,Williams County,1,0,0,1,0
+2004,38300,38,ND,North Dakota,300,NA,1,0,0,0,1
+2004,38340,38,ND,North Dakota,340,NA,1,0,0,1,0
+2004,38640,38,ND,North Dakota,640,NA,1,0,0,1,1
 2004,39001,39,OH,Ohio,001,Adams County,1,0,0,0,1
 2004,39003,39,OH,Ohio,003,Allen County,1,0,0,0,1
 2004,39005,39,OH,Ohio,005,Ashland County,1,0,0,0,1
@@ -20955,6 +21247,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2004,46123,46,SD,South Dakota,123,Tripp County,1,0,0,1,1
 2004,46125,46,SD,South Dakota,125,Turner County,1,0,0,1,1
 2004,46135,46,SD,South Dakota,135,Yankton County,1,0,0,1,1
+2004,46980,46,SD,South Dakota,980,NA,1,0,0,1,1
 2004,47013,47,TN,Tennessee,013,Campbell County,1,0,0,1,1
 2004,47019,47,TN,Tennessee,019,Carter County,1,0,0,1,1
 2004,47027,47,TN,Tennessee,027,Clay County,1,0,0,1,1
@@ -20978,6 +21271,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2004,50015,50,VT,Vermont,015,Lamoille County,1,0,0,1,1
 2004,50019,50,VT,Vermont,019,Orleans County,1,0,0,1,1
 2004,50025,50,VT,Vermont,025,Windham County,1,0,0,1,1
+2004,51e3,51,VA,Virginia,000,NA,2,3,3,1,3
 2004,51005,51,VA,Virginia,005,Alleghany County,1,1,1,0,1
 2004,51023,51,VA,Virginia,023,Botetourt County,1,1,1,0,1
 2004,51027,51,VA,Virginia,027,Buchanan County,1,1,1,0,1
@@ -20998,6 +21292,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2004,51161,51,VA,Virginia,161,Roanoke County,1,1,1,0,1
 2004,51167,51,VA,Virginia,167,Russell County,1,1,1,0,1
 2004,51185,51,VA,Virginia,185,Tazewell County,1,1,1,0,1
+2004,51424,51,VA,Virginia,424,NA,1,1,1,0,1
+2004,51448,51,VA,Virginia,448,NA,1,1,1,1,1
+2004,51832,51,VA,Virginia,832,NA,1,1,1,0,1
 2004,53007,53,WA,Washington,007,Chelan County,2,0,0,2,0
 2004,53017,53,WA,Washington,017,Douglas County,1,0,0,1,0
 2004,53037,53,WA,Washington,037,Kittitas County,1,0,0,1,0
@@ -21149,6 +21446,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,1133,01,AL,Alabama,133,Winston County,2,0,0,2,1
 2005,2185,02,AK,Alaska,185,North Slope Borough,1,0,0,1,1
 2005,2188,02,AK,Alaska,188,Northwest Arctic Borough,1,0,0,1,1
+2005,2362,02,AK,Alaska,362,NA,1,0,0,1,1
+2005,2540,02,AK,Alaska,540,NA,1,0,0,1,1
+2005,2840,02,AK,Alaska,840,NA,1,0,0,1,1
 2005,4001,04,AZ,Arizona,001,Apache County,2,0,0,1,1
 2005,4003,04,AZ,Arizona,003,Cochise County,1,0,0,1,0
 2005,4005,04,AZ,Arizona,005,Coconino County,2,0,0,2,1
@@ -21164,6 +21464,11 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,4023,04,AZ,Arizona,023,Santa Cruz County,1,0,0,1,0
 2005,4025,04,AZ,Arizona,025,Yavapai County,5,0,0,5,2
 2005,4027,04,AZ,Arizona,027,Yuma County,1,0,0,1,0
+2005,4330,04,AZ,Arizona,330,NA,1,0,0,0,1
+2005,4560,04,AZ,Arizona,560,NA,2,0,0,2,2
+2005,4740,04,AZ,Arizona,740,NA,1,0,0,1,1
+2005,4845,04,AZ,Arizona,845,NA,2,0,0,2,2
+2005,4980,04,AZ,Arizona,980,NA,1,0,0,1,1
 2005,5001,05,AR,Arkansas,001,Arkansas County,1,0,0,1,0
 2005,5003,05,AR,Arkansas,003,Ashley County,1,0,0,1,0
 2005,5005,05,AR,Arkansas,005,Baxter County,1,0,0,1,0
@@ -21644,6 +21949,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,16083,16,ID,Idaho,083,Twin Falls County,1,0,0,1,0
 2005,16085,16,ID,Idaho,085,Valley County,1,0,0,1,0
 2005,16087,16,ID,Idaho,087,Washington County,1,0,0,1,0
+2005,16340,16,ID,Idaho,340,NA,1,0,0,1,1
 2005,17001,17,IL,Illinois,001,Adams County,1,0,0,1,0
 2005,17003,17,IL,Illinois,003,Alexander County,1,0,0,1,0
 2005,17005,17,IL,Illinois,005,Bond County,1,0,0,1,0
@@ -22242,6 +22548,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,23027,23,ME,Maine,027,Waldo County,2,0,0,2,1
 2005,23029,23,ME,Maine,029,Washington County,3,0,0,3,1
 2005,23031,23,ME,Maine,031,York County,5,0,0,5,1
+2005,24e3,24,MD,Maryland,000,NA,1,0,0,1,0
 2005,24001,24,MD,Maryland,001,Allegany County,1,0,0,1,0
 2005,24003,24,MD,Maryland,003,Anne Arundel County,1,0,0,1,0
 2005,24005,24,MD,Maryland,005,Baltimore County,1,0,0,1,0
@@ -22531,6 +22838,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,28159,28,MS,Mississippi,159,Winston County,2,1,1,2,2
 2005,28161,28,MS,Mississippi,161,Yalobusha County,1,0,0,1,1
 2005,28163,28,MS,Mississippi,163,Yazoo County,1,1,1,1,1
+2005,29e3,29,MO,Missouri,000,NA,1,0,0,1,0
 2005,29001,29,MO,Missouri,001,Adair County,1,0,0,1,0
 2005,29003,29,MO,Missouri,003,Andrew County,1,0,0,1,0
 2005,29005,29,MO,Missouri,005,Atchison County,1,0,0,1,0
@@ -22810,6 +23118,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,32029,32,NV,Nevada,029,Storey County,3,0,0,3,0
 2005,32031,32,NV,Nevada,031,Washoe County,3,0,0,3,0
 2005,32033,32,NV,Nevada,033,White Pine County,3,0,0,3,0
+2005,32700,32,NV,Nevada,700,NA,3,0,0,3,0
 2005,33001,33,NH,New Hampshire,001,Belknap County,3,1,1,3,1
 2005,33003,33,NH,New Hampshire,003,Carroll County,4,0,0,4,0
 2005,33005,33,NH,New Hampshire,005,Cheshire County,5,1,1,5,1
@@ -23046,6 +23355,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,38015,38,ND,North Dakota,015,Burleigh County,1,0,0,1,0
 2005,38017,38,ND,North Dakota,017,Cass County,1,0,0,1,0
 2005,38019,38,ND,North Dakota,019,Cavalier County,2,0,0,2,1
+2005,38020,38,ND,North Dakota,020,NA,1,0,0,1,1
 2005,38021,38,ND,North Dakota,021,Dickey County,2,0,0,2,1
 2005,38023,38,ND,North Dakota,023,Divide County,1,0,0,1,0
 2005,38025,38,ND,North Dakota,025,Dunn County,2,0,0,2,1
@@ -23089,6 +23399,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,38101,38,ND,North Dakota,101,Ward County,3,0,0,3,2
 2005,38103,38,ND,North Dakota,103,Wells County,1,0,0,1,0
 2005,38105,38,ND,North Dakota,105,Williams County,1,0,0,1,0
+2005,38300,38,ND,North Dakota,300,NA,1,0,0,1,1
+2005,38340,38,ND,North Dakota,340,NA,2,0,0,2,2
 2005,39001,39,OH,Ohio,001,Adams County,2,0,0,2,1
 2005,39003,39,OH,Ohio,003,Allen County,2,0,0,2,1
 2005,39005,39,OH,Ohio,005,Ashland County,2,1,1,2,1
@@ -23569,6 +23881,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,47185,47,TN,Tennessee,185,White County,1,0,0,1,0
 2005,47187,47,TN,Tennessee,187,Williamson County,1,0,0,1,0
 2005,47189,47,TN,Tennessee,189,Wilson County,1,0,0,1,0
+2005,48e3,48,TX,Texas,0,NA,1,0,0,0,0
 2005,48001,48,TX,Texas,001,Anderson County,3,0,0,3,1
 2005,48003,48,TX,Texas,003,Andrews County,3,0,0,3,1
 2005,48005,48,TX,Texas,005,Angelina County,3,1,1,3,1
@@ -23852,6 +24165,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,49053,49,UT,Utah,053,Washington County,3,0,0,3,1
 2005,49055,49,UT,Utah,055,Wayne County,1,0,0,1,0
 2005,49057,49,UT,Utah,057,Weber County,1,0,0,1,0
+2005,49920,49,UT,Utah,920,NA,1,0,0,1,1
+2005,51e3,51,VA,Virginia,000,NA,1,0,0,10,0
 2005,51001,51,VA,Virginia,001,Accomack County,1,0,0,1,0
 2005,51003,51,VA,Virginia,003,Albemarle County,1,0,0,1,0
 2005,51005,51,VA,Virginia,005,Alleghany County,1,0,0,1,0
@@ -23868,6 +24183,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,51027,51,VA,Virginia,027,Buchanan County,1,0,0,1,0
 2005,51029,51,VA,Virginia,029,Buckingham County,1,0,0,1,0
 2005,51031,51,VA,Virginia,031,Campbell County,1,0,0,1,0
+2005,51032,51,VA,Virginia,032,NA,1,0,0,1,0
 2005,51033,51,VA,Virginia,033,Caroline County,1,0,0,1,0
 2005,51035,51,VA,Virginia,035,Carroll County,1,0,0,1,0
 2005,51036,51,VA,Virginia,036,Charles City County,1,0,0,1,0
@@ -23928,6 +24244,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,51155,51,VA,Virginia,155,Pulaski County,1,0,0,1,0
 2005,51157,51,VA,Virginia,157,Rappahannock County,1,0,0,1,0
 2005,51159,51,VA,Virginia,159,Richmond County,1,0,0,1,0
+2005,51160,51,VA,Virginia,160,NA,1,0,0,1,0
 2005,51161,51,VA,Virginia,161,Roanoke County,1,0,0,1,0
 2005,51163,51,VA,Virginia,163,Rockbridge County,1,0,0,1,0
 2005,51165,51,VA,Virginia,165,Rockingham County,1,0,0,1,0
@@ -23947,9 +24264,32 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,51195,51,VA,Virginia,195,Wise County,1,0,0,1,0
 2005,51197,51,VA,Virginia,197,Wythe County,1,0,0,1,0
 2005,51199,51,VA,Virginia,199,York County,1,0,0,1,0
+2005,51200,51,VA,Virginia,200,NA,1,0,0,1,0
+2005,51208,51,VA,Virginia,208,NA,1,0,0,1,0
+2005,51216,51,VA,Virginia,216,NA,1,0,0,1,0
+2005,51344,51,VA,Virginia,344,NA,1,0,0,1,0
+2005,51392,51,VA,Virginia,392,NA,1,0,0,1,0
+2005,51424,51,VA,Virginia,424,NA,1,0,0,1,0
+2005,51432,51,VA,Virginia,432,NA,1,0,0,1,0
+2005,51448,51,VA,Virginia,448,NA,1,0,0,1,0
+2005,51496,51,VA,Virginia,496,NA,1,0,0,1,0
+2005,51512,51,VA,Virginia,512,NA,1,0,0,1,0
+2005,51544,51,VA,Virginia,544,NA,1,0,0,1,0
 2005,51600,51,VA,Virginia,600,Fairfax city,1,0,0,1,0
+2005,51624,51,VA,Virginia,624,NA,1,0,0,1,0
+2005,51672,51,VA,Virginia,672,NA,1,0,0,1,0
 2005,51680,51,VA,Virginia,680,Lynchburg city,1,0,0,1,0
+2005,51688,51,VA,Virginia,688,NA,1,0,0,1,0
 2005,51720,51,VA,Virginia,720,Norton city,1,0,0,1,0
+2005,51728,51,VA,Virginia,728,NA,1,0,0,1,0
+2005,51744,51,VA,Virginia,744,NA,1,0,0,1,0
+2005,51768,51,VA,Virginia,768,NA,1,0,0,1,0
+2005,51784,51,VA,Virginia,784,NA,1,0,0,1,0
+2005,51808,51,VA,Virginia,808,NA,1,0,0,1,0
+2005,51816,51,VA,Virginia,816,NA,1,0,0,1,0
+2005,51832,51,VA,Virginia,832,NA,1,0,0,1,0
+2005,51952,51,VA,Virginia,952,NA,1,0,0,1,0
+2005,51968,51,VA,Virginia,968,NA,1,0,0,2,0
 2005,53001,53,WA,Washington,001,Adams County,1,0,0,1,0
 2005,53003,53,WA,Washington,003,Asotin County,1,0,0,1,0
 2005,53005,53,WA,Washington,005,Benton County,1,0,0,1,0
@@ -24044,6 +24384,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2005,54105,54,WV,West Virginia,105,Wirt County,1,0,0,1,0
 2005,54107,54,WV,West Virginia,107,Wood County,1,0,0,1,0
 2005,54109,54,WV,West Virginia,109,Wyoming County,1,0,0,1,0
+2005,55e3,55,WI,Wisconsin,0,NA,1,0,0,1,0
 2005,55001,55,WI,Wisconsin,001,Adams County,1,0,0,1,0
 2005,55003,55,WI,Wisconsin,003,Ashland County,1,0,0,1,0
 2005,55005,55,WI,Wisconsin,005,Barron County,1,0,0,1,0
@@ -24120,6 +24461,11 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2006,2068,02,AK,Alaska,068,Denali Borough,1,0,0,1,1
 2006,2122,02,AK,Alaska,122,Kenai Peninsula Borough,1,0,0,1,1
 2006,2170,02,AK,Alaska,170,Matanuska-Susitna Borough,1,0,0,1,1
+2006,2365,02,AK,Alaska,365,NA,1,0,0,1,1
+2006,2430,02,AK,Alaska,430,NA,2,0,0,2,2
+2006,2540,02,AK,Alaska,540,NA,1,0,0,1,1
+2006,2650,02,AK,Alaska,650,NA,2,0,0,2,1
+2006,2690,02,AK,Alaska,690,NA,2,0,0,2,2
 2006,4005,04,AZ,Arizona,005,Coconino County,2,0,0,2,0
 2006,4007,04,AZ,Arizona,007,Gila County,1,0,0,1,1
 2006,4009,04,AZ,Arizona,009,Graham County,1,0,0,1,1
@@ -24128,6 +24474,11 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2006,4019,04,AZ,Arizona,019,Pima County,1,0,0,1,1
 2006,4021,04,AZ,Arizona,021,Pinal County,1,0,0,1,1
 2006,4025,04,AZ,Arizona,025,Yavapai County,1,0,0,1,0
+2006,4330,04,AZ,Arizona,330,NA,1,0,0,1,1
+2006,4560,04,AZ,Arizona,560,NA,1,0,0,1,1
+2006,4845,04,AZ,Arizona,845,NA,1,0,0,1,1
+2006,4950,04,AZ,Arizona,950,NA,1,0,0,1,1
+2006,4980,04,AZ,Arizona,980,NA,1,0,0,1,1
 2006,5029,05,AR,Arkansas,029,Conway County,1,1,1,0,1
 2006,5037,05,AR,Arkansas,037,Cross County,1,1,1,1,1
 2006,5049,05,AR,Arkansas,049,Fulton County,1,1,1,0,1
@@ -24293,6 +24644,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2006,27155,27,MN,Minnesota,155,Traverse County,1,0,0,1,0
 2006,27167,27,MN,Minnesota,167,Wilkin County,2,0,0,2,1
 2006,27173,27,MN,Minnesota,173,Yellow Medicine County,1,0,0,1,0
+2006,29e3,29,MO,Missouri,000,NA,3,0,0,3,2
 2006,29003,29,MO,Missouri,003,Andrew County,1,1,1,1,1
 2006,29013,29,MO,Missouri,013,Bates County,1,1,1,1,1
 2006,29015,29,MO,Missouri,015,Benton County,1,1,1,1,1
@@ -24390,6 +24742,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2006,32019,32,NV,Nevada,019,Lyon County,2,0,0,2,1
 2006,32029,32,NV,Nevada,029,Storey County,2,0,0,2,1
 2006,32031,32,NV,Nevada,031,Washoe County,4,0,0,4,1
+2006,32200,32,NV,Nevada,200,NA,1,0,0,1,1
+2006,32700,32,NV,Nevada,700,NA,2,0,0,2,1
+2006,32800,32,NV,Nevada,800,NA,1,0,0,1,1
 2006,33001,33,NH,New Hampshire,001,Belknap County,1,1,1,1,1
 2006,33003,33,NH,New Hampshire,003,Carroll County,1,1,1,1,1
 2006,33009,33,NH,New Hampshire,009,Grafton County,1,0,0,1,1
@@ -24424,6 +24779,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2006,35055,35,NM,New Mexico,055,Taos County,1,0,0,1,1
 2006,35057,35,NM,New Mexico,057,Torrance County,1,0,0,1,1
 2006,35061,35,NM,New Mexico,061,Valencia County,1,0,0,1,1
+2006,35580,35,NM,New Mexico,580,NA,1,0,0,1,1
 2006,36007,36,NY,New York,007,Broome County,2,2,2,2,2
 2006,36017,36,NY,New York,017,Chenango County,2,2,2,2,2
 2006,36023,36,NY,New York,023,Cortland County,1,0,0,1,1
@@ -24451,6 +24807,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2006,36119,36,NY,New York,119,Westchester County,1,0,0,1,1
 2006,38017,38,ND,North Dakota,017,Cass County,2,0,0,2,2
 2006,38019,38,ND,North Dakota,019,Cavalier County,1,0,0,1,1
+2006,38020,38,ND,North Dakota,020,NA,1,0,0,1,1
 2006,38035,38,ND,North Dakota,035,Grand Forks County,1,0,0,1,1
 2006,38067,38,ND,North Dakota,067,Pembina County,1,0,0,1,1
 2006,38073,38,ND,North Dakota,073,Ransom County,2,0,0,2,2
@@ -24568,6 +24925,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2006,41057,41,OR,Oregon,057,Tillamook County,2,0,0,2,2
 2006,41069,41,OR,Oregon,069,Wheeler County,1,0,0,1,1
 2006,41071,41,OR,Oregon,071,Yamhill County,1,0,0,1,1
+2006,41650,41,OR,Oregon,650,NA,1,0,0,1,1
 2006,42001,42,PA,Pennsylvania,001,Adams County,1,0,0,1,1
 2006,42005,42,PA,Pennsylvania,005,Armstrong County,1,0,0,1,1
 2006,42011,42,PA,Pennsylvania,011,Berks County,1,1,1,1,1
@@ -24878,6 +25236,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2006,48503,48,TX,Texas,503,Young County,1,0,0,1,1
 2006,48505,48,TX,Texas,505,Zapata County,1,0,0,1,1
 2006,48507,48,TX,Texas,507,Zavala County,1,0,0,1,1
+2006,51e3,51,VA,Virginia,000,NA,2,0,0,3,3
 2006,51001,51,VA,Virginia,001,Accomack County,1,0,0,1,1
 2006,51005,51,VA,Virginia,005,Alleghany County,1,0,0,1,1
 2006,51013,51,VA,Virginia,013,Arlington County,1,0,0,1,1
@@ -24915,6 +25274,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2006,51183,51,VA,Virginia,183,Sussex County,1,0,0,1,1
 2006,51193,51,VA,Virginia,193,Westmoreland County,1,0,0,1,1
 2006,51199,51,VA,Virginia,199,York County,1,0,0,1,1
+2006,51208,51,VA,Virginia,208,NA,1,0,0,1,1
+2006,51768,51,VA,Virginia,768,NA,1,0,0,1,1
 2006,53007,53,WA,Washington,007,Chelan County,2,0,0,2,1
 2006,53009,53,WA,Washington,009,Clallam County,1,0,0,1,1
 2006,53011,53,WA,Washington,011,Clark County,1,1,1,0,1
@@ -25364,6 +25725,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2007,27147,27,MN,Minnesota,147,Steele County,1,1,1,1,1
 2007,27157,27,MN,Minnesota,157,Wabasha County,1,1,1,1,1
 2007,27169,27,MN,Minnesota,169,Winona County,1,1,1,1,1
+2007,29e3,29,MO,Missouri,0,NA,1,0,0,1,0
+2007,29e3,29,MO,Missouri,000,NA,2,0,0,2,1
 2007,29001,29,MO,Missouri,001,Adair County,2,0,0,2,1
 2007,29003,29,MO,Missouri,003,Andrew County,3,1,1,3,2
 2007,29005,29,MO,Missouri,005,Atchison County,3,1,1,3,2
@@ -25721,6 +26084,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2007,41067,41,OR,Oregon,067,Washington County,1,1,1,1,0
 2007,41069,41,OR,Oregon,069,Wheeler County,1,0,0,1,1
 2007,41071,41,OR,Oregon,071,Yamhill County,2,1,1,2,2
+2007,41282,41,OR,Oregon,282,NA,1,0,0,1,1
+2007,41400,41,OR,Oregon,400,NA,1,0,0,1,1
+2007,41525,41,OR,Oregon,525,NA,2,0,0,2,1
 2007,42015,42,PA,Pennsylvania,015,Bradford County,1,0,0,1,1
 2007,42069,42,PA,Pennsylvania,069,Lackawanna County,1,0,0,1,1
 2007,42079,42,PA,Pennsylvania,079,Luzerne County,1,0,0,1,1
@@ -25755,6 +26121,10 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2007,46115,46,SD,South Dakota,115,Spink County,1,1,1,1,1
 2007,46123,46,SD,South Dakota,123,Tripp County,1,0,0,1,1
 2007,46135,46,SD,South Dakota,135,Yankton County,1,1,1,1,1
+2007,46260,46,SD,South Dakota,260,NA,1,0,0,1,1
+2007,46640,46,SD,South Dakota,640,NA,1,0,0,1,1
+2007,46700,46,SD,South Dakota,700,NA,1,0,0,1,1
+2007,46860,46,SD,South Dakota,860,NA,1,0,0,1,1
 2007,48001,48,TX,Texas,001,Anderson County,1,0,0,1,1
 2007,48007,48,TX,Texas,007,Aransas County,1,0,0,1,0
 2007,48009,48,TX,Texas,009,Archer County,1,1,1,1,1
@@ -25863,6 +26233,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2007,49023,49,UT,Utah,023,Juab County,1,0,0,1,0
 2007,49027,49,UT,Utah,027,Millard County,1,0,0,1,0
 2007,49047,49,UT,Utah,047,Uintah County,1,0,0,1,0
+2007,49920,49,UT,Utah,920,NA,1,0,0,1,0
 2007,50003,50,VT,Vermont,003,Bennington County,1,0,0,1,1
 2007,50005,50,VT,Vermont,005,Caledonia County,2,0,0,2,2
 2007,50009,50,VT,Vermont,009,Essex County,1,0,0,1,1
@@ -25998,6 +26369,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2008,2068,02,AK,Alaska,068,Denali Borough,1,0,0,1,1
 2008,2090,02,AK,Alaska,090,Fairbanks North Star Borough,1,0,0,1,1
 2008,2185,02,AK,Alaska,185,North Slope Borough,1,0,0,1,1
+2008,2650,02,AK,Alaska,650,NA,1,0,0,1,1
 2008,4025,04,AZ,Arizona,025,Yavapai County,1,0,0,1,0
 2008,5001,05,AR,Arkansas,001,Arkansas County,2,2,2,2,2
 2008,5003,05,AR,Arkansas,003,Ashley County,1,0,0,1,1
@@ -26088,6 +26460,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2008,6089,06,CA,California,089,Shasta County,1,0,0,1,0
 2008,6095,06,CA,California,095,Solano County,1,0,0,1,0
 2008,6105,06,CA,California,105,Trinity County,1,0,0,1,0
+2008,6554,06,CA,California,554,NA,1,0,0,1,0
 2008,8025,08,CO,Colorado,025,Crowley County,1,0,0,1,0
 2008,8069,08,CO,Colorado,069,Larimer County,1,1,1,0,1
 2008,8093,08,CO,Colorado,093,Park County,1,0,0,1,0
@@ -26725,6 +27098,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2008,28159,28,MS,Mississippi,159,Winston County,1,0,0,1,0
 2008,28161,28,MS,Mississippi,161,Yalobusha County,1,0,0,1,0
 2008,28163,28,MS,Mississippi,163,Yazoo County,1,0,0,1,0
+2008,29e3,29,MO,Missouri,000,NA,3,1,0,2,2
 2008,29001,29,MO,Missouri,001,Adair County,2,1,1,2,2
 2008,29003,29,MO,Missouri,003,Andrew County,1,1,1,1,1
 2008,29005,29,MO,Missouri,005,Atchison County,1,0,0,1,1
@@ -27063,6 +27437,11 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2008,46123,46,SD,South Dakota,123,Tripp County,1,0,0,1,1
 2008,46125,46,SD,South Dakota,125,Turner County,1,0,0,1,1
 2008,46137,46,SD,South Dakota,137,Ziebach County,2,0,0,2,2
+2008,46220,46,SD,South Dakota,220,NA,1,0,0,1,1
+2008,46260,46,SD,South Dakota,260,NA,1,0,0,1,1
+2008,46700,46,SD,South Dakota,700,NA,1,0,0,1,1
+2008,46860,46,SD,South Dakota,860,NA,2,0,0,3,3
+2008,46980,46,SD,South Dakota,980,NA,1,0,0,1,1
 2008,47005,47,TN,Tennessee,005,Benton County,1,1,1,1,1
 2008,47047,47,TN,Tennessee,047,Fayette County,1,1,1,1,1
 2008,47049,47,TN,Tennessee,049,Fentress County,1,0,0,1,1
@@ -27432,6 +27811,12 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2009,2150,02,AK,Alaska,150,Kodiak Island Borough,1,0,0,1,1
 2009,2170,02,AK,Alaska,170,Matanuska-Susitna Borough,1,0,0,1,1
 2009,2240,02,AK,Alaska,240,Southeast Fairbanks Census Area,1,1,0,1,1
+2009,2255,02,AK,Alaska,255,NA,1,1,0,1,1
+2009,2540,02,AK,Alaska,540,NA,1,0,0,1,1
+2009,2640,02,AK,Alaska,640,NA,1,1,0,1,1
+2009,2650,02,AK,Alaska,650,NA,1,1,0,1,1
+2009,2690,02,AK,Alaska,690,NA,1,1,0,1,1
+2009,2720,02,AK,Alaska,720,NA,1,1,0,1,1
 2009,4003,04,AZ,Arizona,003,Cochise County,1,0,0,1,0
 2009,4005,04,AZ,Arizona,005,Coconino County,1,0,0,1,0
 2009,4007,04,AZ,Arizona,007,Gila County,1,0,0,1,0
@@ -27867,6 +28252,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2009,27029,27,MN,Minnesota,029,Clearwater County,1,0,0,1,1
 2009,27031,27,MN,Minnesota,031,Cook County,1,0,0,1,1
 2009,27041,27,MN,Minnesota,041,Douglas County,1,0,0,1,1
+2009,27042,27,MN,Minnesota,042,NA,1,0,0,1,1
 2009,27051,27,MN,Minnesota,051,Grant County,1,0,0,1,1
 2009,27057,27,MN,Minnesota,057,Hubbard County,1,0,0,1,1
 2009,27069,27,MN,Minnesota,069,Kittson County,2,0,0,2,1
@@ -27888,6 +28274,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2009,27159,27,MN,Minnesota,159,Wadena County,1,0,0,1,1
 2009,27167,27,MN,Minnesota,167,Wilkin County,2,1,0,2,1
 2009,27173,27,MN,Minnesota,173,Yellow Medicine County,1,0,0,1,1
+2009,27512,27,MN,Minnesota,512,NA,1,0,0,1,1
 2009,28005,28,MS,Mississippi,005,Amite County,1,0,0,1,1
 2009,28041,28,MS,Mississippi,041,Greene County,1,0,0,1,1
 2009,28059,28,MS,Mississippi,059,Jackson County,1,0,0,1,1
@@ -27899,6 +28286,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2009,28147,28,MS,Mississippi,147,Walthall County,1,0,0,1,1
 2009,28153,28,MS,Mississippi,153,Wayne County,1,0,0,1,1
 2009,28157,28,MS,Mississippi,157,Wilkinson County,1,0,0,1,1
+2009,29e3,29,MO,Missouri,000,NA,1,0,0,1,0
 2009,29001,29,MO,Missouri,001,Adair County,2,1,0,2,1
 2009,29003,29,MO,Missouri,003,Andrew County,1,0,0,1,0
 2009,29005,29,MO,Missouri,005,Atchison County,1,0,0,1,0
@@ -28077,6 +28465,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2009,38015,38,ND,North Dakota,015,Burleigh County,1,1,0,1,1
 2009,38017,38,ND,North Dakota,017,Cass County,1,1,0,1,1
 2009,38019,38,ND,North Dakota,019,Cavalier County,1,1,0,1,1
+2009,38020,38,ND,North Dakota,020,NA,1,1,0,1,1
 2009,38021,38,ND,North Dakota,021,Dickey County,1,1,0,1,1
 2009,38025,38,ND,North Dakota,025,Dunn County,1,0,0,1,1
 2009,38027,38,ND,North Dakota,027,Eddy County,1,1,0,1,1
@@ -28116,6 +28505,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2009,38101,38,ND,North Dakota,101,Ward County,1,1,0,1,1
 2009,38103,38,ND,North Dakota,103,Wells County,1,1,0,1,1
 2009,38105,38,ND,North Dakota,105,Williams County,1,1,0,1,1
+2009,38300,38,ND,North Dakota,300,NA,1,1,0,1,1
+2009,38640,38,ND,North Dakota,640,NA,1,1,0,1,1
+2009,38995,38,ND,North Dakota,995,NA,1,0,0,1,1
 2009,40001,40,OK,Oklahoma,001,Adair County,1,0,0,1,1
 2009,40007,40,OK,Oklahoma,007,Beaver County,1,0,0,1,0
 2009,40019,40,OK,Oklahoma,019,Carter County,3,2,0,2,2
@@ -28169,6 +28561,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2009,46109,46,SD,South Dakota,109,Roberts County,1,0,0,1,1
 2009,46115,46,SD,South Dakota,115,Spink County,1,0,0,1,1
 2009,46137,46,SD,South Dakota,137,Ziebach County,1,0,0,1,1
+2009,46260,46,SD,South Dakota,260,NA,1,0,0,1,1
+2009,46860,46,SD,South Dakota,860,NA,1,0,0,1,1
 2009,47005,47,TN,Tennessee,005,Benton County,1,0,0,1,1
 2009,47023,47,TN,Tennessee,023,Chester County,1,0,0,1,1
 2009,47027,47,TN,Tennessee,027,Clay County,1,0,0,1,1
@@ -28204,11 +28598,13 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2009,49053,49,UT,Utah,053,Washington County,1,0,0,1,0
 2009,50003,50,VT,Vermont,003,Bennington County,1,0,0,1,1
 2009,50025,50,VT,Vermont,025,Windham County,1,0,0,1,1
+2009,51e3,51,VA,Virginia,000,NA,1,0,0,6,6
 2009,51083,51,VA,Virginia,083,Halifax County,1,0,0,1,1
 2009,51093,51,VA,Virginia,093,Isle of Wight County,1,0,0,1,1
 2009,51097,51,VA,Virginia,097,King and Queen County,1,0,0,1,1
 2009,51131,51,VA,Virginia,131,Northampton County,1,0,0,1,1
 2009,51181,51,VA,Virginia,181,Surry County,1,0,0,1,1
+2009,51768,51,VA,Virginia,768,NA,1,0,0,1,1
 2009,53001,53,WA,Washington,001,Adams County,1,0,0,1,1
 2009,53003,53,WA,Washington,003,Asotin County,1,0,0,1,1
 2009,53005,53,WA,Washington,005,Benton County,3,1,0,2,2
@@ -28266,6 +28662,13 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,4015,04,AZ,Arizona,015,Mohave County,1,0,0,1,1
 2010,4017,04,AZ,Arizona,017,Navajo County,2,0,0,2,1
 2010,4025,04,AZ,Arizona,025,Yavapai County,1,0,0,1,1
+2010,4320,04,AZ,Arizona,320,NA,1,0,0,1,1
+2010,4330,04,AZ,Arizona,330,NA,1,0,0,1,1
+2010,4560,04,AZ,Arizona,560,NA,3,0,0,3,2
+2010,4740,04,AZ,Arizona,740,NA,1,0,0,1,1
+2010,4845,04,AZ,Arizona,845,NA,2,0,0,2,1
+2010,4950,04,AZ,Arizona,950,NA,1,0,0,1,1
+2010,4980,04,AZ,Arizona,980,NA,1,0,0,1,1
 2010,5011,05,AR,Arkansas,011,Bradley County,1,0,0,1,1
 2010,5013,05,AR,Arkansas,013,Calhoun County,1,0,0,1,1
 2010,5019,05,AR,Arkansas,019,Clark County,1,0,0,1,1
@@ -28559,6 +28962,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,23015,23,ME,Maine,015,Lincoln County,1,0,0,1,1
 2010,23023,23,ME,Maine,023,Sagadahoc County,1,0,0,1,1
 2010,23031,23,ME,Maine,031,York County,2,0,0,2,2
+2010,24e3,24,MD,Maryland,000,NA,2,0,0,2,2
 2010,24001,24,MD,Maryland,001,Allegany County,1,0,0,1,1
 2010,24003,24,MD,Maryland,003,Anne Arundel County,2,0,0,2,2
 2010,24005,24,MD,Maryland,005,Baltimore County,2,0,0,2,2
@@ -28645,6 +29049,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,27169,27,MN,Minnesota,169,Winona County,1,0,0,1,1
 2010,27171,27,MN,Minnesota,171,Wright County,1,0,0,1,0
 2010,27173,27,MN,Minnesota,173,Yellow Medicine County,3,0,0,3,2
+2010,27288,27,MN,Minnesota,288,NA,1,0,0,1,1
+2010,27316,27,MN,Minnesota,316,NA,2,0,0,2,1
 2010,28003,28,MS,Mississippi,003,Alcorn County,1,1,0,1,1
 2010,28007,28,MS,Mississippi,007,Attala County,1,1,0,1,1
 2010,28009,28,MS,Mississippi,009,Benton County,1,1,0,1,1
@@ -28701,6 +29107,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,29227,29,MO,Missouri,227,Worth County,1,0,0,1,1
 2010,30015,30,MT,Montana,015,Chouteau County,1,0,0,1,1
 2010,30041,30,MT,Montana,041,Hill County,1,0,0,1,1
+2010,30925,30,MT,Montana,925,NA,1,0,0,1,1
 2010,31001,31,NE,Nebraska,001,Adams County,2,0,0,2,2
 2010,31003,31,NE,Nebraska,003,Antelope County,3,0,0,3,3
 2010,31005,31,NE,Nebraska,005,Arthur County,2,0,0,2,2
@@ -28812,6 +29219,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,35043,35,NM,New Mexico,043,Sandoval County,2,0,0,2,0
 2010,35045,35,NM,New Mexico,045,San Juan County,1,0,0,1,1
 2010,35053,35,NM,New Mexico,053,Socorro County,1,0,0,1,1
+2010,35580,35,NM,New Mexico,580,NA,1,0,0,1,1
+2010,35660,35,NM,New Mexico,660,NA,1,0,0,1,1
 2010,36047,36,NY,New York,047,Kings County,1,0,0,1,1
 2010,36059,36,NY,New York,059,Nassau County,1,0,0,1,1
 2010,36071,36,NY,New York,071,Orange County,1,0,0,1,1
@@ -28866,6 +29275,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,37187,37,NC,North Carolina,187,Washington County,2,1,0,1,1
 2010,37189,37,NC,North Carolina,189,Watauga County,1,0,0,1,1
 2010,37199,37,NC,North Carolina,199,Yancey County,1,0,0,1,1
+2010,37390,37,NC,North Carolina,390,NA,1,0,0,1,1
 2010,38001,38,ND,North Dakota,001,Adams County,2,0,0,2,2
 2010,38003,38,ND,North Dakota,003,Barnes County,3,0,0,3,2
 2010,38005,38,ND,North Dakota,005,Benson County,3,0,0,3,2
@@ -28912,6 +29322,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,38099,38,ND,North Dakota,099,Walsh County,3,0,0,3,2
 2010,38101,38,ND,North Dakota,101,Ward County,1,0,0,1,1
 2010,38103,38,ND,North Dakota,103,Wells County,2,0,0,2,2
+2010,38300,38,ND,North Dakota,300,NA,2,0,0,2,2
+2010,38640,38,ND,North Dakota,640,NA,2,0,0,2,1
 2010,40001,40,OK,Oklahoma,001,Adair County,1,0,0,1,0
 2010,40003,40,OK,Oklahoma,003,Alfalfa County,4,0,0,4,3
 2010,40005,40,OK,Oklahoma,005,Atoka County,1,0,0,1,0
@@ -29077,6 +29489,12 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,46129,46,SD,South Dakota,129,Walworth County,1,0,0,1,1
 2010,46135,46,SD,South Dakota,135,Yankton County,1,0,0,1,1
 2010,46137,46,SD,South Dakota,137,Ziebach County,3,0,0,3,3
+2010,46260,46,SD,South Dakota,260,NA,1,0,0,1,1
+2010,46620,46,SD,South Dakota,620,NA,1,0,0,1,1
+2010,46640,46,SD,South Dakota,640,NA,1,0,0,1,1
+2010,46700,46,SD,South Dakota,700,NA,1,0,0,1,1
+2010,46860,46,SD,South Dakota,860,NA,2,0,0,2,2
+2010,46980,46,SD,South Dakota,980,NA,1,0,0,1,1
 2010,47005,47,TN,Tennessee,005,Benton County,1,1,0,1,1
 2010,47013,47,TN,Tennessee,013,Campbell County,1,0,0,1,1
 2010,47015,47,TN,Tennessee,015,Cannon County,1,1,0,1,1
@@ -29170,6 +29588,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,50007,50,VT,Vermont,007,Chittenden County,1,0,0,1,1
 2010,50011,50,VT,Vermont,011,Franklin County,1,0,0,1,1
 2010,50015,50,VT,Vermont,015,Lamoille County,1,0,0,1,1
+2010,51e3,51,VA,Virginia,000,NA,2,0,0,3,3
 2010,51003,51,VA,Virginia,003,Albemarle County,2,0,0,2,2
 2010,51005,51,VA,Virginia,005,Alleghany County,1,0,0,1,1
 2010,51009,51,VA,Virginia,009,Amherst County,1,0,0,1,1
@@ -29181,6 +29600,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,51023,51,VA,Virginia,023,Botetourt County,1,0,0,1,1
 2010,51027,51,VA,Virginia,027,Buchanan County,1,0,0,1,1
 2010,51029,51,VA,Virginia,029,Buckingham County,1,0,0,1,1
+2010,51032,51,VA,Virginia,032,NA,1,0,0,1,1
 2010,51033,51,VA,Virginia,033,Caroline County,2,0,0,2,2
 2010,51043,51,VA,Virginia,043,Clarke County,1,0,0,1,1
 2010,51045,51,VA,Virginia,045,Craig County,2,0,0,2,2
@@ -29216,8 +29636,18 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,51185,51,VA,Virginia,185,Tazewell County,2,0,0,2,2
 2010,51187,51,VA,Virginia,187,Warren County,1,0,0,1,1
 2010,51195,51,VA,Virginia,195,Wise County,1,0,0,1,1
+2010,51200,51,VA,Virginia,200,NA,2,0,0,2,2
+2010,51208,51,VA,Virginia,208,NA,1,0,0,1,1
+2010,51216,51,VA,Virginia,216,NA,1,0,0,1,1
+2010,51392,51,VA,Virginia,392,NA,1,0,0,1,1
+2010,51496,51,VA,Virginia,496,NA,2,0,0,2,2
 2010,51680,51,VA,Virginia,680,Lynchburg city,2,0,0,2,2
+2010,51688,51,VA,Virginia,688,NA,1,0,0,1,1
 2010,51720,51,VA,Virginia,720,Norton city,1,0,0,1,1
+2010,51728,51,VA,Virginia,728,NA,1,0,0,1,1
+2010,51744,51,VA,Virginia,744,NA,2,0,0,2,2
+2010,51952,51,VA,Virginia,952,NA,2,0,0,2,2
+2010,51968,51,VA,Virginia,968,NA,2,0,0,3,3
 2010,53065,53,WA,Washington,065,Stevens County,1,0,0,1,0
 2010,53077,53,WA,Washington,077,Yakima County,1,0,0,1,0
 2010,54003,54,WV,West Virginia,003,Berkeley County,1,0,0,1,1
@@ -29272,6 +29702,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2010,55141,55,WI,Wisconsin,141,Wood County,1,0,0,1,1
 2010,56013,56,WY,Wyoming,013,Fremont County,1,0,0,1,1
 2010,56031,56,WY,Wyoming,031,Platte County,1,0,0,1,1
+2010,56200,56,WY,Wyoming,200,NA,1,0,0,1,1
 2011,1001,01,AL,Alabama,001,Autauga County,2,1,0,2,1
 2011,1003,01,AL,Alabama,003,Baldwin County,2,0,0,2,1
 2011,1005,01,AL,Alabama,005,Barbour County,2,0,0,2,1
@@ -29342,6 +29773,12 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,2090,02,AK,Alaska,090,Fairbanks North Star Borough,1,0,0,1,0
 2011,2185,02,AK,Alaska,185,North Slope Borough,1,0,0,1,1
 2011,2240,02,AK,Alaska,240,Southeast Fairbanks Census Area,1,0,0,1,1
+2011,2247,02,AK,Alaska,247,NA,1,0,0,1,1
+2011,2362,02,AK,Alaska,362,NA,1,0,0,1,1
+2011,2540,02,AK,Alaska,540,NA,1,0,0,1,1
+2011,2690,02,AK,Alaska,690,NA,1,0,0,1,1
+2011,2855,02,AK,Alaska,855,NA,1,0,0,1,1
+2011,2935,02,AK,Alaska,935,NA,1,0,0,1,1
 2011,4001,04,AZ,Arizona,001,Apache County,1,0,0,1,0
 2011,4003,04,AZ,Arizona,003,Cochise County,2,0,0,2,0
 2011,4011,04,AZ,Arizona,011,Greenlee County,1,0,0,1,0
@@ -29422,6 +29859,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,8043,08,CO,Colorado,043,Fremont County,1,0,0,1,0
 2011,8059,08,CO,Colorado,059,Jefferson County,1,0,0,1,0
 2011,8069,08,CO,Colorado,069,Larimer County,1,0,0,1,0
+2011,9e3,09,CT,Connecticut,000,NA,1,0,0,1,1
 2011,9001,09,CT,Connecticut,001,Fairfield County,5,2,0,5,3
 2011,9003,09,CT,Connecticut,003,Hartford County,5,2,0,5,3
 2011,9005,09,CT,Connecticut,005,Litchfield County,5,2,0,5,3
@@ -29430,6 +29868,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,9011,09,CT,Connecticut,011,New London County,4,2,0,4,2
 2011,9013,09,CT,Connecticut,013,Tolland County,5,2,0,5,3
 2011,9015,09,CT,Connecticut,015,Windham County,4,2,0,4,2
+2011,9105,09,CT,Connecticut,105,NA,1,0,0,1,1
 2011,10001,10,DE,Delaware,001,Kent County,2,0,0,2,1
 2011,10003,10,DE,Delaware,003,New Castle County,1,0,0,1,0
 2011,10005,10,DE,Delaware,005,Sussex County,2,0,0,2,1
@@ -29473,6 +29912,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,16049,16,ID,Idaho,049,Idaho County,1,0,0,1,1
 2011,16069,16,ID,Idaho,069,Nez Perce County,1,0,0,1,1
 2011,16079,16,ID,Idaho,079,Shoshone County,1,0,0,1,1
+2011,16340,16,ID,Idaho,340,NA,1,0,0,1,1
 2011,17001,17,IL,Illinois,001,Adams County,1,0,0,1,1
 2011,17003,17,IL,Illinois,003,Alexander County,1,1,0,1,1
 2011,17005,17,IL,Illinois,005,Bond County,1,0,0,1,1
@@ -29760,6 +30200,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,23021,23,ME,Maine,021,Piscataquis County,1,0,0,1,1
 2011,23029,23,ME,Maine,029,Washington County,1,0,0,1,1
 2011,23031,23,ME,Maine,031,York County,1,0,0,1,1
+2011,24e3,24,MD,Maryland,000,NA,2,0,0,2,1
 2011,24001,24,MD,Maryland,001,Allegany County,1,0,0,1,0
 2011,24003,24,MD,Maryland,003,Anne Arundel County,2,0,0,2,1
 2011,24005,24,MD,Maryland,005,Baltimore County,3,0,0,3,2
@@ -29841,6 +30282,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,27167,27,MN,Minnesota,167,Wilkin County,1,0,0,1,1
 2011,27171,27,MN,Minnesota,171,Wright County,1,0,0,1,1
 2011,27173,27,MN,Minnesota,173,Yellow Medicine County,2,0,0,2,2
+2011,27200,27,MN,Minnesota,200,NA,1,0,0,1,1
+2011,27512,27,MN,Minnesota,512,NA,1,0,0,1,1
 2011,28001,28,MS,Mississippi,001,Adams County,2,1,0,2,1
 2011,28003,28,MS,Mississippi,003,Alcorn County,1,1,0,1,1
 2011,28007,28,MS,Mississippi,007,Attala County,1,1,0,1,1
@@ -29892,6 +30335,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,28157,28,MS,Mississippi,157,Wilkinson County,2,1,0,2,1
 2011,28159,28,MS,Mississippi,159,Winston County,1,1,0,1,1
 2011,28163,28,MS,Mississippi,163,Yazoo County,2,1,0,2,1
+2011,29e3,29,MO,Missouri,000,NA,2,0,0,2,0
 2011,29001,29,MO,Missouri,001,Adair County,2,0,0,2,1
 2011,29003,29,MO,Missouri,003,Andrew County,4,1,0,4,2
 2011,29005,29,MO,Missouri,005,Atchison County,3,1,0,3,1
@@ -30055,6 +30499,11 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,30107,30,MT,Montana,107,Wheatland County,1,0,0,1,1
 2011,30109,30,MT,Montana,109,Wibaux County,1,1,0,1,1
 2011,30111,30,MT,Montana,111,Yellowstone County,2,1,0,2,1
+2011,30225,30,MT,Montana,225,NA,1,1,0,1,1
+2011,30325,30,MT,Montana,325,NA,1,1,0,1,1
+2011,30525,30,MT,Montana,525,NA,1,1,0,0,1
+2011,30550,30,MT,Montana,550,NA,1,0,0,1,1
+2011,30925,30,MT,Montana,925,NA,1,1,0,2,2
 2011,31015,31,NE,Nebraska,015,Boyd County,2,1,0,1,1
 2011,31019,31,NE,Nebraska,019,Buffalo County,1,0,0,1,1
 2011,31021,31,NE,Nebraska,021,Burt County,2,1,0,2,1
@@ -30136,6 +30585,18 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,35051,35,NM,New Mexico,051,Sierra County,1,0,0,1,1
 2011,35053,35,NM,New Mexico,053,Socorro County,1,0,0,1,1
 2011,35055,35,NM,New Mexico,055,Taos County,1,0,0,1,1
+2011,35180,35,NM,New Mexico,180,NA,1,0,0,1,1
+2011,35260,35,NM,New Mexico,260,NA,1,0,0,1,0
+2011,35320,35,NM,New Mexico,320,NA,1,0,0,1,1
+2011,35340,35,NM,New Mexico,340,NA,1,0,0,1,1
+2011,35380,35,NM,New Mexico,380,NA,1,0,0,1,1
+2011,35400,35,NM,New Mexico,400,NA,2,0,0,2,1
+2011,35460,35,NM,New Mexico,460,NA,1,0,0,1,0
+2011,35630,35,NM,New Mexico,630,NA,2,0,0,2,1
+2011,35660,35,NM,New Mexico,660,NA,2,0,0,2,2
+2011,35700,35,NM,New Mexico,700,NA,1,0,0,1,1
+2011,35880,35,NM,New Mexico,880,NA,1,0,0,1,1
+2011,35990,35,NM,New Mexico,990,NA,1,0,0,1,1
 2011,36001,36,NY,New York,001,Albany County,2,1,0,2,1
 2011,36003,36,NY,New York,003,Allegany County,1,0,0,1,1
 2011,36005,36,NY,New York,005,Bronx County,3,1,0,3,2
@@ -30237,6 +30698,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,38015,38,ND,North Dakota,015,Burleigh County,2,1,0,2,1
 2011,38017,38,ND,North Dakota,017,Cass County,2,0,0,2,1
 2011,38019,38,ND,North Dakota,019,Cavalier County,1,0,0,1,1
+2011,38020,38,ND,North Dakota,020,NA,1,0,0,1,1
 2011,38021,38,ND,North Dakota,021,Dickey County,1,0,0,1,1
 2011,38023,38,ND,North Dakota,023,Divide County,2,0,0,2,2
 2011,38025,38,ND,North Dakota,025,Dunn County,1,0,0,1,1
@@ -30276,6 +30738,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,38101,38,ND,North Dakota,101,Ward County,3,1,0,3,2
 2011,38103,38,ND,North Dakota,103,Wells County,1,0,0,1,1
 2011,38105,38,ND,North Dakota,105,Williams County,2,0,0,2,2
+2011,38300,38,ND,North Dakota,300,NA,2,0,0,2,1
+2011,38340,38,ND,North Dakota,340,NA,1,0,0,1,1
+2011,38640,38,ND,North Dakota,640,NA,1,1,0,1,1
 2011,39001,39,OH,Ohio,001,Adams County,1,0,0,1,1
 2011,39009,39,OH,Ohio,009,Athens County,1,0,0,1,1
 2011,39013,39,OH,Ohio,013,Belmont County,1,0,0,1,1
@@ -30426,6 +30891,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,42127,42,PA,Pennsylvania,127,Wayne County,3,0,0,3,1
 2011,42131,42,PA,Pennsylvania,131,Wyoming County,5,2,0,5,3
 2011,42133,42,PA,Pennsylvania,133,York County,2,1,0,2,1
+2011,44e3,44,RI,Rhode Island,0,NA,1,0,0,0,1
 2011,44001,44,RI,Rhode Island,001,Bristol County,2,0,0,2,1
 2011,44003,44,RI,Rhode Island,003,Kent County,2,0,0,2,1
 2011,44005,44,RI,Rhode Island,005,Newport County,2,0,0,2,1
@@ -30718,6 +31184,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,49051,49,UT,Utah,051,Wasatch County,1,0,0,1,1
 2011,49053,49,UT,Utah,053,Washington County,1,0,0,1,1
 2011,49057,49,UT,Utah,057,Weber County,1,0,0,1,1
+2011,49920,49,UT,Utah,920,NA,1,0,0,1,1
 2011,50001,50,VT,Vermont,001,Addison County,3,2,0,3,2
 2011,50003,50,VT,Vermont,003,Bennington County,2,1,0,2,1
 2011,50005,50,VT,Vermont,005,Caledonia County,3,2,0,3,2
@@ -30732,6 +31199,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,50023,50,VT,Vermont,023,Washington County,5,2,0,5,4
 2011,50025,50,VT,Vermont,025,Windham County,3,1,0,3,2
 2011,50027,50,VT,Vermont,027,Windsor County,2,1,0,2,1
+2011,51e3,51,VA,Virginia,000,NA,3,0,0,16,9
 2011,51001,51,VA,Virginia,001,Accomack County,2,0,0,2,1
 2011,51003,51,VA,Virginia,003,Albemarle County,1,1,0,0,1
 2011,51007,51,VA,Virginia,007,Amelia County,1,0,0,1,1
@@ -30768,6 +31236,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,51149,51,VA,Virginia,149,Prince George County,1,0,0,1,1
 2011,51153,51,VA,Virginia,153,Prince William County,1,0,0,1,1
 2011,51159,51,VA,Virginia,159,Richmond County,2,0,0,2,1
+2011,51160,51,VA,Virginia,160,NA,2,0,0,2,1
 2011,51165,51,VA,Virginia,165,Rockingham County,1,0,0,1,0
 2011,51175,51,VA,Virginia,175,Southampton County,1,0,0,1,1
 2011,51177,51,VA,Virginia,177,Spotsylvania County,1,1,0,1,1
@@ -30776,7 +31245,14 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,51187,51,VA,Virginia,187,Warren County,1,0,0,1,0
 2011,51193,51,VA,Virginia,193,Westmoreland County,3,0,0,3,2
 2011,51199,51,VA,Virginia,199,York County,2,0,0,2,1
+2011,51424,51,VA,Virginia,424,NA,1,0,0,1,1
+2011,51432,51,VA,Virginia,432,NA,2,0,0,2,1
+2011,51448,51,VA,Virginia,448,NA,1,0,0,1,1
 2011,51600,51,VA,Virginia,600,Fairfax city,1,0,0,1,1
+2011,51744,51,VA,Virginia,744,NA,1,1,0,1,1
+2011,51768,51,VA,Virginia,768,NA,2,0,0,2,1
+2011,51808,51,VA,Virginia,808,NA,1,0,0,1,1
+2011,51832,51,VA,Virginia,832,NA,1,0,0,1,1
 2011,53033,53,WA,Washington,033,King County,1,0,0,1,1
 2011,53037,53,WA,Washington,037,Kittitas County,1,0,0,1,1
 2011,53039,53,WA,Washington,039,Klickitat County,2,0,0,2,1
@@ -30810,6 +31286,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2011,56041,56,WY,Wyoming,041,Uinta County,1,0,0,1,1
 2011,56043,56,WY,Wyoming,043,Washakie County,1,0,0,1,1
 2011,56045,56,WY,Wyoming,045,Weston County,1,0,0,1,1
+2011,56200,56,WY,Wyoming,200,NA,1,0,0,1,1
 2012,1003,01,AL,Alabama,003,Baldwin County,1,0,0,1,1
 2012,1021,01,AL,Alabama,021,Chilton County,1,1,0,0,1
 2012,1039,01,AL,Alabama,039,Covington County,1,0,0,1,1
@@ -30823,10 +31300,13 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,2068,02,AK,Alaska,068,Denali Borough,1,0,0,1,1
 2012,2122,02,AK,Alaska,122,Kenai Peninsula Borough,2,0,0,2,2
 2012,2170,02,AK,Alaska,170,Matanuska-Susitna Borough,1,0,0,1,1
+2012,2255,02,AK,Alaska,255,NA,1,0,0,1,1
+2012,2430,02,AK,Alaska,430,NA,1,0,0,1,1
 2012,6033,06,CA,California,033,Lake County,1,0,0,1,0
 2012,6073,06,CA,California,073,San Diego County,1,0,0,1,0
 2012,6089,06,CA,California,089,Shasta County,1,0,0,1,0
 2012,6103,06,CA,California,103,Tehama County,1,0,0,1,0
+2012,6522,06,CA,California,522,NA,1,0,0,1,0
 2012,8027,08,CO,Colorado,027,Custer County,1,0,0,1,0
 2012,8041,08,CO,Colorado,041,El Paso County,2,1,0,2,1
 2012,8059,08,CO,Colorado,059,Jefferson County,1,0,0,1,0
@@ -30834,6 +31314,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,8083,08,CO,Colorado,083,Montezuma County,1,0,0,1,0
 2012,8101,08,CO,Colorado,101,Pueblo County,1,0,0,1,0
 2012,8119,08,CO,Colorado,119,Teller County,1,0,0,1,1
+2012,9e3,09,CT,Connecticut,000,NA,1,1,0,1,1
 2012,9001,09,CT,Connecticut,001,Fairfield County,2,1,0,2,1
 2012,9003,09,CT,Connecticut,003,Hartford County,1,0,0,1,0
 2012,9005,09,CT,Connecticut,005,Litchfield County,2,0,0,2,1
@@ -30989,6 +31470,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,22121,22,LA,Louisiana,121,West Baton Rouge Parish,2,1,0,2,1
 2012,22123,22,LA,Louisiana,123,West Carroll Parish,1,0,0,1,1
 2012,22125,22,LA,Louisiana,125,West Feliciana Parish,1,1,0,1,1
+2012,24e3,24,MD,Maryland,000,NA,3,0,0,3,2
 2012,24001,24,MD,Maryland,001,Allegany County,2,0,0,2,1
 2012,24003,24,MD,Maryland,003,Anne Arundel County,2,0,0,2,1
 2012,24005,24,MD,Maryland,005,Baltimore County,2,0,0,2,1
@@ -31036,11 +31518,14 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,27061,27,MN,Minnesota,061,Itasca County,1,0,0,1,1
 2012,27067,27,MN,Minnesota,067,Kandiyohi County,1,0,0,1,1
 2012,27075,27,MN,Minnesota,075,Lake County,1,0,0,1,1
+2012,27082,27,MN,Minnesota,082,NA,1,0,0,1,1
 2012,27093,27,MN,Minnesota,093,Meeker County,1,0,0,1,1
 2012,27115,27,MN,Minnesota,115,Pine County,1,0,0,1,1
 2012,27131,27,MN,Minnesota,131,Rice County,1,0,0,1,1
 2012,27137,27,MN,Minnesota,137,St. Louis County,1,0,0,1,1
 2012,27143,27,MN,Minnesota,143,Sibley County,1,0,0,1,1
+2012,27200,27,MN,Minnesota,200,NA,1,0,0,1,1
+2012,27590,27,MN,Minnesota,590,NA,1,0,0,1,1
 2012,28001,28,MS,Mississippi,001,Adams County,1,1,0,1,1
 2012,28005,28,MS,Mississippi,005,Amite County,2,1,0,2,1
 2012,28007,28,MS,Mississippi,007,Attala County,2,0,0,2,1
@@ -31089,12 +31574,14 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,28157,28,MS,Mississippi,157,Wilkinson County,2,1,0,2,1
 2012,28159,28,MS,Mississippi,159,Winston County,1,0,0,1,1
 2012,28163,28,MS,Mississippi,163,Yazoo County,2,0,0,2,1
+2012,28980,28,MS,Mississippi,980,NA,1,0,0,1,1
 2012,30043,30,MT,Montana,043,Jefferson County,1,0,0,1,0
 2012,30049,30,MT,Montana,049,Lewis and Clark County,1,0,0,1,0
 2012,30065,30,MT,Montana,065,Musselshell County,1,0,0,1,0
 2012,30075,30,MT,Montana,075,Powder River County,2,0,0,2,1
 2012,30081,30,MT,Montana,081,Ravalli County,1,0,0,1,0
 2012,30087,30,MT,Montana,087,Rosebud County,2,0,0,2,1
+2012,30340,30,MT,Montana,340,NA,1,0,0,1,1
 2012,31045,31,NE,Nebraska,045,Dawes County,1,0,0,1,0
 2012,31161,31,NE,Nebraska,161,Sheridan County,1,0,0,1,0
 2012,31165,31,NE,Nebraska,165,Sioux County,1,0,0,1,0
@@ -31137,6 +31624,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,35028,35,NM,New Mexico,028,Los Alamos County,1,0,0,1,0
 2012,35043,35,NM,New Mexico,043,Sandoval County,2,0,0,2,1
 2012,35045,35,NM,New Mexico,045,San Juan County,1,0,0,1,0
+2012,35400,35,NM,New Mexico,400,NA,1,0,0,1,1
+2012,35990,35,NM,New Mexico,990,NA,1,0,0,1,0
 2012,36001,36,NY,New York,001,Albany County,1,0,0,1,0
 2012,36003,36,NY,New York,003,Allegany County,1,0,0,1,0
 2012,36005,36,NY,New York,005,Bronx County,2,1,0,2,1
@@ -31309,6 +31798,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,41047,41,OR,Oregon,047,Marion County,1,0,0,1,1
 2012,41053,41,OR,Oregon,053,Polk County,1,0,0,1,1
 2012,41057,41,OR,Oregon,057,Tillamook County,1,0,0,1,1
+2012,42e3,42,PA,Pennsylvania,0,NA,1,0,0,1,0
 2012,42001,42,PA,Pennsylvania,001,Adams County,1,0,0,1,0
 2012,42003,42,PA,Pennsylvania,003,Allegheny County,1,0,0,1,0
 2012,42005,42,PA,Pennsylvania,005,Armstrong County,1,0,0,1,0
@@ -31404,6 +31894,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,50001,50,VT,Vermont,001,Addison County,1,0,0,1,1
 2012,50015,50,VT,Vermont,015,Lamoille County,1,0,0,1,1
 2012,50019,50,VT,Vermont,019,Orleans County,1,0,0,1,1
+2012,51e3,51,VA,Virginia,000,NA,2,0,0,12,2
 2012,51001,51,VA,Virginia,001,Accomack County,2,1,0,2,1
 2012,51003,51,VA,Virginia,003,Albemarle County,2,0,0,2,1
 2012,51005,51,VA,Virginia,005,Alleghany County,2,0,0,2,1
@@ -31420,6 +31911,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,51027,51,VA,Virginia,027,Buchanan County,1,0,0,1,0
 2012,51029,51,VA,Virginia,029,Buckingham County,2,0,0,2,1
 2012,51031,51,VA,Virginia,031,Campbell County,2,0,0,2,1
+2012,51032,51,VA,Virginia,032,NA,2,0,0,2,1
 2012,51033,51,VA,Virginia,033,Caroline County,1,0,0,1,0
 2012,51035,51,VA,Virginia,035,Carroll County,2,0,0,2,1
 2012,51036,51,VA,Virginia,036,Charles City County,1,0,0,1,0
@@ -31480,6 +31972,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,51155,51,VA,Virginia,155,Pulaski County,2,0,0,2,1
 2012,51157,51,VA,Virginia,157,Rappahannock County,3,0,0,3,2
 2012,51159,51,VA,Virginia,159,Richmond County,1,0,0,1,0
+2012,51160,51,VA,Virginia,160,NA,1,0,0,2,0
 2012,51161,51,VA,Virginia,161,Roanoke County,2,0,0,2,1
 2012,51163,51,VA,Virginia,163,Rockbridge County,2,0,0,2,1
 2012,51165,51,VA,Virginia,165,Rockingham County,2,0,0,2,1
@@ -31499,9 +31992,32 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,51195,51,VA,Virginia,195,Wise County,1,0,0,1,0
 2012,51197,51,VA,Virginia,197,Wythe County,1,0,0,1,0
 2012,51199,51,VA,Virginia,199,York County,1,0,0,1,0
+2012,51200,51,VA,Virginia,200,NA,3,0,0,3,2
+2012,51208,51,VA,Virginia,208,NA,1,0,0,1,0
+2012,51216,51,VA,Virginia,216,NA,2,0,0,2,1
+2012,51344,51,VA,Virginia,344,NA,2,0,0,2,1
+2012,51392,51,VA,Virginia,392,NA,2,0,0,2,1
+2012,51424,51,VA,Virginia,424,NA,1,0,0,1,0
+2012,51432,51,VA,Virginia,432,NA,1,0,0,1,0
+2012,51448,51,VA,Virginia,448,NA,1,0,0,1,0
+2012,51496,51,VA,Virginia,496,NA,3,0,0,4,2
+2012,51512,51,VA,Virginia,512,NA,2,0,0,2,1
+2012,51544,51,VA,Virginia,544,NA,2,0,0,2,1
 2012,51600,51,VA,Virginia,600,Fairfax city,1,0,0,1,0
+2012,51624,51,VA,Virginia,624,NA,2,0,0,2,1
+2012,51672,51,VA,Virginia,672,NA,2,0,0,2,1
 2012,51680,51,VA,Virginia,680,Lynchburg city,1,0,0,1,0
+2012,51688,51,VA,Virginia,688,NA,1,0,0,1,0
 2012,51720,51,VA,Virginia,720,Norton city,2,0,0,2,1
+2012,51728,51,VA,Virginia,728,NA,2,0,0,2,1
+2012,51744,51,VA,Virginia,744,NA,2,0,0,2,1
+2012,51768,51,VA,Virginia,768,NA,1,0,0,1,0
+2012,51784,51,VA,Virginia,784,NA,2,0,0,2,1
+2012,51808,51,VA,Virginia,808,NA,1,0,0,1,0
+2012,51816,51,VA,Virginia,816,NA,1,0,0,1,0
+2012,51832,51,VA,Virginia,832,NA,1,0,0,1,0
+2012,51952,51,VA,Virginia,952,NA,2,0,0,2,1
+2012,51968,51,VA,Virginia,968,NA,2,0,0,4,2
 2012,53007,53,WA,Washington,007,Chelan County,5,0,0,5,0
 2012,53009,53,WA,Washington,009,Clallam County,1,0,0,1,1
 2012,53017,53,WA,Washington,017,Douglas County,1,0,0,1,0
@@ -31519,6 +32035,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,53061,53,WA,Washington,061,Snohomish County,1,0,0,1,1
 2012,53067,53,WA,Washington,067,Thurston County,1,0,0,1,1
 2012,53069,53,WA,Washington,069,Wahkiakum County,1,0,0,1,1
+2012,53240,53,WA,Washington,240,NA,1,0,0,1,1
 2012,54001,54,WV,West Virginia,001,Barbour County,4,0,0,4,2
 2012,54003,54,WV,West Virginia,003,Berkeley County,3,0,0,3,1
 2012,54005,54,WV,West Virginia,005,Boone County,4,1,0,4,2
@@ -31577,13 +32094,20 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2012,55003,55,WI,Wisconsin,003,Ashland County,1,0,0,1,1
 2012,55007,55,WI,Wisconsin,007,Bayfield County,1,0,0,1,1
 2012,55031,55,WI,Wisconsin,031,Douglas County,1,0,0,1,1
+2012,55600,55,WI,Wisconsin,600,NA,1,0,0,1,1
 2012,56001,56,WY,Wyoming,001,Albany County,2,0,0,2,0
 2012,56009,56,WY,Wyoming,009,Converse County,1,0,0,1,0
 2012,56025,56,WY,Wyoming,025,Natrona County,1,0,0,1,0
 2012,56031,56,WY,Wyoming,031,Platte County,1,0,0,1,0
 2012,56045,56,WY,Wyoming,045,Weston County,1,0,0,1,0
+2013,2255,02,AK,Alaska,255,NA,1,1,0,1,1
+2013,2365,02,AK,Alaska,365,NA,1,0,0,1,1
+2013,2640,02,AK,Alaska,640,NA,1,1,0,1,1
+2013,2650,02,AK,Alaska,650,NA,1,1,0,1,1
+2013,2690,02,AK,Alaska,690,NA,1,1,0,1,1
 2013,4015,04,AZ,Arizona,015,Mohave County,1,0,0,1,0
 2013,4025,04,AZ,Arizona,025,Yavapai County,2,0,0,2,0
+2013,4845,04,AZ,Arizona,845,NA,1,0,0,1,1
 2013,5007,05,AR,Arkansas,007,Benton County,1,0,0,1,1
 2013,5009,05,AR,Arkansas,009,Boone County,1,0,0,1,1
 2013,5015,05,AR,Arkansas,015,Carroll County,1,0,0,1,1
@@ -31615,6 +32139,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2013,6089,06,CA,California,089,Shasta County,1,0,0,1,0
 2013,6109,06,CA,California,109,Tuolumne County,2,0,0,2,1
 2013,6111,06,CA,California,111,Ventura County,1,0,0,1,0
+2013,6825,06,CA,California,825,NA,1,0,0,1,1
 2013,8001,08,CO,Colorado,001,Adams County,2,1,0,2,1
 2013,8005,08,CO,Colorado,005,Arapahoe County,2,1,0,2,1
 2013,8013,08,CO,Colorado,013,Boulder County,2,1,0,2,1
@@ -31638,6 +32163,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2013,8115,08,CO,Colorado,115,Sedgwick County,1,0,0,1,1
 2013,8121,08,CO,Colorado,121,Washington County,2,0,0,2,1
 2013,8123,08,CO,Colorado,123,Weld County,2,1,0,2,1
+2013,9e3,09,CT,Connecticut,000,NA,2,0,0,2,1
 2013,9001,09,CT,Connecticut,001,Fairfield County,2,0,0,2,1
 2013,9003,09,CT,Connecticut,003,Hartford County,2,0,0,2,1
 2013,9005,09,CT,Connecticut,005,Litchfield County,2,0,0,2,1
@@ -31962,6 +32488,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2013,30069,30,MT,Montana,069,Petroleum County,1,0,0,1,1
 2013,30087,30,MT,Montana,087,Rosebud County,1,0,0,1,1
 2013,30105,30,MT,Montana,105,Valley County,1,0,0,1,1
+2013,30525,30,MT,Montana,525,NA,1,0,0,1,1
+2013,30925,30,MT,Montana,925,NA,1,0,0,2,2
 2013,31001,31,NE,Nebraska,001,Adams County,1,0,0,1,1
 2013,31045,31,NE,Nebraska,045,Dawes County,1,0,0,1,1
 2013,31051,31,NE,Nebraska,051,Dixon County,1,0,0,1,1
@@ -31982,6 +32510,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2013,33015,33,NH,New Hampshire,015,Rockingham County,1,0,0,1,1
 2013,33017,33,NH,New Hampshire,017,Strafford County,1,0,0,1,1
 2013,33019,33,NH,New Hampshire,019,Sullivan County,2,0,0,2,2
+2013,35e3,35,NM,New Mexico,000,NA,2,0,0,2,2
 2013,35001,35,NM,New Mexico,001,Bernalillo County,1,0,0,1,1
 2013,35003,35,NM,New Mexico,003,Catron County,1,0,0,1,1
 2013,35005,35,NM,New Mexico,005,Chaves County,1,0,0,1,1
@@ -32007,6 +32536,12 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2013,35053,35,NM,New Mexico,053,Socorro County,2,0,0,2,2
 2013,35055,35,NM,New Mexico,055,Taos County,1,0,0,1,1
 2013,35057,35,NM,New Mexico,057,Torrance County,1,0,0,1,1
+2013,35400,35,NM,New Mexico,400,NA,2,0,0,2,2
+2013,35460,35,NM,New Mexico,460,NA,1,0,0,1,1
+2013,35580,35,NM,New Mexico,580,NA,2,0,0,2,2
+2013,35630,35,NM,New Mexico,630,NA,1,0,0,1,1
+2013,35690,35,NM,New Mexico,690,NA,1,0,0,1,1
+2013,35740,35,NM,New Mexico,740,NA,1,0,0,1,1
 2013,36003,36,NY,New York,003,Allegany County,1,0,0,1,1
 2013,36007,36,NY,New York,007,Broome County,1,0,0,1,1
 2013,36013,36,NY,New York,013,Chautauqua County,1,0,0,1,1
@@ -32040,12 +32575,14 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2013,37189,37,NC,North Carolina,189,Watauga County,2,0,0,2,2
 2013,37193,37,NC,North Carolina,193,Wilkes County,1,0,0,1,1
 2013,37199,37,NC,North Carolina,199,Yancey County,1,0,0,1,1
+2013,37390,37,NC,North Carolina,390,NA,2,0,0,2,2
 2013,38001,38,ND,North Dakota,001,Adams County,1,0,0,1,1
 2013,38005,38,ND,North Dakota,005,Benson County,2,0,0,2,2
 2013,38009,38,ND,North Dakota,009,Bottineau County,2,0,0,2,2
 2013,38011,38,ND,North Dakota,011,Bowman County,1,0,0,1,1
 2013,38017,38,ND,North Dakota,017,Cass County,2,0,0,2,1
 2013,38019,38,ND,North Dakota,019,Cavalier County,2,0,0,2,2
+2013,38020,38,ND,North Dakota,020,NA,1,0,0,1,1
 2013,38025,38,ND,North Dakota,025,Dunn County,1,0,0,1,1
 2013,38027,38,ND,North Dakota,027,Eddy County,1,0,0,1,1
 2013,38031,38,ND,North Dakota,031,Foster County,1,0,0,1,1
@@ -32074,6 +32611,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2013,38099,38,ND,North Dakota,099,Walsh County,3,0,0,3,2
 2013,38101,38,ND,North Dakota,101,Ward County,1,0,0,1,1
 2013,38103,38,ND,North Dakota,103,Wells County,2,0,0,2,2
+2013,38300,38,ND,North Dakota,300,NA,1,0,0,1,1
+2013,38640,38,ND,North Dakota,640,NA,2,0,0,2,2
 2013,39007,39,OH,Ohio,007,Ashtabula County,1,0,0,1,1
 2013,39035,39,OH,Ohio,035,Cuyahoga County,1,0,0,1,1
 2013,40003,40,OK,Oklahoma,003,Alfalfa County,1,0,0,1,1
@@ -32181,6 +32720,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2013,46125,46,SD,South Dakota,125,Turner County,1,0,0,1,1
 2013,46127,46,SD,South Dakota,127,Union County,1,0,0,1,1
 2013,46137,46,SD,South Dakota,137,Ziebach County,1,1,0,1,1
+2013,46700,46,SD,South Dakota,700,NA,3,1,0,3,3
+2013,46860,46,SD,South Dakota,860,NA,1,1,0,1,1
 2013,48055,48,TX,Texas,055,Caldwell County,1,0,0,1,1
 2013,48161,48,TX,Texas,161,Freestone County,1,0,0,1,1
 2013,48209,48,TX,Texas,209,Hays County,1,0,0,1,1
@@ -32231,6 +32772,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2014,1129,01,AL,Alabama,129,Washington County,1,0,0,1,1
 2014,2090,02,AK,Alaska,090,Fairbanks North Star Borough,1,0,0,1,1
 2014,2122,02,AK,Alaska,122,Kenai Peninsula Borough,1,0,0,1,1
+2014,2362,02,AK,Alaska,362,NA,1,0,0,1,1
+2014,2540,02,AK,Alaska,540,NA,1,0,0,1,1
+2014,2690,02,AK,Alaska,690,NA,1,0,0,1,1
 2014,4005,04,AZ,Arizona,005,Coconino County,1,0,0,1,0
 2014,4012,04,AZ,Arizona,012,La Paz County,1,0,0,1,1
 2014,4013,04,AZ,Arizona,013,Maricopa County,1,0,0,1,1
@@ -32461,10 +33005,12 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2014,19191,19,IA,Iowa,191,Winneshiek County,1,0,0,1,1
 2014,19193,19,IA,Iowa,193,Woodbury County,1,0,0,1,1
 2014,19197,19,IA,Iowa,197,Wright County,1,0,0,1,1
+2014,19600,19,IA,Iowa,600,NA,1,0,0,1,1
 2014,21071,21,KY,Kentucky,071,Floyd County,1,0,0,1,1
 2014,21115,21,KY,Kentucky,115,Johnson County,1,0,0,1,1
 2014,21119,21,KY,Kentucky,119,Knott County,1,0,0,1,1
 2014,21195,21,KY,Kentucky,195,Pike County,1,0,0,1,1
+2014,24e3,24,MD,Maryland,000,NA,1,0,0,0,1
 2014,24005,24,MD,Maryland,005,Baltimore County,1,0,0,1,1
 2014,24013,24,MD,Maryland,013,Carroll County,1,0,0,1,1
 2014,24027,24,MD,Maryland,027,Howard County,1,0,0,1,1
@@ -32508,6 +33054,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2014,27165,27,MN,Minnesota,165,Watonwan County,1,0,0,1,1
 2014,27171,27,MN,Minnesota,171,Wright County,1,0,0,1,1
 2014,27173,27,MN,Minnesota,173,Yellow Medicine County,1,0,0,1,1
+2014,27288,27,MN,Minnesota,288,NA,1,0,0,1,1
+2014,27512,27,MN,Minnesota,512,NA,1,0,0,1,1
+2014,27874,27,MN,Minnesota,874,NA,1,0,0,1,1
 2014,28057,28,MS,Mississippi,057,Itawamba County,1,1,0,1,1
 2014,28067,28,MS,Mississippi,067,Jones County,1,1,0,1,1
 2014,28079,28,MS,Mississippi,079,Leake County,1,1,0,1,1
@@ -32560,6 +33109,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2014,30095,30,MT,Montana,095,Stillwater County,1,0,0,1,1
 2014,30105,30,MT,Montana,105,Valley County,1,0,0,1,1
 2014,30107,30,MT,Montana,107,Wheatland County,1,0,0,1,1
+2014,30925,30,MT,Montana,925,NA,1,0,0,1,1
 2014,31021,31,NE,Nebraska,021,Burt County,1,0,0,1,1
 2014,31023,31,NE,Nebraska,023,Butler County,1,0,0,1,1
 2014,31025,31,NE,Nebraska,025,Cass County,1,0,0,1,1
@@ -32589,6 +33139,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2014,31177,31,NE,Nebraska,177,Washington County,1,0,0,1,1
 2014,31179,31,NE,Nebraska,179,Wayne County,1,0,0,1,1
 2014,31185,31,NE,Nebraska,185,York County,1,0,0,1,1
+2014,32800,32,NV,Nevada,800,NA,1,0,0,1,1
 2014,35007,35,NM,New Mexico,007,Colfax County,1,0,0,1,1
 2014,35015,35,NM,New Mexico,015,Eddy County,1,0,0,1,1
 2014,35019,35,NM,New Mexico,019,Guadalupe County,1,0,0,1,1
@@ -32600,6 +33151,8 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2014,35047,35,NM,New Mexico,047,San Miguel County,2,0,0,2,2
 2014,35049,35,NM,New Mexico,049,Santa Fe County,1,0,0,1,1
 2014,35051,35,NM,New Mexico,051,Sierra County,1,0,0,1,1
+2014,35320,35,NM,New Mexico,320,NA,1,0,0,1,1
+2014,35660,35,NM,New Mexico,660,NA,1,0,0,1,1
 2014,36003,36,NY,New York,003,Allegany County,1,0,0,1,1
 2014,36009,36,NY,New York,009,Cattaraugus County,2,0,0,2,2
 2014,36013,36,NY,New York,013,Chautauqua County,2,0,0,2,2
@@ -32635,6 +33188,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2014,38069,38,ND,North Dakota,069,Pierce County,1,0,0,1,1
 2014,38075,38,ND,North Dakota,075,Renville County,1,0,0,1,1
 2014,38101,38,ND,North Dakota,101,Ward County,1,0,0,1,1
+2014,38300,38,ND,North Dakota,300,NA,1,0,0,1,1
 2014,40023,40,OK,Oklahoma,023,Choctaw County,1,0,0,1,1
 2014,40079,40,OK,Oklahoma,079,Le Flore County,1,0,0,1,1
 2014,40083,40,OK,Oklahoma,083,Logan County,1,0,0,1,0
@@ -32714,6 +33268,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2014,46125,46,SD,South Dakota,125,Turner County,1,0,0,1,1
 2014,46127,46,SD,South Dakota,127,Union County,1,0,0,1,1
 2014,46137,46,SD,South Dakota,137,Ziebach County,1,0,0,1,1
+2014,46260,46,SD,South Dakota,260,NA,1,0,0,1,1
 2014,47001,47,TN,Tennessee,001,Anderson County,1,0,0,1,1
 2014,47007,47,TN,Tennessee,007,Bledsoe County,1,0,0,1,1
 2014,47017,47,TN,Tennessee,017,Carroll County,2,0,0,2,2
@@ -32759,6 +33314,10 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2014,53061,53,WA,Washington,061,Snohomish County,2,1,0,2,1
 2014,53063,53,WA,Washington,063,Spokane County,1,0,0,1,0
 2014,53065,53,WA,Washington,065,Stevens County,1,0,0,1,0
+2014,53240,53,WA,Washington,240,NA,2,0,0,2,1
+2014,53402,53,WA,Washington,402,NA,1,1,0,1,1
+2014,53730,53,WA,Washington,730,NA,1,1,0,1,1
+2014,53967,53,WA,Washington,967,NA,1,1,0,1,1
 2014,54005,54,WV,West Virginia,005,Boone County,1,0,0,1,0
 2014,54011,54,WV,West Virginia,011,Cabell County,1,0,0,1,0
 2014,54015,54,WV,West Virginia,015,Clay County,1,0,0,1,0
@@ -32810,6 +33369,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2015,6095,06,CA,California,095,Solano County,1,0,0,1,1
 2015,6097,06,CA,California,097,Sonoma County,1,0,0,1,1
 2015,6113,06,CA,California,113,Yolo County,1,0,0,1,1
+2015,6468,06,CA,California,468,NA,1,0,0,1,1
 2015,8001,08,CO,Colorado,001,Adams County,1,0,0,1,1
 2015,8009,08,CO,Colorado,009,Baca County,1,0,0,1,1
 2015,8013,08,CO,Colorado,013,Boulder County,1,0,0,1,1
@@ -32852,6 +33412,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2015,16049,16,ID,Idaho,049,Idaho County,2,0,0,2,2
 2015,16055,16,ID,Idaho,055,Kootenai County,2,0,0,2,2
 2015,16061,16,ID,Idaho,061,Lewis County,1,0,0,1,1
+2015,16840,16,ID,Idaho,840,NA,1,0,0,1,1
 2015,19005,19,IA,Iowa,005,Allamakee County,1,0,0,1,1
 2015,19007,19,IA,Iowa,007,Appanoose County,1,0,0,1,1
 2015,19023,19,IA,Iowa,023,Butler County,1,0,0,1,1
@@ -33257,6 +33818,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2015,45087,45,SC,South Carolina,087,Union County,1,0,0,1,0
 2015,45089,45,SC,South Carolina,089,Williamsburg County,2,1,0,2,1
 2015,45091,45,SC,South Carolina,091,York County,1,0,0,1,0
+2015,45455,45,SC,South Carolina,455,NA,1,0,0,1,0
 2015,46015,46,SD,South Dakota,015,Brule County,1,0,0,1,1
 2015,46017,46,SD,South Dakota,017,Buffalo County,1,0,0,1,1
 2015,46047,46,SD,South Dakota,047,Fall River County,1,0,0,1,1
@@ -33269,6 +33831,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2015,46087,46,SD,South Dakota,087,McCook County,1,0,0,1,1
 2015,46113,46,SD,South Dakota,113,Shannon County,1,0,0,1,1
 2015,46117,46,SD,South Dakota,117,Stanley County,1,0,0,1,1
+2015,46220,46,SD,South Dakota,220,NA,1,0,0,1,1
+2015,46700,46,SD,South Dakota,700,NA,1,1,0,0,1
+2015,46860,46,SD,South Dakota,860,NA,1,0,0,1,1
 2015,47001,47,TN,Tennessee,001,Anderson County,1,0,0,1,1
 2015,47003,47,TN,Tennessee,003,Bedford County,1,0,0,1,1
 2015,47007,47,TN,Tennessee,007,Bledsoe County,1,0,0,1,1
@@ -33460,6 +34025,10 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2015,53071,53,WA,Washington,071,Walla Walla County,1,0,0,1,1
 2015,53073,53,WA,Washington,073,Whatcom County,3,0,0,3,3
 2015,53077,53,WA,Washington,077,Yakima County,2,0,0,2,1
+2015,53105,53,WA,Washington,105,NA,1,0,0,1,0
+2015,53240,53,WA,Washington,240,NA,2,0,0,2,1
+2015,53715,53,WA,Washington,715,NA,1,0,0,1,0
+2015,53995,53,WA,Washington,995,NA,1,0,0,1,0
 2015,54001,54,WV,West Virginia,001,Barbour County,1,0,0,1,1
 2015,54005,54,WV,West Virginia,005,Boone County,2,0,0,2,2
 2015,54007,54,WV,West Virginia,007,Braxton County,3,0,0,3,3
@@ -33843,6 +34412,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2016,22123,22,LA,Louisiana,123,West Carroll Parish,1,1,0,1,1
 2016,22125,22,LA,Louisiana,125,West Feliciana Parish,2,1,0,2,1
 2016,22127,22,LA,Louisiana,127,Winn Parish,1,1,0,1,1
+2016,24e3,24,MD,Maryland,000,NA,1,0,0,1,1
 2016,24001,24,MD,Maryland,001,Allegany County,1,0,0,1,1
 2016,24003,24,MD,Maryland,003,Anne Arundel County,1,0,0,1,1
 2016,24005,24,MD,Maryland,005,Baltimore County,1,0,0,1,1
@@ -33909,6 +34479,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2016,28147,28,MS,Mississippi,147,Walthall County,1,0,0,1,1
 2016,28151,28,MS,Mississippi,151,Washington County,1,1,0,1,1
 2016,28153,28,MS,Mississippi,153,Wayne County,1,1,0,1,1
+2016,29e3,29,MO,Missouri,000,NA,2,0,0,2,1
 2016,29007,29,MO,Missouri,007,Audrain County,1,0,0,1,0
 2016,29009,29,MO,Missouri,009,Barry County,2,1,0,2,1
 2016,29011,29,MO,Missouri,011,Barton County,2,1,0,1,1
@@ -34219,6 +34790,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2016,45087,45,SC,South Carolina,087,Union County,1,0,0,1,0
 2016,45089,45,SC,South Carolina,089,Williamsburg County,2,1,0,2,1
 2016,45091,45,SC,South Carolina,091,York County,1,0,0,1,0
+2016,45455,45,SC,South Carolina,455,NA,1,0,0,1,0
 2016,47007,47,TN,Tennessee,007,Bledsoe County,1,0,0,1,0
 2016,47009,47,TN,Tennessee,009,Blount County,1,0,0,1,0
 2016,47065,47,TN,Tennessee,065,Hamilton County,2,0,0,2,0
@@ -34335,6 +34907,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2016,48487,48,TX,Texas,487,Wilbarger County,1,0,0,1,1
 2016,48499,48,TX,Texas,499,Wood County,1,1,0,1,1
 2016,49053,49,UT,Utah,053,Washington County,1,0,0,1,0
+2016,51e3,51,VA,Virginia,000,NA,2,6,0,6,7
 2016,51003,51,VA,Virginia,003,Albemarle County,1,0,0,1,1
 2016,51013,51,VA,Virginia,013,Arlington County,1,0,0,1,1
 2016,51033,51,VA,Virginia,033,Caroline County,1,0,0,1,1
@@ -34360,8 +34933,14 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2016,51177,51,VA,Virginia,177,Spotsylvania County,1,0,0,1,1
 2016,51179,51,VA,Virginia,179,Stafford County,1,0,0,1,1
 2016,51187,51,VA,Virginia,187,Warren County,1,0,0,1,1
+2016,51200,51,VA,Virginia,200,NA,1,0,0,1,1
+2016,51432,51,VA,Virginia,432,NA,1,1,0,1,1
+2016,51496,51,VA,Virginia,496,NA,1,0,0,1,1
 2016,51600,51,VA,Virginia,600,Fairfax city,1,0,0,1,1
 2016,51720,51,VA,Virginia,720,Norton city,1,0,0,1,1
+2016,51744,51,VA,Virginia,744,NA,1,0,0,1,1
+2016,51952,51,VA,Virginia,952,NA,1,0,0,1,1
+2016,51968,51,VA,Virginia,968,NA,1,0,0,1,1
 2016,53005,53,WA,Washington,005,Benton County,1,0,0,1,0
 2016,53007,53,WA,Washington,007,Chelan County,2,0,0,2,1
 2016,53009,53,WA,Washington,009,Clallam County,2,0,0,2,2
@@ -34419,6 +34998,7 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2016,55113,55,WI,Wisconsin,113,Sawyer County,1,0,0,1,1
 2016,55123,55,WI,Wisconsin,123,Vernon County,1,0,0,1,1
 2016,55129,55,WI,Wisconsin,129,Washburn County,1,0,0,1,1
+2016,55225,55,WI,Wisconsin,225,NA,1,0,0,1,1
 2016,56013,56,WY,Wyoming,013,Fremont County,1,0,0,1,0
 2016,56041,56,WY,Wyoming,041,Uinta County,1,0,0,1,0
 2017,4003,04,AZ,Arizona,003,Cochise County,1,0,0,1,0
@@ -34504,6 +35084,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2017,6109,06,CA,California,109,Tuolumne County,3,0,0,3,3
 2017,6113,06,CA,California,113,Yolo County,3,0,0,3,3
 2017,6115,06,CA,California,115,Yuba County,3,0,0,3,2
+2017,6347,06,CA,California,347,NA,1,0,0,1,1
+2017,6554,06,CA,California,554,NA,1,0,0,1,1
+2017,6714,06,CA,California,714,NA,1,0,0,1,1
 2017,12021,12,FL,Florida,021,Collier County,1,0,0,1,0
 2017,12071,12,FL,Florida,071,Lee County,1,0,0,1,0
 2017,12105,12,FL,Florida,105,Polk County,1,0,0,1,0
@@ -34672,6 +35255,10 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2017,32019,32,NV,Nevada,019,Lyon County,1,0,0,1,1
 2017,32029,32,NV,Nevada,029,Storey County,2,0,0,2,2
 2017,32031,32,NV,Nevada,031,Washoe County,2,0,0,2,2
+2017,32200,32,NV,Nevada,200,NA,1,0,0,1,1
+2017,32650,32,NV,Nevada,650,NA,1,0,0,1,1
+2017,32700,32,NV,Nevada,700,NA,2,0,0,2,2
+2017,32800,32,NV,Nevada,800,NA,1,0,0,1,1
 2017,33001,33,NH,New Hampshire,001,Belknap County,1,0,0,1,1
 2017,33003,33,NH,New Hampshire,003,Carroll County,1,0,0,1,1
 2017,40001,40,OK,Oklahoma,001,Adair County,1,0,0,1,1
@@ -34729,6 +35316,9 @@ year,fips,st_fips,st_abrv,st_name,cty_fips,cty_name,disasters,ihp,iap,pap,hmp
 2017,46117,46,SD,South Dakota,117,Stanley County,1,0,0,1,1
 2017,46119,46,SD,South Dakota,119,Sully County,1,0,0,1,1
 2017,46137,46,SD,South Dakota,137,Ziebach County,1,0,0,1,1
+2017,46640,46,SD,South Dakota,640,NA,1,0,0,1,1
+2017,46700,46,SD,South Dakota,700,NA,1,0,0,1,1
+2017,46860,46,SD,South Dakota,860,NA,1,0,0,1,1
 2017,49003,49,UT,Utah,003,Box Elder County,1,0,0,1,1
 2017,49005,49,UT,Utah,005,Cache County,1,0,0,1,1
 2017,53001,53,WA,Washington,001,Adams County,1,0,0,1,1

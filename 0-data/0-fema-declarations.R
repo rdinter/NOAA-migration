@@ -46,7 +46,7 @@ download.file(ihp, paste0(data_source, "/ihp_raw.csv"))
 
 # Counties data
 fips <- read_csv("0-data/random/race_by_county.csv") %>% 
-  select(fips, st_name = stname, cty_name = ctyname,
+  select(st_name = stname, cty_name = ctyname,
          st_fips = state, cty_fips = county) %>% 
   mutate(st_abrv = state.abb[match(st_name, state.name)]) %>% 
   distinct()
@@ -63,7 +63,11 @@ counties <- read_csv(paste0(data_source, "/declarations_raw.csv")) %>%
   left_join(st_fips) %>% 
   left_join(fips)
 
-counties$fips <- as.numeric(counties$fips)
+counties$fips <- 1000*as.numeric(counties$st_fips) +
+  as.numeric(counties$cty_fips)
+
+# THERE NEEDS TO BE A CHANGE TO THE FIPS CODES AT SOME POINT
+counties$fips <- ifelse(counties$fips == 12025, 12086, counties$fips)
 
 counties_year <- counties %>% 
   filter(!is.na(fips), year > 1963) %>% 
