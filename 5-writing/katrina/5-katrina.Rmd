@@ -10,12 +10,13 @@ header-includes:
    - \usepackage{amsmath}
 output: 
   pdf_document: 
+    toc: false
     keep_tex: yes
 linestretch: 2
 number_sections: yes
 bibliography: katrina.bib
 ---
-
+\pagenumbering{gobble}
 ```{r, include=FALSE}
 library(knitr)
 opts_knit$set(root.dir = normalizePath("../.."))
@@ -31,7 +32,11 @@ opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
 
 \newpage
 
-# Introduction
+
+# 1. Introduction
+
+
+\pagenumbering{arabic}
 
 Natural disasters can cause widespread destruction and weaken local economies. These impacts can lead to permanent migration away from disaster-affected areas. Such permanent, or even semi-permanent, migration induced by natural disasters has the potential to significantly reshape the distribution of national and global populations and economies [@mcintosh2008measuring]. Moreover, because migration moves people out of the path of some disasters, and potentially into the path of other ones, post-disaster migration has implications for the risks associated with future events [@grada1997migration]. Finally, the migration itself and the loss of community cohesion suggests the need for consideration of mental health support in communities that will receive large numbers of disaster migrants [@weber2012displaced].
 
@@ -49,9 +54,9 @@ Permanent migrants -- as opposed to migrants that eventually returned to the New
 
 In this paper, we examine the migration pull factors in terms of characteristics of the destinations of post-Katrina migration out of the New Orleans area by using data on the movement of IRS return filings between counties and a range of county-destination attributes. This paper contributes to the literature by estimating the relative importance of a range of factors in post-disaster relocation decisions. This work conveys a range of policy implications surrounding disasters and climate change. By identifying the characteristics that draw migrants following natural disasters, we increase the understanding of future migration patterns as disasters grow more frequent. Our consideration of distance in the relocation decision also highlights the extent to which post-disaster migrants will be removed from similarly disaster-prone areas. 
 
-The rest of the paper proceeds as follows. In Section \ref{conceptual-underpinnings}, we review the theoretical structure of migration decisions, in Section \ref{data} discuss our data sources, in Section \ref{methods} present our estimating equations, and in Section \ref{results} present our results.
+The rest of the paper proceeds as follows. In Section 2, we review the theoretical structure of migration decisions, in Section 3 discuss our data sources, in Section 4 present our estimating equations, and in Section 5 present our results.
 
-# Conceptual Underpinnings 
+# 2. Conceptual Underpinnings 
 
 From an economic standpoint, migration decisions are based on households comparing their expected lifetime utility in their current location (the origin) to a location to which they could move (the destination) [@greenwood1985human;@greenwood1975research]. @yun2016day examine the decision about whether or not to migrate in an expected lifetime utility framework and focus on the extent to which Katrina induced migration by those who would not otherwise have migrated. The utility that a household expects to receive from living in a particular location depends on economic variables such as the wages and cost-of-living associated with an area, but also on non-economic variables such as environmental amenities, family and social ties, and perceptions about safety. A household will decide to migrate if the increase in expected lifetime utility obtained by moving from the origin to the destination exceeds the costs of moving. These costs include the financial costs associated with moving, as well as more abstract factors such as the social costs incurred by the move. 
 
@@ -65,7 +70,7 @@ Several variables have been suggested, and some tested, to explain the pull fact
 
 Such migration preferences need not be constant, however. The very push-factors that cause migrants to choose to move could shift their relative preferences for pull factors. For example, a hurricane that destroys residents' homes (a push-factor shock) could cause people to rethink their preferences over living in coastal communities. Similarly, because natural disasters can force rapid relocation rather than providing time to search for new jobs or save money for transportation costs, migrants may sacrifice some pull factor preferences for a quicker transition.
 
-# Data 
+# 3. Data 
 
 Our primary source of data is the Internal Revenue Service (IRS) Statistics of Income Division's migration data [@irsmigdata]. These data are based on year-to-year address changes reported on individual income tax returns filed with the IRS and aggregated up to the county level beginning in 1990. The data reports county-to-county flows of households, people, and income as proxied by number of returns filed, number of personal exemptions claimed, and total adjusted gross income. The county-to-county flows can be seen as either inflows or outflows depending on the county of interest. The IRS suppresses observations with fewer than 10 filers due to disclosure concerns and prior to 2004 the IRS did not distinguish between a non-disclosed observation and a true 0 observation. Because we cannot distinguish between a county-to-county pair which received between 1 and 9 filers from a county-to-county pair which did not receive any filers, we treat these potential non-disclosed counties as 0.
 
@@ -83,7 +88,7 @@ We supplement the IRS migration data with a number of explanatory variables that
 
 Summary statistics for the relevant variables are provided in Table \ref{tab:sumstats}.
 
-# Methods 
+# 4. Methods 
 
 In order to understand how Hurricane Katrina affected migration we estimate a series of models of migration outflow from the affected counties. We adopt a traditional gravity model as our baseline model:
 
@@ -121,7 +126,7 @@ The resulting interaction terms capture the change in preferences over each pull
 <!-- The first two variables capture the intensive margin of migration, while the third measures the extensive margin. These models describe the distribution and magnitude of post-disaster migration. The final specification speaks to the mix of migration across potential destinations, holding constant the magnitude of migration flows. -->
 
 
-# Results \label{sec:results}
+# 5. Results \label{sec:results}
 
 In Table \ref{reg:regmain}, we present the results of a series of OLS regressions related to the flow of migrants from the New Orleans area. In each column, we present a particular transformation of the flow of migrants from New Orleans to each destination county. Columns 1 and 2 correspond to the count of migrants and the inverse hyperbolic sine of migrant count, Column 3 relates to a dummy variable for whether or not a county had more than 10 migrants from any of the affected counties, and Column 4 is each county's share of all migrants leaving the New Orleans area.
 
@@ -138,7 +143,7 @@ A large number of residents of New Orleans were evacuated to Houston, Texas by F
 While Hurricane Katrina resulted in substantial increases in outflow migration, much of it to areas that were relatively likely to be affected by future hurricanes, the overall composition of migration remained relatively unchanged. Because people tend to migrate to close areas rather than distant ones, post-disaster migration is unlikely to be a panacea for natural hazards. Still, disaster-related migration may still result in some social benefits. People tend to migrate towards urban population centers rather than rural communities, so disasters may serve to accelerate the shift of populations towards cities, in which they may benefit from agglomeration effects and experience higher productivity.
 
 
-# Conclusion \label{sec:conclusion}
+# 6. Conclusion \label{sec:conclusion}
 
 
 There is a growing amount of discussion about the ability to minimize damages from climate change via adaptation. One dimension of such adaptation is the potential for people to move away from areas that become more exposed to natural disasters in favor of areas that are safer. While it is well-established that people move away from disaster-afflicted regions, it is unclear what this migration does to future disaster risks.  This paper has sought to inform how disasters influence the destination of migrants by focusing on the characteristics of the destinations of post-Katrina migrants from the New Orleans area.  An understanding of the factors driving post-disaster migration is important both in planning for shifts in population and in assessing future damages from natural disasters. 
