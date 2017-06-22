@@ -105,7 +105,7 @@ k_data %>%
 # ---- regressions --------------------------------------------------------
 
 form_base <- formula(exmpt_katrina ~ population + distance + #la_dest +
-                       un_rate + pay + fmr + metro03 + katrina)
+                       un_rate + pay + fmr + disasters+ metro03 + katrina)
 form_05 <- update(form_base, . ~ . + katrina:.)
 form_06 <- update(form_base, . ~ .+  postkat:.)
 form_all <- update(form_base, . ~ . + katrina:. + postkat:. -katrina:postkat)
@@ -304,11 +304,11 @@ mod_stargazer(reg_05, ihs_05, lp_05, pct_05,
               covariate.labels = c("Population (Millions)",
                                    "Distance (Hundreds of Kilometers)",
                                    "Unemployment Rate", "Average Pay",
-                                   "Median Rent", "Non Metro", "Year 2005",
+                                   "Median Rent", "Number of Disasters","Non Metro", "Year 2005",
                                    "Population X 2005", "Distance X 2005",
                                    "Unemployment Rate X 2005 ",
-                                   "Average Pay X 2005", "Median Rent X 2005",
-                                   "Non Metro X 2005"),
+                                   "Average Pay X 2005","Median Rent X 2005",
+                                   "Number of Disasters X 2005","Non Metro X 2005"),
               font.size = "scriptsize",
               title = paste0("\\label{reg:regmain}Effect of Destination ",
                              "Characteristics on New Orleans ",
@@ -336,11 +336,11 @@ mod_stargazer(reg_05_noho, ihs_05_noho, lp_05_noho, pct_05_noho,
               covariate.labels = c("Population (Millions)",
                                    "Distance (Hundreds of Kilometers)",
                                    "Unemployment Rate", "Average Pay",
-                                   "Median Rent", "Non Metro", "Year 2005",
+                                   "Median Rent", "Number of Disasters","Non Metro", "Year 2005",
                                    "Population X 2005", "Distance X 2005",
                                    "Unemployment Rate X 2005 ",
                                    "Average Pay X 2005", "Median Rent X 2005",
-                                   "Non Metro X 2005"),
+                                   "Number of Disasters X 2005","Non Metro X 2005"),
               font.size = "scriptsize",
               title = paste0("\\label{reg:regnoho}Effect of Destination ",
                              "Characteristics on New Orleans ",
