@@ -10,8 +10,8 @@ mig <- read_rds("1-tidy/migration/ctycty.rds") %>%
 #  St. Bernard Parish - 087, and Jefferson Parish - 051
 # katrina <- c(22023, 22075, 22071, 22087, 22051)
 
-# Better option: Jefferson - 051, Lafourche - 057, Orleans - 071, Plaquemines - 075,
-#  St. Bernard - 087, St. Tammany - 103, and Terrebonne - 109
+# Better option: Jefferson - 051, Lafourche - 057, Orleans - 071,
+# Plaquemines - 075, St. Bernard - 087, St. Tammany - 103, and Terrebonne - 109
 # katrina <- c(22051, 22057, 22071, 22075, 22087, 22103, 22109)
 
 # New Orleans MSA Covers
@@ -25,19 +25,25 @@ hurricane <- mig %>%
   filter(ofips %in% katrina, !(dfips %in% katrina)) %>% 
   select(-ofips, -long_o, -lat_o) %>% 
   group_by(dfips, long_d, lat_d, year) %>% 
-  summarise_each(funs(sum(., na.rm = T))) %>% 
+  summarise_all(funs(sum(., na.rm = T))) %>% 
   rename(fips = dfips, return_katrina = return,
          exmpt_katrina = exmpt, agi_katrina = agi) %>% 
   arrange(year) 
 
 hurricane <- hurricane %>% 
   group_by(year) %>% 
-  mutate(return_katrina_eyer = return_katrina / sum(return_katrina, na.rm = T),
-         exmpt_katrina_eyer = exmpt_katrina / sum(exmpt_katrina, na.rm = T),
-         agi_katrina_eyer = agi_katrina / sum(agi_katrina, na.rm = T),
-         return_katrina_eyer_noho = return_katrina / sum(return_katrina[fips != 48201], na.rm = T),
-         exmpt_katrina_eyer_noho = exmpt_katrina / sum(exmpt_katrina[fips != 48201], na.rm = T),
-         agi_katrina_eyer_noho = agi_katrina / sum(agi_katrina[fips != 48201], na.rm = T))
+  mutate(return_katrina_eyer = return_katrina /
+           sum(return_katrina, na.rm = T),
+         exmpt_katrina_eyer = exmpt_katrina /
+           sum(exmpt_katrina, na.rm = T),
+         agi_katrina_eyer = agi_katrina /
+           sum(agi_katrina, na.rm = T),
+         return_katrina_eyer_noho = return_katrina /
+           sum(return_katrina[fips != 48201], na.rm = T),
+         exmpt_katrina_eyer_noho = exmpt_katrina /
+           sum(exmpt_katrina[fips != 48201], na.rm = T),
+         agi_katrina_eyer_noho = agi_katrina /
+           sum(agi_katrina[fips != 48201], na.rm = T))
 
 alternate <- mig %>% 
   group_by(dfips, year) %>% 
@@ -91,10 +97,14 @@ ihp <- read_csv("0-data/FEMA/ihp.csv") %>%
          totalValidRegistrations:onaAmount) %>% 
   filter(!is.na(stname)) %>% 
   group_by(year, county, stname) %>% 
-  summarise_each(funs(sum(., na.rm = T)), -disasterNumber)
+  summarise_at(vars(-disasterNumber), funs(sum(., na.rm = T)))
 
 base <- left_join(base, ihp)
 
+# Disasters by county
+disasters <- read_csv("0-data/FEMA/cty_decl_all.csv")
+
+base <- left_join(base, disasters)
 
 library(Hmisc)
 

@@ -4,6 +4,7 @@
 
 library(lubridate)
 library(rvest)
+library(stringr)
 library(tidyverse)
 library(zoo)
 
@@ -35,11 +36,58 @@ data_source <- paste0(local_dir, "/raw")
 if (!file.exists(local_dir)) dir.create(local_dir)
 if (!file.exists(data_source)) dir.create(data_source)
 
-declarations <- "https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries.csv"
+declarations <- paste0("https://www.fema.gov/api/open/v1/",
+                       "DisasterDeclarationsSummaries.csv")
 download.file(declarations, paste0(data_source, "/declarations_raw.csv"))
 
-ihp <- "https://www.fema.gov/api/open/v1/RegistrationIntakeIndividualsHouseholdPrograms.csv"
+ihp <- paste0("https://www.fema.gov/api/open/v1/",
+              "RegistrationIntakeIndividualsHouseholdPrograms.csv")
 download.file(ihp, paste0(data_source, "/ihp_raw.csv"))
+
+# Counties data
+fips <- read_csv("0-data/random/race_by_county.csv") %>% 
+  select(fips, st_name = stname, cty_name = ctyname,
+         st_fips = state, cty_fips = county) %>% 
+  mutate(st_abrv = state.abb[match(st_name, state.name)]) %>% 
+  distinct()
+
+st_fips <- fips %>% 
+  select(st_name, st_abrv, st_fips) %>% 
+  distinct()
+
+counties <- read_csv(paste0(data_source, "/declarations_raw.csv")) %>% 
+  mutate(date = as.Date(substr(declarationDate, 1, 10), "%Y-%m-%d"),
+         year = as.numeric(str_sub(date, 1, 4)),
+         cty_fips = str_sub(placeCode, -3)) %>% 
+  rename(st_abrv = state) %>% 
+  left_join(st_fips) %>% 
+  left_join(fips)
+
+counties$fips <- as.numeric(counties$fips)
+
+counties_year <- counties %>% 
+  filter(!is.na(fips), year > 1963) %>% 
+  group_by(year, fips, st_fips, st_abrv, st_name, cty_fips, cty_name) %>% 
+  summarise(disasters = n_distinct(disasterNumber),
+            ihp = sum(ihProgramDeclared),
+            iap = sum(iaProgramDeclared),
+            pap = sum(paProgramDeclared),
+            hmp = sum(hmProgramDeclared))
+
+# Grab all of the disasters by county prior to 2000....
+counties_all <- counties %>% 
+  filter(!is.na(fips), year > 1963, year < 2000) %>% 
+  group_by(fips, st_fips, st_abrv, st_name, cty_fips, cty_name) %>% 
+  summarise(disasters = n_distinct(disasterNumber),
+            ihp = sum(ihProgramDeclared),
+            iap = sum(iaProgramDeclared),
+            pap = sum(paProgramDeclared),
+            hmp = sum(hmProgramDeclared))
+
+write_csv(counties_year, paste0(local_dir, "/cty_decl_year.csv"))
+write_csv(counties_all, paste0(local_dir, "/cty_decl_all.csv"))
+
+# Rest
 
 declarations <- read_csv(paste0(data_source, "/declarations_raw.csv")) %>% 
   mutate(date = as.Date(substr(declarationDate, 1, 10), "%Y-%m-%d"),
