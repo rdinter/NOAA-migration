@@ -241,7 +241,23 @@ $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
 $if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
+    \usepackage{authblk}
+    $if(address)$
+        $for(author)$
+            \author[$author.affiliation$]{$author.name$}
+        $endfor$
+        $for(address)$
+            \affil[$address.code$]{$address.address$}
+        $endfor$
+    $else$
+        $for(author)$
+            $if(author.name)$
+                \author{$author.name$}
+            $else$
+                \author{$author$}
+            $endif$
+        $endfor$ 
+    $endif$
 $endif$
 \date{$date$}
 
