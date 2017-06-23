@@ -12,12 +12,10 @@ output:
     toc: false
     keep_tex: yes
     template: template.tex
-    latex_engine: pdflatex
 linestretch: 2
 number_sections: yes
 bibliography: katrina.bib
 jelcodes: Q54
-keywords: Bob angry
 ---
 \pagenumbering{gobble}
 ```{r, include=FALSE}
