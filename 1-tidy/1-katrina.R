@@ -163,11 +163,19 @@ base <- left_join(base, ihp)
 base_newo <- left_join(base_newo, ihp)
 
 # Disasters by county
-disasters <- read_csv("0-data/FEMA/cty_decl_all.csv")
+disasters <- read_rds("0-data/FEMA/cty_decl_all.rds")
 
 base <- left_join(base, disasters)
 
 base_newo <- left_join(base_newo, disasters)
+
+# Area for each county
+
+ctys <- read_rds("0-data/shapefiles/All_2010_county.rds")
+ctys <- select(ctys@data, fips = FIPS, area_sqm = AREA_cty)
+
+base      <- left_join(base, ctys)
+base_newo <- left_join(base_newo, ctys)
 
 
 library(Hmisc)
