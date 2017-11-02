@@ -8,26 +8,28 @@ library(stringr)
 library(tidyverse)
 library(zoo)
 
-fema <- "https://www.fema.gov/disasters/grid/year" %>%
-  read_html() %>%
-  html_nodes(".views-summary") %>% 
-  html_text()
+# Problem reading in number of fema declarations by year
 
-# fema <- read_delim(fema, col_names = F, delim = "\n")
-
-fema_year <- gsub("\n              ", ",", fema)
-fema_year <- gsub("\n          \n", "\n", fema_year)
-fema_year <- gsub("\\(", " ", fema_year)
-fema_year <- gsub(")", " ", fema_year)
-
-
-fema <- read_csv(fema_year, col_names = F) %>% 
-  mutate_each(funs(as.numeric)) %>% 
-  filter(!is.na(X1))
-
-names(fema) <- c("year", "declarations")
-
-write_csv(fema, "0-data/NOAA/fema_declarations.csv")
+# fema <- "https://www.fema.gov/disasters/year" %>%
+#   read_html() %>%
+#   html_nodes(".views-summary") %>% 
+#   html_text()
+# 
+# # fema <- read_delim(fema, col_names = F, delim = "\n")
+# 
+# fema_year <- gsub("\n              ", ",", fema)
+# fema_year <- gsub("\n          \n", "\n", fema_year)
+# fema_year <- gsub("\\(", " ", fema_year)
+# fema_year <- gsub(")", " ", fema_year)
+# 
+# 
+# fema <- read_csv(fema_year, col_names = F) %>% 
+#   mutate_all(funs(as.numeric)) %>% 
+#   filter(!is.na(X1))
+# 
+# names(fema) <- c("year", "declarations")
+# 
+# write_csv(fema, "0-data/NOAA/fema_declarations.csv")
 
 # ---- openfema -----------------------------------------------------------
 
@@ -90,6 +92,8 @@ counties_all <- counties %>%
 
 write_csv(counties_year, paste0(local_dir, "/cty_decl_year.csv"))
 write_csv(counties_all, paste0(local_dir, "/cty_decl_all.csv"))
+write_rds(counties_year, paste0(local_dir, "/cty_decl_year.rds"))
+write_rds(counties_all, paste0(local_dir, "/cty_decl_all.rds"))
 
 # Rest
 
