@@ -1,0 +1,72 @@
+---
+title: "The Effect of Disasters on Migration Destinations: Evidence from Hurricane Katrina"
+author: 
+  - name: Jonathan Eyer
+    affiliation: 1
+  - name: Robert Dinterman
+    affiliation: 2
+  - name: Noah Miller
+    affiliation: 1
+  - name: Adam Rose
+    affiliation: 1
+address:
+  - code: 1
+    address: University of Southern California
+  - code: 2
+    address: The Ohio State University
+date: "`r format(Sys.time(), '%d %B %Y')`"
+abstract: While post-disaster migration can move vulnerable populations from dangerous regions to relatively safe ones, little is known about the processes by which migrants select new homes. We utilize an econometric model of migrant flows to examine the characteristics of the destinations that attracted migrants leaving the New Orleans area following Hurricane Katrina in 2005 relative to migration behaviors in other years. We find an increase flow of migrants to large, nearby counties with a mixed effect of economic variables on migration. We find that counties that had experienced fewer disasters received a greater proportion of total migrants in 2005, but there was an overall increase in migration flow to disaster-exposed regions as well.  
+thanks: "Corresponding Author Jonathan Eyer, email - jeyer@usc.edu"
+header-includes:
+   - \usepackage{amsmath}
+output: 
+  pdf_document: 
+    toc: false
+    keep_tex: yes
+    template: template.tex
+---
+
+```{r, include=FALSE}
+library(knitr)
+opts_knit$set(root.dir = normalizePath("../.."))
+read_chunk("5-katrina-refs.R")
+```
+
+```{r global_options, include=FALSE}
+opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+```
+
+```{r start}
+```
+
+# Tables and Figures
+
+```{r common-states}
+```
+
+\clearpage
+
+```{r common-county}
+```
+
+\clearpage
+
+```{r summary-stats}
+```
+
+\clearpage
+
+```{r regressions, include = FALSE, cache = TRUE}
+```
+
+\clearpage
+\scriptsize
+```{r regall, results='asis', header = FALSE, cache=TRUE}
+```
+
+\clearpage
+\scriptsize
+```{r regall_noho, results='asis', header = FALSE, cache=TRUE}
+```
+
+
