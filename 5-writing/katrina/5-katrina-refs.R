@@ -22,6 +22,14 @@ star_pval <- function(p.value) {
                  symbols = c("***", "**", "*", " ")))
 }
 
+mod_stargazer <- function(...){
+  output <- capture.output(stargazer(...))
+  # The first three lines are the ones we want to remove...
+  output <- output[4:length(output)]
+  # cat out the results - this is essentially just what stargazer does too
+  cat(paste(output, collapse = "\n"), "\n")
+}
+
 sumn  <- function(x) sum(x, na.rm = T)
 meann <- function(x, w) weighted.mean(x, w, na.rm = T)
 
@@ -31,14 +39,14 @@ ref_data <- read_rds("1-tidy/migration/katrina_newo.rds") %>%
   summarise(un_rate_newo = 100*(meann(unemp, exmpt_own) /
                                   meann(unemp + emp, exmpt_own)),
             black_pct_newo = (sumn(black_pct*tot_pop) / sumn(tot_pop)),
-            area_sqm = sumn(area_sqm),
+            #area_sqm = sumn(area_sqm),
             population_newo = sumn(exmpt_own) / 1000000,
-            pop_dense_newo = sumn(exmpt_own) / sumn(area_sqm),
+            pop_dense_newo = sumn(exmpt_own) / sumn(area_sqm) /1000,
             pay_newo = meann(pay, exmpt_own) / 1000,
             fmr_newo = meann(fmr, exmpt_own) / 100)
 
 k_data <- read_rds("1-tidy/migration/katrina.rds") %>% 
-  left_join(ref_data) %>% 
+  left_join(ref_data, by = "year") %>% 
   mutate(moved = 1*!is.na(exmpt_katrina),
          katrina = 1*katrina,
          postkat = (year == 2006),
@@ -46,9 +54,10 @@ k_data <- read_rds("1-tidy/migration/katrina.rds") %>%
          un_rate_ref = un_rate - un_rate_newo,
          population = exmpt_own / 1000000,
          population_ref = population - population_newo,
-         pop_dense = exmpt_own / area_sqm,
+         pop_dense = exmpt_own / area_sqm / 1000,
          pop_dense_ref = pop_dense - pop_dense_newo,
          distance = distance / 100,
+         black_pct_ref = black_pct - black_pct_newo,
          pay = pay / 1000,
          pay_ref = pay - pay_newo,
          fmr = fmr / 100,
@@ -87,11 +96,11 @@ k_data %>%
          total_05 = sumn(exmpt_katrina[year == 2005])) %>% 
   group_by(State = stname) %>% 
   summarise(`Migrants in 2005` = sumn(exmpt_katrina[year == 2005]),
-            `Percentage of Total in 2005` = percent(sumn(exmpt_katrina[year == 2005]) /
-                                                      mean(total_05)),
+            `Percentage of Total in 2005` =
+              percent(sumn(exmpt_katrina[year == 2005]) / mean(total_05)),
             `Average Migrants` = round(sumn(exmpt_katrina[year != 2005])/9),
-            `Percentage of Total` = percent(sumn(exmpt_katrina[year != 2005]) /
-                                              mean(total))) %>% 
+            `Percentage of Total` = 
+              percent(sumn(exmpt_katrina[year != 2005]) / mean(total))) %>% 
   arrange(desc(`Migrants in 2005`)) %>% 
   head(n = 10) %>% 
   kable(format.args = list(big.mark = ","),
@@ -108,11 +117,11 @@ k_data %>%
          ctyname = str_to_title(county)) %>% 
   group_by(FIPS = as.character(fips), County = ctyname, State = stname) %>% 
   summarise(`Migrants in 2005` = sumn(exmpt_katrina[year == 2005]),
-            `Percentage of Total in 2005` = percent(sumn(exmpt_katrina[year == 2005]) /
-                                                      mean(total_05)),
+            `Percentage of Total in 2005` =
+              percent(sumn(exmpt_katrina[year == 2005]) / mean(total_05)),
             `Average Migrants` = round(sumn(exmpt_katrina[year != 2005])/9),
-            `Percentage of Total` = percent(sumn(exmpt_katrina[year != 2005]) /
-                                              mean(total))) %>% 
+            `Percentage of Total` =
+              percent(sumn(exmpt_katrina[year != 2005]) / mean(total))) %>% 
   arrange(desc(`Migrants in 2005`)) %>% 
   head(n = 10) %>% 
   kable(format.args = list(big.mark = ","),
@@ -134,7 +143,7 @@ k_data %>%
                       "Migrants from New Orleans",
                       "Average Monthly Rent (Hundreds of USD)",
                       "In a Metro","Average Annual Pay (Thousands of USD)",
-                      "Population Density (per square mile)",
+                      "Population Density (1,000 per square mile)",
                       "Population (Millions)",
                       "Unemployment Rate")) %>%
   mutate_if(is.numeric, funs(round(.,3)))%>%
@@ -142,11 +151,16 @@ k_data %>%
 
 # ---- regressions --------------------------------------------------------
 
-form_base <- formula(exmpt_katrina ~ population + distance + #la_dest +
+form_base <- formula(exmpt_katrina ~ pop_dense + distance + black_pct +
                        un_rate + pay + fmr + disasters+ metro03 + katrina)
 form_05 <- update(form_base, . ~ . + katrina:.)
 form_06 <- update(form_base, . ~ .+  postkat:.)
 form_all <- update(form_base, . ~ . + katrina:. + postkat:. -katrina:postkat)
+
+form_baser <- formula(exmpt_katrina ~ pop_dense_ref + distance + black_pct_ref+
+                        un_rate_ref + pay_ref + fmr_ref + disasters +
+                        metro03 + katrina)
+form_05r <- update(form_baser, . ~ . + katrina:.)
 
 
 # Raw Flow
@@ -155,6 +169,8 @@ reg_05 <- lm(form_05, data = k_data)
 reg_06 <- lm(form_06, data = k_data)
 reg_all <- lm(form_all, data = k_data)
 
+reg_05r <- lm(form_05r, data = k_data)
+
 # Inverse Hypersine
 ihs_0  <- lm(update(form_base, inv_hypersine(exmpt_katrina) ~.),
              data = k_data)
@@ -162,17 +178,25 @@ ihs_05 <- lm(update(form_05, inv_hypersine(exmpt_katrina) ~.), data = k_data)
 ihs_06 <- lm(update(form_06, inv_hypersine(exmpt_katrina) ~.), data = k_data)
 ihs_all <- lm(update(form_all, inv_hypersine(exmpt_katrina) ~.), data = k_data)
 
+ihs_05r <- lm(update(form_05r, inv_hypersine(exmpt_katrina) ~.), data = k_data)
+
 # Migration percentage
 pct_0  <- lm(update(form_base, exmpt_katrina_eyer ~.), data = k_data)
 pct_05 <- lm(update(form_05, exmpt_katrina_eyer ~.), data = k_data)
 pct_06 <- lm(update(form_06, exmpt_katrina_eyer ~.), data = k_data)
 pct_all <- lm(update(form_all, exmpt_katrina_eyer ~.), data = k_data)
 
+pct_05r <- lm(update(form_05r, exmpt_katrina_eyer ~.), data = k_data)
+
+
 # Linear Probability
 lp_0  <- lm(update(form_base, moved ~.), data = k_data)
 lp_05 <- lm(update(form_05, moved ~.), data = k_data)
 lp_06 <- lm(update(form_06, moved ~.), data = k_data)
 lp_all <- lm(update(form_all, moved ~.), data = k_data)
+
+lp_05r <- lm(update(form_05r, moved ~.), data = k_data)
+
 
 # Logit
 logit_0   <- glm(update(form_base, moved ~.), data = k_data,
@@ -183,6 +207,9 @@ logit_06  <- glm(update(form_06, moved ~.), data = k_data,
                  family = binomial(link = "logit"))
 logit_all <- glm(update(form_all, moved ~.), data = k_data,
                  family = binomial(link = "logit"))
+
+logit_05r  <- glm(update(form_05r, moved ~.), data = k_data,
+                  family = binomial(link = "logit"))
 
 
 # Poisson?
@@ -195,30 +222,60 @@ pois_06 <- glm(update(form_06, exmpt_katrina ~.), data = k_data,
 pois_all <- glm(update(form_all, exmpt_katrina ~.), data = k_data,
                 family = "poisson")
 
+pois_05r <- glm(update(form_05r, exmpt_katrina ~.), data = k_data,
+                family = "poisson")
+
+
 # Raw Flow - No Harris County
 reg_0_noho  <- lm(form_base, data = k_data,subset = k_data$fips != 48201)
 reg_05_noho <- lm(form_05, data = k_data,subset = k_data$fips != 48201)
 reg_06_noho <- lm(form_06, data = k_data,subset = k_data$fips != 48201)
 reg_all_noho <- lm(form_all, data = k_data,subset = k_data$fips != 48201)
 
+reg_05_nohor <- lm(form_05r, data = k_data,subset = k_data$fips != 48201)
+
+
 # Inverse Hypersine - No Harris County
 ihs_0_noho  <- lm(update(form_base, inv_hypersine(exmpt_katrina) ~.),
                   data = k_data,subset = k_data$fips != 48201)
-ihs_05_noho <- lm(update(form_05, inv_hypersine(exmpt_katrina) ~.), data = k_data,subset = k_data$fips != 48201)
-ihs_06_noho <- lm(update(form_06, inv_hypersine(exmpt_katrina) ~.), data = k_data,subset = k_data$fips != 48201)
-ihs_all_noho <- lm(update(form_all, inv_hypersine(exmpt_katrina) ~.), data = k_data,subset = k_data$fips != 48201)
+ihs_05_noho <- lm(update(form_05, inv_hypersine(exmpt_katrina) ~.),
+                  data = k_data,subset = k_data$fips != 48201)
+ihs_06_noho <- lm(update(form_06, inv_hypersine(exmpt_katrina) ~.),
+                  data = k_data,subset = k_data$fips != 48201)
+ihs_all_noho <- lm(update(form_all, inv_hypersine(exmpt_katrina) ~.),
+                   data = k_data,subset = k_data$fips != 48201)
+
+ihs_05_nohor <- lm(update(form_05r, inv_hypersine(exmpt_katrina) ~.),
+                   data = k_data,subset = k_data$fips != 48201)
+
 
 # Migration percentage - No Harris County
-pct_0_noho  <- lm(update(form_base, exmpt_katrina_eyer ~.), data = k_data,subset = k_data$fips != 48201)
-pct_05_noho <- lm(update(form_05, exmpt_katrina_eyer ~.), data = k_data,subset = k_data$fips != 48201)
-pct_06_noho <- lm(update(form_06, exmpt_katrina_eyer ~.), data = k_data,subset = k_data$fips != 48201)
-pct_all_noho <- lm(update(form_all, exmpt_katrina_eyer ~.), data = k_data,subset = k_data$fips != 48201)
+pct_0_noho  <- lm(update(form_base, exmpt_katrina_eyer ~.),
+                  data = k_data,subset = k_data$fips != 48201)
+pct_05_noho <- lm(update(form_05, exmpt_katrina_eyer ~.),
+                  data = k_data,subset = k_data$fips != 48201)
+pct_06_noho <- lm(update(form_06, exmpt_katrina_eyer ~.),
+                  data = k_data,subset = k_data$fips != 48201)
+pct_all_noho <- lm(update(form_all, exmpt_katrina_eyer ~.),
+                   data = k_data,subset = k_data$fips != 48201)
+
+pct_05_nohor <- lm(update(form_05r, exmpt_katrina_eyer ~.),
+                   data = k_data,subset = k_data$fips != 48201)
+
 
 # Linear Probability - No Harris County
-lp_0_noho  <- lm(update(form_base, moved ~.), data = k_data,subset = k_data$fips != 48201)
-lp_05_noho <- lm(update(form_05, moved ~.), data = k_data,subset = k_data$fips != 48201)
-lp_06_noho <- lm(update(form_06, moved ~.), data = k_data,subset = k_data$fips != 48201)
-lp_all_noho <- lm(update(form_all, moved ~.), data = k_data,subset = k_data$fips != 48201)
+lp_0_noho  <- lm(update(form_base, moved ~.), data = k_data,
+                 subset = k_data$fips != 48201)
+lp_05_noho <- lm(update(form_05, moved ~.), data = k_data,
+                 subset = k_data$fips != 48201)
+lp_06_noho <- lm(update(form_06, moved ~.), data = k_data,
+                 subset = k_data$fips != 48201)
+lp_all_noho <- lm(update(form_all, moved ~.), data = k_data,
+                  subset = k_data$fips != 48201)
+
+lp_05_nohor <- lm(update(form_05r, moved ~.), data = k_data,
+                  subset = k_data$fips != 48201)
+
 
 # Poisson - No Harris County
 pois_0_noho  <- glm(update(form_base, exmpt_katrina ~.), data = k_data,
@@ -230,119 +287,10 @@ pois_06_noho <- glm(update(form_06, exmpt_katrina ~.), data = k_data,
 pois_all_noho <- glm(update(form_all, exmpt_katrina ~.), data = k_data,
                      family = "poisson",subset = k_data$fips != 48201)
 
-
-# ---- reg1 ---------------------------------------------------------------
-
-m1 <- coeftest(reg_0, vcov = cluster.vcov(reg_0, cluster = ~fips)) %>% 
-  tidy() %>% mutate(model = "Flow")
-m2 <- coeftest(ihs_0, vcov = cluster.vcov(ihs_0, cluster = ~fips)) %>% 
-  tidy() %>% mutate(model = "IHS")
-m3 <- coeftest(pct_0, vcov = cluster.vcov(pct_0, cluster = ~fips)) %>% 
-  tidy() %>% mutate(model = "Share")
-m4 <- coeftest(lp_0, vcov = cluster.vcov(lp_0, cluster = ~fips)) %>% 
-  tidy() %>% mutate(model = "LP")
-
-all_models <- bind_rows(m1, m2, m3, m4)
-
-varnames <- c("Intercept", "Population (Millions)",
-              "Distance (Hundreds of Kilometers)", "Unemployment Rate",
-              "Annual Pay (Thousands of USD)", "Median Monthly Rent",
-              "Non-Metro", "Is 2005")
-term_order <- c(m1$term, "",varnames) # for ordering variables
-
-ols_table <- all_models %>%
-  mutate(est = paste0(round(estimate, 4), star_pval(p.value)),
-         se = paste0("(", round(std.error, 4), ")")) %>% 
-  select(model, term, est, se) %>%
-  gather(key, value, est:se) %>%
-  spread(model, value) %>% 
-  mutate(term = factor(term, levels =  term_order)) %>% 
-  arrange(term) # last one orders by the factor order, ignoring S.E.
-
-# Remove every other term
-ols_table[seq(2, nrow(ols_table), 2), "term"] <- ""
-# Rename variables for presentation
-ols_table[seq(1,nrow(ols_table),2), "term"] <- varnames
-
-r_squared <- function(x) as.character(round(summary(x)$adj.r.squared, 3))
-n_obs <- function(x) prettyNum(nobs(x), big.mark = ",")
-
-ols_table %>% 
-  select(-key) %>% 
-  bind_rows(data.frame(term = "Adjusted R-Squared",
-                       Flow = r_squared(reg_0), 
-                       IHS = r_squared(ihs_0), 
-                       LP = r_squared(lp_0), 
-                       Share = r_squared(pct_0))) %>% 
-  bind_rows(data.frame(term = "Observations",
-                       Flow = n_obs(reg_0),
-                       IHS = n_obs(ihs_0),
-                       LP = n_obs(lp_0),
-                       Share = n_obs(pct_0))) %>%
-  kable(caption = paste0("\\label{tab:reg_main}Effect of Destination County",
-                         " Characteristics on New Orleans Outflow"))
-
-# ---- reg2 ---------------------------------------------------------------
-
-m1 <- coeftest(reg_05, vcov = cluster.vcov(reg_05, cluster = ~fips)) %>% 
-  tidy() %>% mutate(model = "Flow")
-m2 <- coeftest(ihs_05, vcov = cluster.vcov(ihs_05, cluster = ~fips)) %>% 
-  tidy() %>% mutate(model = "IHS")
-m3 <- coeftest(pct_05, vcov = cluster.vcov(pct_05, cluster = ~fips)) %>% 
-  tidy() %>% mutate(model = "Share")
-m4 <- coeftest(lp_05, vcov = cluster.vcov(lp_05, cluster = ~fips)) %>% 
-  tidy() %>% mutate(model = "LP")
-
-all_models <- bind_rows(m1, m2, m3, m4)
-
-varnames <- c("Intercept", "Population (Millions)",
-              "Distance (Hundreds of Kilometers)", "Unemployment Rate",
-              "Annual Pay (Thousands of USD)", "Median Monthly Rent",
-              "Non-Metro", "Is 2005", "Population x 2005", "Distance x 2005",
-              "Unemployment Rate x 2005", "Pay x 2005", "Monthly Rent x 2005",
-              "Non-Metro x 2005")
-term_order <- c(m1$term, "",varnames) # for ordering variables
-
-ols_table <- all_models %>%
-  mutate(est = paste0(round(estimate, 4), star_pval(p.value)),
-         se = paste0("(", round(std.error, 4), ")")) %>% 
-  select(model, term, est, se) %>%
-  gather(key, value, est:se) %>%
-  spread(model, value) %>% 
-  mutate(term = factor(term, levels =  term_order)) %>% 
-  arrange(term) # last one orders by the factor order, ignoring S.E.
-
-
-# Remove every other term
-ols_table[seq(2, nrow(ols_table), 2), "term"] <- ""
-# Rename variables for presentation
-ols_table[seq(1,nrow(ols_table),2), "term"] <- varnames
-
-ols_table %>% 
-  select(-key) %>% 
-  bind_rows(data.frame(term = "Adjusted R-Squared",
-                       Flow = r_squared(reg_05),
-                       IHS = r_squared(ihs_05),
-                       LP = r_squared(lp_05),
-                       Share = r_squared(pct_05))) %>% 
-  bind_rows(data.frame(term = "Observations",
-                       Flow = n_obs(reg_05),
-                       IHS = n_obs(ihs_05),
-                       LP = n_obs(lp_05),
-                       Share = n_obs(pct_05))) %>%
-  kable(caption = paste0("\\label{tab:reg2005}Effect of Destination",
-                         " County Characteristics on",
-                         " New Orleans Outflow - 2005 Interactions"))
+pois_05_nohor <- glm(update(form_05r, exmpt_katrina ~.), data = k_data,
+                     family = "poisson",subset = k_data$fips != 48201)
 
 # ---- regall ---------------------------------------------------------------
-mod_stargazer <- function(...){
-  output <- capture.output(stargazer(...))
-  # The first three lines are the ones we want to remove...
-  output <- output[4:length(output)]
-  # cat out the results - this is essentially just what stargazer does too
-  cat(paste(output, collapse = "\n"), "\n")
-}
-
 
 mod_stargazer(reg_05, ihs_05, lp_05, pct_05,
               se = list(sqrt(diag(cluster.vcov(reg_05, cluster = ~fips))),
@@ -350,14 +298,18 @@ mod_stargazer(reg_05, ihs_05, lp_05, pct_05,
                         sqrt(diag(cluster.vcov(lp_05, cluster = ~fips))),
                         sqrt(diag(cluster.vcov(pct_05 , cluster = ~fips)))),
               omit.stat = c("f","ser"),
-              covariate.labels = c("Population (Millions)",
+              covariate.labels = c("Population Density (1,000 per square mile)",
                                    "Distance (Hundreds of Kilometers)",
+                                   "Percentage Black",
                                    "Unemployment Rate", "Average Pay",
-                                   "Median Rent", "Number of Disasters","Non Metro", "Year 2005",
+                                   "Median Rent", "Number of Disasters",
+                                   "Non Metro", "Year 2005",
                                    "Population X 2005", "Distance X 2005",
+                                   "Black X 2005",
                                    "Unemployment Rate X 2005 ",
                                    "Average Pay X 2005","Median Rent X 2005",
-                                   "Number of Disasters X 2005","Non Metro X 2005"),
+                                   "Number of Disasters X 2005",
+                                   "Non Metro X 2005"),
               font.size = "scriptsize",
               title = paste0("\\label{reg:regmain}Effect of Destination ",
                              "Characteristics on New Orleans ",
@@ -366,14 +318,7 @@ mod_stargazer(reg_05, ihs_05, lp_05, pct_05,
               model.names = F, dep.var.labels.include = FALSE)
 
 
-# ---- regall_noho ---------------------------------------------------------------
-mod_stargazer <- function(...){
-  output <- capture.output(stargazer(...))
-  # The first three lines are the ones we want to remove...
-  output <- output[4:length(output)]
-  # cat out the results - this is essentially just what stargazer does too
-  cat(paste(output, collapse = "\n"), "\n")
-}
+# ---- regall_noho ------------------------------------------------------------
 
 
 mod_stargazer(reg_05_noho, ihs_05_noho, lp_05_noho, pct_05_noho,
@@ -382,16 +327,80 @@ mod_stargazer(reg_05_noho, ihs_05_noho, lp_05_noho, pct_05_noho,
                         sqrt(diag(cluster.vcov(lp_05_noho, cluster = ~fips))),
                         sqrt(diag(cluster.vcov(pct_05_noho , cluster = ~fips)))),
               omit.stat = c("f","ser"),
-              covariate.labels = c("Population (Millions)",
+              covariate.labels = c("Population Density (1,000 per square mile)",
                                    "Distance (Hundreds of Kilometers)",
+                                   "Percentage Black",
                                    "Unemployment Rate", "Average Pay",
-                                   "Median Rent", "Number of Disasters","Non Metro", "Year 2005",
+                                   "Median Rent", "Number of Disasters",
+                                   "Non Metro", "Year 2005",
                                    "Population X 2005", "Distance X 2005",
+                                   "Black X 2005",
                                    "Unemployment Rate X 2005 ",
                                    "Average Pay X 2005", "Median Rent X 2005",
-                                   "Number of Disasters X 2005","Non Metro X 2005"),
+                                   "Number of Disasters X 2005",
+                                   "Non Metro X 2005"),
               font.size = "scriptsize",
               title = paste0("\\label{reg:regnoho}Effect of Destination ",
+                             "Characteristics on New Orleans ",
+                             "Outflow Migration - Excluding Houston"),
+              column.labels = c("Flow", "IHS", "LP", "Share"),
+              model.names = F, dep.var.labels.include = FALSE)
+
+# ---- referee ------------------------------------------------------------
+
+
+
+# ---- regallr ---------------------------------------------------------------
+
+
+mod_stargazer(reg_05r, ihs_05r, lp_05r, pct_05r,
+              se = list(sqrt(diag(cluster.vcov(reg_05r, cluster = ~fips))),
+                        sqrt(diag(cluster.vcov(ihs_05r, cluster = ~fips))),
+                        sqrt(diag(cluster.vcov(lp_05r, cluster = ~fips))),
+                        sqrt(diag(cluster.vcov(pct_05r, cluster = ~fips)))),
+              omit.stat = c("f","ser"),
+              covariate.labels = c("Population Density (1,000 per square mile)",
+                                   "Distance (Hundreds of Kilometers)",
+                                   "Percentage Black",
+                                   "Unemployment Rate", "Average Pay",
+                                   "Median Rent", "Number of Disasters",
+                                   "Non Metro", "Year 2005",
+                                   "Population X 2005", "Distance X 2005",
+                                   "Black X 2005",
+                                   "Unemployment Rate X 2005 ",
+                                   "Average Pay X 2005","Median Rent X 2005",
+                                   "Number of Disasters X 2005",
+                                   "Non Metro X 2005"),
+              font.size = "scriptsize",
+              title = paste0("\\label{reg:regmainr}Effect of Destination ",
+                             "Characteristics on New Orleans ",
+                             "Outflow Migration"),
+              column.labels = c("Flow", "IHS", "LP", "Share"),
+              model.names = F, dep.var.labels.include = FALSE)
+
+
+# ---- regall_nohor -----------------------------------------------------------
+
+mod_stargazer(reg_05_nohor, ihs_05_nohor, lp_05_nohor, pct_05_nohor,
+              se = list(sqrt(diag(cluster.vcov(reg_05_nohor, cluster = ~fips))),
+                        sqrt(diag(cluster.vcov(ihs_05_nohor, cluster = ~fips))),
+                        sqrt(diag(cluster.vcov(lp_05_nohor, cluster = ~fips))),
+                        sqrt(diag(cluster.vcov(pct_05_nohor, cluster = ~fips)))),
+              omit.stat = c("f","ser"),
+              covariate.labels = c("Population Density (1,000 per square mile)",
+                                   "Distance (Hundreds of Kilometers)",
+                                   "Percentage Black",
+                                   "Unemployment Rate", "Average Pay",
+                                   "Median Rent", "Number of Disasters",
+                                   "Non Metro", "Year 2005",
+                                   "Population X 2005", "Distance X 2005",
+                                   "Black X 2005",
+                                   "Unemployment Rate X 2005 ",
+                                   "Average Pay X 2005", "Median Rent X 2005",
+                                   "Number of Disasters X 2005",
+                                   "Non Metro X 2005"),
+              font.size = "scriptsize",
+              title = paste0("\\label{reg:regnohor}Effect of Destination ",
                              "Characteristics on New Orleans ",
                              "Outflow Migration - Excluding Houston"),
               column.labels = c("Flow", "IHS", "LP", "Share"),
