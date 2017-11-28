@@ -43,7 +43,8 @@ ref_data <- read_rds("1-tidy/migration/katrina_newo.rds") %>%
             population_newo = sumn(exmpt_own) / 1000000,
             pop_dense_newo = sumn(exmpt_own) / sumn(area_sqm) /1000,
             pay_newo = meann(pay, exmpt_own) / 1000,
-            fmr_newo = meann(fmr, exmpt_own) / 100)
+            fmr_newo = meann(fmr, exmpt_own) / 100,
+            disasters_newo = meann(disasters, exmpt_own))
 
 k_data <- read_rds("1-tidy/migration/katrina.rds") %>% 
   left_join(ref_data, by = "year") %>% 
@@ -148,6 +149,45 @@ k_data %>%
                       "Unemployment Rate")) %>%
   mutate_if(is.numeric, funs(round(.,3)))%>%
   kable(caption = "Summary Statistics \\label{tab:sumstats}")
+
+# ---- summary-stats-locations ---------------------------------------------
+katdata <- ref_data %>% 
+  mutate(metro = 1,
+         chunk = 0,
+         chunk = replace(chunk, year < 2005, -1),
+         chunk = replace(chunk, year > 2005, 1)) %>%
+  select(chunk, population_newo, pop_dense_newo, black_pct_newo,
+         un_rate_newo, pay_newo, fmr_newo, metro, disasters_newo) %>%
+  group_by(chunk)  %>%
+  summarise_all(funs(mean), na.rm = T) %>%
+  mutate(ctyname = "New Orleans",
+         stname = "Louisiana",
+         exmpt_katrina= NA)
+names(katdata) <- c("chunk","population","pop_dense","black_pct","un_rate","pay","fmr","metro","disasters","ctyname","stname","exmpt_katrina")
+
+destdata <- k_data %>% 
+  filter(fips %in% c(48201, 22033,48113,48439,22105)) %>%
+  mutate(metro = 1*(metro03 == "metro"),
+         chunk = 0,
+         chunk = replace(chunk, year < 2005, -1),
+         chunk = replace(chunk, year > 2005, 1),
+         ctyname = str_to_title(county)) %>%
+  select(chunk, exmpt_katrina, distance, population, pop_dense, black_pct,
+         un_rate, pay, fmr, metro, disasters, ctyname, stname) %>%
+  group_by(chunk, ctyname, stname) %>%
+  summarise_all(funs(mean), na.rm = T) 
+
+summdata <- bind_rows(katdata, destdata) %>%
+  mutate(chunk = replace(chunk, chunk == 1, "Post-Katrina"),
+         chunk = replace(chunk, chunk == 0, "Katrina"),
+         chunk = replace(chunk, chunk == -1, "Pre-Katrina")) 
+
+summdata <- summdata[,c(1,10,11,2,4,5,6,7,8,9,12,13)]
+names(summdata) <- c("Time Period","County","State","Population (Millions)",
+"Percentage Black"," Unemployment Rate","Average Pay (Thousands of USD)","Average Monthly Rent (Hundreds of USD)",
+"In a Metro","Number of Disasters","Migrants from New Orleans","Distance (Hundreds of Miles)")
+summdata %<>% mutate_if(is.numeric, funs(round(.,3)))%>%
+  kable(caption = "Summary Statistics of Key Counties \\label{tab:sumstats}")
 
 # ---- regressions --------------------------------------------------------
 
@@ -277,6 +317,21 @@ lp_05_nohor <- lm(update(form_05r, moved ~.), data = k_data,
                   subset = k_data$fips != 48201)
 
 
+# Logit
+logit_0_noho   <- glm(update(form_base, moved ~.), data = k_data,
+                 subset = k_data$fips != 48201, family = binomial(link = "logit"))
+logit_05_noho  <- glm(update(form_05, moved ~.), data = k_data,
+                 subset = k_data$fips != 48201,family = binomial(link = "logit"))
+logit_06_noho  <- glm(update(form_06, moved ~.), data = k_data,
+                 subset = k_data$fips != 48201,family = binomial(link = "logit"))
+logit_all_noho <- glm(update(form_all, moved ~.), data = k_data,
+                 subset = k_data$fips != 48201, family = binomial(link = "logit"))
+
+logit_05r_nohor  <- glm(update(form_05r, moved ~.), data = k_data,
+                  subset = k_data$fips != 48201,family = binomial(link = "logit"))
+
+
+
 # Poisson - No Harris County
 pois_0_noho  <- glm(update(form_base, exmpt_katrina ~.), data = k_data,
                     family = "poisson",subset = k_data$fips != 48201)
@@ -314,7 +369,7 @@ mod_stargazer(reg_05, ihs_05, lp_05, pct_05,
               title = paste0("\\label{reg:regmain}Effect of Destination ",
                              "Characteristics on New Orleans ",
                              "Outflow Migration"),
-              column.labels = c("Flow", "IHS", "LP", "Share"),
+              column.labels = c("Flow", "IHS", "Logit", "Share"),
               model.names = F, dep.var.labels.include = FALSE)
 
 
@@ -343,7 +398,7 @@ mod_stargazer(reg_05_noho, ihs_05_noho, lp_05_noho, pct_05_noho,
               title = paste0("\\label{reg:regnoho}Effect of Destination ",
                              "Characteristics on New Orleans ",
                              "Outflow Migration - Excluding Houston"),
-              column.labels = c("Flow", "IHS", "LP", "Share"),
+              column.labels = c("Flow", "IHS", "Logit", "Share"),
               model.names = F, dep.var.labels.include = FALSE)
 
 # ---- referee ------------------------------------------------------------
@@ -353,7 +408,7 @@ mod_stargazer(reg_05_noho, ihs_05_noho, lp_05_noho, pct_05_noho,
 # ---- regallr ---------------------------------------------------------------
 
 
-mod_stargazer(reg_05r, ihs_05r, lp_05r, pct_05r,
+mod_stargazer(reg_05r, ihs_05r, logit_05r, pct_05r,
               se = list(sqrt(diag(cluster.vcov(reg_05r, cluster = ~fips))),
                         sqrt(diag(cluster.vcov(ihs_05r, cluster = ~fips))),
                         sqrt(diag(cluster.vcov(lp_05r, cluster = ~fips))),
