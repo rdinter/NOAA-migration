@@ -186,8 +186,8 @@ summdata <- summdata[,c(1,10,11,2,4,5,6,7,8,9,12,13)]
 names(summdata) <- c("Time Period","County","State","Population (Millions)",
 "Percentage Black"," Unemployment Rate","Average Pay (Thousands of USD)","Average Monthly Rent (Hundreds of USD)",
 "In a Metro","Number of Disasters","Migrants from New Orleans","Distance (Hundreds of Miles)")
-summdata %<>% mutate_if(is.numeric, funs(round(.,3)))%>%
-  kable(caption = "Summary Statistics of Key Counties \\label{tab:sumstats}")
+summdata %>% mutate_if(is.numeric, funs(round(.,3)))%>%
+  kable(caption = "Summary Statistics of Key Counties \\label{tab:sumstatscounty}")
 
 # ---- regressions --------------------------------------------------------
 
@@ -430,7 +430,7 @@ mod_stargazer(reg_05r, ihs_05r, logit_05r, pct_05r,
               title = paste0("\\label{reg:regmainr}Effect of Destination ",
                              "Characteristics on New Orleans ",
                              "Outflow Migration"),
-              column.labels = c("Flow", "IHS", "LP", "Share"),
+              column.labels = c("Flow", "IHS", "Logit", "Share"),
               model.names = F, dep.var.labels.include = FALSE)
 
 
@@ -458,5 +458,5 @@ mod_stargazer(reg_05_nohor, ihs_05_nohor, lp_05_nohor, pct_05_nohor,
               title = paste0("\\label{reg:regnohor}Effect of Destination ",
                              "Characteristics on New Orleans ",
                              "Outflow Migration - Excluding Houston"),
-              column.labels = c("Flow", "IHS", "LP", "Share"),
+              column.labels = c("Flow", "IHS", "Logit", "Share"),
               model.names = F, dep.var.labels.include = FALSE)
