@@ -191,13 +191,13 @@ summdata %>% mutate_if(is.numeric, funs(round(.,3)))%>%
 
 # ---- regressions --------------------------------------------------------
 
-form_base <- formula(exmpt_katrina ~ pop_dense + distance + black_pct +
+form_base <- formula(exmpt_katrina ~ population + distance + black_pct +
                        un_rate + pay + fmr + disasters+ metro03 + katrina)
 form_05 <- update(form_base, . ~ . + katrina:.)
 form_06 <- update(form_base, . ~ .+  postkat:.)
 form_all <- update(form_base, . ~ . + katrina:. + postkat:. -katrina:postkat)
 
-form_baser <- formula(exmpt_katrina ~ pop_dense_ref + distance + black_pct_ref+
+form_baser <- formula(exmpt_katrina ~ population_ref + distance + black_pct_ref+
                         un_rate_ref + pay_ref + fmr_ref + disasters +
                         metro03 + katrina)
 form_05r <- update(form_baser, . ~ . + katrina:.)
